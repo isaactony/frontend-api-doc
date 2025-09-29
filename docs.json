@@ -16,18 +16,18 @@
           {
             "group": "Get Started",
             "pages": [
-              "home/get-started/introduction",
-              "home/get-started/quick-start",
-              "home/get-started/flows",
-              "home/get-started/routing"
+              "get-started/introduction",
+              "get-started/quick-start",
+              "get-started/flows",
+              "get-started/routing"
             ]
           },
           {
             "group": "Best Practices",
             "pages": [
-              "home/best-practices/overview",
-              "home/best-practices/flow-design",
-              "home/best-practices/testing"
+              "best-practices/overview",
+              "best-practices/flow-design",
+              "best-practices/testing"
             ]
           },
           {
@@ -36,33 +36,33 @@
               {
                 "group": "Flow Blocks",
                 "pages": [
-                  "home/blocks/start-flow",
-                  "home/blocks/talk",
-                  "home/blocks/ask-exactly",
-                  "home/blocks/collect",
-                  "home/blocks/filter",
-                  "home/blocks/time-filter",
-                  "home/blocks/end-call"
+                  "blocks/start-flow",
+                  "blocks/talk",
+                  "blocks/ask-exactly",
+                  "blocks/collect",
+                  "blocks/filter",
+                  "blocks/time-filter",
+                  "blocks/end-call"
                 ]
               },
               {
                 "group": "Live Call Actions",
                 "pages": [
-                  "home/blocks/api-request",
-                  "home/blocks/google-sheet-live",
-                  "home/blocks/transfer-flows",
-                  "home/blocks/warm-transfer",
-                  "home/blocks/send-sms",
-                  "home/blocks/send-email",
-                  "home/blocks/zapier-live",
-                  "home/blocks/code"
+                  "blocks/api-request",
+                  "blocks/google-sheet-live",
+                  "blocks/transfer-flows",
+                  "blocks/warm-transfer",
+                  "blocks/send-sms",
+                  "blocks/send-email",
+                  "blocks/zapier-live",
+                  "blocks/code"
                 ]
               },
               {
                 "group": "Post Call Actions",
                 "pages": [
-                  "home/blocks/post-call-overview",
-                  "home/blocks/post-call-send-email"
+                  "blocks/post-call-overview",
+                  "blocks/post-call-send-email"
                 ]
               }
             ]

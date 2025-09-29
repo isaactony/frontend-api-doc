@@ -117,4 +117,3 @@ Try navigating to the root of your device and delete the ~/.mintlify folder. The
 - **Mintlify dev isn't running** - Run `mintlify install` it'll re-install dependencies.
 - **Page loads as a 404** - Make sure you are running in a folder with `mint.json`
 
-Curious about what changed in a CLI version? [Check out the CLI changelog.](/changelog/command-line)
