@@ -16,10 +16,16 @@
           {
             "group": "Get Started",
             "pages": [
-              "get-started/introduction",
+              "introduction",
               "get-started/quick-start",
               "get-started/flows",
               "get-started/routing"
+            ]
+          },
+          {
+            "group": "Capabilities",
+            "pages": [
+              "capabilities/call-history-ai-analytics"
             ]
           },
           {

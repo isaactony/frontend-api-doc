@@ -14,20 +14,23 @@ Escalation is not a fallback of last resort. It is a deliberate part of your cal
 ## Transfer Types
 
 Phonely supports two kinds of transfers, both available through the **Transfer Call** block.
+<CardGroup cols={2}>
+  <Card title="Cold Transfer" icon="phone-off">
+    The call is forwarded immediately to the destination number with no introduction or context sharing.
 
-<Card title="Cold Transfer" icon="phone-off">
-A direct pass-through. The call is forwarded immediately to the destination number with no introduction.  
+    Use cold transfers when speed is more important than context.
 
-Use cold transfers when speed is more important than context — for example, forwarding general inquiries to a receptionist line.
-</Card>
+    For example, forwarding general inquiries to a receptionist line or emergency situations where immediate connection is critical are good use cases for cold transfers.
+  </Card>
 
-<Card title="Warm Transfer" icon="phone-forwarded">
-A contextual handoff. The AI briefly introduces the caller before connecting.  
+  <Card title="Warm Transfer" icon="phone-forwarded">
+    A contextual handoff where the AI briefly introduces the caller and shares relevant context before connecting.
 
-For example: “Hi Sarah, I have John on the line with a billing question.”  
+    Use warm transfers when context and personal touch are important.
 
-Warm transfers also support voicemail detection. If no one answers, the AI quietly resumes the call and lets the customer know someone will follow up.
-</Card>
+    For example: "Hi Sarah, I have John on the line with a billing question." Warm transfers also support voicemail detection and will resume the call if no one answers.
+  </Card>
+</CardGroup>
 
 ---
 
