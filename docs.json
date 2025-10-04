@@ -25,7 +25,8 @@
           {
             "group": "Capabilities",
             "pages": [
-              "capabilities/call-history-ai-analytics"
+              "capabilities/call-history-ai-analytics",
+              "capabilities/variables"
             ]
           },
           {
@@ -223,6 +224,10 @@
     }
   },
   "scripts": [
-    "/js/custom-toc.js"
+    "/js/custom-toc.js",
+    "/js/responsive-iframes.js"
+  ],
+  "stylesheets": [
+    "/css/custom.css"
   ]
 }
