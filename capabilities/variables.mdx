@@ -1,213 +1,162 @@
 ---
-title: "Variables"
-description: "Learn how to use Phonely's comprehensive variable system to capture, store, and reuse information across your workflows."
+title: "Using Variables"
+description: "Every variable in Phonely - what it means, when it's set, and how to use it in flows, APIs, and post-call automations."
 ---
 
 In this guide, we'll introduce you to Phonely's powerful variable system that serves as the backbone for capturing, storing, and reusing information throughout your call workflows.
 
-The **Variables** system serves as a vital tool for personalizing conversations, powering integrations, and automating follow-ups with dynamic data capture and storage capabilities.
+Variables are the backbone of your agents. They capture data during a call, pass it between blocks, and export it after the call for follow-ups and analytics. This page extracts key concepts from the video and includes a complete, paste-ready catalog of live and post-call variables.
+
+<Callout type="info">
+If a block didn't run, its variable appears blank in post-call context. That's intentional so you can safely reference variables without breaking integrations.
+</Callout>
 
 <div class="responsive-iframe-container">
   <iframe src="https://www.youtube.com/embed/mPRa7T5qJSo" title="Phonely Variables Guide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
-<Callout type="info">
-Variables are the backbone of how Phonely agents capture, store, and reuse information during live calls and for post-call reporting and follow-ups.
-</Callout>
+## Key Concepts
 
-## Key Features
+- **What variables are.** Structured data (caller phone, name, intent, outcomes, etc.) that your agent reads/writes at runtime and exposes after the call.
+- **Where they live.**
+  - Live-call variables exist while the conversation is running and power real-time logic (branching, transfers, API requests, messages).
+  - Post-call variables are the finalized record (transcript, summary, sentiment, outcomes, links) used in emails, webhooks, CRMs, or BI.
+- **How they're created.**
+  - Prebuilt/telephony: injected automatically (numbers, timestamps, caller geo, caller ID).
+  - Custom: you define once (e.g., an API key) and reuse anywhere.
+  - Auto-gather: the agent asks for a value at the moment a block needs it (e.g., ask for name inside an API Request block).
+- **Referencing variables.** Type `@` in any field to insert an available variable. You can also reference knowledge base docs via the same menu.
+- **Live vs. post-call actions.**
+  - Live actions happen during the call (API request, SMS, email, transfer, booking).
+  - Post-call actions run only if the call ends at/after a specific node—useful for sending a recap email with recording, logging outcomes, or notifying a team.
 
-1. **Pre-Built Variables** - Automatically available on every call with essential call data
-2. **Custom Variables** - User-defined values that can be reused across workflows
-3. **Auto-Gather Variables** - Capture caller input at the moment it's needed
-4. **Post-Call Variables** - Comprehensive data available after call completion
-5. **AI-Generated Metadata** - Automatic extraction of insights and sentiment analysis
+```mermaid
+flowchart LR
+  A[Caller] --> B(Flow Blocks)
+  B -->|Collect / Auto-gather| V[Live Variables]
+  B -->|API / SMS / Transfer| L[Live Actions]
+  B -->|Call Ends| P[Post-Call Node]
+  P --> R[Recap email / Webhook / CRM update]
+  V -->|Persist| C[Post-Call Variables]
+```
 
-## Pre-Built Variables
+## Variable Types & Capture Methods
 
-Automatically available on every call:
+### Prebuilt (Telephony/System)
+Injected automatically when the call connects (numbers, timestamps, basic geo, caller ID).
 
-<Properties>
-  <Property name="Phone number" type="string">The purchased Phonely number the call came in on.</Property>
-  <Property name="Customer phone number" type="string">The caller's actual number.</Property>
-  <Property name="Call start time" type="datetime">Exact start time of the call.</Property>
-  <Property name="Call date" type="date">Date the call began.</Property>
-  <Property name="Caller ID" type="string">Standard telephony caller ID data.</Property>
-  <Property name="Caller city / ZIP" type="string">Geographic details inferred from the number's area code.</Property>
-</Properties>
+### Custom
+Define a key/value once (for example, `api_key`) and reuse across blocks and flows.
 
-These are passed from the telephony system automatically and require no configuration.
+### Auto-gather
+Prompt the caller at the moment a block needs a value (name, email, date, etc.)—no extra Talk block required.
 
-## Custom Variables
+<Tip>
+In an API Request block, add a query/body field → choose "Auto-gather" → set type (Text, Email, Phone, Date, Time) and "Required." At runtime, the agent asks, then proceeds with the request.
+</Tip>
 
-Custom variables are user-defined values that can be reused across workflows for consistent configuration.
+## Full Variable Catalog
 
-**Key Benefits:**
-- **Consistent Configuration** - Set values once and use across multiple workflows
-- **Flexible Data Types** - Support for text, numbers, emails, phone numbers, and more
-- **API Integration** - Store API keys and configuration data for seamless integrations
+Names/keys below are shown in snake_case for clarity.
 
-**Example Use Case**: Store your API key once as a variable and use it in multiple API request blocks.
+**Caller & Agent Context**
+- **phone_number** (phone) - Your purchased Phonely number the call hit
+- **customer_phone_number** (phone) - The caller's device number
+- **agent_id** (string) - Unique ID of the agent
+- **agent_name** (string) - Display name of the agent
+- **workflow_id** (string) - Internal identifier for the active flow
+- **workflow_name** (string) - Display name of the active flow
 
-## Auto-Gather Variables
+**Telephony/System Timestamps & IDs**
+- **call_start** (datetime) - Exact start timestamp
+- **call_end** (datetime) - Exact end timestamp
+- **call_date** (date) - Convenience date
+- **call_duration** (number) - Total elapsed seconds
+- **call_id** (string) - Stable identifier for joins
+- **caller_id** (string) - Not always present
+- **caller_city** (string) - Area-code inferred; approximate
+- **caller_zip** (string) - Area-code inferred; approximate
 
-Auto-gather captures caller input at the moment it's needed instead of requiring a separate block.
+**Transcript & Links**
+- **transcript_json** (json) - Structured turns w/ timing/meta
+- **transcript_text** (text) - Plain text transcript
+- **recording_url** (url) - Direct audio asset (no UI)
+- **dashboard_url** (url) - Full UI (transcript, vars, analytics)
 
-<Tabs>
-  <Tab title="Example">
-    In an API request block, define caller_name as an auto-gather variable. At runtime, Phonely will prompt the caller for their name before sending the request.
-  </Tab>
-</Tabs>
+**AI Summaries & Classifications**
+- **summary** (text) - Short recap
+- **detailed_summary** (text) - ~5–10 sentences
+- **call_success** (boolean) - Did the call achieve its goal?
+- **sentiment** (enum) - happy, neutral, frustrated…
+- **call_topic** (text) - Topical classification
+- **call_purpose** (text) - Intent classification
+- **key_points** (list) - Three-five highlights
 
-<Properties>
-  <Property name="Supported types" type="array">text, number, email, phone, date, time, etc.</Property>
-  <Property name="Required" type="boolean">Variables can be marked as required.</Property>
-</Properties>
+**Auto-Extracted Entities**
+- **extracted_dates** (list) - Dates mentioned by caller
+- **extracted_times** (list) - Times mentioned
+- **extracted_emails** (list) - Emails mentioned
+- **extracted_names** (list) - Person names mentioned
 
-## Post-Call Variables
+**Follow-Up Signals & Actionables**
+- **unanswered_questions** (list) - Unresolved
+- **follow_up_required** (boolean) - Human attention recommended
+- **follow_up_reason** (text) - Why needed
+- **action_items** (list) - Next steps
 
-After a call ends, all live variables remain available. Additional post-call variables are automatically generated:
+**Outcomes & Endings**
+- **outcome** (text) - Prefer explicit in-flow
+- **ended_call_reason** (enum) - See allowed values below
+- **last_block** (text) - Last block reached
+- **call_direction** (enum) - inbound/outbound
 
-**Caller & Agent Data** - Essential identification and workflow information
-<Properties>
-  <Property name="Phone number" type="string">Purchased Phonely number.</Property>
-  <Property name="Customer phone number" type="string">Inbound caller's number.</Property>
-  <Property name="Agent ID" type="string">Unique ID assigned to the Phonely agent.</Property>
-  <Property name="Agent name" type="string">The agent's configured name.</Property>
-  <Property name="Workflow ID" type="string">The unique ID of the flow used.</Property>
-  <Property name="Workflow name" type="string">Display name of the active workflow.</Property>
-</Properties>
+**Ended call reason - allowed values**
+- customer_hung_up
+- ai_hung_up
+- transferred
+- silence_timeout
+- voicemail_detected (outbound)
+- greeting_hangup
 
-**Transcript & Recording** - Conversation data and media access
-<Properties>
-  <Property name="Transcript JSON" type="object">Structured transcript data.</Property>
-  <Property name="Transcript text" type="string">Plain text transcript.</Property>
-  <Property name="Recording URL" type="url">Raw link to the call audio file.</Property>
-  <Property name="Dashboard URL" type="url">Link to the full Phonely dashboard view with transcript, variables, and analytics.</Property>
-</Properties>
+**A/B Testing Fields (if used)**
+- **ab_test_id** (string) - Internal reference
+- **ab_test_name** (string) - Human-readable label
+- **ab_test_type** (string) - e.g., prompt, voice, etc.
 
-**AI-Generated Metadata** - Intelligent analysis and insights
-<Properties>
-  <Property name="Summary" type="string">Short description of the call.</Property>
-  <Property name="Detailed summary" type="string">Longer narrative of call content.</Property>
-  <Property name="Call success" type="boolean">AI-determined "yes"/"no" on whether the call achieved its intended goal.</Property>
-  <Property name="Sentiment" type="enum">Neutral, happy, frustrated, sad, etc.</Property>
-  <Property name="Call topic" type="string">AI classification of main topic.</Property>
-  <Property name="Call purpose" type="string">AI classification of purpose.</Property>
-  <Property name="Key points" type="array">3–5 bullet highlights from the conversation.</Property>
-</Properties>
+## Working with Variables in the Builder
 
-**Extracted Entities** - Automatically captured structured data
-Phonely automatically extracts structured data from conversations:
+**See what's available:**  
+In any block field, type `@` to insert existing variables. You can also reference knowledge base docs with the same menu.
 
-<Properties>
-  <Property name="Dates" type="array">Any dates mentioned.</Property>
-  <Property name="Times" type="array">Any times mentioned.</Property>
-  <Property name="Emails" type="array">Any email addresses mentioned.</Property>
-  <Property name="Names" type="array">Person names.</Property>
-</Properties>
+**Create custom variables:**  
+Open the Variables modal and add keys you'll reuse (for example, `api_key`, `org_id`). This keeps requests consistent across flows.
 
-**Follow-Up & Action Items** - Post-call automation and task management
-<Properties>
-  <Property name="Unanswered questions" type="array">Questions the AI couldn't resolve.</Property>
-  <Property name="Follow-up required" type="boolean">Yes/No (AI determined).</Property>
-  <Property name="Follow-up reason" type="string">Explanation of why a human is needed.</Property>
-  <Property name="Action items" type="array">Suggested steps from the call.</Property>
-</Properties>
+**Use auto-gather where it matters:**  
+Inside an API Request block, set a parameter's source to "Auto-gather," choose a type (Text, Email, Phone, Date, Time), and mark it required. The agent will ask at runtime and then proceed.
 
-**Call Metadata** - Timing and identification data
-<Properties>
-  <Property name="Call direction" type="enum">Inbound or outbound.</Property>
-  <Property name="Call start" type="datetime">Timestamp.</Property>
-  <Property name="Call end" type="datetime">Timestamp.</Property>
-  <Property name="Call duration" type="duration">Total length.</Property>
-  <Property name="Call ID" type="string">Unique identifier for the call.</Property>
-</Properties>
+**Separate live vs post-call:**  
+Attach a Post-Call node off the block you care about. Anything wired here runs only if the conversation ends there or later (for example, send recap email with `dashboard_url` and `recording_url`).
 
-**Outcome Tracking** - Success metrics and call analysis
-<Properties>
-  <Property name="Outcome" type="string">Tagged outcome (AI or manual). Example: "appointment booked" or "support resolved."</Property>
-  <Property name="Ended call reason" type="array">
-    <Accordion title="Possible reasons">
-      <ul>
-        <li>Customer ended the call</li>
-        <li>AI ended the call</li>
-        <li>Transferred</li>
-        <li>Silence timeout</li>
-        <li>Voicemail detected (for outbound)</li>
-        <li>Greeting hang-up</li>
-      </ul>
-    </Accordion>
-  </Property>
-  <Property name="Last block" type="string">The last block reached before call ended.</Property>
-</Properties>
-
-**A/B Testing Variables** - Testing framework data
-<Properties>
-  <Property name="AB test ID" type="string">Identifier for the A/B test.</Property>
-  <Property name="AB test name" type="string">Name of the A/B test.</Property>
-  <Property name="AB test type" type="string">Type of A/B test conducted.</Property>
-</Properties>
-
-## How to Use
-
-<Steps>
-  <Step stepNumber={1} title="Access Variables">
-    Navigate to your workflow editor and access the Variables section to configure custom variables.
-  </Step>
-  <Step stepNumber={2} title="Create Custom Variables">
-    Define your custom variables with appropriate data types and mark required fields as needed.
-  </Step>
-  <Step stepNumber={3} title="Configure Auto-Gather">
-    Set up auto-gather variables in your blocks to capture caller input dynamically.
-  </Step>
-  <Step stepNumber={4} title="Use in Workflows">
-    Reference variables in your workflow blocks using the variable syntax.
-  </Step>
-  <Step stepNumber={5} title="Access Post-Call Data">
-    Use post-call variables in integrations and follow-up workflows for comprehensive call analysis.
-  </Step>
-</Steps>
-
-## Example Use Cases
-
-<Tabs>
-  <Tab title="Lead Qualification">
-    Use custom variables to store lead scores and qualification criteria, then reference them in follow-up workflows.
-  </Tab>
-  <Tab title="Appointment Scheduling">
-    Capture appointment details with auto-gather variables and use post-call data to send confirmation emails.
-  </Tab>
-  <Tab title="Customer Support">
-    Store customer information and use AI-generated sentiment data to route calls to appropriate support teams.
-  </Tab>
-</Tabs>
-
-## Best Practices
-
-- **Use descriptive variable names** - Choose clear, meaningful names for your custom variables
-- **Leverage auto-gather for dynamic input** - Capture caller information exactly when needed
-- **Utilize post-call variables for analytics** - Take advantage of AI-generated insights for reporting
-- **Test variable configurations** - Ensure variables work correctly before deploying workflows
-- **Document variable purposes** - Keep track of what each variable is used for in your workflows
-
-## Why Variables Matter
-
-Variables enable you to:
-
-- **Personalize conversations dynamically** - Use caller data to create tailored experiences
-- **Power integrations** - Pass caller details into CRMs and other systems via API
-- **Automate follow-ups** - Use post-call data to trigger automated follow-up actions
-- **Track outcomes and performance** - Analyze sentiment, success rates, and call metrics for continuous improvement
+<Tip>
+AI can infer an outcome, but explicit tagging on key branches produces cleaner dashboards and more reliable automation triggers.
+</Tip>
 
 <Warning>
-Ensure all variables are correctly configured to maximize call handling efficiency and data accuracy.
+If you rely on a variable that might be blank (because a block didn't run), add a fallback in your copy or condition. Example: "We couldn't capture your email; reply here and we'll add it."
 </Warning>
 
-## Conclusion
+## Practical Pattern: Auto-Gather Inside an API Request
 
-Phonely's comprehensive variable system provides the foundation for creating dynamic, personalized, and data-driven call experiences. By effectively utilizing pre-built, custom, and post-call variables, you can build sophisticated workflows that adapt to each caller's needs while capturing valuable insights for your business.
+**Scenario**: You're booking an appointment and need the caller's first name.
 
-<CardGroup cols={1}>
-  <Card title="Workflow Guide" icon="workflow" href="/get-started/flows">Learn how to build effective workflows using variables.</Card>
-</CardGroup>
+**Setup**: In the API block, add a body field `first_name` → choose Auto-gather → Type Text → mark Required.
+
+**Result**: At runtime, the agent asks: "What's your first name?" and then proceeds to book without requiring an extra Talk block.
+
+## Summary
+
+- Prebuilt variables arrive from telephony (numbers, timestamps, caller geo).
+- Custom variables keep configuration consistent across blocks.
+- Auto-gather captures inputs exactly where you need them.
+- Post-call variables give you the complete record: transcript, links, AI summaries, entities, outcomes, and reasons.
+- Tag outcomes in-flow for clean reporting, and always guard for blanks.
