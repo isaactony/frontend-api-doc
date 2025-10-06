@@ -14,6 +14,10 @@
       {
         "tab": "Home",
         "icon": "zap",
+        "pages": [
+          "get-started/quick-start"
+        ],
+        
         "groups": [
           {
             "group": "Get Started",
