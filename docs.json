@@ -20,7 +20,7 @@
           {
             "group": "Get Started",
             "pages": [
-              "introduction",
+              "get-started/introduction",
               "get-started/quick-start"
             ]
           },
