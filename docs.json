@@ -14,9 +14,6 @@
       {
         "tab": "Home",
         "icon": "home",
-        "pages": [
-          "get-started/overview"
-        ],
         "groups": [
           {
             "group": "Get Started",
@@ -37,7 +34,7 @@
                 "icon": "git-branch"
               },
               {
-                "name": "Routing",
+                "name": "Call Escelation",
                 "file": "key-concepts/routing",
                 "icon": "route"
               }
