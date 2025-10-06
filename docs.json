@@ -18,7 +18,7 @@
             "pages": [
               {
                 "name": "Overview",
-                "file": "Overview",
+                "file": "get-started/overview",
                 "icon": "sparkles"
               },
               {
