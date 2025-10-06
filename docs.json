@@ -15,7 +15,6 @@
         "groups": [
           {
             "group": "Get Started",
-            "icon": "rocket",
             "pages": [
               {
                 "name": "Overview",
@@ -24,11 +23,11 @@
               },
               {
                 "name": "Quick Start",
-                "file": "key-concepts/quick-start",
+                "file": "get_started/quick-start",
                 "icon": "zap"
               },
               {
-                "name": "Flows",
+                "name": "Connecting Integrations",
                 "file": "key-concepts/flows",
                 "icon": "workflow"
               },
