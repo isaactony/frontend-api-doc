@@ -8,47 +8,26 @@
     "dark": "#690e80"
   },
   "favicon": "/logo/logo-small.png",
-
+  "icons": {
+    "library": "lucide"
+  },
   "navigation": {
     "tabs": [
       {
         "tab": "Home",
-        "icon": "home",
-        "pages": [
-          "get-started/overview"
-        ],
-        
+        "icon": "house",
         "groups": [
           {
             "group": "Get Started",
             "pages": [
-              {
-                "name": "Overview",
-                "file": "get-started/overview",
-                "icon": "sparkles"
-              },
-              {
-                "name": "Quick Start",
-                "file": "get-started/quick-start",
-                "icon": "zap"
-              },
-              {
-                "name": "Connecting Integrations",
-                "file": "key-concepts/flows",
-                "icon": "git-branch"
-              },
-              {
-                "name": "Call Escelation",
-                "file": "key-concepts/routing",
-                "icon": "route"
-              }
+              "introduction",
+              "get-started/quick-start"
             ]
           },
           {
             "group": "Key Concepts",
             "pages": [
-              "introduction",
-              "key-concepts/quick-start",
+              
               "key-concepts/flows",
               "key-concepts/routing"
             ]
@@ -208,11 +187,6 @@
           "anchor": "Dashboard",
           "href": "https://app.phonely.ai",
           "icon": "gauge"
-        },
-        {
-          "anchor": "Platform Help Center",
-          "href": "https://help.phonely.ai",
-          "icon": "circle-help"
         },
         {
           "anchor": "Community",
