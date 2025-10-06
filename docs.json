@@ -8,10 +8,15 @@
     "dark": "#690e80"
   },
   "favicon": "/logo/logo-small.png",
+
   "navigation": {
     "tabs": [
       {
         "tab": "Home",
+        "icon": "home",
+        "pages": [
+          "get-started/overview"
+        ],
         "groups": [
           {
             "group": "Get Started",
@@ -23,13 +28,13 @@
               },
               {
                 "name": "Quick Start",
-                "file": "get_started/quick-start",
+                "file": "get-started/quick-start",
                 "icon": "zap"
               },
               {
                 "name": "Connecting Integrations",
                 "file": "key-concepts/flows",
-                "icon": "workflow"
+                "icon": "git-branch"
               },
               {
                 "name": "Routing",
@@ -37,7 +42,7 @@
                 "icon": "route"
               }
             ]
-          },     
+          },
           {
             "group": "Key Concepts",
             "pages": [
@@ -101,8 +106,13 @@
           }
         ]
       },
+
       {
         "tab": "API Reference",
+        "icon": "code",
+        "pages": [
+          "api-reference/introduction"
+        ],
         "groups": [
           {
             "group": "API Reference",
@@ -172,19 +182,25 @@
           }
         ]
       },
+
       {
         "tab": "Webhook Reference",
+        "icon": "webhook",
+        "pages": [
+          "webhook-reference/intro"
+        ],
         "groups": [
           {
             "group": "Webhook Reference",
             "pages": [
-              "webhook-reference/Intro",
+              "webhook-reference/intro",
               "webhook-reference/endpoint/postcall-webhook"
             ]
           }
         ]
       }
     ],
+
     "global": {
       "anchors": [
         {
@@ -195,7 +211,7 @@
         {
           "anchor": "Platform Help Center",
           "href": "https://help.phonely.ai",
-          "icon": "circle-question"
+          "icon": "circle-help"
         },
         {
           "anchor": "Community",
@@ -205,10 +221,16 @@
       ]
     }
   },
+
+  "interaction": {
+    "drilldown": true
+  },
+
   "logo": {
     "light": "/logo/logo.png",
     "dark": "/logo/logo-white.png"
   },
+
   "navbar": {
     "links": [
       {
@@ -226,16 +248,19 @@
       "href": "https://app.phonely.ai"
     }
   },
+
   "footer": {
     "socials": {
       "linkedin": "https://www.linkedin.com/company/phonely-ai",
       "discord": "https://discord.gg/BMHPUaZG37"
     }
   },
+
   "modeToggle": {
     "default": "light",
     "isHidden": false
   },
+
   "anchors": {
     "components": {
       "Button": {
@@ -248,6 +273,7 @@
       }
     }
   },
+
   "scripts": [
     "/js/custom-toc.js",
     "/js/responsive-iframes.js"
