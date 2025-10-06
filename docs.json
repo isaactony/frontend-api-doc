@@ -15,7 +15,7 @@
         "tab": "Home",
         "icon": "home",
         "pages": [
-          "get-started/quick-start"
+          "get-started/overview"
         ],
         
         "groups": [
@@ -188,7 +188,7 @@
         "tab": "Webhook Reference",
         "icon": "webhook",
         "pages": [
-          "webhook-reference/intro"
+          "webhook-reference/Intro"
         ],
         "groups": [
           {
