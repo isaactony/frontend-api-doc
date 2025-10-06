@@ -15,15 +15,41 @@
         "groups": [
           {
             "group": "Get Started",
+            "icon": "rocket",
+            "pages": [
+              {
+                "name": "Overview",
+                "file": "Overview",
+                "icon": "sparkles"
+              },
+              {
+                "name": "Quick Start",
+                "file": "key-concepts/quick-start",
+                "icon": "zap"
+              },
+              {
+                "name": "Flows",
+                "file": "key-concepts/flows",
+                "icon": "workflow"
+              },
+              {
+                "name": "Routing",
+                "file": "key-concepts/routing",
+                "icon": "route"
+              }
+            ]
+          },     
+          {
+            "group": "Key Concepts",
             "pages": [
               "introduction",
-              "get-started/quick-start",
-              "get-started/flows",
-              "get-started/routing"
+              "key-concepts/quick-start",
+              "key-concepts/flows",
+              "key-concepts/routing"
             ]
           },
           {
-            "group": "Capabilities",
+            "group": "Features",
             "pages": [
               "capabilities/call-history-ai-analytics",
               "capabilities/variables"
