@@ -13,7 +13,7 @@
     "tabs": [
       {
         "tab": "Home",
-        "icon": "zap",
+        "icon": "home",
         "pages": [
           "get-started/quick-start"
         ],
