@@ -1,21 +1,16 @@
 ---
-title: 'Quick Start'
-icon: 'bolt'
-description: 'Build your first agent in 5 minutes'
+title: "Quick Start"
+icon: "bolt"
+description: "Build your first agent in 5 minutes"
 ---
 
-In this article, you will get a brief overview of how Phonely can answer your phones.
-
-Phonely lets you use voice AI to answer your phones.
-
-But we do so much more than that. We give you the no-code platform that lets you build AI voice agents with automatic website imports into knowledge base (RAG vector DB), prebuilt integrations with your software and SOTA call monitoring and testing and reporting. In short, we give you the tools so that you can, rest assured, get your customers the support they need, when they need it.
-
 <div class="responsive-iframe-container">
-  <iframe src="https://www.youtube.com/embed/TcEILS3lCgg" title="Phonely - Full Platform Overview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/Wkx7J96ZxJ4" title="YouTube video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
+
 </div>
 
 <Info>
-Want to jump right in? Try out Phonely for completely free [here](https://phonely.ai).
+  Want to jump right in? Try out Phonely for completely free [here](https://phonely.ai).
 </Info>
 
 ## Building an AI Agent in Phonely
@@ -24,61 +19,78 @@ Want to jump right in? Try out Phonely for completely free [here](https://phonel
 
 Phonely combines a few different technologies together to create AI that accurately answers your phone. We have a few key components that make this happen.
 
-1. **Phonely transcribes your customers calls**
+<CardGroup cols={3}>
+  <Card title="Plan your agent" icon="lightbulb" iconType="solid" href="/get-started/overview" cta="Learn best practices">
+    If you know what you want done, we can almost guarentee we can automate it with Phonely. But like anything, a little planning will go a long way in making sure your agent does everythign you need
+  </Card>
+  <Card title="Build the call flow" icon="workflow" iconType="solid" href="/key-concepts/flows" cta="Learn flow basics">
+    Everything in Phonely is built in flows. Flows allow you to take your call scripts, connect them to tools and so much more.
+  </Card>
+  <Card title="Test, analyze, and scale" icon="chart-line" iconType="solid" href="/capabilities/call-history-ai-analytics" cta="Learn about analytics">
+    Call your agent instantly to test behavior. Learn how to get the most from eview AI summaries, outcomes, and A/B testing your AI agent.
+  </Card>
+</CardGroup>
 
-We use SOTA speech transcription models to transcribe what users are saying. Sometimes, these models aren't perfect and can occasionally mis-transcribe information. Humans also do this over the phone, and just like humans, you can adjust what Phonely says when it doesn't understand the user in your agent's settings.
+## Lets build your agent right now.
 
-2. **We respond using a Large Language Models (LLM)**
+Building voice AI agents has never been easier. Get started in just a few simple steps to build the AI that can automate anything, repeatibly, every single time.
 
-a. The LLM's are what actually react to your user's message to generate responses to their queries. These LLM's get their answers from several areas, 1) the Phonely knowledge base 2) the agent guidelines you set in Phonely 3) the workflow stages you've built
+<Steps>
+  <Step title="Pick a voice" icon="waveform" stepNumber={1}>
+    Choose from thousands of pre-built voices, import from leading providers, or clone a custom voice in minutes to match your brand.
 
-b. All of "how" the AI responds can be configured in the agent design page in Phonely's platform
+    <Frame caption="Voice selection interface">
+      ![Quick Start Voice Example](/assets/quick-start-voice.gif)
+    </Frame>
+  </Step>
+  <Step title="Add your knowledge" icon="book" stepNumber={2}>
+    Upload FAQs, SOPs, and docs to the knowledge base.\
+    Phonely uses retrieval (RAG) to answer policy and product questions anywhere in the call.
 
-3. **We generate a humanlike voice**
+    <Frame caption="Knowledge base upload view">
+      ![Quick Start Knowledge Base Example](/assets/quick-start-knowledgebase.gif)
+    </Frame>
+  </Step>
+  <Step title="Design the flow" icon="workflow" stepNumber={3}>
+    Use the visual Flow Builder to map greetings, questions, transfers, API calls, scheduling, and post-call actions. Learn best pracrices of flow building here.
 
-We rely on a number of different providers that produce realtime speech from text in milliseconds (i.e. elevenlabs, cartesia, play.ht and others). You can change a voice, accent, or language in the agent design settings
+    <Frame caption="Flow builder canvas">
+      ![Phonely flow builder canvas](/images/flow-builder.png)
+    </Frame>
+  </Step>
+  <Step title="Capture variables" icon="list" stepNumber={4}>
+    Define what to collect (e.g., name, DOB). Mark key fields **required** and **confirm** spelling.\
+    Use auto-gather to collect data exactly when the block needs it.
 
-4. **We analyze and display your calls**
+    <Frame caption="Variable configuration panel">
+      ![Variable configuration settings in Phonely](/images/variable-settings.png)
+    </Frame>
+  </Step>
+  <Step title="Transfer & escalate" icon="phone-forwarded" stepNumber={5}>
+    Add **warm transfers** (with voicemail detection and fallback) or **cold transfers**.\
+    Route by intent, person, or department to keep every call moving toward resolution.
 
-a. Every call gets an AI summary, list of action items and an automatically generated transcript. These are stored in the call history page, and can be viewed or filtered by the call performance, number, duration or more.
+    <Frame caption="Transfer configuration options">
+      ![Warm and cold transfer configuration](/images/transfer-options.png)
+    </Frame>
+  </Step>
+  <Step title="Integrate actions" icon="plug" stepNumber={6}>
+    Use pre-built integrations like **Google Calendar**, or call your APIs with the **API Request** block.\
+    Pass variables such as `@name` and `@dob` dynamically.
 
-b. We also have other handy dandy features like the dashboard and call paths to help you view how your calls perform in realtime.
+    <Frame caption="API Request block configuration">
+      ![API request configuration in Phonely](/images/api-request.png)
+    </Frame>
+  </Step>
+  <Step title="Publish & test" icon="rocket" stepNumber={7}>
+    Click **Publish**, hit **Test**, or call your provisioned number to hear your agent live.\
+    Iterate fast and deploy instantly.
 
-### Step 2: Plan your agent
-
-For businesses who answer over 2000 calls per month, we do white glove onboarding and agent build out! Talk to sales [here](https://calendly.com/phonely)
-
-Just like a person, your agent needs to be trained. You can do this by configuring the agent design page in Phonely's dashboard to include all of the information about your business, software, etc. to build your agent. This knowledge base contains all of the information on how to do this, but first we still need a blueprint.
-
-Fortunately, with Phonely's templates, we have taken a lot of the legwork out, and have probably built an AI agent for your use case that should need just a few minutes of tweaking! Check out the templates [here](https://phonely.ai/templates)
-
-Even if you're using a template, the following is a helpful exercise to go through to help you build your agent:
-
-**Define your 80% use case**
-
-To do this, think about what 80% of your people are calling about. This is usually 1-3 things (i.e., scheduling/ rescheduling appointments). Jot down the questions that need to be asked, and the steps you would do to perform this task over the phone.
-
-These will be each structured as workflow later.
-
-**Think about your software**
-
-Oftentimes, having the AI integrate with your software is a crucial step of the process. When you're doing this, write down which software you need it to integrate live (during the call) and which software you need after.
-
-This includes SMS messages, emails, etc., that need to be sent.
-
-**Gather your knowledge base**
-
-Phonely will integrate with a knowledge base to answer FAQ's via an inbuilt knowledge base. To do this, you need to have a knowledge base handy. If you don't have one premade, you can type your own or connect a website
-
-> **Note**: if you connect a website, it is handy to remove the unnecessary pages to prevent the AI from grabbing information that isn't relevant.
-
-**Think about your call forwarding**
-
-To get your AI actually answering your calls you have to either forward your existing phone line to a Phonely number, port your number to Phonely, or give your customers Phonely's number. In virtually all carriers there are settings for this, and the easiest way to find out is to google "how to forward numbers on xyz provider".
-
-**Start simple, nail one use case and scale from there.**
-
-Oftentimes we see customers come with us wanting everything to be handled right away. Barring enterprise customers, this almost always ends up being a ton of work. To prevent this, we recommend trying to nail one use case, and set up call transferring or, a generic message taking for other use cases. This lets you get comfortable building out one workflow and you can scale incrementally over time.
+    <Frame caption="Testing an agent in the dashboard">
+      ![Quick Start Dashboard Example](/assets/quick-start-agent-dashboard.gif)
+    </Frame>
+  </Step>
+</Steps>
 
 ### Step 3: Build your agent
 
@@ -118,27 +130,25 @@ Knowledge Bases can be tweaked and improved to optimize performance, and this is
 
 ![Quick Start Knowledge Base Example](/assets/quick-start-knowledgebase.gif)
 
-
 4. **Build Your Call Flows**
 
 Call flows are a series of questions, steps, or interactions with software that an agent should follow. You can think of workflows as specific tasks that would need to be done over the phone. For example, every time you schedule an appointment you have to gather the same information - call flows allow you to create, and define this script while keeping the agent completely focused on the task at hand.
 
 <div class="responsive-iframe-container">
-  <iframe src="https://www.youtube.com/embed/vPv2vlFKIdw" title="Phonely &#39;Flow&#39; Blocks - Full Tutorial and Explanation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/vPv2vlFKIdw" title="Phonely 'Flow' Blocks - Full Tutorial and Explanation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
+
 </div>
 
-There are two types of call flows, *inbound* and *outbound* call flows.
+There are two types of call flows, _inbound_ and _outbound_ call flows.
 
 **Inbound call flows have a few key concepts:**
 
 - **Start Flow Block**: The start flow block lets the AI know when it should perform this workflow. When it meets these conditions, the AI goes directly into this flow and it will proceed through the questions. The most common use case is to set one flow, per distinct action. I.e., appointment scheduling, callback information, and call routing would be individual, separate flows.
-
 - **Ability to transfer in between call flows**: At every point in the conversation, all call flows are available to the agent. If someone wants to trigger a different call flow later, or during the flow, then the AI can switch between those flows. This lets the AI act more like a person because it can change dynamically based on request. For instance, if your initial flow identifies a caller as new or existing, the agent can then automatically move to a more tailored flow for that client type.
 
 **Outbound call flow key concepts:**
 
 - **Trigger condition**: Trigger conditions are the actions that are used to place a call. When these trigger conditions occur, they will immediately trigger an outbound call to be placed by Phonely. For example, if a new customer is added to your CRM, Phonely can automatically trigger a call to them.
-
 - **Trigger variables**: Each trigger condition comes with its set of 'variables', which is information gathered from the source. E.g., if you are using the Google Sheets trigger condition, the variables would be the headers of each column in your table (first_name, phone_number etc.) For every trigger condition we will use the dynamic information we receive from the trigger condition to place the call. E.g., the initial greeting voicemail message can be customized using the individual caller's information
 
 ### Step 4: Test, Deploy, and Monitor
