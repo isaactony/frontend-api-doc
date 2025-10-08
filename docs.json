@@ -20,7 +20,7 @@
           {
             "group": "Get Started",
             "pages": [
-              "introduction",
+              "get-started/overview",
               "get-started/quick-start"
             ]
           },
@@ -63,15 +63,20 @@
                 ]
               },
               {
+                "group": "Integrations",
+                "pages": [
+                  "blocks/zapier-live",
+                  "blocks/google-sheet-live"
+                ]
+              },
+              {
                 "group": "Live Call Actions",
                 "pages": [
                   "blocks/api-request",
-                  "blocks/google-sheet-live",
                   "blocks/transfer-flows",
                   "blocks/warm-transfer",
                   "blocks/send-sms",
                   "blocks/send-email",
-                  "blocks/zapier-live",
                   "blocks/code"
                 ]
               },
