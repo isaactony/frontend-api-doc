@@ -3,9 +3,9 @@
   "theme": "palm",
   "name": "Phonely Documentation",
   "colors": {
-    "primary": "#cc1d92",
-    "light": "#cc1d92",
-    "dark": "#690e80"
+    "primary": "#e94fa2",
+    "light": "#f6e6f9",
+    "dark": "#5b0d6d"
   },
   "favicon": "/logo/logo-small.png",
   "icons": {
