@@ -1,6 +1,7 @@
 ---
-title: "Introduction"
-icon: 'goal'
+title: "Overview"
+icon: "goal"
+description: "J"
 ---
 
 ## What is Phonely?
@@ -44,84 +45,81 @@ You choose the voice, define what the agent should do, and Phonely handles the l
 
 <Columns cols={2}>
   <Card title="Outbound Campaigns" icon="phone" iconType="solid" cta="Build your first outbound flow">
-    Automate reminders, follow-ups, and reactivation campaigns using the same building blocks as inbound flows.  
-    Pass outbound variables (e.g., name, appointment time) via CSV, Google Sheet, or API.  
+    Automate reminders, follow-ups, and reactivation campaigns using the same building blocks as inbound flows.\
+    Pass outbound variables (e.g., name, appointment time) via CSV, Google Sheet, or API.\
     Enable voicemail detection, configure retries, and stay compliant with dialing and DNC laws.
   </Card>
-
   <Card title="A/B test anything with Phonely" icon="shuffle" iconType="solid" cta="Build your first A/B test">
-    Test prompts, voices, turn-taking settings, transfer strategies, and data-collection methods.  
-    Target the metric you care about—conversion, containment, CSAT proxy, or talk time.  
+    Test prompts, voices, turn-taking settings, transfer strategies, and data-collection methods.\
+    Target the metric you care about—conversion, containment, CSAT proxy, or talk time.\
     See winners in analytics and roll out in one click.
   </Card>
-
   <Card title="Realtime AI reasoning" icon="brain-circuit" iconType="solid" cta="See how reasoning works">
-    Phonely’s reasoning engine explains every action taken by your AI in real time.  
+    Phonely’s reasoning engine explains every action taken by your AI in real time.\
     Understand why it made each decision, which variable it used, and how it adapts—without adding latency.
   </Card>
-
-  <Card title="Advanced AI call analytics" icon="chart-line" iconType="solid"  cta="Explore analytics">
-    Dive into AI-powered summaries, topic clustering, sentiment tracking, and path analysis.  
+  <Card title="Advanced AI call analytics" icon="chart-line" iconType="solid" cta="Explore analytics">
+    Dive into AI-powered summaries, topic clustering, sentiment tracking, and path analysis.\
     Identify performance trends, optimize conversion funnels, and measure ROI at scale.
   </Card>
 </Columns>
 
-
 ## Build a production agent in minutes
 
 <Steps>
-  <Step stepNumber={1} title="Pick a voice" icon="audio-lines">
-    Choose from thousands of pre-built voices, import from leading providers, or clone a custom voice in minutes to match your brand.  
+  <Step title="Pick a voice" icon="audio-lines" stepNumber={1}>
+    Choose from thousands of pre-built voices, import from leading providers, or clone a custom voice in minutes to match your brand.
+
     <Frame caption="Voice selection interface">
-      <img src="/assets/voice-selection.png" alt="Phonely voice selection interface" />
+      ![Phonely voice selection interface](/assets/voice-selection.png)
     </Frame>
   </Step>
+  <Step title="Add your knowledge" icon="book" stepNumber={2}>
+    Upload FAQs, SOPs, and docs to the knowledge base.\
+    Phonely uses retrieval (RAG) to answer policy and product questions anywhere in the call.
 
-  <Step stepNumber={2} title="Add your knowledge" icon="book">
-    Upload FAQs, SOPs, and docs to the knowledge base.  
-    Phonely uses retrieval (RAG) to answer policy and product questions anywhere in the call.  
     <Frame caption="Knowledge base upload view">
-      <img src="/assets/knowledge-upload.png" alt="Knowledge base upload in Phonely" />
+      ![Knowledge base upload in Phonely](/assets/knowledge-upload.png)
     </Frame>
   </Step>
+  <Step title="Design the flow" icon="workflow" stepNumber={3}>
+    Use the visual Flow Builder to map greetings, questions, transfers, API calls, scheduling, and post-call actions.\
+    Write what you want, then click **Generate with AI** to auto-prompt the block.
 
-  <Step stepNumber={3} title="Design the flow" icon="workflow">
-    Use the visual Flow Builder to map greetings, questions, transfers, API calls, scheduling, and post-call actions.  
-    Write what you want, then click **Generate with AI** to auto-prompt the block.  
     <Frame caption="Flow builder canvas">
-      <img src="/assets/flow-builder.png" alt="Phonely flow builder canvas" />
+      ![Phonely flow builder canvas](/assets/flow-builder.png)
     </Frame>
   </Step>
+  <Step title="Capture variables" icon="list" stepNumber={4}>
+    Define what to collect (e.g., name, DOB). Mark key fields **required** and **confirm** spelling.\
+    Use auto-gather to collect data exactly when the block needs it.
 
-  <Step stepNumber={4} title="Capture variables" icon="list">
-    Define what to collect (e.g., name, DOB). Mark key fields **required** and **confirm** spelling.  
-    Use auto-gather to collect data exactly when the block needs it.  
     <Frame caption="Variable configuration panel">
-      <img src="/assets/variable-settings.png" alt="Variable configuration settings in Phonely" />
+      ![Variable configuration settings in Phonely](/assets/variable-settings.png)
     </Frame>
   </Step>
+  <Step title="Transfer & escalate" icon="phone-forwarded" stepNumber={5}>
+    Add **warm transfers** (with voicemail detection and fallback) or **cold transfers**.\
+    Route by intent, person, or department to keep every call moving toward resolution.
 
-  <Step stepNumber={5} title="Transfer & escalate" icon="phone-forwarded">
-    Add **warm transfers** (with voicemail detection and fallback) or **cold transfers**.  
-    Route by intent, person, or department to keep every call moving toward resolution.  
     <Frame caption="Transfer configuration options">
-      <img src="/assets/transfer-options.png" alt="Warm and cold transfer configuration" />
+      ![Warm and cold transfer configuration](/assets/transfer-options.png)
     </Frame>
   </Step>
+  <Step title="Integrate actions" icon="plug" stepNumber={6}>
+    Use pre-built integrations like **Google Calendar**, or call your APIs with the **API Request** block.\
+    Pass variables such as `@name` and `@dob` dynamically.
 
-  <Step stepNumber={6} title="Integrate actions" icon="plug">
-    Use pre-built integrations like **Google Calendar**, or call your APIs with the **API Request** block.  
-    Pass variables such as `@name` and `@dob` dynamically.  
     <Frame caption="API Request block configuration">
-      <img src="/assets/api-request.png" alt="API request configuration in Phonely" />
+      ![API request configuration in Phonely](/assets/api-request.png)
     </Frame>
   </Step>
+  <Step title="Publish & test" icon="rocket" stepNumber={7}>
+    Click **Publish**, hit **Test**, or call your provisioned number to hear your agent live.\
+    Iterate fast and deploy instantly.
 
-  <Step stepNumber={7} title="Publish & test" icon="rocket">
-    Click **Publish**, hit **Test**, or call your provisioned number to hear your agent live.  
-    Iterate fast and deploy instantly.  
     <Frame caption="Testing an agent in the dashboard">
-      <img src="/assets/publish-test.png" alt="Testing Phonely agent via dashboard" />
+      ![Testing Phonely agent via dashboard](/assets/publish-test.png)
     </Frame>
   </Step>
 </Steps>
@@ -139,5 +137,3 @@ You choose the voice, define what the agent should do, and Phonely handles the l
     Every Phonely call is tracked, analyzed and added to your CRM, giving you the transparency to build humanlike voice agents at scale.
   </Card>
 </CardGroup>
-
-
