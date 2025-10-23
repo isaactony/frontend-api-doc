@@ -58,58 +58,84 @@ In an API Request block, add a query/body field → choose "Auto-gather" → set
 
 ## Full Variable Catalog
 
-Names/keys below are shown in snake_case for clarity.
+Variable names below use spaces for clarity.
+### A. Caller & Agent Context
 
-**Caller & Agent Context**
-- **phone_number** (phone) - Your purchased Phonely number the call hit
-- **customer_phone_number** (phone) - The caller's device number
-- **agent_id** (string) - Unique ID of the agent
-- **agent_name** (string) - Display name of the agent
-- **workflow_id** (string) - Internal identifier for the active flow
-- **workflow_name** (string) - Display name of the active flow
+| Variable               | Type    | When set / source      | Example            | Notes                                |
+|------------------------|---------|------------------------|--------------------|--------------------------------------|
+| Business Phone Number  | phone   | Telephony (incoming)   | +15551234567       | The phone number of the agent receiving or making the call |
+| Customer Phone Number  | phone   | Telephony (incoming)   | +14155550123       | The phone number of the customer/caller |
+| Agent ID               | string  | Platform               | gCZmtlhs2ZATJeR4sgjG | Unique identifier for the AI agent handling the call |
+| Agent Name             | string  | Platform               | Sophie             | Display name of the AI agent |
+| Provider               | string  | Telephony              | twilio             | The voice provider used for the call |
+| Workflow ID            | string  | Platform               | wf_8ae2…           | Internal identifier for the active flow.  |
+| Workflow Name          | string  | Platform               | Appointment Scheduling | Display name of the active flow.  |
 
-**Telephony/System Timestamps & IDs**
-- **call_start** (datetime) - Exact start timestamp
-- **call_end** (datetime) - Exact end timestamp
-- **call_date** (date) - Convenience date
-- **call_duration** (number) - Total elapsed seconds
-- **call_id** (string) - Stable identifier for joins
-- **caller_id** (string) - Not always present
-- **caller_city** (string) - Area-code inferred; approximate
-- **caller_zip** (string) - Area-code inferred; approximate
+### B. Telephony/System Timestamps & IDs
 
-**Transcript & Links**
-- **transcript_json** (json) - Structured turns w/ timing/meta
-- **transcript_text** (text) - Plain text transcript
-- **recording_url** (url) - Direct audio asset (no UI)
-- **dashboard_url** (url) - Full UI (transcript, vars, analytics)
+| Variable             | Type       | When set / source     | Example                   | Notes                          |
+|----------------------|------------|-----------------------|---------------------------|--------------------------------|
+| Call Started          | datetime   | Telephony             | 2025-09-26T09:14:03Z      | Timestamp when the call started |
+| Call Ended            | datetime   | Telephony             | 2025-09-26T09:17:22Z      | Timestamp when the call ended |
+| Call Date             | date       | Telephony             | 2025-09-26                | Date of the call |
+| Call Duration         | number (s) | Telephony             | 199                       | Total duration of the call in seconds |
+| Call ID               | string     | Telephony/Platform    | f884685d-7692-437d…       | Unique identifier for the call in Firestore |
+| Call Time             | datetime   | Telephony             | 2025-09-26T09:14:03Z      | Alternative timestamp for when the call started |
+| Caller ID             | string     | Telephony (if avail)  | JOHN SMITH                | Not always present.            |
+| Caller City           | string     | Telephony (inferred)  | San Francisco             | Area-code inferred; approximate.|
+| Caller Zip            | string     | Telephony (inferred)  | 94107                     | Area-code inferred; approximate.|
 
-**AI Summaries & Classifications**
-- **summary** (text) - Short recap
-- **detailed_summary** (text) - ~5–10 sentences
-- **call_success** (boolean) - Did the call achieve its goal?
-- **sentiment** (enum) - happy, neutral, frustrated…
-- **call_topic** (text) - Topical classification
-- **call_purpose** (text) - Intent classification
-- **key_points** (list) - Three-five highlights
+### C. Transcript & Links
 
-**Auto-Extracted Entities**
-- **extracted_dates** (list) - Dates mentioned by caller
-- **extracted_times** (list) - Times mentioned
-- **extracted_emails** (list) - Emails mentioned
-- **extracted_names** (list) - Person names mentioned
+| Variable           | Type    | When set / source    | Example                      | Notes                              |
+|---------------------|---------|----------------------|------------------------------|------------------------------------|
+| Transcript           | json    | Post-call pipeline   | \{\}                        | Array/list of messages containing the full conversation transcript |
+| Transcript Text      | text    | Post-call pipeline   | AI: Hello… / Caller: Hi…     | Plain text version of the transcript |
+| Recording URL        | url     | Telephony/Storage    | https://…/audio.mp3          | URL to access the call recording |
+| Dashboard URL        | url     | Platform             | https://app.phonely.ai/calls/… | URL to view the call details in the dashboard |
 
-**Follow-Up Signals & Actionables**
-- **unanswered_questions** (list) - Unresolved
-- **follow_up_required** (boolean) - Human attention recommended
-- **follow_up_reason** (text) - Why needed
-- **action_items** (list) - Next steps
+### D. AI Summaries & Classifications
 
-**Outcomes & Endings**
-- **outcome** (text) - Prefer explicit in-flow
-- **ended_call_reason** (enum) - See allowed values below
-- **last_block** (text) - Last block reached
-- **call_direction** (enum) - inbound/outbound
+| Variable           | Type     | When set / source  | Example                        | Notes                        |
+|---------------------|----------|--------------------|--------------------------------|------------------------------|
+| Summary             | text     | Post-call AI       | Caller asked about billing…    | Brief summary of the call conversation |
+| Long Summary         | text     | Post-call AI       | ~5–10 sentences                | Extended/detailed summary of the call conversation |
+| AI Success           | boolean  | Post-call AI       | true                           | Indicates whether the AI successfully handled the call |
+| Sentiment            | enum     | Post-call AI       | neutral                        | Detected sentiment/tone of the conversation |
+| Topic                | text     | Post-call AI       | Appointment scheduling         | Main topic(s) discussed during the call |
+| Purpose              | text     | Post-call AI       | Reschedule                     | The purpose or reason for the call |
+| Key Points           | list(text)| Post-call AI      | ["Confirmed date", "Took email"] | Important points or highlights extracted from the conversation |
+
+### E. Auto-Extracted Entities
+
+| Variable             | Type        | When set / source     | Example              | Notes                      |
+|----------------------|-------------|-----------------------|----------------------|----------------------------|
+| Mentioned Date        | list(date)  | Post-call AI          | ["2025-10-09"]       | Any date mentioned during the call |
+| Mentioned Time        | list(time)  | Post-call AI          | ["15:30"]            | Any time mentioned during the call |
+| Mentioned Email       | list(email) | Post-call AI          | ["jane@acme.com"]    | Any email address mentioned during the call |
+| Caller Name          | list(text)  | Post-call AI          | ["Jane Doe"]         | Name of the person calling (if captured) |
+
+### F. Follow-Up Signals & Actionables
+
+| Variable                 | Type         | When set / source  | Example                       | Notes       |
+|---------------------------|--------------|--------------------|-------------------------------|-------------|
+| Unanswered Questions     | list(text)   | Post-call AI       | ["Coverage for X?"]           | Questions that were asked but not answered during the call |
+| Follow Up               | boolean      | Post-call AI       | true                          | Whether a follow-up is required |
+| Follow Up Reason        | text         | Post-call AI       | Needs policy confirmation     | Reason why a follow-up is needed |
+| Action Items            | list(text)   | Post-call AI       | ["Email quote", "Schedule callback"] | List of action items identified from the call |
+
+### G. Outcomes & Endings
+
+| Variable           | Type     | When set / source  | Example           | Notes                          |
+|--------------------|----------|--------------------|-------------------|--------------------------------|
+| Call Outcome        | text     | Flow / Post-call AI| appointment_scheduled | Overall outcome or result of the call |
+| Ended Reason       | enum     | Telephony/Platform | customer_hung_up  | Reason why the call ended |
+| Last Block         | text     | Platform           | Collect Email     | The last workflow block executed during the call |
+| Call Direction     | enum     | Telephony          | inbound           | Direction of the call (inbound/outbound) |
+| Action List        | list(text)| Platform          | ["Transfer to sales", "Send email"] | List of actions performed during the call |
+| Workflow Triggered | boolean  | Platform           | true              | Whether a workflow was triggered during the call |
+| Call Transferred   | boolean  | Telephony/Platform | true              | Whether the call was transferred to another party |
+| Stored Variables   | json     | Platform           | {"key1": "value1", "key2": "value2"} | Variables stored during the call execution |
 
 **Ended call reason - allowed values**
 - customer_hung_up
@@ -119,10 +145,13 @@ Names/keys below are shown in snake_case for clarity.
 - voicemail_detected (outbound)
 - greeting_hangup
 
-**A/B Testing Fields (if used)**
-- **ab_test_id** (string) - Internal reference
-- **ab_test_name** (string) - Human-readable label
-- **ab_test_type** (string) - e.g., prompt, voice, etc.
+### H. A/B Testing Fields (if used)
+
+| Variable          | Type      | When set / source | Example       | Notes                     |
+|-------------------|-----------|-------------------|--------------|---------------------------|
+| AB Test ID        | string    | Experiment runner | exp_12ab…     | Unique identifier for the A/B test (if applicable) |
+| AB Test Name      | string    | Experiment runner | Prompt Variant B | Name of the A/B test (if applicable) |
+| AB Test Type      | string    | Experiment runner | A             | Type of A/B test variant ('A' or 'B', if applicable) |
 
 ## Working with Variables in the Builder
 
