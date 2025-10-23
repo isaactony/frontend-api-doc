@@ -58,7 +58,6 @@ In an API Request block, add a query/body field → choose "Auto-gather" → set
 
 ## Full Variable Catalog
 
-Variable names below use spaces for clarity.
 ### A. Caller & Agent Context
 
 | Variable               | Type    | When set / source      | Example            | Notes                                |
@@ -78,7 +77,7 @@ Variable names below use spaces for clarity.
 | Call Started          | datetime   | Telephony             | 2025-09-26T09:14:03Z      | Timestamp when the call started |
 | Call Ended            | datetime   | Telephony             | 2025-09-26T09:17:22Z      | Timestamp when the call ended |
 | Call Date             | date       | Telephony             | 2025-09-26                | Date of the call |
-| Call Duration         | number (s) | Telephony             | 199                       | Total duration of the call in seconds |
+| Call Duration         | number     | Telephony             | 199                       | Total duration of the call in seconds |
 | Call ID               | string     | Telephony/Platform    | f884685d-7692-437d…       | Unique identifier for the call in Firestore |
 | Call Time             | datetime   | Telephony             | 2025-09-26T09:14:03Z      | Alternative timestamp for when the call started |
 | Caller ID             | string     | Telephony (if avail)  | JOHN SMITH                | Not always present.            |
@@ -89,7 +88,7 @@ Variable names below use spaces for clarity.
 
 | Variable           | Type    | When set / source    | Example                      | Notes                              |
 |---------------------|---------|----------------------|------------------------------|------------------------------------|
-| Transcript           | json    | Post-call pipeline   | \{\}                        | Array/list of messages containing the full conversation transcript |
+| Transcript           | json    | Post-call pipeline   | \{ "Assistent": "Thanks for calling!" \}  | Array/list of messages containing the full conversation transcript |
 | Transcript Text      | text    | Post-call pipeline   | AI: Hello… / Caller: Hi…     | Plain text version of the transcript |
 | Recording URL        | url     | Telephony/Storage    | https://…/audio.mp3          | URL to access the call recording |
 | Dashboard URL        | url     | Platform             | https://app.phonely.ai/calls/… | URL to view the call details in the dashboard |
@@ -135,7 +134,7 @@ Variable names below use spaces for clarity.
 | Action List        | list(text)| Platform          | ["Transfer to sales", "Send email"] | List of actions performed during the call |
 | Workflow Triggered | boolean  | Platform           | true              | Whether a workflow was triggered during the call |
 | Call Transferred   | boolean  | Telephony/Platform | true              | Whether the call was transferred to another party |
-| Stored Variables   | json     | Platform           | {"key1": "value1", "key2": "value2"} | Variables stored during the call execution |
+| Stored Variables   | json     | Platform           | \{"key1": "value1", "key2": "value2"\} | Variables stored during the call execution |
 
 **Ended call reason - allowed values**
 - customer_hung_up
