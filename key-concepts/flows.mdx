@@ -8,36 +8,37 @@ description: "Build complex conversations, connect with your tools and more with
 
 Flows are the visual blueprints for your AI phone agents - defining what the agent says, collects, calls, and decides from "hello" to hang-up.
 
+
 ## What are Flows?
 
 <Card title="Blocks" icon="sparkles">
-  Individual units of behavior - speak to callers, collect info, call APIs, transfer, end calls, and more.
+Individual units of behavior - speak to callers, collect info, call APIs, transfer, end calls, and more.
 </Card>
 
 <Card title="Edges" icon="arrow-right">
-  Connections that determine which path the conversation takes next.
+Connections that determine which path the conversation takes next.
 </Card>
 
 <Card title="Variables" icon="tag">
-  The agent's short-term memory - values that change per call (caller inputs, system data, API results).
+The agent's short-term memory - values that change per call (caller inputs, system data, API results).
 </Card>
 
 ## Why use Flows?
 
 <Card title="No code to start">
-  Drag, drop, and configure. Ship fast without waiting on engineering.
+Drag, drop, and configure. Ship fast without waiting on engineering.
 </Card>
 
 <Card title="Real-time & natural">
-  Handle interruptions, clarifications, and pivots mid-conversation.
+Handle interruptions, clarifications, and pivots mid-conversation.
 </Card>
 
 <Card title="Built to scale">
-  Confidently handle thousands of concurrent calls.
+Confidently handle thousands of concurrent calls.
 </Card>
 
 <Card title="Integrations">
-  Call your APIs and systems directly from the Flow.
+Call your APIs and systems directly from the Flow.
 </Card>
 
 ---
@@ -48,29 +49,32 @@ Flows are the visual blueprints for your AI phone agents - defining what the age
 
 <Steps>
   <Step title="Enter edit mode">
-    Open your Flow and click <b>
-     Edit</b>
+    Open your Flow and click <b>Edit</b>
   </Step>
+  
   <Step title="Add blocks">
     Drag desired blocks from the left sidebar onto the canvas.
   </Step>
+  
   <Step title="Configure blocks">
     Click a block to set prompts, fields, API details, and validation.
   </Step>
+  
   <Step title="Connect blocks">
     Drag from a block’s output port (bottom) to the next block’s input (top).
   </Step>
+  
   <Step title="Save">
-    Click <b>
-     Save</b>
-
+    Click <b>Save</b>
     Each save creates a new version.
   </Step>
 </Steps>
 
-<Info>
-  <b>Versioning:</b> Every save is a version. You can revert. Always test before pushing to production.
-</Info>
+<info>
+  <b>Versioning:</b>
+
+   Every save is a version. You can revert. Always test before pushing to production.
+</info>
 
 ## Connecting blocks with edges
 
@@ -78,12 +82,11 @@ Flows are the visual blueprints for your AI phone agents - defining what the age
   <Step title="Create an edge">
     Click and drag from the output of one block to the input of the next.
   </Step>
-  <Step title="Configure the edge">
-    Click and drag from the output of one block to the input of the next.
-  </Step>
+  
   <Step title="Configure the edge">
     Select the edge to open the editor and set guards/requirements.
   </Step>
+  
   <Step title="Confirm & save">
     Define what must be present or confirmed before the edge is taken, then save.
   </Step>
@@ -105,23 +108,16 @@ Flows are the visual blueprints for your AI phone agents - defining what the age
 
 <AccordionGroup>
   <Accordion title="What are call variables?">
-    Variables are dynamic containers that persist for the duration of the call - like the agent's working memory.
-  </Accordion>
+  Variables are dynamic containers that persist for the duration of the call - like the agent's working memory.
+</Accordion>
+
   <Accordion title="How to set variables">
-    Use <b>
-     Collect</b>
+  Use <b>Collect</b> blocks for caller input, <b>API Request</b> blocks for external data, or add custom variables via the Variable modal.
+</Accordion>
 
-    blocks for caller input, <b>
-     API Request</b>
-
-    blocks for external data, or add custom variables via the Variable modal.
-  </Accordion>
   <Accordion title="How to access variables">
-    Reference by name with <code>
-     @variable_name</code>
-
-    or select from the Variable modal. Use them in prompts, conditions, and API payloads.
-  </Accordion>
+  Reference by name with <code>@variable\_name</code> or select from the Variable modal. Use them in prompts, conditions, and API payloads.
+</Accordion>
 </AccordionGroup>
 
 ### Variable types
@@ -146,32 +142,20 @@ Flows are the visual blueprints for your AI phone agents - defining what the age
 
 # Call outcome tagging
 
-<Info>
+<info>
   Outcome tags enable analytics, reporting, and automations after the call ends.
-</Info>
+</info>
 
 <Card title="Automatic">
-  System applies defaults like <code>
-   completed</code>
-
-  , <code>
-   failed</code>
-
-  , or <code>
-   transferred</code>
-
-  .
+System applies defaults like <code>completed</code>, <code>failed</code>, or <code>transferred</code>.
 </Card>
 
 <Card title="Custom">
-  Set custom tags in <b>
-   End Call</b>
-
-  blocks for downstream workflows.
+Set custom tags in <b>End Call</b> blocks for downstream workflows.
 </Card>
 
 <Card title="Conditional">
-  Apply tags only when conditions on variables are met.
+Apply tags only when conditions on variables are met.
 </Card>
 
 <Properties>
@@ -198,18 +182,15 @@ Flows are the visual blueprints for your AI phone agents - defining what the age
       <Step title="Upload a recording">
         Validate recognition and branch logic with real audio.
       </Step>
+      
       <Step title="Simulate variables">
-        Seed test values for <code>
-         @name</code>
-
-        , <code>
-         @phone</code>
-
-        , etc.
+        Seed test values for <code>@name</code>, <code> @phone</code>, etc.
       </Step>
+      
       <Step title="Path testing">
         Walk each branch and confirm expected prompts.
       </Step>
+      
       <Step title="Error testing">
         Force empty/malformed inputs to validate fallbacks.
       </Step>
@@ -220,12 +201,15 @@ Flows are the visual blueprints for your AI phone agents - defining what the age
       <Step title="Use test numbers">
         Route calls to non-production DIDs.
       </Step>
+      
       <Step title="Monitor in real time">
         Watch transcripts and events in the dashboard.
       </Step>
+      
       <Step title="Measure performance">
         Track response times, success rates, transfers.
       </Step>
+      
       <Step title="A/B versions">
         Compare alternative prompts/flows.
       </Step>
@@ -237,14 +221,16 @@ Flows are the visual blueprints for your AI phone agents - defining what the age
 
 <AccordionGroup>
   <Accordion title="Conversation design">
-    Keep prompts natural and concise, offer clear next steps, plan for interruptions, and confirm critical data before proceeding.
-  </Accordion>
+  Keep prompts natural and concise, offer clear next steps, plan for interruptions, and confirm critical data before proceeding.
+</Accordion>
+
   <Accordion title="Technical hygiene">
-    Test all branches, add fallback edges, watch performance metrics, and keep external dependencies resilient.
-  </Accordion>
+  Test all branches, add fallback edges, watch performance metrics, and keep external dependencies resilient.
+</Accordion>
+
   <Accordion title="Variable management">
-    Use descriptive names, validate inputs, handle missing data gracefully, and scrub sensitive data when not needed.
-  </Accordion>
+  Use descriptive names, validate inputs, handle missing data gracefully, and scrub sensitive data when not needed.
+</Accordion>
 </AccordionGroup>
 
 ---
@@ -335,20 +321,24 @@ Flows are the visual blueprints for your AI phone agents - defining what the age
 
 <AccordionGroup>
   <Accordion title="Flow not responding">
-    Verify block connections, confirm required variables are set, test blocks individually, and check API auth/endpoints.
-  </Accordion>
+  Verify block connections, confirm required variables are set, test blocks individually, and check API auth/endpoints.
+</Accordion>
+
   <Accordion title="Poor call quality">
-    Review Talk block voice settings, try alternate voices, adjust rate and pauses, and check variable interpolation.
-  </Accordion>
+  Review Talk block voice settings, try alternate voices, adjust rate and pauses, and check variable interpolation.
+</Accordion>
+
   <Accordion title="Transfer failures">
-    Confirm destination numbers/agents, test fallbacks, and verify timing and availability windows.
-  </Accordion>
+  Confirm destination numbers/agents, test fallbacks, and verify timing and availability windows.
+</Accordion>
+
   <Accordion title="Variable issues">
-    Check spelling/case, ensure values are set before use, validate data types, and test prompts using variables.
-  </Accordion>
+  Check spelling/case, ensure values are set before use, validate data types, and test prompts using variables.
+</Accordion>
+
   <Accordion title="API integration problems">
-    Test endpoints in isolation, verify credentials and headers, confirm request/response schemas, and watch rate limits/timeouts.
-  </Accordion>
+  Test endpoints in isolation, verify credentials and headers, confirm request/response schemas, and watch rate limits/timeouts.
+</Accordion>
 </AccordionGroup>
 
 ---
@@ -363,39 +353,21 @@ You now have the essentials to design reliable, natural AI phone experiences:
 
 <Steps>
   <Step title="Start simple">
-    Build with <b>
-     Start Call</b>
-
-    , <b>
-     Talk</b>
-
-    , and <b>
-     End Call</b>
+    Build with <b>Start Call</b>, <b>Talk</b>, and <b>End Call</b>
   </Step>
+  
   <Step title="Add interaction">
-    Use <b>
-     Collect</b>
-
-    and <b>
-     Question</b>
-
-    blocks.
+    Use <b>Collect</b> and <b>Question</b> blocks.
   </Step>
+  
   <Step title="Integrate systems">
-    Add <b>
-     API Request</b>
-
-    and conditional edges.
+    Add <b>API Request</b> and conditional edges.
   </Step>
+  
   <Step title="Optimize">
-    Use <b>
-     Filter</b>
-
-    and <b>
-     Time Filter</b>
-
-    to route intelligently.
+    Use <b>Filter</b> and <b>Time Filter</b> to route intelligently.
   </Step>
+  
   <Step title="Test thoroughly">
     Apply simulation and live testing practices above.
   </Step>
