@@ -1,6 +1,6 @@
 ---
-title: 'Flow Design'
-description: 'How to structure conversations for optimal user experience'
+title: "Flow Design"
+description: "How to structure conversations for optimal user experience"
 ---
 
 Good flow design is the foundation of successful AI phone agents. This guide covers essential principles for creating intuitive, effective conversation flows that provide value to your callers.
@@ -14,6 +14,7 @@ Good flow design is the foundation of successful AI phone agents. This guide cov
 </Info>
 
 **Best Practices:**
+
 - Limit decision points to 3-4 options maximum
 - Use clear, conversational language
 - Avoid technical jargon
@@ -22,6 +23,7 @@ Good flow design is the foundation of successful AI phone agents. This guide cov
 **2. Start with the End in Mind**
 
 Before building your flow, clearly define:
+
 - What is the primary goal of this conversation?
 - What information do you need to collect?
 - What action should the caller take?
@@ -31,19 +33,16 @@ Before building your flow, clearly define:
 
 Real phone conversations are dynamic and unpredictable. Design your flows to handle:
 
-<CardGroup columns="2">
+<CardGroup cols={2}>
   <Card title="Interruptions" icon="pause">
     Callers may interrupt or ask questions at any time
   </Card>
-  
   <Card title="Clarifications" icon="question">
     People may need to repeat or clarify information
   </Card>
-  
   <Card title="Emotional States" icon="heart">
     Callers may be frustrated, confused, or in a hurry
   </Card>
-  
   <Card title="Technical Issues" icon="wifi">
     Connection problems or background noise
   </Card>
@@ -51,15 +50,17 @@ Real phone conversations are dynamic and unpredictable. Design your flows to han
 
 ## Flow Structure Guidelines
 
-**• Opening Strong** - Your first 10 seconds determine the entire call experience
+**Opening Strong** - Your first 10 seconds determine the entire call experience
 
 **Good Opening:**
+
 > "Hi! I'm your AI assistant from [Company]. I'm here to help you [specific purpose]. How can I assist you today?"
 
 **Avoid:**
+
 > "Welcome to our automated system. Please listen carefully as our menu options have changed..."
 
-**• Logical Flow Progression** - Structure your conversation in a logical sequence
+**Logical Flow Progression**  - Structure your conversation in a logical sequence
 
 1. **Greeting & Purpose** - Set expectations
 2. **Information Gathering** - Collect what you need
@@ -84,7 +85,7 @@ Real phone conversations are dynamic and unpredictable. Design your flows to han
 
 ## Error Handling
 
-**• Graceful Degradation** - Always provide fallback options when things don't go as planned
+**Graceful Degradation**  - Always provide fallback options when things don't go as planned
 
 <AccordionGroup>
   <Accordion title="When Information Isn't Clear" icon="exclamation-triangle">
@@ -92,13 +93,11 @@ Real phone conversations are dynamic and unpredictable. Design your flows to han
     - Offer alternatives: "If you don't have your account number, I can help you with your phone number instead."
     - Provide human assistance: "Let me connect you with a human agent who can help."
   </Accordion>
-  
   <Accordion title="When Systems Are Down" icon="server">
     - Acknowledge the issue: "I'm experiencing some technical difficulties right now."
     - Offer alternatives: "I can take your information and have someone call you back."
     - Provide contact information: "You can also reach us at [phone number] or [email]."
   </Accordion>
-  
   <Accordion title="When Callers Are Frustrated" icon="face-frown">
     - Show empathy: "I understand this is frustrating."
     - Take responsibility: "I apologize for the confusion."
@@ -108,21 +107,24 @@ Real phone conversations are dynamic and unpredictable. Design your flows to han
 
 ## Language Guidelines
 
-**• Use Natural, Conversational Language**
+**Use Natural, Conversational Language**
 
 **Good:**
+
 - "I'd be happy to help you with that."
 - "Let me look that up for you."
 - "I understand you're looking for..."
 
 **Avoid:**
+
 - "Please hold while I process your request."
 - "Invalid input detected."
 - "System error 404."
 
-**• Match Your Brand Voice**
+**Match Your Brand Voice**
 
 Consider your company's personality:
+
 - **Professional Services:** Formal, respectful, thorough
 - **Tech Companies:** Friendly, efficient, helpful
 - **Healthcare:** Caring, patient, clear
@@ -130,7 +132,7 @@ Consider your company's personality:
 
 ## Testing
 
-**• Testing Checklist** - Before deploying your flow, test it with:
+**Testing Checklist**  - Before deploying your flow, test it with:
 
 <Checklist>
   <ChecklistItem>Real users (not just your team)</ChecklistItem>
@@ -139,7 +141,7 @@ Consider your company's personality:
   <ChecklistItem>Different phone types and connection qualities</ChecklistItem>
 </Checklist>
 
-**• Common Issues**
+**Common Issues**
 
 - **Dead Ends:** Can callers get stuck without options?
 - **Confusing Language:** Are instructions clear to non-technical users?
@@ -148,7 +150,7 @@ Consider your company's personality:
 
 ## Next Steps
 
-<CardGroup columns="1">
+<CardGroup cols={2}>
   <Card title="Testing Strategies" icon="vial" href="/best-practices/testing">
     Learn how to thoroughly test your flows before deployment.
   </Card>
