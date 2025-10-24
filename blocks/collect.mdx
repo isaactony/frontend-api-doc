@@ -1,6 +1,6 @@
 ---
-title: 'Collect'
-description: 'Efficiently gather multiple pieces of information from callers in a natural, conversational manner'
+title: "Collect"
+description: "Efficiently gather multiple pieces of information from callers in a natural, conversational manner"
 ---
 
 In this tutorial, we'll guide you through the Collect Block in Phonely, demonstrating how you can efficiently gather multiple pieces of information from a customer in a natural, conversational manner. This feature streamlines your workflows, making your AI receptionist highly efficient and human-like. To clear up any initial confusion, this was previously called the 'Multi-Ask Block'.
@@ -40,30 +40,32 @@ Understanding the nuances between Phonely's conversational blocks is crucial for
 1. **Add a New Block**: In your workflow, click the + button to add a new block.
 2. **Select Collect**: Choose the "Collect" option from the available blocks.
 3. **Configure Questions**: For each piece of information you need to gather, you will add a specific entry within the Collect Block's settings:
-
    - **Name (Variable Name)**: Assign a descriptive internal name for the variable that will store this piece of information (e.g., "customer_name", "contact_phone", "user_email"). This name will be used to reference the data later.
-   
    - **Type (Answer Type)**: Select the appropriate data type for the expected input (e.g., text, phone, email, number, date). This ensures Phonely validates and stores the information in the correct format for subsequent use.
-   
    - **Question (Instruction)**: Briefly describe what Phonely should ask or obtain from the customer (e.g., "Get customer name", "Get customer phone", "Get customer email"). This serves as an instruction to the AI.
 
-   **Tip**: You can include specific instructions here, such as "Get the caller's name and spell it back to them."
+<Tip>
+  You can include specific instructions here, such as "Get the caller's name and spell it back to them
+</Tip>
 
 ## Example
 
 Here's how you might configure a Collect Block to collect basic customer details:
 
 **Question 1 (Name):**
+
 - **Name**: `name`
 - **Type**: text (or potentially a custom format for capitalization)
 - **Question**: "Get customer name"
 
 **Question 2 (Phone Number):**
+
 - **Name**: `phone`
 - **Type**: phone
 - **Question**: "Get customer phone"
 
 **Question 3 (Call Reason):**
+
 - **Name**: `call_reason`
 - **Type**: text
 - **Question**: "Get reason for call"
