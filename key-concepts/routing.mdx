@@ -4,17 +4,16 @@ icon: "route"
 description: "Learn how to configure call routing, transfer, and escalation in Phonely to combine AI automation with reliable human handoffs."
 ---
 
-Most calls can be automated with Phonely’s AI agents, but no automation system covers every scenario. A frustrated customer, a request for a specific team member, or a policy that requires human sign-off are all situations where escalation is necessary. Phonely makes it simple to design call flows that are both efficient and flexible: the AI handles routine calls while ensuring humans are available when needed.
+Most calls can be automated with Phonely’s AI agents, but no automation system covers every scenario. A frustrated customer, a request for a specific team member, or a policy that requires human sign-off are all situations where escalation is necessary. Phonely makes it simple to design call flows that are both efficient and flexible: the AI handles routine calls while ensuring humans are available when needed.  
 
 <Info>
-Escalation is not a fallback of last resort. It is a deliberate part of your call design, ensuring every customer journey has a safe path to resolution.
+  Escalation is not a fallback of last resort. It is a deliberate part of your call design, ensuring every customer journey has a safe path to resolution.
 </Info>
-
----
 
 ## Transfer Types
 
 Phonely supports two kinds of transfers, both available through the **Transfer Call** block.
+
 <CardGroup cols={2}>
   <Card title="Cold Transfer" icon="phone-off">
     The call is forwarded immediately to the destination number with no introduction or context sharing.
@@ -23,7 +22,6 @@ Phonely supports two kinds of transfers, both available through the **Transfer C
 
     For example, forwarding general inquiries to a receptionist line or emergency situations where immediate connection is critical are good use cases for cold transfers.
   </Card>
-
   <Card title="Warm Transfer" icon="phone-forwarded">
     A contextual handoff where the AI briefly introduces the caller and shares relevant context before connecting.
 
@@ -32,8 +30,6 @@ Phonely supports two kinds of transfers, both available through the **Transfer C
     For example: "Hi Sarah, I have John on the line with a billing question." Warm transfers also support voicemail detection and will resume the call if no one answers.
   </Card>
 </CardGroup>
-
----
 
 ## Global Transfer Flows
 
@@ -47,8 +43,6 @@ Transfers don’t always happen in predictable places. A caller may ask for supp
     Create a new flow, mark it as global, and define the triggers that should cause calls to jump into it. Add transfer logic inside that flow just as you would in any other.
   </Accordion>
 </AccordionGroup>
-
----
 
 ## Adding Conditions
 
@@ -66,9 +60,7 @@ Transfers can be made conditional. The most common example is business hours: yo
   </Step>
 </Steps>
 
-This ensures that transfers only occur when someone is available to answer. Similar conditions can be applied to frustration detection, caller intent, or other business rules.
-
----
+This ensures that transfers only occur when someone is available to answer. Similar conditions can be applied to frustration detection, caller intent, or other business rules.   
 
 ## Example Flow
 
@@ -87,49 +79,40 @@ Here’s how escalation can be built into an appointment scheduling flow:
   <Tab title="Step 4: Protect against failure">
     Enable voicemail detection. Add a Talk block after failed transfers to let the caller know no one is available and log their message.
   </Tab>
+  <Tab title="Tab">
+    
+  </Tab>
 </Tabs>
-
----
 
 ## Advanced Options
 
 Transfer Call blocks come with additional controls that improve reliability.
 
-<Properties>
-  <Property name="voicemail_detection" type="boolean">
-    Detects voicemail and brings the caller back into the flow with a fallback message.
-  </Property>
-  <Property name="transfer_failures" type="action">
-    Defines what happens if a transfer cannot connect - for example, retry once or send the call to a fallback Talk block.
-  </Property>
-  <Property name="ivr_detection" type="boolean">
-    Detects if the destination number has an IVR (phone tree) and handles it appropriately.
-  </Property>
-</Properties>
+| **Option**              | **Type**  | **Description**                                                                                                       |
+| :---------------------- | :-------- | :-------------------------------------------------------------------------------------------------------------------- |
+| **Voicemail Detection** | `boolean` | Detects voicemail and brings the caller back into the flow with a fallback message                                    |
+| **Transfer Failures**   | `action`  | Defines what happens if a transfer cannot connect - for example, retry once or send the call to a fallback Talk block |
+| **IVR Detection**       | `boolean` | Detects if the destination number has an IVR (phone tree) and handles it appropriately                                |
 
-These options ensure that escalation is never the end of the conversation. Even when transfers fail, callers remain supported.
-
----
+These options ensure that escalation is never the end of the conversation. Even when transfers fail, callers remain supported.   
 
 ## Best Practices
 
 Phonely’s transfer features are flexible, but good design makes them effective. A few guidelines:
 
-- Use warm transfers in customer-facing scenarios where context matters.  
-- Always configure fallbacks so that no call ends in silence.  
-- Apply Time Filters or other conditions to avoid unnecessary transfers.  
-- Treat escalation as part of the customer journey, not an exception to it.  
+- Use warm transfers in customer-facing scenarios where context matters.
+- Always configure fallbacks so that no call ends in silence.
+- Apply Time Filters or other conditions to avoid unnecessary transfers.
+- Treat escalation as part of the customer journey, not an exception to it.
 
-<Callout type="warning">
-Failing to set fallbacks can result in dropped calls. Always define what should happen if a transfer does not complete.
-</Callout>
-
----
+<warning>
+  Failing to set fallbacks can result in dropped calls. Always define what should happen if a transfer does not complete.
+</warning>
 
 # Summary
 
 Call routing, transfers, and escalation transform AI automation from a closed system into a flexible, human-aware experience. Cold transfers are fast, warm transfers are professional, Global Flows provide responsiveness at any point, and Time Filters give you control over when transfers should occur. By layering in advanced options such as voicemail detection and transfer failure handling, you can design flows that never leave a caller unsupported.
 
 <Info>
-For more detail, see our guides on [Warm Transfers](/blocks/warm-transfer) and [Time Filters](/blocks/time-filter).
+  For more detail, see our guides on [Warm Transfers](/blocks/warm-transfer) and [Time Filters](/blocks/time-filter).
 </Info>
