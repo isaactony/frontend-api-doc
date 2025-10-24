@@ -15,75 +15,69 @@ Testing should be integrated into your development workflow, not treated as an a
 
 ## Types of Testing
 
-**1. Unit Testing**
-
-Test individual blocks and components in isolation:
-
-<CardGroup cols={2}>
-  <Card title="Block Configuration" icon="gear">
-    Verify each block works with different input values and configurations.
-  </Card>
-  <Card title="Variable Handling" icon="code">
-    Test how variables are passed between blocks and transformed.
-  </Card>
-  <Card title="API Integrations" icon="plug">
-    Ensure external API calls work with various response formats.
-  </Card>
-  <Card title="Error Conditions" icon="exclamation-triangle">
-    Test how blocks handle unexpected inputs or failures.
-  </Card>
-</CardGroup>
-
-**2. Integration Testing**
-
-Test how different parts of your flow work together:
-
 <Steps>
-  <Step title="Block Connections">
-    Verify that blocks connect properly and data flows correctly between them.
+  <Step title=" Unit Testing">
+    Test individual blocks and components in isolation:
+
+    <CardGroup cols={2}>
+      <Card title="Block Configuration" icon="gear">
+        Verify each block works with different input values and configurations.
+      </Card>
+      <Card title="Variable Handling" icon="code">
+        Test how variables are passed between blocks and transformed.
+      </Card>
+      <Card title="API Integrations" icon="plug">
+        Ensure external API calls work with various response formats.
+      </Card>
+      <Card title="Error Conditions" icon="exclamation-triangle">
+        Test how blocks handle unexpected inputs or failures.
+      </Card>
+    </CardGroup>
   </Step>
-  <Step title="Conditional Logic">
-    Test all possible paths through your flow, including edge cases.
+  <Step title="Integration Testing">
+    Test how different parts of your flow work together:
+
+    **Block connections:** Verify that blocks connect properly and data flows correctly between them.
+
+    **Conditional Logic:** Test all possible paths through your flow, including edge cases.
+
+    **External systems:** Ensure integrations with databases, APIs, and other services work as expected.
   </Step>
-  <Step title="External Systems">
-    Ensure integrations with databases, APIs, and other services work as expected.
+  <Step title="End-to-end Testing">
+    Test complete user journeys from start to finish:
+
+    <AccordionGroup>
+      <Accordion title="Happy Path Testing" icon="check-circle">
+        Test the ideal user journey where everything goes smoothly:
+
+        - User calls in
+        - Provides correct information
+        - Receives expected response
+        - Call ends successfully
+      </Accordion>
+      <Accordion title="Error Path Testing" icon="exclamation-triangle">
+        Test scenarios where things go wrong:
+
+        - Invalid input provided
+        - System timeouts
+        - Network connectivity issues
+        - User hangs up mid-conversation
+      </Accordion>
+      <Accordion title="Edge Case Testing" icon="question">
+        Test unusual but possible scenarios:
+
+        - Very long responses
+        - Background noise
+        - Multiple people on the call
+        - Non-English speakers
+      </Accordion>
+    </AccordionGroup>
   </Step>
 </Steps>
 
-**3. End-to-End Testing**
-
-Test complete user journeys from start to finish:
-
-<AccordionGroup>
-  <Accordion title="Happy Path Testing" icon="check-circle">
-    Test the ideal user journey where everything goes smoothly:
-
-    - User calls in
-    - Provides correct information
-    - Receives expected response
-    - Call ends successfully
-  </Accordion>
-  <Accordion title="Error Path Testing" icon="exclamation-triangle">
-    Test scenarios where things go wrong:
-
-    - Invalid input provided
-    - System timeouts
-    - Network connectivity issues
-    - User hangs up mid-conversation
-  </Accordion>
-  <Accordion title="Edge Case Testing" icon="question">
-    Test unusual but possible scenarios:
-
-    - Very long responses
-    - Background noise
-    - Multiple people on the call
-    - Non-English speakers
-  </Accordion>
-</AccordionGroup>
-
 ## Testing Tools
 
-**Built-in Tools**
+#### **Built-in Tools**
 
 <CardGroup cols={2}>
   <Card title="Flow Simulator" icon="play">
@@ -100,33 +94,48 @@ Test complete user journeys from start to finish:
   </Card>
 </CardGroup>
 
-**• Manual Testing**
+#### **Manual Testing**
 
-<Checklist>
-  <ChecklistItem>Test with different phone types (landline, mobile, VoIP)</ChecklistItem>
-  <ChecklistItem>Test with various connection qualities (good, poor, intermittent)</ChecklistItem>
-  <ChecklistItem>Test with different user personas (technical, non-technical, elderly)</ChecklistItem>
-  <ChecklistItem>Test during different times of day and days of the week</ChecklistItem>
-  <ChecklistItem>Test with background noise and interruptions</ChecklistItem>
-  <ChecklistItem>Test error scenarios and recovery paths</ChecklistItem>
-</Checklist>
+<Check>
+  Test with different phone types (landline, mobile, VoIP)
+</Check>
+
+<Check>
+  Test with various connection qualities (good, poor, intermittent)
+</Check>
+
+<Check>
+  Test with different user personas (technical, non-technical, elderly)
+</Check>
+
+<Check>
+  Test during different times of day and days of the week
+</Check>
+
+<Check>
+  Test with background noise and interruptions
+</Check>
+
+<Check>
+  Test error scenarios and recovery paths
+</Check>
 
 ## Test Data
 
-**• Creating Test Data**
+#### **Creating Test Data**
 
 <Warning>
   **Security Note:** Never use real customer data for testing. Always use anonymized or synthetic data.
 </Warning>
 
-**Best Practices:**
+#### **Best Practices**
 
 - Create representative sample data that covers various scenarios
 - Include edge cases (very long names, special characters, etc.)
 - Test with different data formats and languages
 - Ensure test data reflects your actual user base demographics
 
-**• Environment Setup**
+#### **Environment Setup**
 
 <Steps>
   <Step title="Separate Test Environment">
@@ -142,7 +151,7 @@ Test complete user journeys from start to finish:
 
 ## Performance Testing
 
-**• Load Testing** - Test how your agents perform under various load conditions
+**Load Testing** - Test how your agents perform under various load conditions
 
 <CardGroup cols={2}>
   <Card title="Concurrent Calls" icon="users">
@@ -159,7 +168,7 @@ Test complete user journeys from start to finish:
   </Card>
 </CardGroup>
 
-**• Response Time Testing** - Monitor and optimize key performance metrics
+**Response Time Testing** - Monitor and optimize key performance metrics
 
 - **Initial Response Time:** How quickly does the agent start speaking?
 - **Processing Time:** How long does it take to process user input?
@@ -168,21 +177,33 @@ Test complete user journeys from start to finish:
 
 ## User Testing
 
-**• Beta Testing**
+### **Beta Testing**
 
 <Info>
   **Recommendation:** Run a beta test with a small group of real users before full deployment.
 </Info>
 
-**Beta Testing Process:**
+#### **Beta Testing Process**
 
-1. **Recruit Testers:** Find representative users from your target audience
-2. **Provide Instructions:** Give clear guidance on what to test and how to report issues
-3. **Monitor Calls:** Listen to recordings and analyze performance data
-4. **Collect Feedback:** Gather both quantitative metrics and qualitative feedback
-5. **Iterate:** Make improvements based on findings before full launch
+<Steps>
+  <Step title="Recruit Testers">
+    Find representative users from your target audience
+  </Step>
+  <Step title="Provide Instructions">
+    Give clear guidance on what to test and how to report issues
+  </Step>
+  <Step title="Monitor Calls">
+    Listen to recordings and analyze performance data
+  </Step>
+  <Step title="Collect Feedback">
+    Gather both quantitative metrics and qualitative feedback
+  </Step>
+  <Step title="Iterate">
+    Make improvements based on findings before full launch
+  </Step>
+</Steps>
 
-**• Feedback**
+#### **Feedback**
 
 <AccordionGroup>
   <Accordion title="Quantitative Metrics" icon="chart-line">
@@ -201,7 +222,7 @@ Test complete user journeys from start to finish:
 
 ## Continuous Testing
 
-**• Automated Testing** - Set up automated tests that run on every change
+**Automated Testing** - Set up automated tests that run on every change
 
 <Steps>
   <Step title="Pre-deployment Tests">
@@ -215,13 +236,13 @@ Test complete user journeys from start to finish:
   </Step>
 </Steps>
 
-**• Regression**
+## **Regression**
 
 <Warning>
   **Important:** Always test that new changes don't break existing functionality.
 </Warning>
 
-**Regression Testing Strategy:**
+#### **Regression Testing Strategy:**
 
 - Maintain a comprehensive test suite that covers all critical paths
 - Run full regression tests before major releases
@@ -230,15 +251,27 @@ Test complete user journeys from start to finish:
 
 ## Documentation
 
-**• Test Plans** - Keep detailed records of your testing activities
+**Test Plans** - Keep detailed records of your testing activities
 
-<Checklist>
-  <ChecklistItem>Test plan documentation with clear objectives</ChecklistItem>
-  <ChecklistItem>Test case descriptions and expected results</ChecklistItem>
-  <ChecklistItem>Actual test results and any deviations</ChecklistItem>
-  <ChecklistItem>Issue tracking and resolution documentation</ChecklistItem>
-  <ChecklistItem>Performance benchmarks and trends</ChecklistItem>
-</Checklist>
+<Check>
+  Test plan documentation with clear objectives
+</Check>
+
+<Check>
+  Test case descriptions and expected results
+</Check>
+
+<Check>
+  Actual test results and any deviations
+</Check>
+
+<Check>
+  Issue tracking and resolution documentation
+</Check>
+
+<Check>
+  Performance benchmarks and trends
+</Check>
 
 ## Next Steps
 
