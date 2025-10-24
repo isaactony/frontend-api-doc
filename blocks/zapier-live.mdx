@@ -9,9 +9,7 @@ The Zapier Block in Phonely's platform allows you to seamlessly integrate your A
 
 Essentially, the Zapier Block acts as a bridge, sending specific data collected during a Phonely call to Zapier, which then automates tasks in your other connected software. By connecting with Zapier, Phonely's capabilities become almost endless.
 
-<div class="responsive-iframe-container">
-  <iframe src="https://www.youtube.com/embed/G3ERwb2Yf7E" title="Zapier Block" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
+<iframe src="https://www.youtube.com/embed/G3ERwb2Yf7E" title="YouTube video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
 
 ## Key Features
 
@@ -64,18 +62,16 @@ Setting up the Zapier Block involves configuring both your Phonely workflow and 
 1. Return to the Phonely platform and click on the Zapier Block you added.
 2. **Webhook URL:** Paste the copied Webhook URL from Zapier into the "Webhook URL" field of the Zapier block.
 3. **Customize Data Sent to Zapier:**
-   
+
    You have two options here:
-   
    - **Send Full Data:** (Default) This option sends all available post-call information or live-call variables to Zapier.
    - **Customize Fields:** (Recommended for precision) Define specific fields to send. This allows you to send only the relevant data, optimizing the payload. To do this, you'll specify a Name (which acts as a key in a JSON body, e.g., "customer_phone") and its Value (which will be a Phonely variable, e.g., [customer_phone_number]).
-   
+
    **Example Custom Fields:**
    - Name: `full_name`, Value: `[full_name_variable]` (e.g., from a Prompt Block)
    - Name: `email_address`, Value: `[customer_email_variable]`
    - Name: `phone_number`, Value: `[customer_phone_number_variable]`
    - Name: `call_dashboard_link`, Value: `[dashboard_url]` (Phonely's direct link to the call record)
-
 4. **Add Interim Message (Optional):** Enter a message the AI will say during the Zapier processing (e.g., "One moment while I confirm your details.").
 5. **Add Call Outcome Tagging (Optional):** Define a tag for analytics to track when the call reaches this block (e.g., "Zapier_Triggered").
 
