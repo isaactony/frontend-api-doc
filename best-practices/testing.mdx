@@ -1,17 +1,15 @@
 ---
-title: 'Testing'
-description: 'Comprehensive testing strategies for reliable AI phone agents'
+title: "Testing"
+description: "Comprehensive testing strategies for reliable AI phone agents"
 ---
 
 Thorough testing is crucial for ensuring your AI phone agents work reliably in production. This guide covers testing strategies, tools, and best practices to help you catch issues before they impact your callers.
 
-## Testing Philosophy
+## Testing Philosophy- **Test Early, Test Often**
 
-**• Test Early, Test Often**
-
-<Info>
-  **Golden Rule:** Every change should be tested before deployment, no matter how small.
-</Info>
+<Tip>
+  Golden Rule: Every change should be tested before deployment, no matter how small.
+</Tip>
 
 Testing should be integrated into your development workflow, not treated as an afterthought. The earlier you catch issues, the easier and cheaper they are to fix.
 
@@ -21,19 +19,16 @@ Testing should be integrated into your development workflow, not treated as an a
 
 Test individual blocks and components in isolation:
 
-<CardGroup columns="2">
+<CardGroup cols={2}>
   <Card title="Block Configuration" icon="gear">
     Verify each block works with different input values and configurations.
   </Card>
-  
   <Card title="Variable Handling" icon="code">
     Test how variables are passed between blocks and transformed.
   </Card>
-  
   <Card title="API Integrations" icon="plug">
     Ensure external API calls work with various response formats.
   </Card>
-  
   <Card title="Error Conditions" icon="exclamation-triangle">
     Test how blocks handle unexpected inputs or failures.
   </Card>
@@ -62,22 +57,23 @@ Test complete user journeys from start to finish:
 <AccordionGroup>
   <Accordion title="Happy Path Testing" icon="check-circle">
     Test the ideal user journey where everything goes smoothly:
+
     - User calls in
     - Provides correct information
     - Receives expected response
     - Call ends successfully
   </Accordion>
-  
   <Accordion title="Error Path Testing" icon="exclamation-triangle">
     Test scenarios where things go wrong:
+
     - Invalid input provided
     - System timeouts
     - Network connectivity issues
     - User hangs up mid-conversation
   </Accordion>
-  
   <Accordion title="Edge Case Testing" icon="question">
     Test unusual but possible scenarios:
+
     - Very long responses
     - Background noise
     - Multiple people on the call
@@ -87,21 +83,18 @@ Test complete user journeys from start to finish:
 
 ## Testing Tools
 
-**• Built-in Tools**
+**Built-in Tools**
 
-<CardGroup columns="2">
+<CardGroup cols={2}>
   <Card title="Flow Simulator" icon="play">
     Test your flows in a controlled environment before going live.
   </Card>
-  
   <Card title="Call Recording Analysis" icon="microphone">
     Review actual call recordings to identify issues and improvements.
   </Card>
-  
   <Card title="Analytics Dashboard" icon="chart-bar">
     Monitor call success rates, completion times, and error patterns.
   </Card>
-  
   <Card title="A/B Testing" icon="flask">
     Compare different versions of your flows to optimize performance.
   </Card>
@@ -127,6 +120,7 @@ Test complete user journeys from start to finish:
 </Warning>
 
 **Best Practices:**
+
 - Create representative sample data that covers various scenarios
 - Include edge cases (very long names, special characters, etc.)
 - Test with different data formats and languages
@@ -150,19 +144,16 @@ Test complete user journeys from start to finish:
 
 **• Load Testing** - Test how your agents perform under various load conditions
 
-<CardGroup columns="2">
+<CardGroup cols={2}>
   <Card title="Concurrent Calls" icon="users">
     Test with multiple simultaneous calls to ensure system stability.
   </Card>
-  
   <Card title="Peak Hours" icon="clock">
     Simulate high-traffic periods to identify bottlenecks.
   </Card>
-  
   <Card title="Long Conversations" icon="hourglass">
     Test extended conversations to check for memory leaks or timeouts.
   </Card>
-  
   <Card title="Rapid Succession" icon="bolt">
     Test quick back-to-back calls to verify system recovery.
   </Card>
@@ -184,6 +175,7 @@ Test complete user journeys from start to finish:
 </Info>
 
 **Beta Testing Process:**
+
 1. **Recruit Testers:** Find representative users from your target audience
 2. **Provide Instructions:** Give clear guidance on what to test and how to report issues
 3. **Monitor Calls:** Listen to recordings and analyze performance data
@@ -199,7 +191,6 @@ Test complete user journeys from start to finish:
     - Error rates
     - User satisfaction scores
   </Accordion>
-  
   <Accordion title="Qualitative Feedback" icon="comments">
     - User interviews
     - Survey responses
@@ -231,6 +222,7 @@ Test complete user journeys from start to finish:
 </Warning>
 
 **Regression Testing Strategy:**
+
 - Maintain a comprehensive test suite that covers all critical paths
 - Run full regression tests before major releases
 - Use automated testing where possible to catch issues quickly
@@ -250,7 +242,7 @@ Test complete user journeys from start to finish:
 
 ## Next Steps
 
-<CardGroup columns="1">
+<CardGroup cols={2}>
   <Card title="Flow Design" icon="pen-tool" href="/best-practices/flow-design">
     Review flow design principles for better user experience.
   </Card>
