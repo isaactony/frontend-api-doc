@@ -1,6 +1,6 @@
 ---
-title: 'Time Filter'
-description: 'Dynamically filter conversations and apply different routing instructions based on time of day'
+title: "Time Filter"
+description: "Dynamically filter conversations and apply different routing instructions based on time of day"
 ---
 
 In this page, we'll guide you through the Time Filter Block in Phonely. This block allows your AI agent to dynamically filter the conversation and apply different routing instructions based upon the time of day. It's an essential tool for managing caller experiences during and outside of specific operating hours, lunch breaks, or other time-sensitive scenarios.
@@ -9,9 +9,9 @@ In this page, we'll guide you through the Time Filter Block in Phonely. This blo
 
 This one's a little intuitive, but in case you need to hear it… The Time Filter Block essentially acts as a gatekeeper, directing the conversational flow down different paths depending on whether the current time falls within or outside of predefined time ranges. This ensures callers receive appropriate assistance regardless of when they call.
 
-<div class="responsive-iframe-container">
-  <iframe src="https://www.youtube.com/embed/TVERxl2hbS8" title="Time Filter Block" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
+<iframe src="https://www.youtube.com/embed/TVERxl2hbS8" title="YouTube video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
+
+<div class="responsive-iframe-container" />
 
 ## Key Features
 
@@ -34,26 +34,28 @@ This one's a little intuitive, but in case you need to hear it… The Time Filte
 
 Using the Time Filter Block involves defining your operational hours and connecting the appropriate workflow paths.
 
-**1. Add a Time Filter Block**
+<Steps>
+  <Step title="Add a Time Filter Block">
+    Navigate to your workflow in the Agent Design tab.
 
-1. Navigate to your workflow in the Agent Design tab.
-2. Click the + button to add a new block.
-3. Select the "Time Filter Block" from the available options.
+    Click the + button to add a new block.
 
-**2. Configure Time Ranges**
+    Select the "Time Filter Block" from the available options.
+  </Step>
+  <Step title="Configure Time Ranges">
+    Within the block's settings, you will see a calendar interface to define your time ranges.
 
-Within the block's settings, you will see a calendar interface to define your time ranges.
+    - **Set Daily Hours**: For each day of the week, adjust the sliders or input exact times to set the desired "open" hours.
+    - **Add Multiple Ranges**: If you have breaks or multiple shifts within a day (e.g., open from 9 AM-12 PM and 1 PM-5 PM), click the + button to add additional time blocks for that specific day.
+    - **Disconnect Times**: If you want no action to occur during a specific time block, ensure it is disconnected from any output path. The AI will not route through any "true" path for disconnected times.
+  </Step>
+  <Step title="Define Outcome Paths">
+    - Connect subsequent blocks from the "True" path for actions that should occur when the time falls within your configured range(s).
+    - Connect subsequent blocks from the "False" path for actions that should occur when the time falls outside your configured range(s).
 
-- **Set Daily Hours**: For each day of the week, adjust the sliders or input exact times to set the desired "open" hours.
-- **Add Multiple Ranges**: If you have breaks or multiple shifts within a day (e.g., open from 9 AM-12 PM and 1 PM-5 PM), click the + button to add additional time blocks for that specific day.
-- **Disconnect Times**: If you want no action to occur during a specific time block, ensure it is disconnected from any output path. The AI will not route through any "true" path for disconnected times.
-
-**3. Define Outcome Paths**
-
-- Connect subsequent blocks from the "True" path for actions that should occur when the time falls within your configured range(s).
-- Connect subsequent blocks from the "False" path for actions that should occur when the time falls outside your configured range(s).
-
-![Time Filter Block example](/assets/time-filter-block.png)
+    ![Timefilterphonely Pn](/images/timefilterphonely.png)
+  </Step>
+</Steps>
 
 ## Example Use Case
 
@@ -66,10 +68,12 @@ A common application of the Time Filter Block is to manage customer support inte
 **• Outcome Paths**
 
 **True Path (Within Business Hours):**
+
 - Connect to a Transfer Call Block to route the caller to a live customer support agent.
 - **Alternatively**: Connect to a Prompt Block that offers more advanced AI-driven support or a scheduling option during business hours.
 
 **False Path (After Business Hours):**
+
 - Connect to a Prompt Block to inform the caller that support is closed and offer alternatives (e.g., leave a voicemail, direct to FAQs, provide emergency contact info).
 - Connect to an End Call Block if no further interaction is desired after hours.
 
