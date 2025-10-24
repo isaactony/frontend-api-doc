@@ -8,13 +8,13 @@ In this guide, we'll introduce you to Phonely's powerful variable system that se
 
 Variables are the backbone of your agents. They capture data during a call, pass it between blocks, and export it after the call for follow-ups and analytics. This page extracts key concepts from the video and includes a complete, paste-ready catalog of live and post-call variables.
 
-<Callout type="info">
-If a block didn't run, its variable appears blank in post-call context. That's intentional so you can safely reference variables without breaking integrations.
-</Callout>
+<info>
+  If a block didn't run, its variable appears blank in post-call context. That's intentional so you can safely reference variables without breaking integrations.
+</info>
 
-<div class="responsive-iframe-container">
-  <iframe src="https://www.youtube.com/embed/mPRa7T5qJSo" title="Phonely Variables Guide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
+<div class="responsive-iframe-container" />
+
+<iframe src="https://www.youtube.com/embed/mPRa7T5qJSo" title="YouTube video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
 
 ## Key Concepts
 
@@ -44,99 +44,103 @@ flowchart LR
 ## Variable Types & Capture Methods
 
 ### Prebuilt (Telephony/System)
+
 Injected automatically when the call connects (numbers, timestamps, basic geo, caller ID).
 
 ### Custom
+
 Define a key/value once (for example, `api_key`) and reuse across blocks and flows.
 
 ### Auto-gather
+
 Prompt the caller at the moment a block needs a value (name, email, date, etc.)—no extra Talk block required.
 
 <Tip>
-In an API Request block, add a query/body field → choose "Auto-gather" → set type (Text, Email, Phone, Date, Time) and "Required." At runtime, the agent asks, then proceeds with the request.
+  In an API Request block, add a query/body field → choose "Auto-gather" → set type (Text, Email, Phone, Date, Time) and "Required." At runtime, the agent asks, then proceeds with the request.
 </Tip>
 
 ## Full Variable Catalog
 
 ### A. Caller & Agent Context
 
-| Variable               | Type    | When set / source      | Example            | Notes                                |
-|------------------------|---------|------------------------|--------------------|--------------------------------------|
-| Business Phone Number  | phone   | Telephony (incoming)   | +15551234567       | The phone number of the agent receiving or making the call |
-| Customer Phone Number  | phone   | Telephony (incoming)   | +14155550123       | The phone number of the customer/caller |
-| Agent ID               | string  | Platform               | gCZmtlhs2ZATJeR4sgjG | Unique identifier for the AI agent handling the call |
-| Agent Name             | string  | Platform               | Sophie             | Display name of the AI agent |
-| Provider               | string  | Telephony              | twilio             | The voice provider used for the call |
-| Workflow ID            | string  | Platform               | wf_8ae2…           | Internal identifier for the active flow.  |
-| Workflow Name          | string  | Platform               | Appointment Scheduling | Display name of the active flow.  |
+| Variable              | Type   | When set / source    | Example                | Notes                                                      |
+| --------------------- | ------ | -------------------- | ---------------------- | ---------------------------------------------------------- |
+| Business Phone Number | phone  | Telephony (incoming) | \+15551234567          | The phone number of the agent receiving or making the call |
+| Customer Phone Number | phone  | Telephony (incoming) | \+14155550123          | The phone number of the customer/caller                    |
+| Agent ID              | string | Platform             | gCZmtlhs2ZATJeR4sgjG   | Unique identifier for the AI agent handling the call       |
+| Agent Name            | string | Platform             | Sophie                 | Display name of the AI agent                               |
+| Provider              | string | Telephony            | twilio                 | The voice provider used for the call                       |
+| Workflow ID           | string | Platform             | wf_8ae2…               | Internal identifier for the active flow.                   |
+| Workflow Name         | string | Platform             | Appointment Scheduling | Display name of the active flow.                           |
 
 ### B. Telephony/System Timestamps & IDs
 
-| Variable             | Type       | When set / source     | Example                   | Notes                          |
-|----------------------|------------|-----------------------|---------------------------|--------------------------------|
-| Call Started          | datetime   | Telephony             | 2025-09-26T09:14:03Z      | Timestamp when the call started |
-| Call Ended            | datetime   | Telephony             | 2025-09-26T09:17:22Z      | Timestamp when the call ended |
-| Call Date             | date       | Telephony             | 2025-09-26                | Date of the call |
-| Call Duration         | number     | Telephony             | 199                       | Total duration of the call in seconds |
-| Call ID               | string     | Telephony/Platform    | f884685d-7692-437d…       | Unique identifier for the call in Firestore |
-| Call Time             | datetime   | Telephony             | 2025-09-26T09:14:03Z      | Alternative timestamp for when the call started |
-| Caller ID             | string     | Telephony (if avail)  | JOHN SMITH                | Not always present.            |
-| Caller City           | string     | Telephony (inferred)  | San Francisco             | Area-code inferred; approximate.|
-| Caller Zip            | string     | Telephony (inferred)  | 94107                     | Area-code inferred; approximate.|
+| Variable      | Type     | When set / source    | Example              | Notes                                           |
+| ------------- | -------- | -------------------- | -------------------- | ----------------------------------------------- |
+| Call Started  | datetime | Telephony            | 2025-09-26T09:14:03Z | Timestamp when the call started                 |
+| Call Ended    | datetime | Telephony            | 2025-09-26T09:17:22Z | Timestamp when the call ended                   |
+| Call Date     | date     | Telephony            | 2025-09-26           | Date of the call                                |
+| Call Duration | number   | Telephony            | 199                  | Total duration of the call in seconds           |
+| Call ID       | string   | Telephony/Platform   | f884685d-7692-437d…  | Unique identifier for the call in Firestore     |
+| Call Time     | datetime | Telephony            | 2025-09-26T09:14:03Z | Alternative timestamp for when the call started |
+| Caller ID     | string   | Telephony (if avail) | JOHN SMITH           | Not always present.                             |
+| Caller City   | string   | Telephony (inferred) | San Francisco        | Area-code inferred; approximate.                |
+| Caller Zip    | string   | Telephony (inferred) | 94107                | Area-code inferred; approximate.                |
 
 ### C. Transcript & Links
 
-| Variable           | Type    | When set / source    | Example                      | Notes                              |
-|---------------------|---------|----------------------|------------------------------|------------------------------------|
-| Transcript           | json    | Post-call pipeline   | \{ "Assistent": "Thanks for calling!" \}  | Array/list of messages containing the full conversation transcript |
-| Transcript Text      | text    | Post-call pipeline   | AI: Hello… / Caller: Hi…     | Plain text version of the transcript |
-| Recording URL        | url     | Telephony/Storage    | https://…/audio.mp3          | URL to access the call recording |
-| Dashboard URL        | url     | Platform             | https://app.phonely.ai/calls/… | URL to view the call details in the dashboard |
+| Variable        | Type | When set / source  | Example                                | Notes                                                              |
+| --------------- | ---- | ------------------ | -------------------------------------- | ------------------------------------------------------------------ |
+| Transcript      | json | Post-call pipeline | { "Assistent": "Thanks for calling!" } | Array/list of messages containing the full conversation transcript |
+| Transcript Text | text | Post-call pipeline | AI: Hello… / Caller: Hi…               | Plain text version of the transcript                               |
+| Recording URL   | url  | Telephony/Storage  | https://…/audio.mp3                    | URL to access the call recording                                   |
+| Dashboard URL   | url  | Platform           | https://app.phonely.ai/calls/…         | URL to view the call details in the dashboard                      |
 
 ### D. AI Summaries & Classifications
 
-| Variable           | Type     | When set / source  | Example                        | Notes                        |
-|---------------------|----------|--------------------|--------------------------------|------------------------------|
-| Summary             | text     | Post-call AI       | Caller asked about billing…    | Brief summary of the call conversation |
-| Long Summary         | text     | Post-call AI       | ~5–10 sentences                | Extended/detailed summary of the call conversation |
-| AI Success           | boolean  | Post-call AI       | true                           | Indicates whether the AI successfully handled the call |
-| Sentiment            | enum     | Post-call AI       | neutral                        | Detected sentiment/tone of the conversation |
-| Topic                | text     | Post-call AI       | Appointment scheduling         | Main topic(s) discussed during the call |
-| Purpose              | text     | Post-call AI       | Reschedule                     | The purpose or reason for the call |
-| Key Points           | list(text)| Post-call AI      | ["Confirmed date", "Took email"] | Important points or highlights extracted from the conversation |
+| Variable     | Type       | When set / source | Example                          | Notes                                                          |
+| ------------ | ---------- | ----------------- | -------------------------------- | -------------------------------------------------------------- |
+| Summary      | text       | Post-call AI      | Caller asked about billing…      | Brief summary of the call conversation                         |
+| Long Summary | text       | Post-call AI      | ~5–10 sentences                  | Extended/detailed summary of the call conversation             |
+| AI Success   | boolean    | Post-call AI      | true                             | Indicates whether the AI successfully handled the call         |
+| Sentiment    | enum       | Post-call AI      | neutral                          | Detected sentiment/tone of the conversation                    |
+| Topic        | text       | Post-call AI      | Appointment scheduling           | Main topic(s) discussed during the call                        |
+| Purpose      | text       | Post-call AI      | Reschedule                       | The purpose or reason for the call                             |
+| Key Points   | list(text) | Post-call AI      | ["Confirmed date", "Took email"] | Important points or highlights extracted from the conversation |
 
 ### E. Auto-Extracted Entities
 
-| Variable             | Type        | When set / source     | Example              | Notes                      |
-|----------------------|-------------|-----------------------|----------------------|----------------------------|
-| Mentioned Date        | list(date)  | Post-call AI          | ["2025-10-09"]       | Any date mentioned during the call |
-| Mentioned Time        | list(time)  | Post-call AI          | ["15:30"]            | Any time mentioned during the call |
-| Mentioned Email       | list(email) | Post-call AI          | ["jane@acme.com"]    | Any email address mentioned during the call |
-| Caller Name          | list(text)  | Post-call AI          | ["Jane Doe"]         | Name of the person calling (if captured) |
+| Variable        | Type        | When set / source | Example                                   | Notes                                       |
+| --------------- | ----------- | ----------------- | ----------------------------------------- | ------------------------------------------- |
+| Mentioned Date  | list(date)  | Post-call AI      | ["2025-10-09"]                            | Any date mentioned during the call          |
+| Mentioned Time  | list(time)  | Post-call AI      | ["15:30"]                                 | Any time mentioned during the call          |
+| Mentioned Email | list(email) | Post-call AI      | ["[jane@acme.com](mailto:jane@acme.com)"] | Any email address mentioned during the call |
+| Caller Name     | list(text)  | Post-call AI      | ["Jane Doe"]                              | Name of the person calling (if captured)    |
 
 ### F. Follow-Up Signals & Actionables
 
-| Variable                 | Type         | When set / source  | Example                       | Notes       |
-|---------------------------|--------------|--------------------|-------------------------------|-------------|
-| Unanswered Questions     | list(text)   | Post-call AI       | ["Coverage for X?"]           | Questions that were asked but not answered during the call |
-| Follow Up               | boolean      | Post-call AI       | true                          | Whether a follow-up is required |
-| Follow Up Reason        | text         | Post-call AI       | Needs policy confirmation     | Reason why a follow-up is needed |
-| Action Items            | list(text)   | Post-call AI       | ["Email quote", "Schedule callback"] | List of action items identified from the call |
+| Variable             | Type       | When set / source | Example                              | Notes                                                      |
+| -------------------- | ---------- | ----------------- | ------------------------------------ | ---------------------------------------------------------- |
+| Unanswered Questions | list(text) | Post-call AI      | ["Coverage for X?"]                  | Questions that were asked but not answered during the call |
+| Follow Up            | boolean    | Post-call AI      | true                                 | Whether a follow-up is required                            |
+| Follow Up Reason     | text       | Post-call AI      | Needs policy confirmation            | Reason why a follow-up is needed                           |
+| Action Items         | list(text) | Post-call AI      | ["Email quote", "Schedule callback"] | List of action items identified from the call              |
 
 ### G. Outcomes & Endings
 
-| Variable           | Type     | When set / source  | Example           | Notes                          |
-|--------------------|----------|--------------------|-------------------|--------------------------------|
-| Call Outcome        | text     | Flow / Post-call AI| appointment_scheduled | Overall outcome or result of the call |
-| Ended Reason       | enum     | Telephony/Platform | customer_hung_up  | Reason why the call ended |
-| Last Block         | text     | Platform           | Collect Email     | The last workflow block executed during the call |
-| Call Direction     | enum     | Telephony          | inbound           | Direction of the call (inbound/outbound) |
-| Action List        | list(text)| Platform          | ["Transfer to sales", "Send email"] | List of actions performed during the call |
-| Workflow Triggered | boolean  | Platform           | true              | Whether a workflow was triggered during the call |
-| Call Transferred   | boolean  | Telephony/Platform | true              | Whether the call was transferred to another party |
-| Stored Variables   | json     | Platform           | \{"key1": "value1", "key2": "value2"\} | Variables stored during the call execution |
+| Variable           | Type       | When set / source   | Example                              | Notes                                             |
+| ------------------ | ---------- | ------------------- | ------------------------------------ | ------------------------------------------------- |
+| Call Outcome       | text       | Flow / Post-call AI | appointment_scheduled                | Overall outcome or result of the call             |
+| Ended Reason       | enum       | Telephony/Platform  | customer_hung_up                     | Reason why the call ended                         |
+| Last Block         | text       | Platform            | Collect Email                        | The last workflow block executed during the call  |
+| Call Direction     | enum       | Telephony           | inbound                              | Direction of the call (inbound/outbound)          |
+| Action List        | list(text) | Platform            | ["Transfer to sales", "Send email"]  | List of actions performed during the call         |
+| Workflow Triggered | boolean    | Platform            | true                                 | Whether a workflow was triggered during the call  |
+| Call Transferred   | boolean    | Telephony/Platform  | true                                 | Whether the call was transferred to another party |
+| Stored Variables   | json       | Platform            | {"key1": "value1", "key2": "value2"} | Variables stored during the call execution        |
 
 **Ended call reason - allowed values**
+
 - customer_hung_up
 - ai_hung_up
 - transferred
@@ -146,32 +150,32 @@ In an API Request block, add a query/body field → choose "Auto-gather" → set
 
 ### H. A/B Testing Fields
 
-| Variable          | Type      | When set / source | Example       | Notes                     |
-|-------------------|-----------|-------------------|--------------|---------------------------|
-| AB Test ID        | string    | Experiment runner | exp_12ab…     | Unique identifier for the A/B test (if applicable) |
-| AB Test Name      | string    | Experiment runner | Prompt Variant B | Name of the A/B test (if applicable) |
-| AB Test Type      | string    | Experiment runner | A             | Type of A/B test variant ('A' or 'B', if applicable) |
+| Variable     | Type   | When set / source | Example          | Notes                                                |
+| ------------ | ------ | ----------------- | ---------------- | ---------------------------------------------------- |
+| AB Test ID   | string | Experiment runner | exp_12ab…        | Unique identifier for the A/B test (if applicable)   |
+| AB Test Name | string | Experiment runner | Prompt Variant B | Name of the A/B test (if applicable)                 |
+| AB Test Type | string | Experiment runner | A                | Type of A/B test variant ('A' or 'B', if applicable) |
 
 ## Working with Variables in the Builder
 
-**See what's available:**  
+**See what's available:**\
 In any block field, type `@` to insert existing variables. You can also reference knowledge base docs with the same menu.
 
-**Create custom variables:**  
+**Create custom variables:**\
 Open the Variables modal and add keys you'll reuse (for example, `api_key`, `org_id`). This keeps requests consistent across flows.
 
-**Use auto-gather where it matters:**  
+**Use auto-gather where it matters:**\
 Inside an API Request block, set a parameter's source to "Auto-gather," choose a type (Text, Email, Phone, Date, Time), and mark it required. The agent will ask at runtime and then proceed.
 
-**Separate live vs post-call:**  
+**Separate live vs post-call:**\
 Attach a Post-Call node off the block you care about. Anything wired here runs only if the conversation ends there or later (for example, send recap email with `dashboard_url` and `recording_url`).
 
 <Tip>
-AI can infer an outcome, but explicit tagging on key branches produces cleaner dashboards and more reliable automation triggers.
+  AI can infer an outcome, but explicit tagging on key branches produces cleaner dashboards and more reliable automation triggers.
 </Tip>
 
 <Warning>
-If you rely on a variable that might be blank (because a block didn't run), add a fallback in your copy or condition. Example: "We couldn't capture your email; reply here and we'll add it."
+  If you rely on a variable that might be blank (because a block didn't run), add a fallback in your copy or condition. Example: "We couldn't capture your email; reply here and we'll add it."
 </Warning>
 
 ## Practical Pattern: Auto-Gather Inside an API Request
