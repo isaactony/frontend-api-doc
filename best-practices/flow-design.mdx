@@ -7,46 +7,45 @@ Good flow design is the foundation of successful AI phone agents. This guide cov
 
 ## Core Design Principles
 
-**1. Keep It Simple**
+<Steps>
+  <Step title="Keep It Simple">
+    <Tip>
+      Rule of Thumb: If you can't explain your flow in 30 seconds, it's probably too complex.
+    </Tip>
+    **Best Practices:**
 
-<Info>
-  **Rule of Thumb:** If you can't explain your flow in 30 seconds, it's probably too complex.
-</Info>
+    - Limit decision points to 3-4 options maximum
+    - Use clear, conversational language
+    - Avoid technical jargon
+    - Provide obvious next steps
+  </Step>
+  <Step title="New Step" stepNumber={2}>
+    Before building your flow, clearly define:
 
-**Best Practices:**
+    - What is the primary goal of this conversation?
+    - What information do you need to collect?
+    - What action should the caller take?
+    - How will you know the call was successful?
+  </Step>
+  <Step title="Design for Real Conversations">
+    Real phone conversations are dynamic and unpredictable. Design your flows to handle:
 
-- Limit decision points to 3-4 options maximum
-- Use clear, conversational language
-- Avoid technical jargon
-- Provide obvious next steps
-
-**2. Start with the End in Mind**
-
-Before building your flow, clearly define:
-
-- What is the primary goal of this conversation?
-- What information do you need to collect?
-- What action should the caller take?
-- How will you know the call was successful?
-
-**3. Design for Real Conversations**
-
-Real phone conversations are dynamic and unpredictable. Design your flows to handle:
-
-<CardGroup cols={2}>
-  <Card title="Interruptions" icon="pause">
-    Callers may interrupt or ask questions at any time
-  </Card>
-  <Card title="Clarifications" icon="question">
-    People may need to repeat or clarify information
-  </Card>
-  <Card title="Emotional States" icon="heart">
-    Callers may be frustrated, confused, or in a hurry
-  </Card>
-  <Card title="Technical Issues" icon="wifi">
-    Connection problems or background noise
-  </Card>
-</CardGroup>
+    <CardGroup cols={2}>
+      <Card title="Interruptions" icon="pause">
+        Callers may interrupt or ask questions at any time
+      </Card>
+      <Card title="Clarifications" icon="question">
+        People may need to repeat or clarify information
+      </Card>
+      <Card title="Emotional States" icon="heart">
+        Callers may be frustrated, confused, or in a hurry
+      </Card>
+      <Card title="Technical Issues" icon="wifi">
+        Connection problems or background noise
+      </Card>
+    </CardGroup>
+  </Step>
+</Steps>
 
 ## Flow Structure Guidelines
 
@@ -60,16 +59,25 @@ Real phone conversations are dynamic and unpredictable. Design your flows to han
 
 > "Welcome to our automated system. Please listen carefully as our menu options have changed..."
 
-**Logical Flow Progression**  - Structure your conversation in a logical sequence
+### **Logical Flow Progression**  - Structure your conversation in a logical sequence
 
-1. **Greeting & Purpose** - Set expectations
-2. **Information Gathering** - Collect what you need
-3. **Processing** - Handle the request
-4. **Confirmation** - Verify understanding
-5. **Next Steps** - Clear action items
-6. **Closing** - Professional ending
+<Steps>
+  <Step title="Greeting & Purpose - Set expectations">
+  </Step>
+  <Step title="Information Gathering - Collect what you need">
+  </Step>
+  <Step title="Processing - Handle the request">
+  </Step>
+  <Step title="Confirmation - Verify understanding">
+  </Step>
+  <Step title="Next Steps - Clear action items">
+  </Step>
+  <Step title="Closing - Professional ending">
+    
+  </Step>
+</Steps>
 
-**• Effective Information Collection**
+## **Effective Information Collection**
 
 <Steps>
   <Step title="Ask One Thing at a Time">
