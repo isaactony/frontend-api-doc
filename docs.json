@@ -260,6 +260,6 @@
   ],
   "stylesheets": [
     "/css/custom.css",
-    "/css/table-fix.css"
+    "/css/variables-table-alignment.css"
   ]
 }
