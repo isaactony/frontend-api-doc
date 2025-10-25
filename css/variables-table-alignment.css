@@ -1,37 +1,38 @@
 /* Clean Table Fix - Perfect alignment with content containment */
 
+/* Force all tables to use fixed layout for consistent column alignment */
 table {
     table-layout: fixed !important;
     width: 100% !important;
     border-collapse: collapse !important;
     margin: 0 !important;
-    padding: 0 !important;     
+    padding: 0 !important;
 }
 
 /* Define exact column widths for perfect alignment */
 table th:nth-child(1),
 table td:nth-child(1) {
-    width: 25% !important;   
+    width: 25% !important;
 }
 
 table th:nth-child(2),
 table td:nth-child(2) {
-    width: 10% !important;  
+    width: 10% !important;
 }
 
 table th:nth-child(3),
 table td:nth-child(3) {
-    width: 20% !important;   
+    width: 20% !important;
 }
 
-table th:nth-child(4),   
+table th:nth-child(4),
 table td:nth-child(4) {
-    width: 20% !important;   
+    width: 20% !important;
 }
 
-table th:nth-child(5),   
+table th:nth-child(5),
 table td:nth-child(5) {
-    width: 25% !important;     
+    width: 25% !important;
 }
 
 /* Cell styling - keep content within boundaries */
@@ -46,15 +47,15 @@ table td {
     white-space: normal !important;
     overflow: hidden !important;
     box-sizing: border-box !important;
-    border: 1px solid #e5e7eb !important;
+    border: 1px solid #332f33 !important;
     height: auto !important;
     min-height: 40px !important;
 }
 
 /* Header styling */
 table th {
-    background-color: #f8f9fa !important;
-    color: #1f2937 !important;
+    background-color: #110c19 !important;
+    color: #ffffff !important;
     font-weight: 600 !important;
     border-bottom: 2px solid #e5e7eb !important;
 }
@@ -63,7 +64,6 @@ table th {
 @media (prefers-color-scheme: dark) {
     table th {
         background-color: #1f2937 !important;
-        color: #f9fafb !important;
         border-bottom-color: #374151 !important;
     }
     
