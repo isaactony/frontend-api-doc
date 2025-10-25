@@ -5,9 +5,9 @@ description: "Seamlessly hand off calls to human agents with personalized introd
 
 In this page, learn how to create a Warm Transfer in Phonely's platform. The Warm Transfer Block is a critical feature for delivering exceptional customer experience, allowing your AI agent to seamlessly hand over a live phone conversation to a human agent with a personalized introduction. Unlike a basic transfer, warm transfers act as an intermediary, speaking to the receiving agent to provide context about the caller before the transfer is completed, preventing callers from having to repeat themselves and ensuring a smooth, informed transition to human support.
 
-<div class="responsive-iframe-container">
-  <iframe src="https://www.youtube.com/embed/ezPR82_FhYI" title="Warm Transferring with Phonely" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
+<iframe src="https://www.youtube.com/embed/ezPR82_FhYI" title="YouTube video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
+
+<div class="responsive-iframe-container" />
 
 ## Key Features
 
@@ -29,36 +29,35 @@ In this page, learn how to create a Warm Transfer in Phonely's platform. The War
 
 Implementing a Warm Transfer involves adding the block to your workflow, configuring the transfer details, and setting up intelligent fallback options.
 
-**1. Add the Block**
+<Steps>
+  <Step title="Add the Block">
+    1. Navigate to your workflow in the Agent Design tab.
+    2. Click the **\+** button at the point in your conversation where you want the warm transfer to occur (e.g., after an "Ask Exactly Block" where the caller requests human assistance).
+    3. Select the **"Warm Transfer Block"** from the available options.
+  </Step>
+  <Step title="Configure">
+    1. Click on the Warm Transfer Block to open its settings.
+    2. **Transfer Phone Number:** Enter the phone number of the human agent or team you wish to transfer the call to.
+    3. **Introduction Message:** Compose the message that your Phonely AI will say to the receiving human agent. Use variables to provide context (e.g., "Hi, I have [caller_name] on the line, they're calling about [reason_for_call].").
+    4. **Set Duration:** Define how long Phonely should attempt the warm transfer before executing a fallback.
+  </Step>
+  <Step title=" Enable Detection">
+    1. Check **"Detect IVR"** if you want Phonely to identify and handle connections to automated phone systems.
+    2. Check **"Detect Voicemail"** if you want Phonely to recognize and handle connections to voicemails.
+    3. **Error Handling (Invalid Number):** Define what should happen if the transfer number is invalid or unavailable. You can choose to continue the conversation (e.g., ask for an alternative number) or route to a different flow.
+    4. **Add Call Outcome Tagging (Optional):** Add a tag for this specific transfer event for analytics.
+  </Step>
+  <Step title="Define Outcome Paths">
+    This provides distinct output paths for different scenarios:
 
-1. Navigate to your workflow in the Agent Design tab.
-2. Click the **+** button at the point in your conversation where you want the warm transfer to occur (e.g., after an "Ask Exactly Block" where the caller requests human assistance).
-3. Select the **"Warm Transfer Block"** from the available options.
+    - **Successful Transfer:** The path for when the transfer is completed.
+    - **IVR Detected:** The path taken if an IVR system is detected at the transfer number.
+    - **Voicemail Detected:** The path taken if a voicemail is detected.
+    - **Invalid Number:** The path taken if the provided transfer number is invalid or unreachable.
 
-**2. Configure**
-
-1. Click on the Warm Transfer Block to open its settings.
-2. **Transfer Phone Number:** Enter the phone number of the human agent or team you wish to transfer the call to.
-3. **Introduction Message:** Compose the message that your Phonely AI will say to the receiving human agent. Use variables to provide context (e.g., "Hi, I have [caller_name] on the line, they're calling about [reason_for_call].").
-4. **Set Duration:** Define how long Phonely should attempt the warm transfer before executing a fallback.
-
-**3. Enable Detection**
-
-1. Check **"Detect IVR"** if you want Phonely to identify and handle connections to automated phone systems.
-2. Check **"Detect Voicemail"** if you want Phonely to recognize and handle connections to voicemails.
-3. **Error Handling (Invalid Number):** Define what should happen if the transfer number is invalid or unavailable. You can choose to continue the conversation (e.g., ask for an alternative number) or route to a different flow.
-4. **Add Call Outcome Tagging (Optional):** Add a tag for this specific transfer event for analytics.
-
-**4. Define Outcome Paths**
-
-This provides distinct output paths for different scenarios:
-
-- **Successful Transfer:** The path for when the transfer is completed.
-- **IVR Detected:** The path taken if an IVR system is detected at the transfer number.
-- **Voicemail Detected:** The path taken if a voicemail is detected.
-- **Invalid Number:** The path taken if the provided transfer number is invalid or unreachable.
-
-Link subsequent blocks to these paths to create appropriate conversational branches (e.g., if voicemail is detected, AI could say, "Looks like they're not available, can I take a message?").
+    Link subsequent blocks to these paths to create appropriate conversational branches (e.g., if voicemail is detected, AI could say, "Looks like they're not available, can I take a message?").
+  </Step>
+</Steps>
 
 ## Use Cases and Benefits
 
