@@ -5,9 +5,9 @@ description: "Setting Up Google Sheets Integration to Retrieve real-time Informa
 
 Phonely's Google Sheets integration allows you to provide customers with real-time updates about their orders. This guide will walk you through creating a workflow to fetch order details from Google Sheets and deliver them to customers during calls.
 
-<div class="responsive-iframe-container">
-  <iframe src="https://www.loom.com/embed/187d3ec0a086497abfc53d8638370f25" title="Loom video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
+<iframe src="https://www.loom.com/embed/187d3ec0a086497abfc53d8638370f25" title="Loom video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
+
+<div class="responsive-iframe-container" />
 
 With this integration, you can:
 
@@ -17,42 +17,44 @@ With this integration, you can:
 
 ## Setup
 
-**1. Set a Trigger in the Workflow**
+<Steps>
+  <Step title="Set a Trigger in the Workflow">
+    1. Navigate to **Agent Design** and select the **Workflows** tab.
+    2. Create a new **Start Flow Block** and configure it to trigger when a customer asks about their order.
+       - For example, the workflow could activate when the customer mentions _"order status"_ or similar phrases.
+  </Step>
+  <Step title="Gather the Customer's Order Number">
+    1. Use a **Question Block** to ask the customer for their order number.
+    2. Save the response as a variable (e.g., `order_number`).
+       - You can use alternative blocks like **Multi-Ask** or **Prompt blocks**, but in this example, we're using a **Question Block** for simplicity.
 
-1. Navigate to **Agent Design** and select the **Workflows** tab.
-2. Create a new **Start Flow Block** and configure it to trigger when a customer asks about their order.
-   - For example, the workflow could activate when the customer mentions _"order status"_ or similar phrases.
+    <Tip>
+      **Pro Tip:** Encourage customers to spell out their order number for better transcription accuracy.
+    </Tip>
+  </Step>
+  <Step title="Connect to Google Sheets">
+    1. Integrate your Google Sheet with Phonely by selecting the **Google Sheets Integration** option in the Workflow menu.
+    2. Use the **Search a Row** function to:
+       - Retrieve data from a specific column in the spreadsheet (e.g., match the `order_number` variable).
+       - Search across all rows and columns to find relevant information.
+    3. Sync the spreadsheet by selecting the file and tab you want to use. If needed, click **Reconnect** to refresh the connection.
 
-**2. Gather the Customer's Order Number**
-
-1. Use a **Question Block** to ask the customer for their order number.
-2. Save the response as a variable (e.g., `order_number`).
-   - You can use alternative blocks like **Multi-Ask** or **Prompt blocks**, but in this example, we're using a **Question Block** for simplicity.
-
-\> **Pro Tip:** Encourage customers to spell out their order number for better transcription accuracy.
-
-**3. Connect to Google Sheets**
-
-1. Integrate your Google Sheet with Phonely by selecting the **Google Sheets Integration** option in the Workflow menu.
-2. Use the **Search a Row** function to:
-   - Retrieve data from a specific column in the spreadsheet (e.g., match the `order_number` variable).
-   - Search across all rows and columns to find relevant information.
-3. Sync the spreadsheet by selecting the file and tab you want to use. If needed, click **Reconnect** to refresh the connection.
-
-_Optional:_ Choose whether to include all Google Sheets data in the AI agent's context. This can help the AI reference the data more dynamically during the call.
-
-**4. Display the Information**
-
-1. Add a **Prompt Block** to inform the customer of their order details.
-2. Use variables pulled from Google Sheets, such as:
-   - **Order Status:** "Your order is currently [shipped, processing, etc.]."
-   - **Shipping Date:** "It is scheduled to ship on [date]."
-   - **Product Name or ID:** Include additional details if necessary.
-
-**5. Customize the Output**
-
-- Include as many details as needed, such as product descriptions, estimated delivery dates, or tracking links.
-- Ensure all information dynamically updates in real time, thanks to the synced Google Sheet.
+    <Tip>
+      _Optional:_ Choose whether to include all Google Sheets data in the AI agent's context. This can help the AI reference the data more dynamically during the call.
+    </Tip>
+  </Step>
+  <Step title="Display the Information">
+    1. Add a **Prompt Block** to inform the customer of their order details.
+    2. Use variables pulled from Google Sheets, such as:
+       - **Order Status:** "Your order is currently [shipped, processing, etc.]."
+       - **Shipping Date:** "It is scheduled to ship on [date]."
+       - **Product Name or ID:** Include additional details if necessary.
+  </Step>
+  <Step title="Customize the Output">
+    - Include as many details as needed, such as product descriptions, estimated delivery dates, or tracking links.
+    - Ensure all information dynamically updates in real time, thanks to the synced Google Sheet. 
+  </Step>
+</Steps>
 
 ## Example Use Case
 
