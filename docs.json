@@ -259,6 +259,7 @@
     "/js/responsive-iframes.js"
   ],
   "stylesheets": [
-    "/css/custom.css"
+    "/css/custom.css",
+    "/css/table-fix.css"
   ]
 }
