@@ -54,7 +54,7 @@ table td {
 /* Header styling */
 table th {
     background-color: #110c19 !important;
-    color: #ffffff !important;
+    color: #ffffff;
     font-weight: 600 !important;
     border-bottom: 2px solid #e5e7eb !important;
 }
