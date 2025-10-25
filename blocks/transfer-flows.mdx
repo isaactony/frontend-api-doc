@@ -1,6 +1,6 @@
 ---
-title: 'Transfer Flow'
-description: 'Seamlessly transition between call flows while maintaining context and data'
+title: "Transfer Flow"
+description: "Seamlessly transition between call flows while maintaining context and data"
 ---
 
 In this tutorial, we’ll guide you through the Transfer Flow Block in Phonely. This block allows your AI agent to seamlessly transition from one call flow to another, enabling advanced conversational routing and modular workflow design.
@@ -9,9 +9,9 @@ In this tutorial, we’ll guide you through the Transfer Flow Block in Phonely. 
 
 The Transfer Flow Block is essential for managing complex call flows by breaking them down into smaller, manageable parts. It acts as a bridge, directing the caller from the current AI agent's conversation to the beginning of a different, specified call flow, maintaining the call rather than ending it. In the call itself, this block creates seamless transitions that the caller does not notice.
 
-<div class="responsive-iframe-container">
-  <iframe src="https://www.youtube.com/embed/ddLKOGpXIMI" title="Transfer Flow Block" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
+<iframe src="https://www.youtube.com/embed/ddLKOGpXIMI" title="YouTube video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
+
+<div class="responsive-iframe-container" />
 
 ## Key Features
 
@@ -31,25 +31,27 @@ The Transfer Flow Block is essential for managing complex call flows by breaking
 
 ## How to Use
 
-**1. Add the Transfer Flow Block**
+<Steps>
+  <Step title="Add the Transfer Flow Block">
+    1. Navigate to your call flow in the Agent Design tab.
+    2. Click the **\+** button to add a new block.
+    3. Select the **"Transfer Flow Block"** from the available options.
+  </Step>
+  <Step title="Configure the Block">
+    1. Click on the Transfer Flow Block to open its settings.
+    2. **Select Target Call Flow:** From the dropdown menu, choose the specific call flow (e.g., a specialized service call flow) you want the call to transfer to.
+    3. **Add Interim Message (Optional):** Enter any message Phonely should say to the caller during the transition (e.g., "Please wait while I connect you to our scheduling assistant.").
+    4. **Add Call Outcome Tagging (Optional):** Input information to tag the call for further analytics in the Phonely analytics section.
+    5. Click **"Save"** to confirm your selection.
+  </Step>
+  <Step title=" Connect the Block">
+    Ensure the Transfer Flow Block is properly linked within your current call flow, directing the call flow to it at the appropriate moment.
 
-1. Navigate to your call flow in the Agent Design tab.
-2. Click the **+** button to add a new block.
-3. Select the **"Transfer Flow Block"** from the available options.
+    ![Transfer Flow Block Pn](/images/transfer-flow-block.png)
 
-**2. Configure the Block**
-
-1. Click on the Transfer Flow Block to open its settings.
-2. **Select Target Call Flow:** From the dropdown menu, choose the specific call flow (e.g., a specialized service call flow) you want the call to transfer to.
-3. **Add Interim Message (Optional):** Enter any message Phonely should say to the caller during the transition (e.g., "Please wait while I connect you to our scheduling assistant.").
-4. **Add Call Outcome Tagging (Optional):** Input information to tag the call for further analytics in the Phonely analytics section.
-5. Click **"Save"** to confirm your selection.
-
-**3. Connect the Block**
-
-Ensure the Transfer Flow Block is properly linked within your current call flow, directing the call flow to it at the appropriate moment.
-
-![Transfer Flow Block example](/assets/transfer-flow-block.png)
+    ## 
+  </Step>
+</Steps>
 
 ## Best Practices
 
