@@ -89,21 +89,29 @@ Implementing the Send Email Block involves setting up your workflow to gather in
 
 Here's an example workflow to illustrate the process of using the Send Email Block for callback requests:
 
-1. **Trigger**: Customer says "I want a to schedule an appointment with Joe"
-2. **Action 1 (Prompt Block)**:
-   - Instruct AI to: "Get the caller's name, email, and best callback phone number. Inform them that an appointment scheduling link will be sent to their email"
-   - Store variables: customer_name (text), customer_email (email), callback_phone (phone).
-3. **Action 2 (Send Email Block - Live Call)**:
-   - Recipient: [email@example.com](mailto:email@example.com)
-   - From Name: Phonely AI Agent
-   - Subject: Appointment Scheduling for [customer_name]
-   - Body:
-     - Customer Name: [customer_name]
-     - Email: [customer_email]
-     - Callback Phone: [callback_phone]
-     - Conversation Summary: [summary]
-     - Appointment Scheduling Link: [example@cal.com](mailto:example@cal.com)
-4. **Action 3 (End Call Block)**: Graciously end the call after collecting information and dispatching the email.
+<Steps>
+  <Step title="Trigger">
+    Customer says "I want a to schedule an appointment with Joe"
+  </Step>
+  <Step title="Action 1 (Prompt Block)">
+    - Instruct AI to: "Get the caller's name, email, and best callback phone number. Inform them that an appointment scheduling link will be sent to their email"
+    - Store variables: customer_name (text), customer_email (email), callback_phone (phone).
+  </Step>
+  <Step title="Action 2 (Send Email Block - Live Call):">
+    - Recipient: [email@example.com](mailto:email@example.com)
+    - From Name: Phonely AI Agent
+    - Subject: Appointment Scheduling for [customer_name]
+    - Body:
+      - Customer Name: [customer_name]
+      - Email: [customer_email]
+      - Callback Phone: [callback_phone]
+      - Conversation Summary: [summary]
+      - Appointment Scheduling Link: [example@cal.com](mailto:example@cal.com)
+  </Step>
+  <Step title="Action 3 (End Call Block):">
+    Graciously end the call after collecting information and dispatching the email.
+  </Step>
+</Steps>
 
 ## Conclusion
 
