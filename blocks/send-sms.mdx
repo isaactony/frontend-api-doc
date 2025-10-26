@@ -66,7 +66,7 @@ The Send Text Message Block very simply allows Phonely to send a text message fr
   <Step title="Compose the Message Content: Enter the message you want to send.">
     - You can dynamically include answers to previous questions or other stored variables by selecting them from the available options.
     - For post-call SMS, you can use variables like caller_name, phone_number, or URL.
-    - For live call SMS, you can use any variable stored from previous blocks (e.g., address, confirmation, or a live transcript). 
+    - For live call SMS, you can use any variable stored from previous blocks (e.g., address, confirmation, or a live transcript).
   </Step>
   <Step title="Add Interim Message (Optional)">
     Define a brief message for the AI to say while the text is being sent.
@@ -78,7 +78,7 @@ The Send Text Message Block very simply allows Phonely to send a text message fr
 
 ## Important Note on Phone Number Forwarding & SMS
 
-If you are forwarding your main business phone number to Phonely's phone number, and you attempt to use the "customer's phone number they texted from" option directly with that forwarded number, the SMS might incorrectly be sent back to your forwarded number rather than the actual customer's original calling number.   
+If you are forwarding your main business phone number to Phonely's phone number, and you attempt to use the "customer's phone number they texted from" option directly with that forwarded number, the SMS might incorrectly be sent back to your forwarded number rather than the actual customer's original calling number.
 
 **Workaround/Best Practice**: To ensure the SMS is always sent to the correct customer, it is highly recommended to add a step in your workflow to explicitly ask the customer for their phone number (using an Ask Exactly Block, for example) and then use that collected variable as the recipient for the Send Text Message Block. This also provides an opportunity for a verification step.
 
@@ -86,12 +86,23 @@ If you are forwarding your main business phone number to Phonely's phone number,
 
 Here's an example workflow to illustrate the process of using the Send Text Message Block:
 
-1. **Trigger**: Customer would like to book an appointment
-2. **Action 1 (Talk Block)**: Qualify the customer with a series of questions to determine if they can schedule an appointment or not.
-3. **Action 2 (Ask Exactly Block)**: Ask for the customer's phone number (e.g., "What's the best number to send that link to?"). Store as customer_number.
-4. **Action 3 (Send Text Message Block)**: Send an SMS to the customer_number variable.
-   - **Message Content**: "Here's the link to our scheduling calendar: [cal_link_variable]"
-   - **Interim Message**: "Sending you that link right now."
+<Steps>
+  <Step title="Trigger">
+    Customer would like to book an appointment
+  </Step>
+  <Step title="Action 1 (Talk Block)">
+    Qualify the customer with a series of questions to determine if they can schedule an appointment or not
+  </Step>
+  <Step title="Action 2 (Ask Exactly Block)">
+     Ask for the customer's phone number (e.g., "What's the best number to send that link to?"). Store as customer_number
+  </Step>
+  <Step title="Action 3 (Send Text Message Block)">
+    Send an SMS to the customer_number variable.
+
+    - **Message Content**: "Here's the link to our scheduling calendar: [cal_link_variable]"
+    - **Interim Message**: "Sending you that link right now."
+  </Step>
+</Steps>
 
 ## Conclusion
 
