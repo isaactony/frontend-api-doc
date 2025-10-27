@@ -9,15 +9,17 @@ The Code Block is a powerful new workflow that allows you to execute Python code
 
 It acts as a dynamic logic layer between conversational steps, giving you the ability to compute values and make conditional decisions through your own scripts.
 
-Currently, the Code Block supports Python, with JavaScript support coming soon.
-
-<iframe src="https://www.loom.com/embed/d9eb80087ffb4880bc6321edad4a9b1a" title="Loom video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
-
-When the Code Block runs, it:
+When a Code Block runs, it:
 
 - Receives workflow variables as input (through an input dictionary).
 - Executes your defined Python logic.
 - Returns any new or modified values as output (through an output dictionary).
+
+<Danger>
+  Currently, Code Blocks supports Python
+</Danger>
+
+<iframe src="https://www.loom.com/embed/d9eb80087ffb4880bc6321edad4a9b1a" title="Loom video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
 
 ## When to Use
 
@@ -39,7 +41,7 @@ In this example, we will demonstrate how the Code Block is used inside a workflo
   <Step title="Configure Input Variables">
     Each Code Block begins with one or more input variables, these are values passed into your script from previous blocks.
 
-    Enter the name of the variable. This is the name that you will use to refer to thei variable in your code.
+    Enter the name of the variable. This is the name that you will use to refer to the variable in your code.
 
     <Tip>
       You’ll notice default variables like `arg1` and `arg2` when adding a Code Block. Feel free to rename or remove them to match your workflow’s actual input variables.
@@ -173,11 +175,11 @@ In this example, we will demonstrate how the Code Block is used inside a workflo
     After the Code Block executes, all returned data becomes available as new variables.\
     You can reference these variables in later blocks (such as Transfer, Send SMS, or Email).
 
-    Example:
+    In the above example we can:
 
     - Add a **Transfer Block**.
     - Set the **Phone Number** field to the variable store_phone.
-    - When triggered, the agent automatically transfers the caller to the correct store.
+    - Such that when triggered, the agent automatically transfers the caller to the correct store.
 
       ![Codeoutputvariables Pn](/images/codeoutputvariables.png)
   </Step>
