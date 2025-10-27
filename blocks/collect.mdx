@@ -37,18 +37,28 @@ Understanding the nuances between Phonely's conversational blocks is crucial for
 
 ## Setup
 
-1. **Add a New Block**: In your workflow, click the + button to add a new block.
-2. **Select Collect**: Choose the "Collect" option from the available blocks.
-3. **Configure Questions**: For each piece of information you need to gather, you will add a specific entry within the Collect Block's settings:
-   - **Name (Variable Name)**: Assign a descriptive internal name for the variable that will store this piece of information (e.g., "customer_name", "contact_phone", "user_email"). This name will be used to reference the data later.
-   - **Type (Answer Type)**: Select the appropriate data type for the expected input (e.g., text, phone, email, number, date). This ensures Phonely validates and stores the information in the correct format for subsequent use.
-   - **Question (Instruction)**: Briefly describe what Phonely should ask or obtain from the customer (e.g., "Get customer name", "Get customer phone", "Get customer email"). This serves as an instruction to the AI.
+<Steps>
+  <Step title="Add a New Block">
+    In your workflow, click the + button to add a new block.
 
-<Tip>
-  You can include specific instructions here, such as "Get the caller's name and spell it back to them
-</Tip>
+    ![Howto Adda Collect Block Gi](/images/HowtoAddaCollectBlock.gif)
+  </Step>
+  <Step title="Select Collect:">
+    Choose the "Collect" option from the available blocks.
+  </Step>
+  <Step title="Configure Questions:">
+    For each piece of information you need to gather, you will add a specific entry within the Collect Block's settings:
 
-## Example
+    - **Name (Variable Name)**: Assign a descriptive internal name for the variable that will store this piece of information (e.g., "customer_name", "contact_phone", "user_email"). This name will be used to reference the data later.
+    - **Type (Answer Type)**: Select the appropriate data type for the expected input (e.g., text, phone, email, number, date). This ensures Phonely validates and stores the information in the correct format for subsequent use.
+    - **Question (Instruction)**: Briefly describe what Phonely should ask or obtain from the customer (e.g., "Get customer name", "Get customer phone", "Get customer email"). This serves as an instruction to the AI.
+
+    <Tip>
+      You can include specific instructions here, such as "Get the caller's name and spell it back to them
+    </Tip>
+    ## 
+  </Step>
+</Steps>
 
 Here's how you might configure a Collect Block to collect basic customer details:
 
