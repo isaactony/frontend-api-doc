@@ -94,8 +94,6 @@ In this example, we will demonstrate how the Code Block is used inside a workflo
     - The function returns another dictionary that becomes the **output**, feeding data to the next blocks.
     - The -\> dict type hint simply means the function returns a dictionary.
 
-    You can think of this function as a self-contained “mini program” that takes workflow data, processes it, and gives back results.
-
     **ZIP-to-Store Map**
 
     ```
@@ -109,7 +107,7 @@ In this example, we will demonstrate how the Code Block is used inside a workflo
     ```
 
     \
-    This is a **lookup table** that links each ZIP code to the corresponding store’s phone number.
+    This is a lookup table that links each ZIP code to the corresponding store’s phone number.
 
     - If a customer provides ZIP code 12345, the workflow will know to call **\+1-555-123-4567**.
     - If the ZIP code is 10001, it will return **\+1-555-002-352** instead.
@@ -126,7 +124,7 @@ In this example, we will demonstrate how the Code Block is used inside a workflo
 
     - It searches the dictionary for the customer’s zip_code value (captured earlier in the workflow).
     - If it finds a match, it retrieves the store’s phone number.
-    - If the ZIP code isn’t recognized, it falls back to a **default number** — in this case, **\+1-444-504-6273**, which might be your main support or general customer service line.
+    - If the ZIP code isn’t recognized, it falls back to a default number — in this case, **\+1-444-504-6273**, which might be your main support or general customer service line.
 
     This ensures there’s always a valid number to dial, even for unrecognized ZIP codes.
 
@@ -141,8 +139,8 @@ In this example, we will demonstrate how the Code Block is used inside a workflo
     ```
 
     Here, the result is stored in a dictionary with a descriptive key name, "store_phone_number".\
-    This key becomes the **variable name** that other workflow blocks can reference later.\
-    For example, in a **Transfer Block**, you could select store_phone_number to automatically route the caller to the correct location.
+    This key becomes the variable name that other workflow blocks can reference later.\
+    For example, in a Transfer Block, you could select store_phone_number to automatically route the caller to the correct location.
 
     **Returning the Result**
 
@@ -153,8 +151,8 @@ In this example, we will demonstrate how the Code Block is used inside a workflo
     Finally, the function returns the dictionary to Phonely. From this point, the output variable store_phone_number becomes available to all downstream blocks
   </Step>
   <Step title="Validate Your Code">
-    After entering your Python code, click **Validate Code** to ensure it’s syntactically correct.\
-    If validation passes, a green checkmark ✅ appears next to the Cofigure tab name, and the **Continue** button activates.
+    After entering your Python code, click Validate Code to ensure it’s syntactically correct.\
+    If validation passes, a green checkmark  appears next to the Cofigure tab name, and the Continue button activates.
 
     ![image.png](/images/image.png)
   </Step>
