@@ -1,5 +1,4 @@
 /* Clean Table Fix - Perfect alignment with content containment */
-/* Scoped to documentation content only to prevent platform interference */
 
 .mintlify-doc-content table,
 [data-mintlify-doc-content] table,
@@ -75,7 +74,7 @@
     white-space: normal !important;
     overflow: hidden !important;
     box-sizing: border-box !important;
-    border: 1px solid #332f33 !important;
+    border: 1px solid #5c485c !important;
     height: auto !important;
     min-height: 40px !important;
 }
