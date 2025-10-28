@@ -63,7 +63,7 @@
                 ]
               },
               {
-                "group": "Integrations",
+                "group": "Live Call Integrations",
                 "pages": [
                   "blocks/zapier-live",
                   "blocks/google-sheets-live"
