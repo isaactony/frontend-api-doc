@@ -66,7 +66,7 @@
                 "group": "Integrations",
                 "pages": [
                   "blocks/zapier-live",
-                  "blocks/google-sheet-live"
+                  "blocks/google-sheets-live"
                 ]
               },
               {
