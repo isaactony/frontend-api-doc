@@ -36,7 +36,7 @@ In this example, we will demonstrate how the Code Block is used inside a workflo
   <Step title="Add a New Block">
     From your workflow canvas, click the + icon and select Code from the list of available blocks.
 
-    The block will appear in your flow, ready for configuration
+    The block will appear in your flow, ready for configuration. 
 
     ![Howtoaddcodeblock Gi](/images/howtoaddcodeblock.gif)
   </Step>
@@ -58,7 +58,7 @@ In this example, we will demonstrate how the Code Block is used inside a workflo
 
     #### Variables from Previous Blocks
 
-    Use information already gathered earlier in the conversation.
+    Use information already gathered earlier in other flows.
 
     For example, in this workflow, the AI first asks the caller why they’re calling. If the caller requests a store transfer, they’ll be prompted to provide their zip_code. This value can then be used as an input variable within the Code Bloc
   </Step>
@@ -156,12 +156,12 @@ In this example, we will demonstrate how the Code Block is used inside a workflo
   </Step>
   <Step title="Validate Your Code">
     After entering your Python code, click Validate Code to ensure it’s syntactically correct.\
-    If validation passes, a green checkmark  appears next to the Cofigure tab name, and the **Continue** button activates.
+    If validation passes, a green checkmark  appears next to the Cofigure tab name, and the **Continue** button activates. Click **Continue** to proceed to the testing step.
 
     ![Codevalidation Pn](/images/codevalidation.png)
   </Step>
   <Step title="Test the Block">
-    Once you’ve written and validated your Python function, you can test it directly inside the Test tab of the Code Block editor. This step allows you to make sure the logic behaves exactly as you expect before you connect it to other workflow components.
+    Once you’ve written and validated your Python function, you can test it directly from the Test tab. This step allows you to make sure the logic behaves exactly as you expect before you connect it to other workflow components.
 
     To do this, simply enter the respective values of the input variables into the test input field and observe the results when you click the **Test** button.
 
@@ -174,8 +174,11 @@ In this example, we will demonstrate how the Code Block is used inside a workflo
     </Tip>
   </Step>
   <Step title="Use Output Variables">
-    After the Code Block executes, all returned data becomes available as new variables.\
-    You can reference these variables in later blocks (such as Transfer, Send SMS, or Email).
+    After the Code Block has been validated and tested to produce the expected results, you can connect other flows to it.
+
+    Each time the code flow runs, all returned data is automatically made available as variables for the subsequent flows.
+
+    These variables can then be referenced in later blocks - such as Transfer, Send SMS, or Email etc.
 
     In the above example we can:
 
