@@ -1,4 +1,6 @@
-/*Tables- Alignment with content containment */
+/* Clean Table Fix - Perfect alignment with content containment */
+/* Scoped to documentation content only to prevent platform interference */
+
 .mintlify-doc-content table,
 [data-mintlify-doc-content] table,
 .mdx-content table,
@@ -10,7 +12,7 @@
     padding: 0 !important;
 }
 
-/* Define exact column widths for perfect alignment */
+/* Define exact column widths for 4-column layout with larger Type column */
 .mintlify-doc-content table th:nth-child(1),
 .mintlify-doc-content table td:nth-child(1),
 [data-mintlify-doc-content] table th:nth-child(1),
@@ -19,7 +21,7 @@
 .mdx-content table td:nth-child(1),
 .markdown-content table th:nth-child(1),
 .markdown-content table td:nth-child(1) {
-    width: 18% !important;
+    width: 26% !important;
 }
 
 .mintlify-doc-content table th:nth-child(2),
@@ -30,7 +32,7 @@
 .mdx-content table td:nth-child(2),
 .markdown-content table th:nth-child(2),
 .markdown-content table td:nth-child(2) {
-    width: 18% !important;
+    width: 27% !important;
 }
 
 .mintlify-doc-content table th:nth-child(3),
@@ -41,7 +43,7 @@
 .mdx-content table td:nth-child(3),
 .markdown-content table th:nth-child(3),
 .markdown-content table td:nth-child(3) {
-    width: 20% !important;
+    width: 22% !important;
 }
 
 .mintlify-doc-content table th:nth-child(4),
@@ -52,17 +54,6 @@
 .mdx-content table td:nth-child(4),
 .markdown-content table th:nth-child(4),
 .markdown-content table td:nth-child(4) {
-    width: 20% !important;
-}
-
-.mintlify-doc-content table th:nth-child(5),
-.mintlify-doc-content table td:nth-child(5),
-[data-mintlify-doc-content] table th:nth-child(5),
-[data-mintlify-doc-content] table td:nth-child(5),
-.mdx-content table th:nth-child(5),
-.mdx-content table td:nth-child(5),
-.markdown-content table th:nth-child(5),
-.markdown-content table td:nth-child(5) {
     width: 25% !important;
 }
 
@@ -184,7 +175,7 @@
         font-size: 0.875rem !important;
     }
     
-    /* Adjust column widths for mobile to prevent content overflow */
+    /* Adjust column widths for 4-column mobile layout */
     .mintlify-doc-content table th:nth-child(1),
     .mintlify-doc-content table td:nth-child(1),
     [data-mintlify-doc-content] table th:nth-child(1),
@@ -193,8 +184,8 @@
     .mdx-content table td:nth-child(1),
     .markdown-content table th:nth-child(1),
     .markdown-content table td:nth-child(1) {
-        width: 25% !important;
-        min-width: 120px !important;
+        width: 26% !important;
+        min-width: 130px !important;
     }
     
     .mintlify-doc-content table th:nth-child(2),
@@ -205,8 +196,8 @@
     .mdx-content table td:nth-child(2),
     .markdown-content table th:nth-child(2),
     .markdown-content table td:nth-child(2) {
-        width: 12% !important;
-        min-width: 80px !important;
+        width: 27% !important;
+        min-width: 110px !important;
     }
     
     .mintlify-doc-content table th:nth-child(3),
@@ -217,8 +208,8 @@
     .mdx-content table td:nth-child(3),
     .markdown-content table th:nth-child(3),
     .markdown-content table td:nth-child(3) {
-        width: 20% !important;
-        min-width: 100px !important;
+        width: 22% !important;
+        min-width: 95px !important;
     }
     
     .mintlify-doc-content table th:nth-child(4),
@@ -229,20 +220,8 @@
     .mdx-content table td:nth-child(4),
     .markdown-content table th:nth-child(4),
     .markdown-content table td:nth-child(4) {
-        width: 18% !important;
-        min-width: 90px !important;
-    }
-    
-    .mintlify-doc-content table th:nth-child(5),
-    .mintlify-doc-content table td:nth-child(5),
-    [data-mintlify-doc-content] table th:nth-child(5),
-    [data-mintlify-doc-content] table td:nth-child(5),
-    .mdx-content table th:nth-child(5),
-    .mdx-content table td:nth-child(5),
-    .markdown-content table th:nth-child(5),
-    .markdown-content table td:nth-child(5) {
         width: 25% !important;
-        min-width: 120px !important;
+        min-width: 105px !important;
     }
 }
 
