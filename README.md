@@ -1,6 +1,6 @@
 # Phonely Documentation
 
-This repository contains the documentation for Phonely - AI phone agents and conversation flows.
+This repository contains the documentation for Phonely: AI phone agents and conversation flows.
 
 ## Development Setup
 
