@@ -1,0 +1,2312 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Phonely API",
+    "description": "API for Phonely services including agent management and call summaries",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://app.phonely.ai/api"
+    }
+  ],
+  "paths": {
+    "/get-agent": {
+      "post": {
+        "summary": "Get agent information",
+        "description": "Retrieve agent information based on the provided user ID and agent ID",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgentRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/duplicate-agent": {
+      "post": {
+        "summary": "Duplicate an agent",
+        "description": "Create a duplicate of an existing agent for the specified user",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DuplicateAgentRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DuplicateAgentResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/get-agents": {
+      "post": {
+        "summary": "Get agents information",
+        "description": "Retrieve information for all agents associated with the user",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetOrgsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OrgInfo"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/get-orgs": {
+      "get": {
+        "summary": "Get organizations information",
+        "description": "Retrieve information for all organizations associated with the user",
+        "parameters": [
+          {
+            "name": "uid",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "User ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AgentInfo"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/get-call": {
+      "post": {
+        "summary": "Get call information",
+        "description": "Retrieve information for a specific call",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetCallRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CallSummaryResponse"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/import-number": {
+      "post": {
+        "summary": "Import number",
+        "description": "Import a Twilio phone number to an agent",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportNumberRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ImportNumberResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/list-voices": {
+      "get": {
+        "summary": "List available voices",
+        "description": "Get a list of all available voices for your agent",
+        "responses": {
+          "200": {
+            "description": "List of available voices",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Voice"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/update-agent": {
+      "post": {
+        "summary": "Update agent's setup",
+        "description": "Update the setup for a specific agent",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAgentRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Agent updated successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Indicates if the update was successful"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request body",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/report-call-error": {
+      "post": {
+        "summary": "Report an issue with a call",
+        "description": "Submit an error report for a specific call with feedback and suggestions",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReportCallErrorRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Error report submitted successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Indicates if the report was submitted successfully"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Call or agent not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/agent-documents": {
+      "get": {
+        "summary": "List agent documents",
+        "description": "Retrieve all documents associated with a specific agent",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "uid",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "User ID"
+          },
+          {
+            "name": "agentId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Agent ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of documents",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "documents": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Document"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Upload documents",
+        "description": "Upload documents to an agent's knowledge base. Maximum 10 files, each under 10MB. Supports PDF, DOCX, and TXT files.",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": ["uid", "agentId", "files"],
+                "properties": {
+                  "uid": {
+                    "type": "string",
+                    "description": "User ID"
+                  },
+                  "agentId": {
+                    "type": "string",
+                    "description": "Agent ID"
+                  },
+                  "files": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    },
+                    "maxItems": 10,
+                    "description": "Documents to upload"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Files uploaded successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "documentIds": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request or file validation error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete document",
+        "description": "Delete a document from an agent's knowledge base",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "uid",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "User ID"
+          },
+          {
+            "name": "agentId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Agent ID"
+          },
+          {
+            "name": "documentId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Document ID to delete"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Document deleted successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Document not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/agent-websites": {
+      "get": {
+        "summary": "List agent websites",
+        "description": "Retrieve all websites associated with a specific agent's knowledge base",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "uid",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "User ID"
+          },
+          {
+            "name": "agentId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Agent ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of websites",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "websites": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Website"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Add websites to agent knowledge base",
+        "description": "Crawl and add websites to an agent's knowledge base. Supports customizable crawling parameters including depth limit, URL filtering, and page limits.",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["uid", "agentId", "url"],
+                "properties": {
+                  "uid": {
+                    "type": "string",
+                    "description": "User ID"
+                  },
+                  "agentId": {
+                    "type": "string",
+                    "description": "Agent ID"
+                  },
+                  "url": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Base URL to crawl"
+                  },
+                  "limit": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 10,
+                    "default": 5,
+                    "description": "Maximum number of pages to crawl (max 10)"
+                  },
+                  "maxDepth": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 10,
+                    "default": 1,
+                    "description": "Maximum crawling depth (max 10)"
+                  },
+                  "excludePaths": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Array of URL paths to exclude from crawling"
+                  },
+                  "includePaths": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Array of URL paths to include in crawling (if specified, only these paths will be crawled)"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Websites added successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error crawling or adding websites",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete website from agent knowledge base",
+        "description": "Remove a specific website from an agent's knowledge base",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "uid",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "User ID"
+          },
+          {
+            "name": "agentId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Agent ID"
+          },
+          {
+            "name": "websiteId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Website ID to delete"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Website deleted successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Website not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/to_your_webhook_url": {
+      "post": {
+        "summary": "",
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CallSummaryResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Call not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/usage": {
+      "get": {
+        "summary": "Get usage data",
+        "description": "Retrieves usage data for all agents accessible by a user within a date range. If agentId is provided, returns data for that specific agent only. Requires X-Authorization header with valid API key.",
+        "parameters": [
+          {
+            "name": "uid",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "User ID"
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            "description": "Start date in YYYY-MM-DD format"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            "description": "End date in YYYY-MM-DD format"
+          },
+          {
+            "name": "agentId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional agent ID to filter data for specific agent"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsageResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request - Missing required parameters or invalid date format",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Missing or invalid API key",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User or agent not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/get-all-agents": {
+      "get": {
+        "summary": "Get all agents",
+        "description": "Retrieves a comprehensive list of all agents across all organizations, organized by organization. This endpoint is typically used for administrative purposes.",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAllAgentsResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get-invoices": {
+      "post": {
+        "summary": "Get invoices",
+        "description": "Retrieves billing invoices for a specific customer from Stripe.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetInvoicesRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetInvoicesResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Customer ID is required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized origin",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Invoices not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get-subscription": {
+      "post": {
+        "summary": "Get subscription",
+        "description": "Retrieves subscription details for a specific Stripe subscription.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetSubscriptionRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetSubscriptionResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Subscription ID is required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized origin",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Subscription not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/chat/build": {
+      "post": {
+        "summary": "Chat build",
+        "description": "Provides AI-powered chat functionality for building and developing with Phonely. This endpoint uses advanced AI models with tool integration for enhanced assistance.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChatBuildRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChatBuildResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request format",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error or AI processing error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AgentRequest": {
+        "type": "object",
+        "required": ["uid", "agentId"],
+        "properties": {
+          "uid": {
+            "type": "string",
+            "description": "User ID"
+          },
+          "agentId": {
+            "type": "string",
+            "description": "Agent ID"
+          }
+        }
+      },
+      "AgentResponse": {
+        "type": "object",
+        "properties": {
+          "uid": {
+            "type": "string",
+            "description": "User ID"
+          },
+          "agentId": {
+            "type": "string",
+            "description": "Agent ID"
+          },
+          "name": {
+            "type": "string",
+            "description": "Agent name"
+          },
+          "country": {
+            "type": "string",
+            "description": "Country code",
+            "nullable": true
+          },
+          "businessPhoneNumber": {
+            "type": "string",
+            "description": "Business phone number",
+            "nullable": true
+          }
+        }
+      },
+      "DuplicateAgentRequest": {
+        "type": "object",
+        "required": ["uid", "agentId"],
+        "properties": {
+          "uid": {
+            "type": "string",
+            "description": "User ID"
+          },
+          "agentId": {
+            "type": "string",
+            "description": "Agent ID to be duplicated"
+          }
+        }
+      },
+      "DuplicateAgentResponse": {
+        "type": "object",
+        "properties": {
+          "uid": {
+            "type": "string",
+            "description": "User ID"
+          },
+          "agentId": {
+            "type": "string",
+            "description": "New duplicated Agent ID"
+          },
+          "name": {
+            "type": "string",
+            "description": "New duplicated Agent name"
+          }
+        }
+      },
+      "GetAgentsRequest": {
+        "type": "object",
+        "required": ["uid"],
+        "properties": {
+          "uid": {
+            "type": "string",
+            "description": "User ID"
+          }
+        }
+      },
+      "GetOrgsRequest": {
+        "type": "object",
+        "required": ["uid"],
+        "properties": {
+          "uid": {
+            "type": "string",
+            "description": "User ID"
+          }
+        }
+      },
+      "GetCallRequest": {
+        "type": "object",
+        "required": ["uid", "agentId", "callId"],
+        "properties": {
+          "uid": {
+            "type": "string",
+            "description": "User ID (can be retrieved from the user settings page)"
+          },
+          "agentId": {
+            "type": "string",
+            "description": "Agent ID (can be retrieved from the agent settings page)"
+          },
+          "callId": {
+            "type": "string",
+            "description": "Call ID (can be retrieved from the call history page)"
+          }
+        }
+      },
+      "AgentInfo": {
+        "type": "object",
+        "properties": {
+          "uid": {
+            "type": "string",
+            "description": "User ID"
+          },
+          "agentId": {
+            "type": "string",
+            "description": "Agent ID"
+          },
+          "name": {
+            "type": "string",
+            "description": "Agent name"
+          },
+          "country": {
+            "type": "string",
+            "description": "Country code",
+            "nullable": true
+          },
+          "businessPhoneNumber": {
+            "type": "string",
+            "description": "Business phone number",
+            "nullable": true
+          }
+        }
+      },
+      "OrgInfo": {
+        "type": "object",
+        "properties": {
+          "orgId": {
+            "type": "string",
+            "description": "Organization ID"
+          },
+          "name": {
+            "type": "string",
+            "description": "Organization name"
+          }
+        }
+      },
+      "CallSummaryResponse": {
+        "type": "object",
+        "properties": {
+          "agentName": {
+            "type": "string",
+            "description": "Name of the agent handling the call"
+          },
+          "mentionedEmail": {
+            "type": "string",
+            "nullable": true,
+            "description": "Email address mentioned during the call"
+          },
+          "unansweredQuestions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of questions that were not answered during the call"
+          },
+          "actionItems": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of action items identified during the call"
+          },
+          "followUpReason": {
+            "type": "string",
+            "description": "Reason for any required follow-up"
+          },
+          "followUp": {
+            "type": "string",
+            "description": "Indicator if follow-up is required"
+          },
+          "recordingUrl": {
+            "type": "string",
+            "description": "URL to access the call recording"
+          },
+          "dashboardUrl": {
+            "type": "string",
+            "description": "URL to access the call dashboard"
+          },
+          "purpose": {
+            "type": "string",
+            "description": "Main purpose or topic of the call"
+          },
+          "sentiment": {
+            "type": "string",
+            "description": "Overall sentiment of the call"
+          },
+          "transcriptText": {
+            "type": "string",
+            "description": "Full text transcript of the call"
+          },
+
+          "transcript": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TranscriptEntry"
+            },
+            "description": "Structured transcript of the call"
+          },
+          "mentionedDate": {
+            "type": "string",
+            "nullable": true,
+            "description": "Any specific date mentioned during the call"
+          },
+          "businessPhoneNumber": {
+            "type": "string",
+            "description": "Phone number of the agent"
+          },
+          "keyPoints": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Key points or highlights from the call"
+          },
+          "topic": {
+            "type": "string",
+            "description": "Main topic or category of the call"
+          },
+          "longSummary": {
+            "type": "string",
+            "nullable": true,
+            "description": "Detailed summary of the call"
+          },
+          "callId": {
+            "type": "string",
+            "description": "Unique identifier for the call"
+          },
+          "ai_success": {
+            "type": "string",
+            "description": "Indicator of AI's success in handling the call"
+          },
+          "customerPhoneNumber": {
+            "type": "string",
+            "description": "Phone number of the customer"
+          },
+          "callStarted": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Date string when the call started"
+          },
+          "callEnded": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Date string when the call ended"
+          },
+          "duration": {
+            "type": "number",
+            "description": "Duration of the call in seconds"
+          },
+          "callerName": {
+            "type": "string",
+            "description": "Name of the caller"
+          },
+          "callDirection": {
+            "type": "string",
+            "description": "Direction of the call (inbound/outbound)"
+          },
+          "mentionedTime": {
+            "type": "string",
+            "nullable": true,
+            "description": "Any specific time mentioned during the call"
+          },
+          "summary": {
+            "type": "string",
+            "description": "Brief summary of the call"
+          },
+          "endedReason": {
+            "type": "string",
+            "description": "Reason for the call ending"
+          }
+        }
+      },
+      "TranscriptEntry": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string",
+            "description": "Content of the transcript entry"
+          },
+          "role": {
+            "type": "string",
+            "description": "Role of the speaker (e.g., assistant, user)"
+          }
+        }
+      },
+      "ImportNumberRequest": {
+        "type": "object",
+        "required": ["uid", "agentId", "source", "twilioAccountSid", "twilioAuthToken", "phoneNumber", "countryCode"],
+        "properties": {
+          "uid": {
+            "type": "string",
+            "description": "User ID"
+          },
+          "agentId": {
+            "type": "string",
+            "description": "Agent ID (agent should not have a phone number assigned yet)"
+          },
+          "source": {
+            "type": "string",
+            "description": "Phone number source (currently only supports 'twilio')"
+          },
+          "twilioAccountSid": {
+            "type": "string",
+            "description": "Twilio account SID"
+          },
+          "twilioAuthToken": {
+            "type": "string",
+            "description": "Twilio auth token"
+          },
+          "phoneNumber": {
+            "type": "string",
+            "description": "Phone number to import, includes country code. i.e +10123456789"
+          },
+          "countryCode": {
+            "type": "string",
+            "description": "Country code of the phone number, ISO 3166-1 alpha-2 format"
+          }
+        }
+      },
+      "ImportNumberResponse": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "Message indicating the result of the operation"
+          }
+        }
+      },
+      "Voice": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the voice"
+          },
+          "id": {
+            "type": "string",
+            "description": "unique voice id, use for set agent's voice"
+          },
+          "gender": {
+            "type": "string",
+            "description": "Gender of the voice"
+          },
+          "language": {
+            "type": "string",
+            "description": "Support language of the voice"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Feature tags associated with the voice"
+          },
+          "accent": {
+            "type": "string",
+            "description": "Accent of the voice"
+          },
+          "isMultiLingualSupport": {
+            "type": "boolean",
+            "description": "Whether the voice supports multiple languages"
+          }
+        }
+      },
+      "UpdateAgentRequest": {
+        "type": "object",
+        "required": ["uid", "agentId"],
+        "properties": {
+          "uid": {
+            "type": "string",
+            "description": "User ID"
+          },
+          "agentId": {
+            "type": "string",
+            "description": "Agent ID to update"
+          },
+          "orgId": {
+            "type": "string",
+            "description": "Organization ID to update"
+          },
+          "voiceId": {
+            "type": "string",
+            "description": "ID of the voice to assign to the agent"
+          },
+          "agentName": {
+            "type": "string",
+            "description": "Name of the agent, limited to 50 characters"
+          },
+          "greetingMessage": {
+            "type": "string",
+            "description": "Greeting message to be used when the agent is called, limited to 500 characters"
+          },
+          "humanizeConversation": {
+            "type": "boolean",
+            "description": "Add a vocal ticks such as hmm, umm etc. to your conversation."
+          },
+          "conversationStyle": {
+            "type": "string",
+            "description": "'Casual' | 'Humorous' | 'Direct' | 'Formal' | 'Persuasive' | 'Friendly'"
+          }
+        }
+      },
+      "ReportCallErrorRequest": {
+        "type": "object",
+        "required": ["uid", "agentId", "callId", "email", "reason"],
+        "properties": {
+          "uid": {
+            "type": "string",
+            "description": "User ID"
+          },
+          "agentId": {
+            "type": "string",
+            "description": "ID of the agent involved in the call"
+          },
+          "callId": {
+            "type": "string",
+            "description": "ID of the call being reported"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "description": "Email address for feedback communication"
+          },
+          "reason": {
+            "type": "string",
+            "description": "Detailed explanation of the issue or feedback"
+          }
+        }
+      },
+      "Document": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Document ID"
+          },
+          "agentId": {
+            "type": "string",
+            "description": "Associated agent ID"
+          },
+          "name": {
+            "type": "string",
+            "description": "Document name"
+          },
+          "active": {
+            "type": "boolean",
+            "description": "Document active status"
+          },
+          "fileUrl": {
+            "type": "string",
+            "description": "URL to access the document"
+          },
+          "lastUpdatedBy": {
+            "type": "string",
+            "description": "Who last updated the document"
+          },
+          "lastUpdatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the document was last updated"
+          }
+        }
+      },
+      "Website": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Website ID"
+          },
+          "agentId": {
+            "type": "string",
+            "description": "Associated agent ID"
+          },
+          "name": {
+            "type": "string",
+            "description": "Website name or title"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Website URL"
+          },
+          "active": {
+            "type": "boolean",
+            "description": "Website active status"
+          },
+          "content": {
+            "type": "string",
+            "description": "Processed website content (JSON format)"
+          },
+          "contentMD": {
+            "type": "string",
+            "description": "Website content in Markdown format"
+          },
+          "lastUpdatedBy": {
+            "type": "string",
+            "description": "Who last updated the website"
+          },
+          "lastUpdatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the website was last updated"
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Error code or identifier"
+          },
+          "message": {
+            "type": "string",
+            "description": "Detailed error message"
+          }
+        }
+      },
+      "UsageResponse": {
+        "type": "object",
+        "properties": {
+          "summary": {
+            "type": "object",
+            "properties": {
+              "totalCallCount": {
+                "type": "integer",
+                "description": "Total number of calls"
+              },
+              "totalCallMinutes": {
+                "type": "number",
+                "description": "Total call duration in minutes"
+              },
+              "agentCount": {
+                "type": "integer",
+                "description": "Number of agents"
+              },
+              "orgCount": {
+                "type": "integer",
+                "description": "Number of organizations"
+              }
+            },
+            "required": ["totalCallCount", "totalCallMinutes", "agentCount", "orgCount"],
+            "description": "Summary statistics for the usage data"
+          },
+          "agents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AgentUsage"
+            },
+            "description": "Usage data for each agent"
+          },
+          "dateRange": {
+            "type": "object",
+            "properties": {
+              "startDate": {
+                "type": "string",
+                "format": "date",
+                "description": "Start date of the query range"
+              },
+              "endDate": {
+                "type": "string",
+                "format": "date",
+                "description": "End date of the query range"
+              }
+            },
+            "required": ["startDate", "endDate"],
+            "description": "Date range for the usage data"
+          },
+          "requestedAgentId": {
+            "type": "string",
+            "description": "Agent ID that was specifically requested (only present when agentId parameter was provided)",
+            "nullable": true
+          }
+        },
+        "required": ["summary", "agents", "dateRange"]
+      },
+      "AgentUsage": {
+        "type": "object",
+        "properties": {
+          "agentId": {
+            "type": "string",
+            "description": "Agent ID"
+          },
+          "agentName": {
+            "type": "string",
+            "description": "Agent name"
+          },
+          "orgId": {
+            "type": "string",
+            "description": "Organization ID",
+            "nullable": true
+          },
+          "orgName": {
+            "type": "string",
+            "description": "Organization name",
+            "nullable": true
+          },
+          "callCount": {
+            "type": "integer",
+            "description": "Number of calls for this agent"
+          },
+          "callMinutes": {
+            "type": "number",
+            "description": "Total call duration in minutes for this agent"
+          }
+        },
+        "required": ["agentId", "agentName", "callCount", "callMinutes"]
+      },
+      "GetAllAgentsResponse": {
+        "type": "object",
+        "properties": {
+          "orgAgents": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Organization name"
+                },
+                "orgId": {
+                  "type": "string",
+                  "description": "Organization ID"
+                },
+                "agents": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "description": "Agent ID"
+                      },
+                      "name": {
+                        "type": "string",
+                        "description": "Agent name"
+                      },
+                      "businessPhoneNumber": {
+                        "type": "string",
+                        "description": "Business phone number",
+                        "nullable": true
+                      },
+                      "orgId": {
+                        "type": "string",
+                        "description": "Organization ID"
+                      },
+                      "cluster": {
+                        "type": "string",
+                        "description": "Cluster identifier"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "GetInvoicesRequest": {
+        "type": "object",
+        "required": ["customerId"],
+        "properties": {
+          "customerId": {
+            "type": "string",
+            "description": "Stripe customer ID"
+          }
+        }
+      },
+      "GetInvoicesResponse": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "Response message"
+          },
+          "invoices": {
+            "type": "object",
+            "description": "Stripe invoices object"
+          }
+        }
+      },
+      "GetSubscriptionRequest": {
+        "type": "object",
+        "required": ["subscriptionId"],
+        "properties": {
+          "subscriptionId": {
+            "type": "string",
+            "description": "Stripe subscription ID"
+          }
+        }
+      },
+      "GetSubscriptionResponse": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "Response message"
+          },
+          "subscription": {
+            "type": "object",
+            "properties": {
+              "subscriptionId": {
+                "type": "string",
+                "description": "Subscription ID"
+              },
+              "customerId": {
+                "type": "string",
+                "description": "Customer ID"
+              },
+              "status": {
+                "type": "string",
+                "description": "Subscription status"
+              },
+              "currentPeriodStart": {
+                "type": "number",
+                "description": "Current period start timestamp"
+              },
+              "currentPeriodEnd": {
+                "type": "number",
+                "description": "Current period end timestamp"
+              }
+            }
+          }
+        }
+      },
+      "ChatBuildRequest": {
+        "type": "object",
+        "required": ["id", "messages"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique session identifier"
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Message ID"
+                },
+                "role": {
+                  "type": "string",
+                  "description": "Message role"
+                },
+                "parts": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "description": "Part type"
+                      },
+                      "text": {
+                        "type": "string",
+                        "description": "Text content"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "userId": {
+            "type": "string",
+            "description": "User identifier for tracking"
+          }
+        }
+      },
+      "ChatBuildResponse": {
+        "type": "object",
+        "description": "Server-Sent Events (SSE) stream with AI responses"
+      }
+    },
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-Authorization"
+      }
+    }
+  }
+}

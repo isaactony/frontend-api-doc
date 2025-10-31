@@ -1,0 +1,293 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "palm",
+  "name": " Phonely Documentation",
+  "colors": {
+    "primary": "#6B0099",
+    "light": "#FAFAFA",
+    "dark": "#1A1A1C"
+  },
+  "favicon": "/logo/logo-small.png",
+  "icons": {
+    "library": "lucide"
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Home",
+        "icon": "house",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "get-started/overview",
+              "get-started/quick-start"
+            ]
+          },
+          {
+            "group": "Key Concepts",
+            "pages": [
+              
+              "key-concepts/flows",
+              "key-concepts/routing"
+            ]
+          },
+          {
+            "group": "Features",
+            "pages": [
+              "capabilities/call-history-ai-analytics",
+              "capabilities/variables"
+            ]
+          },
+          {
+            "group": "Agent Design",
+  
+            "pages" : [
+              {
+                "group": "Voice",
+              "pages": [
+                "agent-design/voice/voice-selection",
+                "agent-design/voice/clone-voice"
+              ]},
+              "agent-design/set-agent-guidelines"
+              
+            ]
+          },
+          {
+            "group": "Best Practices",
+            "pages": [
+              "best-practices/overview",
+              "best-practices/flow-design",
+              "best-practices/testing"
+            ]
+          },
+          {
+            "group": "Call Flows",
+            "pages": [
+              {
+                "group": "Flow Blocks",
+                "pages": [
+                  "blocks/flow-blocks/start-flow",
+                  "blocks/flow-blocks/talk",
+                  "blocks/flow-blocks/ask-exactly",
+                  "blocks/flow-blocks/collect",
+                  "blocks/flow-blocks/filter",
+                  "blocks/flow-blocks/time-filter",
+                  "blocks/flow-blocks/end-call"
+                ]
+              },
+              
+              {
+                "group": "Live Call Actions",
+                "pages": [
+                  "blocks/live-call-actions/api-request",
+                  "blocks/live-call-actions/transfer-flows",
+                  "blocks/live-call-actions/warm-transfer",
+                  "blocks/live-call-actions/send-sms",
+                  "blocks/live-call-actions/send-email",
+                  "blocks/live-call-actions/codeflow"
+                ]
+              },
+            
+              {
+                "group": "Post Call Actions",
+                "pages": [
+                  "blocks/post-call-actions/post-call-overview",
+                  "blocks/post-call-actions/post-call-send-email"
+                ]
+              },
+              {
+                "group": "Live Call Integrations",
+                "pages": [
+                  "blocks/live-call-integrations/zapier-live",
+                  "blocks/live-call-integrations/google-sheet-live"
+                ]
+              }
+            ]
+          },
+          {
+            "group": " Agent Knowledge Base",
+            "pages": [
+              "agent-knowledge-base/upload-files",
+              "agent-knowledge-base/upload-documents",
+              "agent-knowledge-base/add-websites",
+              "agent-knowledge-base/import-from-external",
+              "agent-knowledge-base/managing-data-sources"
+
+            ]
+          }
+        ]
+      },
+      
+
+      {
+        "tab": "API Reference",
+        "icon": "code",
+        "pages": [
+          "api-reference/introduction"
+        ],
+        "groups": [
+          {
+            "group": "API Reference",
+            "pages": [
+              "api-reference/introduction",
+              {
+                "group": "Endpoints",
+                "pages": [
+                  {
+                    "group": "Agent Management",
+                    "pages": [
+                      "api-reference/endpoint/get-agent",
+                      "api-reference/endpoint/get-agents",
+                      "api-reference/endpoint/get-all-agents",
+                      "api-reference/endpoint/duplicate-agent",
+                      "api-reference/endpoint/update-agent"
+                    ]
+                  },
+                  {
+                    "group": "Call Management",
+                    "pages": [
+                      "api-reference/endpoint/get-call",
+                      "api-reference/endpoint/report-call-error"
+                    ]
+                  },
+                  {
+                    "group": "Organization & Usage",
+                    "pages": [
+                      "api-reference/endpoint/get-orgs",
+                      "api-reference/endpoint/get-usage"
+                    ]
+                  },
+                  {
+                    "group": "Voice & Phone",
+                    "pages": [
+                      "api-reference/endpoint/list-voices",
+                      "api-reference/endpoint/import-number"
+                    ]
+                  },
+                  {
+                    "group": "Knowledge Base",
+                    "pages": [
+                      "api-reference/endpoint/agent-documents",
+                      "api-reference/endpoint/post-agent-documents",
+                      "api-reference/endpoint/delete-agent-documents",
+                      "api-reference/endpoint/agent-websites",
+                      "api-reference/endpoint/post-agent-websites",
+                      "api-reference/endpoint/delete-agent-websites"
+                    ]
+                  },
+                  {
+                    "group": "Billing & Subscription",
+                    "pages": [
+                      "api-reference/endpoint/get-invoices",
+                      "api-reference/endpoint/get-subscription"
+                    ]
+                  },
+                  {
+                    "group": "Development",
+                    "pages": [
+                      "api-reference/endpoint/chat-build"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "tab": "Webhook Reference",
+        "icon": "webhook",
+        "pages": [
+          "webhook-reference/Intro"
+        ],
+        "groups": [
+          {
+            "group": "Webhook Reference",
+            "pages": [
+              "webhook-reference/intro",
+              "webhook-reference/endpoint/postcall-webhook"
+            ]
+          }
+        ]
+      }
+    ],
+
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Dashboard",
+          "href": "https://app.phonely.ai",
+          "icon": "gauge"
+        },
+        {
+          "anchor": "Community",
+          "href": "https://discord.gg/BMHPUaZG37",
+          "icon": "users"
+        }
+      ]
+    }
+  },
+
+  "interaction": {
+    "drilldown": true
+  },
+
+  "logo": {
+    "light": "/logo/logo.png",
+    "dark": "/logo/logo-white.png"
+  },
+
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "mailto:support@phonely.ai"
+      },
+      {
+        "label": "Community",
+        "href": "https://discord.gg/BMHPUaZG37"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Dashboard",
+      "href": "https://app.phonely.ai"
+    }
+  },
+
+  "footer": {
+    "socials": {
+      "linkedin": "https://www.linkedin.com/company/phonely-ai",
+      "discord": "https://discord.gg/BMHPUaZG37"
+    }
+  },
+
+  "modeToggle": {
+    "default": "light",
+    "isHidden": false
+  },
+
+  "anchors": {
+    "components": {
+      "Button": {
+        "variants": {
+          "primary": {
+            "background": "var(--color-primary)",
+            "color": "white"
+          }
+        }
+      }
+    }
+  },
+
+  "scripts": [
+    "/js/custom-toc.js",
+    "/js/responsive-iframes.js"
+  ],
+  "stylesheets": [
+    "/css/custom.css",
+    "/css/variables-table-alignment.css"
+  ]
+}

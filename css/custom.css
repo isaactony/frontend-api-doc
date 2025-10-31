@@ -1,0 +1,195 @@
+/* Hide the "powered by Mintlify" text in the sidebar */
+a.text-sm.text-gray-500.dark\:text-gray-400.hover\:text-gray-700.dark\:hover\:text-gray-300.text-nowrap {
+   display: none !important;
+}
+
+/* Thin scrollbars for better UX */
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+    background: transparent;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* For Firefox - thin scrollbars */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+/* Prevent scroll chaining between different content areas */
+html, body {
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Target specific scrollable areas to prevent cross-scrolling */
+main, .content, [role="main"], .main-content,
+.mintlify-doc-content,
+.mintlify-doc-content > div,
+[data-mintlify-doc-content],
+article, .article-content {
+    overscroll-behavior: contain;
+}
+
+/* Sidebar scrolling should be independent */
+aside, .sidebar, [role="complementary"],
+[class*="sidebar"],
+[class*="toc"],
+[class*="table-of-contents"],
+[class*="on-this-page"],
+[class*="right-sidebar"],
+[class*="right-side"],
+[data-mintlify-toc],
+.mintlify-toc {
+    overscroll-behavior: contain;
+}
+
+/* Prevent scroll chaining between left nav and main content */
+nav, [role="navigation"],
+[class*="nav"],
+[class*="menu"] {
+    overscroll-behavior: contain;
+}
+
+/* Additional isolation for main content area */
+main, .content, [role="main"], .main-content,
+.mintlify-doc-content,
+.mintlify-doc-content > div,
+[data-mintlify-doc-content],
+article, .article-content {
+    overscroll-behavior: contain;
+}
+
+/* TOC filtering is now handled by JavaScript */
+
+/* CSS Custom Properties for responsive iframe configuration */
+:root {
+    --iframe-border-radius: 8px;
+    --iframe-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --iframe-margin: 1rem 0;
+    --iframe-transition: padding-bottom 0.3s ease, max-height 0.3s ease;
+    
+    /* Aspect ratios for different screen sizes */
+    --iframe-aspect-large: 50%;        /* 2:1 for large screens */
+    --iframe-aspect-desktop: 56.25%;   /* 16:9 for desktop */
+    --iframe-aspect-tablet-landscape: 52.5%; /* 1.9:1 for tablet landscape */
+    --iframe-aspect-tablet-portrait: 60%;    /* 1.67:1 for tablet portrait */
+    --iframe-aspect-mobile: 66.67%;    /* 1.5:1 for mobile */
+    --iframe-aspect-very-small: 75%;   /* 4:3 for very small screens */
+    
+    /* Max heights for different screen sizes */
+    --iframe-max-height-large: 600px;
+    --iframe-max-height-desktop: 500px;
+    --iframe-max-height-tablet-landscape: 400px;
+    --iframe-max-height-tablet-portrait: 350px;
+    --iframe-max-height-mobile: 300px;
+    --iframe-max-height-very-small: 250px;
+}
+
+/* Responsive iframe container with dynamic sizing */
+.responsive-iframe-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    border-radius: var(--iframe-border-radius);
+    box-shadow: var(--iframe-shadow);
+    margin: var(--iframe-margin);
+    transition: var(--iframe-transition);
+}
+
+.responsive-iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: var(--iframe-border-radius);
+}
+
+/* Fallback for direct iframe styling */
+.responsive-iframe,
+iframe.responsive-iframe {
+    width: 100% !important;
+    aspect-ratio: 16 / 9 !important;
+    border: none !important;
+    border-radius: var(--iframe-border-radius) !important;
+    box-shadow: var(--iframe-shadow) !important;
+    margin: var(--iframe-margin) !important;
+}
+
+/* Dynamic aspect ratios based on screen size */
+.responsive-iframe-container {
+    padding-bottom: var(--iframe-aspect-desktop); /* Default 16:9 for desktop */
+}
+
+/* Large screens (1200px+) - More cinematic */
+@media (min-width: 1200px) {
+    .responsive-iframe-container {
+        padding-bottom: var(--iframe-aspect-large);
+        max-height: var(--iframe-max-height-large);
+    }
+}
+
+/* Desktop (992px - 1199px) - Standard 16:9 */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .responsive-iframe-container {
+        padding-bottom: var(--iframe-aspect-desktop);
+        max-height: var(--iframe-max-height-desktop);
+    }
+}
+
+/* Tablet landscape (768px - 991px) - Slightly wider */
+@media (min-width: 768px) and (max-width: 991px) {
+    .responsive-iframe-container {
+        padding-bottom: var(--iframe-aspect-tablet-landscape);
+        max-height: var(--iframe-max-height-tablet-landscape);
+    }
+}
+
+/* Tablet portrait (481px - 767px) - More square */
+@media (min-width: 481px) and (max-width: 767px) {
+    .responsive-iframe-container {
+        padding-bottom: var(--iframe-aspect-tablet-portrait);
+        max-height: var(--iframe-max-height-tablet-portrait);
+    }
+}
+
+/* Mobile landscape (480px and below) - Even more square */
+@media (max-width: 480px) {
+    .responsive-iframe-container {
+        padding-bottom: var(--iframe-aspect-mobile);
+        max-height: var(--iframe-max-height-mobile);
+    }
+}
+
+/* Very small screens (320px and below) - Almost square */
+@media (max-width: 320px) {
+    .responsive-iframe-container {
+        padding-bottom: var(--iframe-aspect-very-small);
+        max-height: var(--iframe-max-height-very-small);
+    }
+}
+
+/* Additional specificity for Mintlify content areas */
+.mintlify-doc-content .responsive-iframe-container,
+.mintlify-doc-content .responsive-iframe,
+.mintlify-doc-content iframe.responsive-iframe,
+[data-mintlify-doc-content] .responsive-iframe-container,
+[data-mintlify-doc-content] .responsive-iframe,
+[data-mintlify-doc-content] iframe.responsive-iframe {
+    width: 100% !important;
+}
