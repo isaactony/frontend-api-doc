@@ -106,6 +106,13 @@
             ]
           },
           {
+            "group": "Outbound Calling",
+            "pages": [
+              "outboundcalling/createaoutboundcallingcampaign",
+              "outboundcalling/creating-call-flows-for-outbound-campaigns"
+            ]
+          },
+          {
             "group": " Agent Knowledge Base",
             "pages": [
               "agent-knowledge-base/upload-files",
