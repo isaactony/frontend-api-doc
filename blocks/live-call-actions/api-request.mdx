@@ -18,7 +18,7 @@ It can:
 
 You can connect it to any REST API using a cURL command or manual setup.
 
-##  2. Adding the API Request Block to a Flow
+## 2. Adding the API Request Block to a Flow
 
 1. In your flow editor, click the **➕ (plus)** icon below an existing block.
 2. In the popup menu, look under Live Call Actions.
@@ -30,7 +30,7 @@ You can connect it to any REST API using a cURL command or manual setup.
   For example, you can collect a caller’s name and email first, then use the API Request block to send those details to your CRM.
 </Tip>
 
-## 3. Setup 
+## 3. Setup
 
 When you open the block, you’ll see two ways to define your API request:
 
@@ -63,7 +63,7 @@ You’ll then define all settings step by step in the **Configure** tab.
 
 ![Manually Build Api Request Flow Gi](/assets/manually-build-api-request-flow.gif)
 
-## 4. Configure 
+## 4. Configure
 
 The **Configure** tab is where you define what your API request should do.
 
@@ -128,7 +128,9 @@ Example:
 }
 ```
 
-> 💡 You can also insert variables captured earlier in your flow (like `{{caller.name}}` or `{{collected.email}}`) to make the request dynamic.
+<Tip>
+  You can make your API requests dynamic by inserting variables captured earlier in your flow. Type `@`to open the variable picker or select from **Available Variables** or **Auto-Gather Variables** to include dynamic data in your request.
+</Tip>
 
 ### **6. Advanced Settings**
 
