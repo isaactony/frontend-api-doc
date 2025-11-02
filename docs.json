@@ -100,7 +100,8 @@
                 "group": "Live Call Integrations",
                 "pages": [
                   "blocks/live-call-integrations/zapier-live",
-                  "blocks/live-call-integrations/google-sheet-live"
+                  "blocks/live-call-integrations/google-sheet-live",
+                  "blocks/live-call-integrations/google-calendar"
                 ]
               }
             ]
