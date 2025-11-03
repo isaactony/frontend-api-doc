@@ -38,21 +38,12 @@ With these tools, you can:
 
 1. From the left navigation panel, click **Call History** under the **Call** section.
 2. You’ll see a **table view** listing all calls made or received by your Phonely agents.
-   - Each row includes:
-     - Date & Time
-     - Business Number
-     - Customer Number
-     - Duration
-     - Topic
-     - Sentiment
-     - Ended Reason
-     - Outcome
 
 <Tip>
   The gray dot beside a call indicates you’ve already viewed it. Unread calls remain highlighted for easy tracking.
 </Tip>
 
-##  **Filtering & Sorting Calls**
+## **Filtering & Sorting Calls**
 
 Use the **Filters panel** to quickly refine your search and uncover the calls that matter most.
 
@@ -100,7 +91,7 @@ The **Blocks** tab breaks the conversation down into the individual workflow blo
 
 Each block displays:
 
-- **Block Name and Status** (e.g., Greeting Message → Completed)
+- **Block Name and Status**. 
 - **AI Speech** and **User Input** text
 - **Variables Extracted** during the exchange
 - **Reasoning** that explains AI intent detection or clarification logic
@@ -112,6 +103,42 @@ Example:
 > - **Extracted Variable:** `caller_reason: “Enquiring about a room”`
 
 This view is especially helpful when debugging or optimizing your call flows.
+
+## Exporting Selected Calls and Running Reports
+
+The **Export** and **Report** options allow you to analyze call performance or share data externally.
+
+### A) Export Selected Calls
+
+Use **Export Selected Calls** when you want to download specific calls manually from the list.
+
+1. From the **Call History** table, check the calls you want to include.
+   - You can select one or multiple rows.
+2. Click **Export Selected Calls**.
+   - This action downloads a **CSV file** containing detailed data for only those calls.
+
+### B) Running a Report
+
+Use **Run Report** to generate an automatic summary of all calls that match your **filters and date range** - no manual selection needed.
+
+1. At the top of the Call History page, apply the desired date range. 
+2. Once your filters are set, click Run Report in the bottom toolbar.
+3. Phonely will automatically generate a Call Report summarizing those filtered calls.
+
+### C) Understanding the Call Report
+
+After clicking **Run Report**, a summary panel appears showing:
+
+![Call Report Analytics Pn](/assets/call-report-analytics.png)
+
+### D) Downloading Report Data
+
+You can download your report in two formats:
+
+- **Raw Data (CSV)** – Contains every individual call and all details, perfect for deeper review in Excel or Sheets.
+- **Summary Stats (JSON)** – Contains aggregated metrics only (totals, averages, outcomes), useful for analytics tools or dashboards.
+
+Simply click the **Download CSV** or **Download JSON** button from the Call Report panel.
 
 ## **Understanding Call Path Analytics**
 
@@ -133,14 +160,6 @@ You can use filters here to focus on:
 - Certain workflows (e.g., Appointment Booking vs. Legal Reception)
 - Calls that share the same outcome or end reason
 
-### **Why It’s Important**
-
-- Identify where most calls are ending (e.g., 32% ending before booking).
-- Spot bottlenecks or prompt issues.
-- Measure success rates per workflow.
-
-> 🔗 _For a deeper dive into workflow behavior and troubleshooting conversation flows, see our upcoming guide: _[_Understanding Call Flow in Phonely_](#)_._
-
 ## Example Use Cases
 
 <Tabs>
@@ -158,10 +177,6 @@ You can use filters here to focus on:
 - **Regularly analyze call paths** - Identify and address bottlenecks in your conversation flows
 - **Adjust call prompts based on data insights** - Use analytics to improve customer satisfaction
 - **Review recordings for quality assurance** - Listen to calls to identify improvement opportunities
-
-## Conclusion
-
-Phonely's call history and analytics features provide essential insights to optimize call management and customer interaction. By effectively using these tools, you can enhance your call handling processes, ensure better outcomes, and drive customer satisfaction.
 
 <CardGroup cols={1}>
   <Card title="Call Routing Guide" icon="route" href="/key-concepts/routing">
