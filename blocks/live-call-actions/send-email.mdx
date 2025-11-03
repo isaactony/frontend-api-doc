@@ -41,7 +41,7 @@ Implementing the Send Email Block involves setting up your workflow to gather in
     2. Create a New Flow, or select an existing one to edit.
     3. Ensure a Trigger Condition is Set: Define a trigger for your workflow (e.g., "when someone asks for a callback" or "wants to speak to a person"). This ensures the flow initiates under specific circumstances.
   </Step>
-  <Step title="Gather Necessary Information (e.g., using a Prompt Block)">
+  <Step title="Gather Necessary Information (e.g., using a Collect Block)">
     1. Add a Prompt Block (or a Multi-Ask Block) early in your workflow.
     2. Instruct the AI to gather specific contact information that you want to include in the email (e.g., name, email address, phone number).
     3. Define Variables: Ensure you define variables within your Prompt Block (e.g., caller_name, caller_email, caller_phone_number) and specify their types.
@@ -51,8 +51,8 @@ Implementing the Send Email Block involves setting up your workflow to gather in
     </Tip>
   </Step>
   <Step title="Add the Send Email Block">
-    1. In your workflow, click the + button to add an action.
-    2. Select "Send Email Message" from the available options.
+    1. In your workflow, click the **\+** button to add an action.
+    2. Select "**Send Email**" from the available options.
 
     **Post Call vs. Live Call**
 
@@ -64,23 +64,26 @@ Implementing the Send Email Block involves setting up your workflow to gather in
     2. Format: Choose between "Plain Text" or "HTML" format for your email content.
     3. Compose Subject & Body: Enter your desired subject line and message content.
 
+    ![Send Email Block Pn](/assets/send-email-block.png)
+
     **Dynamic Content**
 
-    You can embed any variables you have previously stored in your workflow. For example:
-
-    - **Subject**: New call from [caller_name] - Callback Requested
-    - **Body**:
-      - New call from: [caller_name]
-      - Email: [caller_email]
-      - Phone Number: [caller_phone_number]
-      - Summary of Conversation: [summary] (Phonely can capture a live summary)
-      - Link to Call: [dashboard_url] (Provides a direct link to the call recording in your Phonely dashboard.
-
-    4. Set Email Recipient: Specify the email address to which this automated email should be sent.
+    You can embed any variables you have previously stored in your workflow.
 
     <Tip>
-      If you want to send this to your team, you can send to a static email address. If you want to send this to your customer, you can select the email variable that was earlier defined in the call
+      If you want to send this to your team, you can send to a static email address. If you want to send this to your customer, you can select the email variable that was earlier defined in the call. 
     </Tip>
+    | Field                               | Description                                                                                                                                                            |
+    | :---------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | **To**                              | Enter one or more recipient email addresses (e.g., your team or customer). You can also use a variable (e.g., `{{caller_email}}`).                                     |
+    | **Subject**                         | Write a clear subject line. Variables can be embedded (e.g., `New callback request from {{caller_name}}`).                                                             |
+    | **Body**                            | Compose your message. You can include variables, such as:                                                                                                              |
+    |                                     | - `Caller Name: {{caller_name}}`<br />- `Email: {{caller_email}}`<br />- `Phone: {{caller_phone}}`<br />- `Summary: {{summary}}`<br />- `Recording: {{dashboard_url}}` |
+    | **Body Type**                       | Choose between **Plain Text** or **HTML** for formatting.                                                                                                              |
+    | **From Name**                       | Define how the sender name will appear in the recipient’s inbox (e.g., _Phonely AI Agent_).                                                                            |
+    | **Interim Message (optional)**      | When enabled, Phonely will briefly tell the caller something like “I’m sending that email for you now.”                                                                |
+    | **Call Outcome Tagging (optional)** | Add a keyword (e.g., _Email Sent_, _Follow-up Triggered_) for easier reporting and analytics later.                                                                    |
+
     5. Set From Name: Define the name that will appear as the sender of the email.
 
     ![Email Block Pn](/images/email-block.png)
