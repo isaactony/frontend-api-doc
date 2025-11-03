@@ -66,7 +66,7 @@ Implementing the Send Email Block involves setting up your workflow to gather in
 
     **Dynamic Content**
 
-    Crucially, you can embed any variables you have previously stored in your workflow. For example:
+    You can embed any variables you have previously stored in your workflow. For example:
 
     - **Subject**: New call from [caller_name] - Callback Requested
     - **Body**:
@@ -76,7 +76,11 @@ Implementing the Send Email Block involves setting up your workflow to gather in
       - Summary of Conversation: [summary] (Phonely can capture a live summary)
       - Link to Call: [dashboard_url] (Provides a direct link to the call recording in your Phonely dashboard.
 
-    4. Set Email Recipient: Specify the email address to which this automated email should be sent. If you want to send this to your team, you can send to a static email address. If you want to send this to your customer, you can select the email variable that was earlier defined in the call.
+    4. Set Email Recipient: Specify the email address to which this automated email should be sent.
+
+    <Tip>
+      If you want to send this to your team, you can send to a static email address. If you want to send this to your customer, you can select the email variable that was earlier defined in the call
+    </Tip>
     5. Set From Name: Define the name that will appear as the sender of the email.
 
     ![Email Block Pn](/images/email-block.png)
