@@ -79,13 +79,8 @@ Let’s walk through every part of the setup shown in your screenshots.
 
     - **Call Variables** – System-generated details like caller ID, phone number, or call metadata.
     - **Custom Variables** – Variables you’ve defined manually.
-    - **Auto-Gather Variables (Beta)** – Automatically collected call metadata.
-    - **Contact and Address Details**
+    - **Auto-Gather Variables (Beta)** – Prompts the caller at the moment a block needs a value (name, email, date, etc.)—no extra Talk block required.
     - **Collect Caller Details** – Inputs from Collect or Ask Exactly blocks (e.g., `caller_name`, `caller_phone`).
-
-    <Tip>
-      Use \$caller_phone to check if the caller’s number matches a specific one.
-    </Tip>
   </Step>
   <Step title="Select the Comparison Operator" titleSize="h2">
     Click the dropdown that says **“is equal to”** to see other options:
@@ -144,8 +139,7 @@ Let’s walk through every part of the setup shown in your screenshots.
 
     #### Call Outcome Tagging
 
-    Optionally, add a **keyword tag** to label this flow’s result (e.g., `validated`, `invalid_number`).\
-    This helps track call outcomes later in reports or analytics.
+    Optionally, add a **keyword tag** to label this flow’s result (e.g., `validated`, `invalid_number`). This helps track call outcomes later in reports or analytics.
   </Step>
   <Step title="Save the Filter" titleSize="h2">
     Click **Done** to confirm and exit.
@@ -158,19 +152,24 @@ Let’s walk through every part of the setup shown in your screenshots.
 
     ## Example: Using Variables in Filter Logic
 
-    Let’s say your Collect block captured two inputs:
+    Let’s say your **Collect block** gathered two inputs from the caller:
 
-    - `caller_name`
     - `caller_phone`
+    - `caller_zip_code`
 
-    You can create a Filter block with logic like:
+    You can then use a **Filter block** to determine which store location the caller should be routed to based on these values.
 
-    - **Condition 1:** `caller_name is equal to "Isaac"`
-    - **Condition 2:** `caller_phone starts with "+254"`
+    **Example conditions:**
 
-    Set **Logic** to `And`.
+    - **Condition 1:** `caller_phone` starts with **"+1-312"** _(Chicago area code)_
+    - **Condition 2:** `caller_zip_code` is equal to **"60601"** _(Downtown Chicago ZIP code)_
 
-    \>If both are true, the flow continues through the **True** branch (perhaps triggering an API Request).\
-    \>If not, the flow follows the **False** branch (e.g., play a message: “Sorry, your name could not be verified”).
+    Set **Logic** to **And**.
+
+    \> **If both conditions are true**, the flow continues through the **True** branch — for example, routing the caller to the **Chicago Downtown Store** or triggering an **API Request** to fetch store details in that ZIP code area.
+
+    \> **If not**, the flow follows the **False** branch — for example, playing a message such as:
+
+    > “Sorry, we couldn’t find a nearby store based on your location. Please check your ZIP code and try again.”
   </Step>
 </Steps>
