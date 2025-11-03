@@ -97,9 +97,19 @@
                 "group": "Live Call Integrations",
                 "pages": [
                   "blocks/live-call-integrations/zapier-live",
-                  "blocks/live-call-integrations/google-sheet-live"
+                  "blocks/live-call-integrations/google-sheet-live",
+                  "blocks/live-call-integrations/googlecalendar",
+                  "blocks/live-call-integrations/google-meet"
                 ]
               }
+            ]
+          },
+          {
+            "group": "Outbound Calling",
+            "pages": [
+              "outboundcalling/createaoutboundcallingcampaign",
+              "outboundcalling/creating-call-flows-for-outbound-campaigns"
+             
             ]
           },
           {
