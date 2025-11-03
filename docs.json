@@ -35,7 +35,6 @@
           {
             "group": "Features",
             "pages": [
-              "capabilities/call-history-ai-analytics",
               "capabilities/variables"
             ]
           },
@@ -54,11 +53,9 @@
             ]
           },
           {
-            "group": "Best Practices",
+            "group": "Call History and Analytics",
             "pages": [
-              "best-practices/overview",
-              "best-practices/flow-design",
-              "best-practices/testing"
+              "capabilities/call-history-ai-analytics"
             ]
           },
           {
@@ -100,18 +97,9 @@
                 "group": "Live Call Integrations",
                 "pages": [
                   "blocks/live-call-integrations/zapier-live",
-                  "blocks/live-call-integrations/google-sheet-live",
-                  "blocks/live-call-integrations/google-calendar",
-                  "blocks/live-call-integrations/google-gmail"
+                  "blocks/live-call-integrations/google-sheet-live"
                 ]
               }
-            ]
-          },
-          {
-            "group": "Outbound Calling",
-            "pages": [
-              "outboundcalling/createaoutboundcallingcampaign",
-              "outboundcalling/creating-call-flows-for-outbound-campaigns"
             ]
           },
           {
@@ -123,6 +111,14 @@
               "agent-knowledge-base/import-from-external",
               "agent-knowledge-base/managing-data-sources"
 
+            ]
+          },
+          {
+            "group": "Best Practices",
+            "pages": [
+              "best-practices/overview",
+              "best-practices/flow-design",
+              "best-practices/testing"
             ]
           }
         ]
