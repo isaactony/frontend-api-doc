@@ -6,7 +6,9 @@ description: "Learn to leverage Phonely's call history and analytics features fo
 
 In this guide, we'll introduce you to Phonely's powerful call history and analytics features that help you manage, analyze, and optimize your call outcomes for better operational efficiency and customer satisfaction.
 
-The **Call History and Analytics** serves as a vital tool for managing and analyzing your calls. Understanding these features can enhance your ability to filter, analyze, and optimize call outcomes, improving both operational efficiency and customer satisfaction.
+Phonely’s Call History and Analytics Dashboard provide a centralized view of every conversation that occurs within your AI-powered phone system. Each call is automatically logged with detailed metadata - including call duration, sentiment, outcomes, and transcripts - helping you understand not just what happened, but why.
+
+Understanding these features can enhance your ability to filter, analyze, and optimize call outcomes, improving both operational efficiency and customer satisfaction.
 
 <iframe src="https://www.youtube.com/embed/qRSKlZrT7Do" title="YouTube video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
 
@@ -16,54 +18,128 @@ The **Call History and Analytics** serves as a vital tool for managing and analy
 
 ## Key Features
 
-1. **Comprehensive Call Logging**: Every call is logged with detailed information including phone numbers, topics, sentiments, and outcomes
-2. **Advanced Filtering**: Display only the calls relevant to your needs, such as those tagged for product support or specific outcomes
-3. **Detailed Call Analysis**: Access conversation summaries, caller details, and call statistics
-4. **Call Path Insights**: Understand how conversations flow and where they end for better routing optimization
-5. **Recording Playback**: Listen to call recordings with adjustable speed and quality controls
+| Feature                        | Description                                                                                                                                           |
+| :----------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Comprehensive Call Logging** | Every inbound, outbound, and web call is logged with key details such as caller number, sentiment, topic, duration, and outcome.                      |
+| **Advanced Filtering**         | Narrow results using filters for duration, sentiment, outcomes, call types, or unread calls. Perfect for focusing on specific campaigns or workflows. |
+| **Detailed Call Insights**     | Dive into individual call records to view conversation summaries, transcripts, and AI reasoning.                                                      |
+| **Playback Controls**          | Replay any call, adjust playback speed, or download audio recordings for QA or training.                                                              |
+| **Call Path Analysis**         | Visualize where calls begin, branch, and end across your workflow — invaluable for diagnosing drop-offs and routing issues.                           |
+| **Block-Level Tracking**       | View the step-by-step flow of conversation blocks, including AI prompts, user input, and extracted variables.                                         |
 
-## How to Use
+With these tools, you can:
 
-<Steps>
-  <Step title="Access Call History" stepNumber={1}>
-    Navigate to the Call History page from your Phonely Dashboard to view all logged calls.
-  </Step>
-  <Step title="Apply Filters" stepNumber={2}>
-    Use the filtering options to display only calls relevant to your analysis needs.
-  </Step>
-  <Step title="Review Call Details" stepNumber={3}>
-    Click on individual calls to view conversation summaries, caller details, and key statistics.
-  </Step>
-  <Step title="Analyze Call Paths" stepNumber={4}>
-    Review how conversations flow and identify where calls are ending to optimize your prompts.
-  </Step>
-  <Step title="Play Recordings" stepNumber={5}>
-    Listen to call recordings, adjust playback speed, and download recordings as needed.
-  </Step>
-</Steps>
+- Track how customers interact with your AI assistant
+- Review outcomes and conversation quality
+- Identify where calls end and improve your workflows
+- Audit performance across time ranges, agents, or workflows
 
-## Overview
+## **Accessing the Call History Page**
 
-Every call in Phonely is logged with comprehensive details such as phone numbers, topics, sentiments, and outcomes. These details allow you to filter and view only the relevant calls, focusing on specific aspects like product support or customer inquiries.
+1. From the left navigation panel, click **Call History** under the **Call** section.
+2. You’ll see a **table view** listing all calls made or received by your Phonely agents.
+   - Each row includes:
+     - Date & Time
+     - Business Number
+     - Customer Number
+     - Duration
+     - Topic
+     - Sentiment
+     - Ended Reason
+     - Outcome
 
 <Tip>
-  Filtering Capabilities
-
-  Use filters to display only the calls relevant to your needs, such as those tagged for product support or other specific outcomes.
+  The gray dot beside a call indicates you’ve already viewed it. Unread calls remain highlighted for easy tracking.
 </Tip>
 
-## Analyzing Call Details
+##  **Filtering & Sorting Calls**
 
-The call history page provides a detailed view, including conversation summaries, caller details, and call statistics. This section also allows playback of call recordings and adjustment of playback features such as speed and quality.
+Use the **Filters panel** to quickly refine your search and uncover the calls that matter most.
 
-## **Call Path Insights**
+### Available Filters:
 
-Call paths show how conversations flow and where they end, offering insights into call routing and customer interaction outcomes.
+- **Duration:** Filter by call length using the time slider (e.g., 0–10 minutes+)
+- **Unread / Read:** Show only new or previously reviewed calls
+- **Sentiment:** Focus on _Positive_, _Neutral_, or _Negative_ customer interactions
+- **Outcome:** Filter by workflow outcomes like _End Call_, _Greeting Hangup_, _Appointment Scheduled_, or _Lead Qualified_
+- **Ended Reason:** See whether calls were _Customer Ended_, _Phonely Ended_, _Timeout_, or _Transfer_
+- **Call Type:** Separate _Inbound_, _Outbound_, and _Web Calls_
+- **Mode:** Distinguish between _Call_ or _Messaging_ sessions
 
-| **Feature**            | **Type**  | **Description**                                                                    |
-| :--------------------- | :-------- | :--------------------------------------------------------------------------------- |
-| **Call Flow Analysis** | `feature` | Analyze where calls are ending and adjust prompts to improve customer satisfaction |
-| **Routing Insights**   | `feature` | Gain insights into where calls are being routed and adjust strategies accordingly  |
+![Call History Filters Gi](/assets/call-history-filters.gif)
+
+You can also click **View \> Toggle Columns** to customize which fields are displayed, such as A/B Test, Last Block, or Version.
+
+## **Reviewing Call Details**
+
+Click any call row to open the **Call Detail View**.\
+You’ll find three tabs at the top: **Highlights**, **Transcript**, and **Blocks**.
+
+![Call History Blocks Gi](/assets/call-history-blocks.gif)
+
+### **1. Highlights Tab**
+
+Displays a summarized view of the entire call:
+
+- **Call Summary** – A quick narrative describing what the call was about.
+- **Caller Details** – The caller’s phone number and detected location.
+- **Call Stats** – Sentiment, end reason, duration, topic, and final outcome.
+
+### **2. Transcript Tab**
+
+The **Transcript** provides a turn-by-turn record of the conversation.
+
+- Each Phonely message and user response is timestamped.
+- Stored variables (like `caller_reason` or `room_type`) appear inline.
+- “View Reasoning” shows the AI’s decision-making process in real time - Phonely’s **real-time reasoning** feature explains _why_ the AI responded a certain way.
+- Checkboxes indicate **endpoint detection**, marking pauses or timeouts in conversation.
+
+### **3. Blocks Tab**
+
+The **Blocks** tab breaks the conversation down into the individual workflow blocks used during the call.
+
+Each block displays:
+
+- **Block Name and Status** (e.g., Greeting Message → Completed)
+- **AI Speech** and **User Input** text
+- **Variables Extracted** during the exchange
+- **Reasoning** that explains AI intent detection or clarification logic
+
+Example:
+
+> - **Block:** _Identify Purpose_
+> - **AI Speech:** “Could you tell me a bit more about your inquiry?”
+> - **Extracted Variable:** `caller_reason: “Enquiring about a room”`
+
+This view is especially helpful when debugging or optimizing your call flows.
+
+## **Understanding Call Path Analytics**
+
+Click the **Call Path** tab at the top of the Call History page to visualize how conversations progress through your workflows.
+
+Each node in the diagram represents a block or workflow segment, while the connecting lines show call progression between them.
+
+![Call Path Gi](/assets/call-path.gif)
+
+### **What You’ll See**
+
+- **Start Node** – Entry point of all calls (shows total call count and average duration).
+- **Workflow Nodes** – Represent steps like  _Reception Flow_, or _AI Receptionist_.
+- **End Node** – Displays success rate, total calls ended, and end reasons (e.g., _AI Hang Up_, _Customer Ended_).
+
+You can use filters here to focus on:
+
+- A specific date range
+- Certain workflows (e.g., Appointment Booking vs. Legal Reception)
+- Calls that share the same outcome or end reason
+
+### **Why It’s Important**
+
+- Identify where most calls are ending (e.g., 32% ending before booking).
+- Spot bottlenecks or prompt issues.
+- Measure success rates per workflow.
+
+> 🔗 _For a deeper dive into workflow behavior and troubleshooting conversation flows, see our upcoming guide: _[_Understanding Call Flow in Phonely_](#)_._
 
 ## Example Use Cases
 
