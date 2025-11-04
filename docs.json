@@ -46,7 +46,8 @@
                 "group": "Voice",
               "pages": [
                 "agent-design/voice/voice-selection",
-                "agent-design/voice/clone-voice"
+                "agent-design/voice/clone-voice",
+                "agent-design/voice/add-a-voice"
               ]},
               "agent-design/set-agent-guidelines"
               
