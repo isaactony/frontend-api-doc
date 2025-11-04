@@ -33,7 +33,7 @@ Understanding when to use a Code Block helps you unlock its full potential in bu
 In this example, we will demonstrate how the Code Block is used inside a workflow for a fictitious store. The goal is to automatically transfer customers to their nearest store based on the ZIP code provided during a call.
 
 <Steps>
-  <Step title="Add a New Block">
+  <Step title="Add a New Block" titleSize="p">
     From your workflow canvas, click the + icon and select Code from the list of available blocks.
 
     The block will appear in your flow, ready for configuration.
@@ -60,7 +60,7 @@ In this example, we will demonstrate how the Code Block is used inside a workflo
 
     Use information already gathered earlier in other flows.
 
-    For example, in this workflow, the AI first asks the caller why they’re calling. If the caller requests a store transfer, they’ll be prompted to provide their zip_code. This value can then be used as an input variable within the Code Bloc
+    For example, in this workflow, the AI first asks the caller why they’re calling. If the caller requests a store transfer, they’ll be prompted to provide their zip_code. This value can then be used as an input variable within the Code Block. 
   </Step>
   <Step title="Write Your Code">
     <Tip>
@@ -152,11 +152,13 @@ In this example, we will demonstrate how the Code Block is used inside a workflo
     return output_dict
     ```
 
-    Finally, the function returns the dictionary to Phonely. From this point, the output variable store_phone_number becomes available to all downstream blocks
+    Finally, the function returns the dictionary to Phonely. From this point, the output variable **store_phone_number** becomes available to all downstream blocks
   </Step>
   <Step title="Validate Your Code">
     After entering your Python code, click Validate Code to ensure it’s syntactically correct.\
-    If validation passes, a green checkmark  appears next to the Cofigure tab name, and the **Continue** button activates. Click **Continue** to proceed to the testing step.
+    If validation passes, a green checkmark  appears next to the Cofigure tab name, and the **Continue** button activates. 
+
+    Click **Continue** to proceed to the testing step.
 
     ![Codevalidation Pn](/images/codevalidation.png)
   </Step>
