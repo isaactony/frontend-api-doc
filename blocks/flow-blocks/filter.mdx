@@ -37,29 +37,27 @@ Automatically escalate high-priority or urgent cases. For example, If ticket_urg
 
 When the Filter block is added to your flow:
 
-- It **evaluates one or more conditions** using variables and comparison rules.
+- It evaluates one or more conditions using variables and comparison rules.
 - Each condition returns either **True** or **False**.
 - Based on the outcome:
-  - **True path** → Executes the next connected block when all/any conditions are met.
-  - **False path** → Executes the next block when conditions fail.
+  - **True path** \> Executes the next connected block when all/any conditions are met.
+  - **False path** \> Executes the next block when conditions fail.
 
-So, you can visually **branch your automation** into multiple directions depending on call or data logic.
+![Filter Block Pn](/assets/filter-block.png)
+
+So, you can visually branch your automation into multiple directions depending on call or data logic.
 
 ## How to Set Up a Filter Block
 
 Let’s walk through every part of the setup shown in your screenshots.
 
 <Steps>
-  <Step title="Add the Filter Block" titleSize="h2">
+  <Step title="Add the Filter Block" titleSize="h3">
     1. In your flow, click the **“+”** icon after any existing block.
     2. Under **Flow Actions**, choose **Filter**.
     3. The Filter block will appear with two output paths — **True** and **False**.
-
-    <Tip>
-      The red warning “Issues to Fix Before Publishing” will disappear once all required fields are filled.
-    </Tip>
   </Step>
-  <Step title="Define Your Conditions" titleSize="h2">
+  <Step title="Define Your Conditions" titleSize="h3">
     Each condition is a rule that tells Phonely what to check.
 
     1. Click the Filter block to open its configuration panel.
@@ -72,7 +70,7 @@ Let’s walk through every part of the setup shown in your screenshots.
     | **Comparison Operator**           | Defines how the field is compared — options include: <br />• `exists` <br />• `is equal to` <br />• `is not equal to` <br />• `is an array containing` |
     | **Value Type & Comparison Value** | Select data type (`String`, `Number`, or `Boolean`) and specify the value to compare against.                                                          |
   </Step>
-  <Step title=" Choose Available Variables" titleSize="h2">
+  <Step title=" Choose Available Variables" titleSize="h3">
     Click inside Define Field, this opens the Available Variables panel.
 
     Here you’ll find:
@@ -82,7 +80,7 @@ Let’s walk through every part of the setup shown in your screenshots.
     - **Auto-Gather Variables (Beta)** – Prompts the caller at the moment a block needs a value (name, email, date, etc.)—no extra Talk block required.
     - **Collect Caller Details** – Inputs from Collect or Ask Exactly blocks (e.g., `caller_name`, `caller_phone`).
   </Step>
-  <Step title="Select the Comparison Operator" titleSize="h2">
+  <Step title="Select the Comparison Operator" titleSize="h3">
     Click the dropdown that says **“is equal to”** to see other options:
 
     - **exists** \> Checks if a variable exists or is defined.
@@ -90,14 +88,17 @@ Let’s walk through every part of the setup shown in your screenshots.
     - **is not equal to** \> Checks inequality.
     - **is an array containing** \> Used when working with list-type variables.
 
-    Choose one that fits your logic.\
-    For example:
+    Choose one that fits your logic.
 
-    - Use `exists` to ensure a phone number is collected.
-    - Use `is equal to` to match a user’s choice.
+    <Tip>
+      For example:
+
+      - Use `exists` to ensure a phone number is collected.
+      - Use `is equal to` to match a user’s choice.
+    </Tip>
   </Step>
-  <Step title="Select the Data Type" titleSize="h2">
-    Under the comparison dropdown, click the small menu (defaults to **String**) and choose the correct type:
+  <Step title="Select the Data Type" titleSize="h3">
+    Under the comparison dropdown, click the small menuand choose the correct type:
 
     | Data Type   | When to Use                                         |
     | :---------- | :-------------------------------------------------- |
@@ -105,9 +106,9 @@ Let’s walk through every part of the setup shown in your screenshots.
     | **Number**  | For numeric comparisons like age, amount, or count. |
     | **Boolean** | For true/false logic (e.g., `is_verified = true`).  |
 
-    Then enter your comparison value (e.g., `"yes"` or `123`).
+    Then enter your comparison value.
   </Step>
-  <Step title="Add Multiple Conditions" titleSize="h2">
+  <Step title="Add Multiple Conditions" titleSize="h3">
     To check multiple rules:
 
     1. Click **➕ Add Condition** to create a new condition.
@@ -125,7 +126,7 @@ Let’s walk through every part of the setup shown in your screenshots.
     - **And** \> `caller_name = John` **and** `caller_phone = 123456`
     - **Or** \> `caller_name = John` **or** `caller_name = Jane`
   </Step>
-  <Step title="Configure Advanced Settings" titleSize="h2">
+  <Step title="Configure Advanced Settings" titleSize="h3">
     Scroll down to **Advanced Settings**.
 
     Here’s what you can adjust:
@@ -135,13 +136,13 @@ Let’s walk through every part of the setup shown in your screenshots.
     Enable this if you want to play a message to the caller while Phonely checks the conditions.
 
     - **Post Interim Message Delay:** Adds a short delay before continuing.
-    - **Interim Message Prompt:** You can write or auto-generate a 3–7 word message such as “Please hold while I check” or “Verifying your input.”
+    - **Interim Message Prompt:** You can write or auto-generate a 3–7 word message such as _“Please hold while I check_” or _“Verifying your input.”_
 
     #### Call Outcome Tagging
 
     Optionally, add a **keyword tag** to label this flow’s result (e.g., `validated`, `invalid_number`). This helps track call outcomes later in reports or analytics.
   </Step>
-  <Step title="Save the Filter" titleSize="h2">
+  <Step title="Save the Filter" titleSize="h3">
     Click **Done** to confirm and exit.
 
     Once done:
