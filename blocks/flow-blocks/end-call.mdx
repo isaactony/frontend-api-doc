@@ -13,7 +13,7 @@ It’s typically placed at the end of a call flow or at points where no further 
 
 - To end the conversation naturally with a final spoken message.
 - To automatically generate or define a goodbye message using context.
-- To trigger an SMS follow-up message that mirrors the call’s tone. 
+- To trigger an SMS follow-up message that mirrors the call’s tone.
 - To label and track call outcomes using tags for reporting or integration purposes.
 - Call Summary: Generate comprehensive call summary.
 - Outcome Tagging: Set custom outcome tags for analytics.
@@ -23,7 +23,7 @@ It’s typically placed at the end of a call flow or at points where no further 
 
 Use this block in scenarios such as:
 
-- Wrapping up a completed interaction (e.g., after confirming an appointment or providing requested info). 
+- Wrapping up a completed interaction (e.g., after confirming an appointment or providing requested info).
 - Ending failed or fallback paths (e.g., when no valid input is received).
 - Closing flows after conditional routing, such as when eligibility or verification fails.
 - Finishing conversations with a personalized or dynamic closing message.
@@ -47,9 +47,9 @@ Use this block in scenarios such as:
     - The model analyzes what has been said and creates a natural, polite closing line.
     - Example prompt:
 
-      > “Generate an appropriate goodbye message based on the conversation context to be spoken immediately before ending the call. The user will not say anything after you speak.”
+      > _“Generate an appropriate goodbye message based on the conversation context to be spoken immediately before ending the call. The user will not say anything after you speak.”_
 
-    _Best for adaptive flows where closing messages depend on the situation._
+    Best for adaptive flows where closing messages depend on the situation.
 
     #### **Option 2: Fixed Message**
 
@@ -61,22 +61,6 @@ Use this block in scenarios such as:
     _Best for consistent, predefined call closings._
   </Step>
   <Step title="Configure Advanced Settings">
-    Click the **Advanced Settings** dropdown to unlock more control options.
-
-    #### **1. SMS Message Prompt**
-
-    Use this if you want Phonely to also send a **follow-up SMS** that mirrors the voice message.\
-    This can confirm the conversation or summarize next steps.
-
-    **How it works:**
-
-    - The system rephrases your end call message into a natural text tone.
-    - Example prompt:
-
-      > “Rephrase the following message from a voice conversation to be more appropriate for a text conversation, while keeping the same meaning and sentiment.”
-
-    _Useful for flows where follow-ups or confirmations are needed after a call ends._
-
     #### **2. Call Outcome Tagging**
 
     This allows you to tag the call with **keywords** that describe its result (e.g., _completed_, _failed_verification_, _voicemail_, _no_response_).
@@ -90,7 +74,7 @@ Use this block in scenarios such as:
     _Helps filter or analyze call outcomes later in analytics dashboards._
   </Step>
   <Step title="Save and Finalize">
-    Click **✔ Done** once all required fields are filled.\
+    Click **Done** once all required fields are filled.\
     The End Call block will now appear as
   </Step>
 </Steps>
