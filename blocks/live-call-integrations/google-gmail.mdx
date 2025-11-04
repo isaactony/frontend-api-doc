@@ -3,7 +3,7 @@ description: "Description of your new file."
 title: "Connecting a Gmail Account to Phonely"
 ---
 
-Phonely’s Gmail integration allows your automated call flows to **send emails directly from your Gmail account**, perfect for follow-ups, confirmations, or notifications triggered during live calls.
+Phonely’s Gmail integration allows your automated call flows to send emails directly from your Gmail account, perfect for follow-ups, confirmations, or notifications triggered during live calls.
 
 This guide walks you through every step of connecting your Gmail account and testing the integration successfully.
 
@@ -12,8 +12,8 @@ This guide walks you through every step of connecting your Gmail account and tes
 1. In your flow editor, locate the point where you want to send an email.
 2. Click the **➕ (plus)** icon under the block (for example, under a _Collect_ block).
 3. A menu appears with two sections:
-   - **Flow blocks** (like Talk, Collect, Ask Exactly)
-   - **Live Call Actions**
+   - Flow blocks (like Talk, Collect, Ask Exactly)
+   - Live Call Actions
 4. From **Live Call Actions**, select **Gmail**.
 
 You’ll now see a new **Gmail** block added to your flow.
@@ -37,7 +37,7 @@ Before you can send emails, Phonely needs permission to access your Gmail accoun
   <Step title="Click Connect">
     You’ll be redirected to Google’s authentication page.
   </Step>
-  <Step title="Sign in with the Gmail account you want to use.">
+  <Step title="Sign in with the Gmail account you want to use." titleSize="p">
     
   </Step>
   <Step title="Allow Phonely to access your Gmail for sending emails">
@@ -66,7 +66,7 @@ Next, define what email should be sent.
 | **Subject** | The subject line of your email (e.g., _Follow-up from our conversation_). |
 | **Body**    | The main content of your email. You can include plain text or HTML.       |
 
-Once you fill these fields, the **Fill in required fields to continue** button becomes active.
+Once you fill these fields, the Fill in required fields to continue button becomes active.
 
 ### **Advanced Settings**
 
@@ -95,13 +95,7 @@ The **Test** tab lets you verify your configuration by sending a real email.
    You’ll see all the details you set:
 2. Click **Test**.
 
-Phonely will send an actual email to the address provided.
-
-### Expected Result
-
-You should see a confirmation:
-
-In your Gmail inbox, the test message should look like this:
+Phonely will send an actual email to the address provided with the detailed entered in the subject and body fields.
 
 ## Save and Connect to the Next Block
 
