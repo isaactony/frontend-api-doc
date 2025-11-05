@@ -78,11 +78,11 @@ Let’s build a **Make Appointment** Custom Action that collects a preferred tim
     - If the caller chooses a time, capture their response with another **Collect** block (e.g., `preferredSlot`).
   </Step>
   <Step title="Book the Appointment" titleSize="h3">
-    Next, add a second **API Request** block to confirm the booking:
+    Next, add a second API Request block to confirm the booking:
 
-    - **Endpoint**
-    - **Method:** `POST`
-    - **Body Example:**
+    - Endpoint
+    - Method: `POST`
+    - Body Example
 
       ```
       {
@@ -136,13 +136,13 @@ Let’s build a **Make Appointment** Custom Action that collects a preferred tim
 
     Make sure every outcome path from your Custom Action connects to the appropriate block:
 
-    | **Output Path**    | **Typical Connection**                          | **Example Action**                                                        |
-    | :----------------- | :---------------------------------------------- | :------------------------------------------------------------------------ |
-    | **Success**        | End Call\> **Send SMS** or **Send Email**       | “Your consultation is confirmed for Thursday at 2 PM.”                    |
-    | **Error**          | \> **Escalate to Support** or **Transfer Call** | Route the caller to a live receptionist if booking fails.                 |
-    | **Not Interested** | \> **End Call**                                 | Politely close the call: “Alright, no problem — thank you for your time.” |
+    | **Output Path**    | **Typical Connection**                  | **Example Action**                                                        |
+    | :----------------- | :-------------------------------------- | :------------------------------------------------------------------------ |
+    | **Success**        | End Call\> Send SMS or Send Email       | “Your consultation is confirmed for Thursday at 2 PM.”                    |
+    | **Error**          | \> Escalate to Support or Transfer Call | Route the caller to a live receptionist if booking fails.                 |
+    | **Not Interested** | \> End Call                             | Politely close the call: “Alright, no problem — thank you for your time.” |
 
-    These connections ensure that **each scenario is gracefully handled** without leaving the caller in an unfinished state.
+    These connections ensure that each scenario is gracefully handled without leaving the caller in an unfinished state.
 
     **Add Optional Post-Call Actions**
 
