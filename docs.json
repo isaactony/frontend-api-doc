@@ -91,7 +91,8 @@
                 "group": "Post Call Actions",
                 "pages": [
                   "blocks/post-call-actions/post-call-overview",
-                  "blocks/post-call-actions/post-call-send-email"
+                  "blocks/post-call-actions/post-call-send-email",
+                  "blocks/post-call-actions/connect-to-google-drive"
                 ]
               },
               {
