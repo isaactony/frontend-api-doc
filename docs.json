@@ -106,7 +106,7 @@
               {
                 "group": "Custom Actions",
                 "pages": [
-                  "custom-integrations/custom-actions"
+                  "blocks/custom-integrations/custom-actions"
                 ]
               }
             ]
