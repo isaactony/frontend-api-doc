@@ -102,6 +102,12 @@
                   "blocks/live-call-integrations/googlecalendar",
                   "blocks/live-call-integrations/google-meet"
                 ]
+              },
+              {
+                "group": "Custom Actions",
+                "pages": [
+                  "custom-integrations/custom-actions"
+                ]
               }
             ]
           },
