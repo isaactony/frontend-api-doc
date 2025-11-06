@@ -104,23 +104,36 @@ Let’s walk through every part of the setup shown in your screenshots.
 
     Then enter your comparison value.
   </Step>
-  <Step title="Add Multiple Conditions" titleSize="h3">
-    To check multiple rules:
+  <Step title="Add Multiple Cases and Conditions" titleSize="h3">
+    You can branch your flow based on cases, where each case represents a possible path or scenario. Each case can contain one or more conditions, which define the logic that must be met for that path to trigger.
 
-    1. Click **➕ Add Condition** to create a new condition.
-    2. Each added condition can check a separate variable or logic path.
+    ![Cases And Conditions In A Filter Block Gi](/assets/cases-and-conditions-in-a-filter-block.gif)
 
-    Now, choose your **Logic Operator**:
+    #### Cases
 
-    | Logic Option | Description                                                  |
-    | :----------- | :----------------------------------------------------------- |
-    | **And**      | All conditions must be true to continue along the True path. |
-    | **Or**       | Only one condition must be true to continue.                 |
+    A case represents a distinct route your flow can take. For example, _Case 1_ might handle verified callers, while _Case 2_ handles unverified callers.\
+    Use **➕ Add Case** to create a new case with its own set of conditions.
 
-    For example:
+    #### Conditions
 
-    - And \> `caller_name = John` and `caller_phone = 123456`
-    - Or \> `caller_name = John` or `caller_name = Jane`
+    Within each case, you can define one or more conditions to check specific rules or data values.
+
+    - Click **➕ Add Condition** to add another rule within the same case.
+    - Each condition can evaluate a different variable, such as caller name, phone number, or appointment type.
+
+    #### Logic Operators
+
+    When you have multiple conditions in a case, choose how they interact using a **Logic Operator**:
+
+    | Logic Option | Description                                                |
+    | :----------- | :--------------------------------------------------------- |
+    | **And**      | All conditions must be true for the case to match.         |
+    | **Or**       | Only one condition needs to be true for the case to match. |
+
+    #### Example
+
+    - **And** → `caller_name = John` **and** `caller_phone = 123456`
+    - **Or** → `caller_name = John` **or** `caller_name = Jane`
   </Step>
   <Step title="Configure Advanced Settings" titleSize="h3">
     Scroll down to **Advanced Settings**.
