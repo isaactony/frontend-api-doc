@@ -19,7 +19,7 @@ Think of a Custom Action as a mini reusable workflow inside your larger flow. It
 
 ## Building a Custom Action (Appointment Example)
 
-Let’s build a **Make Appointment** Custom Action that collects a preferred time, checks availability, and books an appointment.
+Let’s build a Make Appointment Custom Action that collects a preferred time, checks availability, and books an appointment.
 
 ![How To Create A Custom Action Gi](/assets/how-to-create-a-custom-action.gif)
 
@@ -32,7 +32,7 @@ Let’s build a **Make Appointment** Custom Action that collects a preferred tim
   <Step title="Add Blocks to Your Custom Action" titleSize="h3">
     Inside the purple area (your Custom Action workspace), you can start building just like you would in a regular flow.
 
-    - Click the **＋ **button below**the Start node**  to open the block selector, then choose any block you want to add — for example, Talk, Collect, API Request, or Send Email.
+    - Click the ****＋ ****button below the ****Start node****  to open the block selector, then choose any block you want to add — for example, Talk, Collect, API Request, or Send Email.
     - Alternatively, you can drag blocks into the purple area from an existing flow.
 
     <Tip>
@@ -43,8 +43,7 @@ Let’s build a **Make Appointment** Custom Action that collects a preferred tim
     Inside the purple area, you can drag and connect blocks just like a normal flow.
   </Step>
   <Step title="Example: Configuring an Appointment Custom Action " titleSize="h3">
-    Let’s walk through how to configure a **Custom Action** that handles appointment scheduling for a legal office.\
-    In this example, the goal is to let your AI agent collect the client’s preferred time, check availability, and book a consultation slot automatically.
+    Let’s walk through how to configure a Custom Action that handles appointment scheduling for a legal office.
 
     #### **Connect an API Request Block**
 
@@ -100,6 +99,8 @@ Let’s build a **Make Appointment** Custom Action that collects a preferred tim
     Output nodes define how your **Custom Action** communicates results back to the main flow.\
     They act as exit points - determining what happens once your action finishes, whether it succeeds, fails, or the caller ends the process.
 
+    ![Managing Output Nodes Gi](/assets/managing-output-nodes.gif)
+
     **Understanding Output Paths**
 
     Each output path represents a possible outcome of your action. For example:
@@ -148,7 +149,7 @@ Let’s build a **Make Appointment** Custom Action that collects a preferred tim
     - **Send Email:** Send an internal summary to your legal assistant or client.
     - **Send SMS:** Send a text reminder or confirmation link.
     - **API Request:** Log the appointment into your CRM or case-management system.
-    - **Code Block:** Run custom logic — for example, update case status or trigger automation in another tool.
+    - **Code Block:** Run custom logic - for example, update case status or trigger automation in another tool.
 
     Once all nodes are connected and fields configured, your Custom Action for appointment booking is complete.\
     In the next section, we’ll cover how to publish your Custom Action to your organization or the Phonely Marketplace so it can be reused by others.
@@ -172,7 +173,7 @@ Let’s build a **Make Appointment** Custom Action that collects a preferred tim
     | **Publish to Marketplace**  | Submits the action for public review and distribution, making it available to all users on Phonely.                                             |
   </Step>
   <Step title="Configure Customizable Fields" titleSize="h3">
-    After selecting a publish option, Phonely will prompt you to **configure fields**.\
+    After selecting a publish option, Phonely will prompt you to configure fields.\
     This step defines which variables other users can edit when they use your Custom Action in their own flows.
 
     1. The **Configure Fields** window opens automatically.\
@@ -187,14 +188,10 @@ Let’s build a **Make Appointment** Custom Action that collects a preferred tim
     After configuring fields, you’ll move to the **Finalize Custom Action** window.\
     This is where you define how your integration will appear to others.
 
-    1. **Integration Name:**\
-       Choose an existing integration or create a new one.
-    2. **Description:**\
-       Provide a clear summary of what your Custom Action does.
-    3. **Icon:**\
-       Select an icon to represent your Custom Action (e.g., a purple grid or custom graphic).
-    4. **Action Name:**\
-       Enter a short, clear title for the action.
+    1. **Integration Name: **Choose an existing integration or create a new one.
+    2. **Description: **Provide a clear summary of what your Custom Action does.
+    3. **Icon: **Select an icon to represent your Custom Action. 
+    4. **Action Name: **Enter a short, clear title for the action.
     5. Click **Submit** to finalize and publish.
 
        ![Create Custom Action Pn](/assets/create-custom-action.png)
@@ -212,14 +209,12 @@ Let’s build a **Make Appointment** Custom Action that collects a preferred tim
 
     - Update the action
     - Edit metadata (name, description)
-    - Re-publish 
+    - Re-publish
 
-     Team members can find it in the **Add Action** menu under your chosen integration name ready to drag, configure, and connect into their own call flows.
+    Team members can find it in the **Add Action** menu under your chosen integration name ready to drag, configure, and connect into their own call flows.
 
     ![How To Use Published Custom Actions Gi](/assets/how-to-use-published-custom-actions.gif)
   </Step>
 </Steps>
-
-#### 
 
 ---
