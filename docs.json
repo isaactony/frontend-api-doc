@@ -54,12 +54,6 @@
             ]
           },
           {
-            "group": "Call History and Analytics",
-            "pages": [
-              "capabilities/call-history-ai-analytics"
-            ]
-          },
-          {
             "group": "Call Flows",
             "pages": [
               {
@@ -129,6 +123,12 @@
               "agent-knowledge-base/import-from-external",
               "agent-knowledge-base/managing-data-sources"
 
+            ]
+          },
+                    {
+            "group": "Call History and Analytics",
+            "pages": [
+              "capabilities/call-history-ai-analytics"
             ]
           },
           {
