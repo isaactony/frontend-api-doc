@@ -72,24 +72,85 @@ When authorization is successful:
 
 ## 5. Configure Email Settings
 
-In the **Configure** step, define the details of the email that will be sent by your agent.
+In the **Configure** step, define exactly how your agent should send the email during or after a call. This includes setting recipients, subject, body content, and fine-tuning behavior through **Advanced Settings**.
 
-1. **Recipient Email**
-   - Enter the target email address or use dynamic variables from the call .
-   - You can add multiple recipients.
-   - During live calls, this could be a support address or teammate; after calls, it might be a customer follow-up address.
-2. **Subject Line**
-   - Write a clear subject.
-   - Include call-related variables like `caller_name`, `call_id`, or `call_summary` for personalized messages.
-3. **Message Body**
-   - Draft the content of the email.
-   - Use this space to send thank-you messages, call outcomes, or data collected during the conversation.
-   - HTML formatting is supported for stylized layouts or signatures.
-4. **Attachments (Optional)**
-   - Attach call summaries, transcripts, or documents generated during the workflow.
-   - Common use case: attach a transcript when sending internal summaries post-call.
+### **Recipient (To)**
 
-![Microsoft Outlook Configuration Pn](/assets/microsoft-outlook-configuration.png)
+Enter one or more email addresses that should receive the message.
+
+- Use Add Recipient to include multiple recipients.
+- You can use dynamic variables (e.g., `caller_email`) to personalize who receives the message based on the call data.
+- For live calls, this might be a teammate or support inbox; for post-call workflows, it’s often the customer or lead.
+
+### **Subject**
+
+Write a clear, relevant subject line for your email.
+
+### **Body**
+
+Compose the message that will be sent to recipients.
+
+- Use this section to share updates, summarize call details, or thank the customer for their time.
+- You can insert dynamic variables captured during the call.
+- The message can be written in Plain Text or HTML format, depending on your needs.
+
+<Tip>
+  HTML mode allows for stylized layouts, signatures, links, or branded templates, while Plain Text is best for simple, system-generated messages.
+</Tip>
+
+## **Advanced Settings**
+
+Click **Advanced Settings** to access additional configuration options that define how your email behaves.
+
+### **Body Type**
+
+Select how your email content should be formatted:
+
+- **HTML** – Use this for formatted or branded emails.
+- **Plain Text** – Use this for simpler, lightweight communication.
+
+### **Cc (Carbon Copy)**
+
+Add additional recipients who should receive a visible copy of the email.
+
+- Example: _manager@example.com_
+- This is ideal for notifying supervisors or team members of customer interactions.
+
+### **Bcc (Blind Carbon Copy)**
+
+Add recipients who will receive a hidden copy of the email.
+
+### **Reply To**
+
+Specify an email address for responses if you don’t want replies sent to the sender’s account.
+
+### **Interim Message**
+
+Enable this option to send a short, temporary message to the caller while the email is being processed during a live call.
+
+- Check **Interim Message** to activate it.
+- In the **Interim Message Prompt**, write or generate a friendly phrase such as:\
+  _“Please hold on while I send that for you.”_
+
+<Tip>
+  This setting improves caller experience by confirming that the system is working on their request.
+</Tip>
+
+### **Post Interim Message Delay (Optional)**
+
+If selected, Phonely will wait a few seconds before sending the interim message — useful for smoothing timing between live agent responses.
+
+### **Call Outcome Tagging**
+
+Add one or more tags to categorize the result of the action or call.
+
+- Example: _“follow-up,” “lead,” “escalated”_
+- These tags make it easier to filter and track calls in your reports or analytics dashboards.
+
+### **Finishing Up**
+
+Once all required fields (To, Subject, and Body) are filled in, the Continue button becomes active.\
+Click Continue to move on to the Test step, where you can send a test email and verify that your configuration works as intended.
 
 ## 6. Test the Integration
 
