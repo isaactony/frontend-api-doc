@@ -97,8 +97,7 @@
                 "pages": [
                   "blocks/live-call-integrations/zapier-live",
                   "blocks/live-call-integrations/google-sheet-live",
-                  "blocks/live-call-integrations/googlecalendar",
-                  "blocks/live-call-integrations/google-meet",
+                  "blocks/live-call-integrations/google-calendar",
                   "blocks/live-call-integrations/microsoft-outlook",
                   "blocks/live-call-integrations/slack"
                 ]
