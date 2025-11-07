@@ -1,16 +1,17 @@
 ---
-title: 'Transfer Call'
-description: 'Hand off live calls directly to humans or designated phone numbers with dynamic routing capabilities'
+title: "Transfer Call"
+description: "Hand off live calls directly to humans or designated phone numbers with dynamic routing capabilities"
 ---
+
 In this article, you will learn how to use Phonely's Transfer Call Block. The Transfer Call Block is a powerful tool that allows your AI agent to transfer calls to specific phone numbers or dynamically route calls using variables retrieved from external sources, such as APIs. This guide walks you through both straightforward and dynamic use cases for leveraging this essential feature in your automated workflows.
 
 ## What is it?
 
 The Transfer Call Block allows your Phonely AI to hand off a live call directly to a human or another designated phone number, making it invaluable for routing callers to the right department, agent, or service.
 
-<div class="responsive-iframe-container">
-  <iframe src="https://www.youtube.com/embed/ddLKOGpXIMI" title="Transfer Flow Block" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
+<iframe src="https://www.youtube.com/embed/ddLKOGpXIMI" title="YouTube video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
+
+<div class="responsive-iframe-container" />
 
 ## Key Features
 
@@ -28,7 +29,7 @@ The Transfer Call Block provides unparalleled flexibility for routing calls, mak
 
 The Transfer Call Block can be configured for both simple, static transfers and more complex, dynamic routing scenarios.
 
-**• Simple Use Case: Basic Call Transfers**
+## **Simple Use Case: Basic Call Transfers**
 
 This is the most straightforward application, where calls are transferred to a pre-defined phone number.
 
@@ -42,6 +43,7 @@ This is the most straightforward application, where calls are transferred to a p
 Set trigger conditions within the preceding blocks in your workflow to determine when a call should be transferred.
 
 **Example**: Transfer the call if the customer:
+
 - Asks to speak with a person.
 - Appears frustrated during the conversation.
 
@@ -53,14 +55,14 @@ Add a message that will play for the caller while the transfer is in progress, s
 
 Assign a Call Outcome Tag (e.g., "Sales Transfer") to track and analyze transferred calls in your dashboard and analytics, providing valuable insights.
 
-**• Bonus: Department Transfers**
+## **Bonus: Department Transfers**
 
 For routing to different departments, you can combine the Transfer Call Block with other Phonely features:
 
 1. Add an Ask Exactly Block before the transfer to ask the caller which department they would like to reach (e.g., Sales, Marketing, Support).
 2. Route calls to the appropriate department by duplicating the Transfer Call block and assigning specific department phone numbers to each branch.
 
-**• Dynamic Use Case: Real-time Call Transfers via API**
+## **Dynamic Use Case: Real-time Call Transfers via API**
 
 This application is ideal for scenarios where target phone numbers are not fixed (e.g., routing to the next available agent in a call center) and need to be retrieved dynamically.
 
