@@ -51,20 +51,13 @@ Let’s build a Make Appointment Custom Action that collects a preferred time, c
 
     - Click the **＋ button** under your Collect block and select **API Request**.
     - In the configuration panel:
-      - Method:  `GET`
-      - Endpoint
-      - Headers: include your `Content-Type` (e.g., `application/json`) and `apiKey`
-      - Body Parameters
 
-        ```
-        {
-          "startTime": "{{collected.startTime}}",
-          "endTime": "{{collected.endTime}}",
-          "attorneyId": "12345"
-        }
-        
-        ```
-      - You can reference any collected variables using double curly braces `{{ }}`.
+
+    - Method:  `GET`
+    - Endpoint
+    - Headers: include your `Content-Type` (e.g., `application/json`) and `apiKey`
+    - Body Parameters. 
+    - You can reference any collected variables using double curly braces.
 
     This request checks available appointment slots for the specified time range.
   </Step>
@@ -82,16 +75,6 @@ Let’s build a Make Appointment Custom Action that collects a preferred time, c
 
     - Endpoint
     - Method: `POST`
-    - Body Example
-
-      ```
-      {
-        "name": "{{collected.name}}",
-        "email": "{{collected.email}}",
-        "selectedSlot": "{{collected.preferredSlot}}"
-      }
-      
-      ```
 
     If the booking is successful, the API will return a confirmation response with details like `bookingId` or `meetingLink`.
   </Step>
