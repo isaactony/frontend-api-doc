@@ -19,7 +19,7 @@ You can configure this integration to:
 3. Click the **plus (+)** icon after any block (commonly after **End Call**).
 4. From **Post Call Actions**, select **Send Call Data**.
 
- This action is triggered once the call ends, ensuring all relevant data is finalized before being sent.
+This action is triggered once the call ends, ensuring all relevant data is finalized before being sent.
 
 ## 2. Configure Webhook Settings
 
@@ -37,7 +37,7 @@ Enter the endpoint URL where the data will be sent.
 
 Toggle Send full call data to decide whether Phonely should send all available call fields or only specific ones.
 
-### **Option A: Full Call Data. **
+### Option A: Full Call Data. 
 
 When this is checked, Phonely automatically sends the entire call payload to your webhook.
 
@@ -58,7 +58,7 @@ The **Manual** option lets you build a JSON payload by specifying each key-value
 
 ### **How to Use**
 
-1. Click **Add Field** to create new entries.
+1. Click **Add Field** to create new entries.                  
 2. Under **Key**, define the name of your data field (e.g., `callerName`, `callSummary`).
 3. Under **Value**, enter a static value or select a dynamic variable from your workflow.
 4. Select the **Type** (String, Number, Boolean, etc.) for each field.
@@ -66,13 +66,13 @@ The **Manual** option lets you build a JSON payload by specifying each key-value
 ![image.png](/images/image.png)
 
 <Tip>
-   Manual mode is best for simple, structured payloads sent to other systems like CRMs or notification apps.
+  Manual mode is best for simple, structured payloads sent to other systems like CRMs or notification apps.
 </Tip>
 
 ## 6. Code Mode
 
 For advanced users, the **Code** option allows you to directly write or paste raw JSON.\
-You can freely format your request body, insert variables, and structure nested objects.    
+You can freely format your request body, insert variables, and structure nested objects.
 
 ![Send Full Data Code Pn](/assets/send-full-data-code.png)
 

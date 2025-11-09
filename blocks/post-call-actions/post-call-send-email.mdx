@@ -12,16 +12,11 @@ The Post-Call Send Email Block serves as a vital tool for automating follow-up c
 ## Key Features of the Post-Call Send Email Block
 
 1. **Automated Email Dispatch**: Sends emails automatically from your Phonely agent to a specified recipient after the call has ended.
-
 2. **Variable-Rich Content**: Dynamically compose email subject lines and body content by embedding variables from the ongoing conversation (e.g., caller's name, provided email, phone number, call summary, dashboard URL to the call recording).
-
 3. **Plain Text or HTML**: Choose between sending emails in plain text format or with rich HTML formatting for enhanced presentation.
-
 4. **Flexible Triggering**:
    - **Post Call Action**: Triggers the email after the call has ended. Post-call emails are highly valuable as they can be configured to send even if the caller doesn't complete the entire workflow, acting as a preemptive notification.
-
 5. **Custom Recipient & Sender**: Define the recipient email address and the "From" name that appears on the email.
-
 6. **Variable Formatting**: Utilizes Phonely's variable formatting capabilities, ensuring captured data (like phone numbers) is presented in a desired style.
 
 ## How to Use the Post Call Send Email Block
@@ -32,7 +27,7 @@ Implementing the Post Call Send Email Block involves setting up your workflow to
 
 1. Access the Workflows Page from your Phonely Dashboard.
 2. Create a New Flow, or select an existing one to edit.
-3. Ensure a Trigger Condition is Set: Define a trigger for your workflow (e.g., "when someone asks for a callback" or "wants to speak to a person"). This ensures the flow initiates under specific circumstances.
+3. Ensure a Trigger Condition is Set: Define a trigger for your workflow (e.g., "when someone asks for a callback" or "wants to speak to a person"). This ensures the flow initiates under specific circumstances.    
 
 **2. Gather Necessary Information (e.g., using a Prompt Block)**
 
@@ -61,7 +56,7 @@ Crucially, you can embed any variables you have previously stored in your workfl
   - Email: [caller_email]
   - Phone Number: [caller_phone_number]
   - Summary of Conversation: [summary] (Phonely can capture a live summary)
-  - Link to Call: [dashboard_url] (Provides a direct link to the call recording in your Phonely dashboard)
+  - Link to Call: [dashboard_url] (Provides a direct link to the call recording in your Phonely dashboard). 
 
 4. Set Email Recipient: Specify the email address to which this automated email should be sent. If you want to send this to your team, you can send to a static email address. If you want to send this to your customer, you can select the email variable that was earlier defined in the call.
 5. Set From Name: Define the name that will appear as the sender of the email.
@@ -71,22 +66,19 @@ Crucially, you can embed any variables you have previously stored in your workfl
 Here's an example workflow to illustrate the process of using the Post Call Send Email Block for callback requests:
 
 1. **Trigger**: Customer says "I want to schedule an appointment with Joe"
-
 2. **Action 1 (Prompt Block)**:
    - Instruct AI to: "Get the caller's name, email, and best callback phone number. Inform them that an appointment scheduling link will be sent to their email"
    - Store variables: customer_name (text), customer_email (email), callback_phone (phone).
-
 3. **Action 2 (Post Call Send Email Block)**:
-   - Recipient: email@example.com (or select customer_email variable for customer notifications)
-   - From Name: Phonely AI Agent
+   - Recipient: [email@example.com](mailto:email@example.com) (or select customer_email variable for customer notifications). 
+   - From Name: Phonely AI Agent. 
    - Subject: Appointment Scheduling for [customer_name]
    - Body:
      - Customer Name: [customer_name]
      - Email: [customer_email]
      - Callback Phone: [callback_phone]
      - Conversation Summary: [summary]
-     - Appointment Scheduling Link: example@cal.com
-
+     - Appointment Scheduling Link: [example@cal.com](mailto:example@cal.com)
 4. **Action 3 (End Call Block)**: Graciously end the call after collecting information and dispatching the email.
 
 ## Conclusion
