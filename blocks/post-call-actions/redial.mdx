@@ -62,10 +62,18 @@ You can configure **multiple retry attempts** for each call:
 
 Example setup:
 
-| Attempt | Action      | Delay Duration | Unit    | Voicemail Message                      |
-| ------- | ----------- | :------------- | ------- | :------------------------------------- |
-|         | Retry After | 30             | Minutes | “We tried reaching you earlier today…” |
-|         | Retry After | 2              | Hours   | “Following up regarding your request…” |
+<Tip>
+  You can configure more than one redial attempt to maximize your chances of reaching the customer. For example:
+
+  - **First Attempt:** Set the action to **Retry After**, then enter a delay of **30 minutes**.\
+    This means Phonely will automatically try to call the same number again half an hour after the first call ends.\
+    You might also add a short voicemail message such as:\
+    _“We tried reaching you earlier today regarding your inquiry. Please call us back when convenient.”_
+  - **Second Attempt:** Add another redial attempt and again choose **Retry After**, this time with a delay of **2 hours**.\
+    This ensures a follow-up attempt happens later in the day, giving the customer more time to respond.\
+    You could use a different voicemail, for example:\
+    _“Following up on our earlier call — we just wanted to reconnect and assist you further.”_
+</Tip>
 
 This tiered approach increases your chances of reaching the customer while avoiding spammy behavior.
 
