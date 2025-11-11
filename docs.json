@@ -25,17 +25,18 @@
             ]
           },
           {
+            "group": "Dashboard & Accounts",
+            "pages": [
+            ]
+          },
+          {
             "group": "Key Concepts",
             "pages": [
               
               "key-concepts/flows",
-              "key-concepts/routing"
-            ]
-          },
-          {
-            "group": "Features",
-            "pages": [
-              "capabilities/variables"
+              "key-concepts/routing",
+              "key-concepts/variables"
+
             ]
           },
           {
