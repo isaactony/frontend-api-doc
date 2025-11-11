@@ -1,6 +1,6 @@
 ---
 title: "Connecting to Make"
-description: "Description of your new file."
+description: "Learn how to share call data with make using webhooks"
 ---
 
 This guide explains how to connect your **Phonely** account to **Make (formerly Integromat)** to automatically send call data and trigger workflows. You’ll create a webhook in Make, configure a scenario to receive data from Phonely, and set up a return output scenario for handling structured responses.
@@ -18,41 +18,27 @@ To receive and process this data correctly, Make requires:
 
 1. In Make, go to **Webhooks** from the left-hand menu.
 2. Click **Open Scenario Builder**.
+3. In the Scenario Builder, click the **\+** icon to add a module.
+4. Search for **Webhooks (Built-in)**.
 
-![image.png](/images/image.png)
-
-2. In the Scenario Builder, click the **\+** icon to add a module.
-3. Search for **Webhooks (Built-in)**.
-
-![image.png](/images/image.png)
 
 4. Select **Custom Webhook** under **Triggers**.
-5. Click **Add**, name your webhook (e.g., _Phonely Call Event_), and click **Save**.
+5. Click **Add**, name your webhook, and click **Save**.
 6. Make will generate a unique **Webhook URL** (e.g.,\
    `https://hook.eu1.make.com/your-webhook-id`).
-7. Copy this URL — you’ll need it in Phonely.
+7. Clikc copy address to clipborad to copy the webhook url. 
 
-### Create a Return Output Scenario in Make
+![How To Create A Webhook In Make Gi](/assets/how-to-create-a-webhook-in-make.gif)
 
-A return output scenario is required so that Make can send responses or processed data back to Phonely (e.g., summaries, post-call notes, or analytics).
+Click **Run once** — you should see “**Listening for data…**”.
 
-1. In the Make **Scenarios** section, create a new scenario.
-2. Add a **Webhooks** module as the trigger (Custom Webhook or Mailhook, depending on use case).
-3. Connect this to a **Scenarios \> Return Output** module.
-4. Open **Scenario Inputs and Outputs** from the bottom panel:
-   - Under **Scenario Inputs**, define the expected fields from Phonely (e.g., `callername`, `callerphonenumber`, `summary`, `transcript`).
-   - Under **Scenario Outputs**, define what data you want Make to return (e.g., processed summary, success message, timestamp).
-5. Click **Save** once all input and output structures match the Phonely data fields.
+<Tip>
+  If you run the Phonely test _before_ the scenario is listening, you get and error saying that there is no scenario listening for this webhook. 
+</Tip>
 
-### Link the Return Output Scenario to Your Webhook
+If Make receives it, you’ll see a successful bundle appear in that webhook module, and Phonely’s test will show success.
 
-1. In your **first scenario**, after the **Webhook** trigger, add another module.
-2. Choose **Scenarios \> Call a Subscenario**.
-3. Select the **Return Output** scenario you just created.
-4. Map the input fields from Phonely to the sub-scenario inputs.
-5. Save and run the scenario once to activate it.
-
-Now, every time Phonely triggers the webhook, the call data flows into Make, is processed according to your setup, and returns structured outputs.
+Without closing that page, go back to **Phonely** and follow the steps below.
 
 ### Connect the Webhook in Phonely
 
@@ -68,7 +54,13 @@ Now, every time Phonely triggers the webhook, the call data flows into Make, is 
    - `summary`
    - `longSummary`
    - `ai_success`
-4. Click **Continue** and test the webhook — you should see a success message like:
+4. Click **Continue** and test the webhook. 
+
+![How To Connect Phonely To Make Gi](/assets/how-to-connect-phonely-to-make.gif)
+
+### Test and Verify
+
+1. Trigger a test call or event from Phonely.  You should see a success message like. 
 
    ```
    {
@@ -76,11 +68,7 @@ Now, every time Phonely triggers the webhook, the call data flows into Make, is 
    }
    ```
 
-### Test and Verify
 
-1. Trigger a test call or event from Phonely.
-2. In Make, open your scenario and check the execution log.
-3. Confirm that:
+1. In Make, open your scenario and check the execution log.
+2. Confirm that:
    - The webhook received the call data.
-   - The correct scenario ran.
-   - The response was sent back successfully.
