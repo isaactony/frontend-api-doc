@@ -1,0 +1,114 @@
+---
+title: "Creating and Managing Agents"
+description: "Description of your new file."
+---
+
+Agents are the core of your Phonely workspace.\
+Each agent represents a virtual assistant that can manage calls, collect data, and automate workflows using custom call flows, knowledge sources, and integrations.
+
+This guide explains how to **create**, **duplicate**, and **manage agents**, as well as how organizations, workflows, and phone numbers fit together in the Phonely ecosystem.
+
+### Understanding Agents in Phonely
+
+Each **Agent** in Phonely acts as an independent assistant with its own:
+
+- **Primary phone number** – the number used to handle incoming and outgoing calls.
+- **Call workflows** – logic and conversation paths unique to that agent.
+- **Knowledge base** – information the agent uses to answer questions and make decisions.
+- **Guidelines** – instructions for how the agent should behave and respond.
+- **Settings** – configurations for integrations, notifications, and post-call actions.
+
+Agents operate **independently** under an organization, meaning workflows and data are **not shared across agents** unless explicitly duplicated.
+
+### Creating a New Agent
+
+You can create a new agent from scratch to handle a specific business area or campaign.
+
+1. From the **left sidebar**, click **Create Agent**.
+2. In the **New Agent** modal, choose **Create**.
+3. Enter a name for your new agent (e.g., _Support Agent_, _Finance Assistant_).
+4. Select the **Organization** this agent belongs to.
+
+<Tip>
+  If you have multiple organizations, pick the one that owns the phone number and associated data
+</Tip>
+
+5. Click **Create**.
+
+Your new agent will appear in the agent list on the left, ready for configuration.
+
+### Duplicating an Existing Agent
+
+Duplicating an agent allows you to quickly reuse an existing setup — including workflows, integrations, and voice settings — without rebuilding from scratch.
+
+1. Click **Create Agent**.
+2. In the modal, select the **Duplicate** option.
+3. Choose the **Agent** you want to duplicate from the dropdown list.\
+   _(For example, duplicate “Phonely” or “LegalAgent” if they already have a configured workflow.)_
+4. Select the **Organization** to assign the duplicate agent under.
+5. Click **Duplicate**.
+
+Phonely will duplicate the selected agent and append the name (copy) and inherit:
+
+- The existing workflows.
+- The voice and behavior settings.
+- Any knowledge base sources or guidelines from the original.
+
+You can then modify the duplicated agent independently — e.g., assign a new number, tweak prompts, or change post-call actions.
+
+### Assigning Phone Numbers
+
+Each agent is assigned **one primary phone number**.\
+This number is unique to the agent and determines how calls are routed and tracked.
+
+- When creating a new agent, a number can be automatically assigned.
+- You can later configure or change the number under the **Settings** tab of that agent.
+- All call logs, transcripts, and reports are tied to that number and its workflows.
+
+### Workflows are Agent-Specific
+
+Each agent manages its own **call flows**. That means the Greeting Messages, Conditional Blocks, Redial configurations, and Post Call actions belong **only** to that specific agent.
+
+#### Example:
+
+- Your **LegalAgent** may have a workflow that gathers caller details and emails them to the legal team.
+- Your **support** agent might have a different flow that sends call data to Make via webhook.
+
+Even if the structure looks similar, these workflows are stored separately.\
+You can, however, **duplicate** an existing workflow from one agent to another using the **Duplicate Agent** feature.
+
+### Managing Knowledge Bases and Guidelines
+
+Each agent can have its own **Knowledge Base** and **Guidelines** to refine how it handles calls.
+
+- **Knowledge Base:**\
+  Upload or connect documents and resources the agent can use to answer customer questions.
+- **Guidelines:**\
+  Define tone, personality, and behavior (e.g., “Be polite but concise” or “Always verify customer identity first”).
+
+These customizations ensure each agent operates according to the department’s goals — for example, a legal agent may use compliance-related documents, while a support agent references FAQs.
+
+### Organizations and Their Importance
+
+Organizations are the **top-level structure** in Phonely.\
+They group multiple agents, workflows, and data under one account.
+
+#### Benefits of Using Organizations:
+
+- **Centralized management:** All agents, numbers, and billing are linked under one organization.
+- **Access control:** You can manage which team members can view or edit specific agents.
+- **Separation of departments:** Keep distinct data for teams (e.g., Support vs. Legal vs. Sales).
+- **Consistent settings:** Shared integrations, compliance rules, and call analytics live under the same organization.
+
+If you work with multiple clients or brands, creating a **separate organization** for each ensures data isolation and easier management.
+
+### Editing Agent Settings
+
+Once your agent is created, open it to access these sections:
+
+- **Agent Design** – Customize call flows, redial logic, and post-call actions.
+- **Knowledge Base** – Manage uploaded documents or connected data sources.
+- **Settings** – Adjust integrations, notifications, and assigned phone numbers.
+- **Guidelines** – Fine-tune tone, compliance, and behavior preferences.
+
+Each section ensures your agent performs consistently and aligns with your organization’s goals.
