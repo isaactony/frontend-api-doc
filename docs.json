@@ -25,8 +25,9 @@
             ]
           },
           {
-            "group": "Dashboard & Accounts",
+            "group": "Dashboard & Agents",
             "pages": [
+              "dashboard-and-agents/agents"
             ]
           },
           {
