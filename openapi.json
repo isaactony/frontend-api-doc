@@ -336,6 +336,231 @@
         ]
       }
     },
+    "/calls/{agentId}": {
+      "get": {
+        "summary": "List calls by agent ID",
+        "description": "Retrieves a list of calls for a specific agent with comprehensive filtering and pagination options",
+        "parameters": [
+          {
+            "name": "agentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The ID of the agent whose calls you want to retrieve"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 100
+            },
+            "description": "Maximum number of results to return"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0
+            },
+            "description": "Number of results to skip for pagination"
+          },
+          {
+            "name": "customer_phone_number",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter by customer phone number"
+          },
+          {
+            "name": "campaign_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter by campaign ID"
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": ["COMPLETED", "FAILED", "ENDED", "IN_PROGRESS"]
+              }
+            },
+            "description": "Filter by call status (can specify multiple values)"
+          },
+          {
+            "name": "sentiment",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": ["Positive", "Negative", "Neutral"]
+              }
+            },
+            "description": "Filter by sentiment (can specify multiple values)"
+          },
+          {
+            "name": "call_type",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": ["inboundPhoneCall", "outboundPhoneCall", "webCall", "dailyCall"]
+              }
+            },
+            "description": "Filter by call type (can specify multiple values)"
+          },
+          {
+            "name": "outcome",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "description": "Filter by call outcome (can specify multiple values)"
+          },
+          {
+            "name": "ended_reason",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "description": "Filter by call ended reason (can specify multiple values)"
+          },
+          {
+            "name": "mode",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "description": "Filter by call mode (can specify multiple values)"
+          },
+          {
+            "name": "start_date",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "description": "Filter calls after this date (ISO 8601 datetime format)"
+          },
+          {
+            "name": "end_date",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "description": "Filter calls before this date (ISO 8601 datetime format)"
+          },
+          {
+            "name": "min_duration",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number"
+            },
+            "description": "Minimum call duration in seconds"
+          },
+          {
+            "name": "max_duration",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number"
+            },
+            "description": "Maximum call duration in seconds"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListCallsResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Agent ID is missing or invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Invalid or missing API key",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - You do not have access to this agent",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
     "/import-number": {
       "post": {
         "summary": "Import number",
@@ -1793,6 +2018,155 @@
           "endedReason": {
             "type": "string",
             "description": "Reason for the call ending"
+          }
+        }
+      },
+      "ListCallsResponse": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CallItem"
+            },
+            "description": "Array of call objects matching the filter criteria"
+          },
+          "total": {
+            "type": "integer",
+            "description": "Total number of calls matching the filters (not limited by pagination)"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "The limit value used in the request"
+          },
+          "offset": {
+            "type": "integer",
+            "description": "The offset value used in the request"
+          }
+        }
+      },
+      "CallItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the call"
+          },
+          "agentId": {
+            "type": "string",
+            "description": "ID of the agent that handled the call"
+          },
+          "business_phone_number": {
+            "type": "string",
+            "description": "The business phone number used for the call"
+          },
+          "customer_phone_number": {
+            "type": "string",
+            "description": "The customer's phone number"
+          },
+          "started_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "ISO 8601 datetime when the call started"
+          },
+          "ended_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "ISO 8601 datetime when the call ended"
+          },
+          "duration": {
+            "type": "number",
+            "description": "Call duration in seconds"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["COMPLETED", "FAILED", "ENDED", "IN_PROGRESS"],
+            "description": "Call status"
+          },
+          "recording_url": {
+            "type": "string",
+            "description": "URL to access the call recording"
+          },
+          "ended_reason": {
+            "type": "string",
+            "description": "Reason why the call ended"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["inboundPhoneCall", "outboundPhoneCall", "webCall", "dailyCall"],
+            "description": "Type of call"
+          },
+          "mode": {
+            "type": "string",
+            "description": "Call mode"
+          },
+          "read": {
+            "type": "boolean",
+            "description": "Whether the call has been read"
+          },
+          "c_sentiment": {
+            "type": "string",
+            "enum": ["Positive", "Negative", "Neutral"],
+            "description": "Customer sentiment analysis result"
+          },
+          "c_outcome": {
+            "type": "string",
+            "description": "Call outcome classification"
+          },
+          "c_topic": {
+            "type": "string",
+            "description": "Topic identified during the call"
+          },
+          "ab_test_type": {
+            "type": "string",
+            "description": "A/B test variant"
+          },
+          "ab_test_id": {
+            "type": "string",
+            "description": "ID of the A/B test"
+          },
+          "ab_test_success": {
+            "type": "boolean",
+            "description": "Whether the A/B test was successful"
+          },
+          "draft_agent_version": {
+            "type": "string",
+            "nullable": true,
+            "description": "Version of draft agent used, if any"
+          },
+          "draft_agent_id": {
+            "type": "string",
+            "nullable": true,
+            "description": "ID of draft agent used, if any"
+          },
+          "workflow_path_history": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WorkflowAction"
+            },
+            "description": "Array of workflow actions executed during the call"
+          },
+          "campaign_id": {
+            "type": "string",
+            "nullable": true,
+            "description": "ID of the campaign associated with the call, if any"
+          }
+        }
+      },
+      "WorkflowAction": {
+        "type": "object",
+        "properties": {
+          "actionId": {
+            "type": "string",
+            "description": "ID of the workflow action"
+          },
+          "workflowId": {
+            "type": "string",
+            "description": "ID of the workflow"
+          },
+          "readableName": {
+            "type": "string",
+            "description": "Human-readable name of the action"
           }
         }
       },
