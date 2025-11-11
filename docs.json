@@ -33,7 +33,7 @@
           {
             "group": "Key Concepts",
             "pages": [
-              
+              "key-concepts/create-duplicate-agents",
               "key-concepts/flows",
               "key-concepts/routing",
               "key-concepts/variables"
