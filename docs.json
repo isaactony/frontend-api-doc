@@ -90,6 +90,7 @@
                 "pages": [
                   "blocks/post-call-actions/post-call-overview",
                   "blocks/post-call-actions/post-call-send-email",
+                  "blocks/post-call-actios/connect-to-make",
                   "blocks/post-call-actions/redial",
                   "blocks/post-call-actions/campaign",
                   "blocks/post-call-actions/connect-to-google-drive"
