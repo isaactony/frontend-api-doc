@@ -41,9 +41,10 @@
             ]
           },
           {
-            "group": "Agent Design & Settings",
-  
+            "group": "Agent Design & Settings",  
             "pages" : [
+            "agent-design/create-duplicate-agents",
+
               {
                 "group": "Voice",
               "pages": [
