@@ -25,12 +25,6 @@
             ]
           },
           {
-            "group": "Dashboard & Agents",
-            "pages": [
-              "dashboard-and-agents/agents"
-            ]
-          },
-          {
             "group": "Key Concepts",
             "pages": [
               "key-concepts/create-duplicate-agents",
