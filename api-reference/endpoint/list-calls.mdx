@@ -1,0 +1,153 @@
+---
+title: "List Calls by Agent ID"
+openapi: "GET /calls/{agentId}"
+---
+
+Retrieves a list of calls for a specific agent with comprehensive filtering and pagination options. This endpoint allows you to query call history, filter by various criteria, and paginate through results.
+
+### Request
+
+**Method:** `GET`  
+**Endpoint:** `/api/calls/{agentId}`  
+**Headers:**
+
+- `X-Authorization`: Your API key (required)
+
+**Path Parameters:**
+
+- `agentId` (string, required): The ID of the agent whose calls you want to retrieve
+
+**Query Parameters:**
+
+**Pagination:**
+
+- `limit` (number, optional): Maximum number of results to return. Default: `100`
+- `offset` (number, optional): Number of results to skip for pagination. Default: `0`
+
+**Single Value Filters:**
+
+- `customer_phone_number` (string, optional): Filter by customer phone number
+- `campaign_id` (string, optional): Filter by campaign ID
+
+**Array Filters (can specify multiple values):**
+
+- `status` (string[], optional): Filter by call status
+  - Available values: `COMPLETED`, `FAILED`, `ENDED`, `IN_PROGRESS`
+  - Example: `?status=COMPLETED&status=FAILED`
+- `sentiment` (string[], optional): Filter by sentiment
+  - Available values: `Positive`, `Negative`, `Neutral`
+  - Example: `?sentiment=Positive&sentiment=Negative`
+- `call_type` (string[], optional): Filter by call type
+  - Available values: `inboundPhoneCall`, `outboundPhoneCall`, `webCall`, `dailyCall`
+  - Example: `?call_type=inboundPhoneCall&call_type=outboundPhoneCall`
+- `outcome` (string[], optional): Filter by call outcome
+- `ended_reason` (string[], optional): Filter by call ended reason
+- `mode` (string[], optional): Filter by call mode
+
+**Date Range Filters:**
+
+- `start_date` (string, optional): Filter calls after this date (ISO 8601 datetime format)
+- `end_date` (string, optional): Filter calls before this date (ISO 8601 datetime format)
+
+**Duration Range Filters:**
+
+- `min_duration` (number, optional): Minimum call duration in seconds
+- `max_duration` (number, optional): Maximum call duration in seconds
+
+### Response
+
+**Success Response (200):**
+
+```json
+{
+  "items": [
+    {
+      "id": "string",
+      "agentId": "string",
+      "business_phone_number": "string",
+      "customer_phone_number": "string",
+      "started_at": "string",
+      "ended_at": "string",
+      "duration": number,
+      "status": "string",
+      "recording_url": "string",
+      "ended_reason": "string",
+      "type": "string",
+      "mode": "string",
+      "read": boolean,
+      "c_sentiment": "string",
+      "c_outcome": "string",
+      "c_topic": "string",
+      "ab_test_type": "string",
+      "ab_test_id": "string",
+      "ab_test_success": boolean,
+      "draft_agent_version": "string | null",
+      "draft_agent_id": "string | null",
+      "workflow_path_history": [
+        {
+          "actionId": "string",
+          "workflowId": "string",
+          "readableName": "string"
+        }
+      ],
+      "campaign_id": "string | null"
+    }
+  ],
+  "total": number,
+  "limit": number,
+  "offset": number
+}
+```
+
+**Response Fields:**
+
+**Top-level fields:**
+
+- `items` (array): Array of call objects matching the filter criteria
+- `total` (number): Total number of calls matching the filters (not limited by pagination)
+- `limit` (number): The limit value used in the request
+- `offset` (number): The offset value used in the request
+
+**Call object fields:**
+
+- `id` (string): Unique identifier for the call
+- `agentId` (string): ID of the agent that handled the call
+- `business_phone_number` (string): The business phone number used for the call
+- `customer_phone_number` (string): The customer's phone number
+- `started_at` (string): ISO 8601 datetime when the call started
+- `ended_at` (string): ISO 8601 datetime when the call ended
+- `duration` (number): Call duration in seconds
+- `status` (string): Call status (`COMPLETED`, `FAILED`, `ENDED`, `IN_PROGRESS`)
+- `recording_url` (string): URL to access the call recording
+- `ended_reason` (string): Reason why the call ended (e.g., `assistant-ended-call`)
+- `type` (string): Type of call (`inboundPhoneCall`, `outboundPhoneCall`, `webCall`, `dailyCall`)
+- `mode` (string): Call mode (e.g., `call`)
+- `read` (boolean): Whether the call has been read
+- `c_sentiment` (string): Customer sentiment analysis result (`Positive`, `Negative`, `Neutral`)
+- `c_outcome` (string): Call outcome classification
+- `c_topic` (string): Topic identified during the call
+- `ab_test_type` (string): A/B test variant (e.g., `A`, `B`)
+- `ab_test_id` (string): ID of the A/B test
+- `ab_test_success` (boolean): Whether the A/B test was successful
+- `draft_agent_version` (string | null): Version of draft agent used, if any
+- `draft_agent_id` (string | null): ID of draft agent used, if any
+- `workflow_path_history` (array): Array of workflow actions executed during the call
+  - `actionId` (string): ID of the workflow action
+  - `workflowId` (string): ID of the workflow
+  - `readableName` (string): Human-readable name of the action
+- `campaign_id` (string | null): ID of the campaign associated with the call, if any
+
+**Error Responses:**
+
+- `400 Bad Request`: Agent ID is missing or invalid
+- `401 Unauthorized`: Invalid or missing API key
+- `403 Forbidden`: You do not have access to this agent
+- `500 Internal Server Error`: Server error
+
+### Notes
+
+- Array filters can be specified multiple times in the query string to filter by multiple values
+- All date parameters should be in ISO 8601 format (e.g., `2024-01-01T00:00:00Z`)
+- Duration values are in seconds
+- Phone numbers should be URL-encoded (e.g., `+1234567890` becomes `%2B1234567890`)
+- The `total` field in the response indicates the total count of matching calls, which may be greater than the number of items returned based on the `limit` parameter
