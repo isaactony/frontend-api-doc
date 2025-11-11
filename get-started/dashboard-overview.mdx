@@ -1,0 +1,176 @@
+---
+title: "Understanding the Dashboard"
+description: "Description of your new file."
+---
+
+The **Phonely Dashboard** is where you monitor how your agents are performing, understand your call activity, and extract insights about your conversations. It provides real-time and historical analytics so you can evaluate efficiency, identify patterns, and improve your overall communication strategy.
+
+Every chart, metric, and filter on the dashboard is designed to help you answer key questions such as:
+
+- How many calls are we handling?
+- When are we busiest?
+- What are people calling about?
+- How well are our agents and flows performing?
+- What outcomes and sentiments are our calls producing?
+
+This guide walks you through every part of the dashboard—what each metric means, how filters work, and how to interpret the insights you see.
+
+## **Dashboard Overview and Controls**
+
+At the top of your dashboard, you’ll find global controls that determine what data you’re viewing. These filters ensure your analytics remain relevant and focused on specific agents, date ranges, or metrics.
+
+### **Selecting Agents**
+
+You can view performance data for one or multiple agents simultaneously.\
+Each agent represents a distinct AI assistant with its own phone number, workflows, and call flows.
+
+To select agents:
+
+1. Click the **Select Agents** dropdown.
+2. Choose the agents you’d like to include.
+3. You can select all, deselect all, or focus on one specific agent.
+
+This is particularly useful when comparing multiple agents—for example, how your _LegalAgent_ performs compared to your _Finance Agent_.
+
+### **Choosing a Date Range**
+
+Next to the agent selector, you’ll see a **date picker** that lets you define the time period for your analytics.
+
+You can choose from:
+
+- **Preset ranges** like _Last 7 Days_ or _Last 30 Days_, or
+- **Custom date ranges** by clicking specific start and end dates on the calendar.
+
+Once you click **Apply**, all graphs and data will refresh to match the selected timeframe.\
+This flexibility helps you analyze trends over time, compare performance across weeks, or investigate specific events (e.g., a new campaign launch).
+
+### **Filtering Metrics**
+
+Some widgets on the dashboard have their own filters, allowing you to focus on certain metrics or categories within the chart. For instance, under **Call Outcomes**, you can filter by _Total Calls_, _Total Duration_, or _Total Actions_.\
+This enables a deeper dive into specific performance indicators without changing your entire dashboard view.
+
+## **Understanding Key Dashboard Metrics**
+
+Each section of the dashboard focuses on a unique aspect of your communication performance. Together, they give you a full picture of how your phone agents are interacting with customers.
+
+### **1. Call Volume**
+
+The **Call Volume** chart tracks the total number of calls made and received by Phonely during the selected period. It distinguishes between:
+
+- **Inbound calls** (received by your agents) and
+- **Outbound calls** (initiated by your agents).
+
+You can use this visualization to identify trends and patterns in your call traffic:
+
+- A sudden drop in inbound calls might indicate routing issues or downtime.
+- A sharp increase may reflect a successful campaign or seasonal surge.
+
+By analyzing call volume over time, you can make informed decisions about staffing, flow optimization, and scaling your agents.
+
+### **2. Peak Times**
+
+The **Peak Times** section identifies when most calls occur during the day.\
+Each bar represents an hour block, helping you pinpoint your busiest hours.
+
+This information is essential for:
+
+- Scheduling live monitoring or human backup during high-traffic periods.
+- Timing outbound campaigns for maximum engagement.
+- Adjusting flow logic or call distribution to balance workloads.
+
+For example, if your calls peak between 3 PM and 5 PM, you can plan automated follow-ups or redials during quieter hours.
+
+### **3. End Call Reasons**
+
+The **End Call Reasons** widget automatically categorizes why each call ended.\
+Common end reasons include:
+
+- **Customer Ended** – The caller hung up intentionally.
+- **Silence Timeout** – The call ended because there was no activity for a set duration.
+- **Agent Ended** – Phonely or your AI flow ended the call based on logic or timeout.
+- **Transfer or Voicemail** – The call was redirected or logged to voicemail.
+
+Understanding end call reasons helps you identify friction points.\
+If you notice frequent timeouts, your script or flow may need adjustments.\
+If many customers hang up early, consider revising your greeting or routing logic.
+
+### **4. Call Topics**
+
+The **Call Topics** section organizes calls by detected intent or purpose.\
+Phonely uses natural language understanding to interpret what each call was about—such as _Billing Inquiry_, _Appointment Booking_, or _Technical Support_.
+
+These insights help you:
+
+- Understand what’s driving your call volume.
+- See how well your routing or automation aligns with real customer needs.
+- Identify new opportunities for automation or FAQs.
+
+For instance, if “Order Status” becomes your most frequent topic, you might introduce a dedicated flow or quick-response feature to handle it automatically.
+
+### **5. Call Actions**
+
+**Call Actions** represent the most common steps or automations your agents triggered during calls.\
+These actions could include:
+
+- Sending follow-up emails or SMS messages.
+- Creating or updating records in connected systems (like Google Sheets or Zapier).
+- Running code blocks or transferring calls.
+
+This section shows which automations are most active and how often they occur.\
+It’s an excellent indicator of workflow effectiveness—if a critical action rarely appears, it might mean users aren’t reaching that stage or an integration isn’t firing properly.
+
+### **6. Call Outcomes**
+
+**Call Outcomes** summarize what happened at the end of each call.\
+Unlike “End Call Reasons” (which describe _how_ the call technically ended), outcomes describe the **business result**.
+
+Examples of call outcomes:
+
+- Appointment booked
+- Issue resolved
+- Payment collected
+- Lead qualified
+- No answer
+
+These outcomes are vital for measuring success.\
+They help teams assess whether conversations are achieving their goals and whether call flows are converting effectively.\
+Monitoring trends in call outcomes also helps you evaluate changes over time—for example, after tweaking scripts or updating your AI prompts.
+
+### **7. Call Sentiment**
+
+The **Call Sentiment** section analyzes caller emotions and tone throughout the conversation.\
+Each call is categorized as **Positive**, **Neutral**, or **Negative** based on the caller’s language and sentiment.
+
+This insight helps you gauge customer satisfaction without manually reviewing transcripts.\
+If you notice a rise in negative sentiment, it could indicate a confusing workflow, an unhelpful agent tone, or recurring product issues.\
+On the other hand, consistently positive sentiment is a strong indicator that your AI agents are providing effective support.
+
+### **8. Agent Breakdown**
+
+The **Agent Breakdown** chart compares performance across all active agents.\
+You can toggle between several views:
+
+- **Inbound** – Total received calls per agent.
+- **Outbound** – Total outgoing calls per agent.
+- **Duration** – Average or total talk time per agent.
+- **Action** – Distribution of triggered actions per agent.
+
+This visualization helps identify high-performing agents or those handling the largest share of traffic.\
+It’s also useful for A/B testing—when you create duplicated agents to test new voices or flows, this chart quickly shows which configuration performs better.
+
+## **Filters and Data Exploration**
+
+Each of the above sections can be adjusted using the filters within the widget.\
+For instance, under **Call Outcomes**, you can display related metrics like _Total Actions_ or _Total Duration_ for deeper correlation analysis.
+
+Filters make it easier to explore relationships between different types of data, such as:
+
+- Does a higher call duration correlate with better outcomes?
+- Are certain topics consistently leading to negative sentiment?
+- Which agents are driving the most successful actions?
+
+## **Exporting Reports**
+
+Once you’ve applied your desired filters and date range, click **Export Report** in the top-right corner.\
+This generates a detailed report you can share with your team or management.\
+Exports are ideal for weekly reviews, quarterly reports, or comparing campaign performance.
