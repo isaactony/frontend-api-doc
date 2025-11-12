@@ -125,10 +125,16 @@
 
             ]
           },
-                    {
+        {
             "group": "Call History and Analytics",
             "pages": [
               "call-history-ai-analytics/call-history-ai-analytics"
+            ]
+          },
+          {
+            "group": "Settings,Plans & Billings",
+            "pages": [
+              
             ]
           },
           {
