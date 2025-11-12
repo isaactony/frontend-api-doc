@@ -128,7 +128,7 @@
                     {
             "group": "Call History and Analytics",
             "pages": [
-              "capabilities/call-history-ai-analytics"
+              "call-history-ai-analytics/call-history-ai-analytics"
             ]
           },
           {
