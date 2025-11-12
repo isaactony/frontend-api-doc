@@ -32,12 +32,11 @@
               "key-concepts/flows",
               "key-concepts/routing",
               "key-concepts/variables"
-
             ]
           },
           {
-            "group": "Agent Design & Settings",  
-            "pages" : [
+            "group": "Agent Design & Settings",
+            "pages": [
               "agent-design/voice/clone-voice",
               "agent-design/voice/add-a-voice",
               "agent-design/voice/voice-selection",
@@ -45,7 +44,6 @@
               "agent-design/voice/interruption-settings",
               "agent-design/set-agent-guidelines",
               "agent-design/flow-settings"
-  
             ]
           },
           {
@@ -63,7 +61,6 @@
                   "blocks/flow-blocks/end-call"
                 ]
               },
-              
               {
                 "group": "Live Call Actions",
                 "pages": [
@@ -75,7 +72,6 @@
                   "blocks/live-call-actions/codeflow"
                 ]
               },
-            
               {
                 "group": "Post Call Actions",
                 "pages": [
@@ -85,7 +81,6 @@
                   "blocks/post-call-actions/redial",
                   "blocks/post-call-actions/campaign",
                   "blocks/post-call-actions/connect-to-google-drive"
-                  
                 ]
               },
               {
@@ -111,7 +106,6 @@
             "pages": [
               "outboundcalling/createaoutboundcallingcampaign",
               "outboundcalling/creating-call-flows-for-outbound-campaigns"
-             
             ]
           },
           {
@@ -122,19 +116,12 @@
               "agent-knowledge-base/add-websites",
               "agent-knowledge-base/import-from-external",
               "agent-knowledge-base/managing-data-sources"
-
-            ]
-          },
-        {
-            "group": "Call History and Analytics",
-            "pages": [
-              "call-history-ai-analytics/call-history-ai-analytics"
             ]
           },
           {
-            "group": "Settings,Plans & Billings",
+            "group": "Call History and Analytics",
             "pages": [
-              
+              "call-history-ai-analytics/call-history-ai-analytics"
             ]
           },
           {
@@ -147,8 +134,6 @@
           }
         ]
       },
-      
-
       {
         "tab": "API Reference",
         "icon": "code",
@@ -224,7 +209,6 @@
           }
         ]
       },
-
       {
         "tab": "Webhook Reference",
         "icon": "webhook",
@@ -242,7 +226,6 @@
         ]
       }
     ],
-
     "global": {
       "anchors": [
         {
@@ -258,16 +241,13 @@
       ]
     }
   },
-
   "interaction": {
     "drilldown": true
   },
-
   "logo": {
     "light": "/logo/logo.png",
     "dark": "/logo/logo-white.png"
   },
-
   "navbar": {
     "links": [
       {
@@ -285,19 +265,16 @@
       "href": "https://app.phonely.ai"
     }
   },
-
   "footer": {
     "socials": {
       "linkedin": "https://www.linkedin.com/company/phonely-ai",
       "discord": "https://discord.gg/BMHPUaZG37"
     }
   },
-
   "modeToggle": {
     "default": "light",
     "isHidden": false
   },
-
   "anchors": {
     "components": {
       "Button": {
@@ -310,7 +287,6 @@
       }
     }
   },
-
   "scripts": [
     "/js/custom-toc.js",
     "/js/responsive-iframes.js"
