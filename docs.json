@@ -123,14 +123,6 @@
             "pages": [
               "call-history-ai-analytics/call-history-ai-analytics"
             ]
-          },
-          {
-            "group": "Best Practices",
-            "pages": [
-              "best-practices/overview",
-              "best-practices/flow-design",
-              "best-practices/testing"
-            ]
           }
         ]
       },
