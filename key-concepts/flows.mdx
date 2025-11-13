@@ -1,6 +1,5 @@
 ---
-title: "Flows"
-icon: "workflow"
+title: "Using Call Flows"
 description: "Build complex conversations, connect with your tools and more with flows"
 ---
 
@@ -48,8 +47,7 @@ Flows are the visual blueprints for your AI phone agents - defining what the age
 
 <Steps>
   <Step title="Enter edit mode">
-    Open your Flow and click <b>
-     Edit</b>
+    Open your Flow and click Edit
   </Step>
   <Step title="Add blocks">
     Drag desired blocks from the left sidebar onto the canvas.
@@ -61,17 +59,12 @@ Flows are the visual blueprints for your AI phone agents - defining what the age
     Drag from a block’s output port (bottom) to the next block’s input (top).
   </Step>
   <Step title="Save">
-    Click <b>
-     Save</b>
-
-    Each save creates a new version.
+    Click Save Each save creates a new version.
   </Step>
 </Steps>
 
 <Info>
-  <b>Versioning:</b>
-
-  Every save is a version. You can revert. Always test before pushing to production.
+  Versioning: Every save is a version. You can revert. Always test before pushing to production.
 </Info>
 
 ## Connecting blocks with edges
@@ -88,15 +81,13 @@ Flows are the visual blueprints for your AI phone agents - defining what the age
   </Step>
 </Steps>
 
-<Properties>
-  <Property name="required_variables" type="array">
-    Variables that must exist (and be non-empty) for the edge to be eligible.
-  </Property>
+<Info>
+  Variables that must exist (and be non-empty) for the edge to be eligible.
+</Info>
 
-  <Property name="confirm_variables" type="array">
-    Variables the caller should confirm before taking the edge (e.g., <code>@name</code>, <code>@address</code>).
-  </Property>
-</Properties>
+<Info>
+  Variables the caller should confirm before taking the edge (e.g.,@name, @address).
+</Info>
 
 ---
 
@@ -107,19 +98,10 @@ Flows are the visual blueprints for your AI phone agents - defining what the age
     Variables are dynamic containers that persist for the duration of the call - like the agent's working memory.
   </Accordion>
   <Accordion title="How to set variables">
-    Use <b>
-     Collect</b>
-
-    blocks for caller input, <b>
-     API Request</b>
-
-    blocks for external data, or add custom variables via the Variable modal.
+    Use Collect blocks for caller input, API Request blocks for external data, or add custom variables via the Variable modal.
   </Accordion>
   <Accordion title="How to access variables">
-    Reference by name with <code>
-     @variable_name</code>
-
-    or select from the Variable modal. Use them in prompts, conditions, and API payloads.
+    Reference by name with @variable_name or select from the Variable modal. Use them in prompts, conditions, and API payloads.
   </Accordion>
 </AccordionGroup>
 
@@ -151,33 +133,21 @@ Variables in Phonely can store different types of data. Choose the appropriate t
   Outcome tags enable analytics, reporting, and automations after the call ends.
 </Info>
 
-
 <Card title="Automatic">
   System applies defaults like `completed`, `failed`, or `transferred`.
 </Card>
 
 <Card title="Custom">
-  Set custom tags in <b>
-   End Call</b>
-
-  blocks for downstream workflows.
+  Set custom tags in End Call blocks for downstream workflows.
 </Card>
 
 <Card title="Conditional">
   Apply tags only when conditions on variables are met.
 </Card>
 
-<Properties>
-  <Property name="appointment_scheduled" type="tag" />
-
-  <Property name="lead_qualified" type="tag" />
-
-  <Property name="customer_satisfied" type="tag" />
-
-  <Property name="escalation_needed" type="tag" />
-
-  <Property name="no_show_followup" type="tag" />
-</Properties>
+<Tip>
+  Some examples of tags that you can use include: **appointment_scheduled**, **lead_qualified,** **customer_satisfied, escalation_needed, no_show_followup**, etc.
+</Tip>
 
 ---
 
@@ -350,16 +320,16 @@ You now have the essentials to design reliable, natural AI phone experiences:
 
 <Steps>
   <Step title="Start simple">
-    Build with <b> Start Call</b>, <b>Talk</b>, and <b>End Call</b>
+    Build with Start Call,Talk, and End Call
   </Step>
   <Step title="Add interaction">
-    Use <b>Collect</b>and <b>Question </b>blocks.
+    Use Collect and Question blocks.
   </Step>
   <Step title="Integrate systems">
-    Add <b>API Request</b>and conditional edges.
+    Add API Request and conditional edges.
   </Step>
   <Step title="Optimize">
-    Use <b>Filter</b>and <b>Time Filter</b>to route intelligently.
+    Use Filter and Time Filter to route intelligently.
   </Step>
   <Step title="Test thoroughly">
     Apply simulation and live testing practices above.

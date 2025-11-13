@@ -1,5 +1,204 @@
 ---
-title: 'New file'
-description: 'Description of your new file.'
+title: "Custom Actions: Build Once, Reuse Everywhere"
+description: "Learn how to build, publish and update custom actions in Phonely"
 ---
 
+## What Are Custom Actions?
+
+Custom Actions allow you to package a series of connected blocks - for example, prompts, logic branches, and API requests - into a single reusable block.\
+Once created, you can reuse this action across multiple call flows, share it with your organization, or even publish it to the marketplace.
+
+Think of a Custom Action as a mini reusable workflow inside your larger flow. It behaves like a single block but contains its own inner logic, inputs, and outputs.
+
+## Why Custom Actions Matter
+
+- **Reusability:** Build a workflow once (e.g., appointment scheduling, lead collection, verification) and reuse it across multiple flows.
+- **Consistency:** Ensure teams follow the same steps and structure for repeated processes.
+- **Scalability:** Share standard actions (like “Verify Customer Identity”) across teams and departments.
+- **Maintainability:** Update logic in one plac, changes automatically propagate to all flows using that action.
+
+## Building a Custom Action (Appointment Example)
+
+Let’s build a Make Appointment Custom Action that collects a preferred time, checks availability, and books an appointment.
+
+![How To Create A Custom Action Gi](/assets/how-to-create-a-custom-action.gif)
+
+<Steps>
+  <Step title="Start from Your Flow" titleSize="h3">
+    1. Open an existing call flow (e.g., your appointment scheduling flow).
+    2. Click the **＋ button** under any existing block.
+    3. Select Build a Custom Action. A purple editor window opens -  his is your custom action workspace.
+  </Step>
+  <Step title="Add Blocks to Your Custom Action" titleSize="h3">
+    Inside the purple area (your Custom Action workspace), you can start building just like you would in a regular flow.
+
+    - Click the **＋ button** below the ****Start node****  to open the block selector, then choose any block you want to add — for example, Talk, Collect, API Request, or Send Email.
+    - Alternatively, you can drag blocks into the purple area from an existing flow.
+
+    <Tip>
+      When you drag a block into a Custom Action, it becomes part of that action’s internal logic. This means it is disconnected from any nodes outside the group.
+
+      Only the designated output nodes (e.g., Success, Error) can connect outside the Custom Action to the rest of your main flow.
+    </Tip>
+    Inside the purple area, you can drag and connect blocks just like a normal flow.
+  </Step>
+  <Step title="Example: Configuring an Appointment Custom Action " titleSize="h3">
+    Let’s walk through how to configure a Custom Action that handles appointment scheduling for a legal office.
+
+    **Connect an API Request Block**
+
+    Next, you’ll connect to your firm’s booking system or calendar API to check available slots.
+
+    - Click the **＋ button** under your Collect block and select **API Request**.
+    - In the configuration panel:
+    - Method:  `GET`
+    - Endpoint
+    - Headers: include your `Content-Type` (e.g., `application/json`) and `apiKey`
+    - Body Parameters.
+    - You can reference any collected variables using double curly braces.
+
+    This request checks available appointment slots for the specified time range.
+  </Step>
+  <Step title="Offer Available Time Slots" titleSize="h3">
+    After retrieving availability, add a **Talk** block to read back available slots to the caller.
+
+    Example prompt:
+
+    > “I found two available slots - tomorrow at 10 AM and Thursday at 2 PM. Which one would you prefer?”
+
+    - If the caller chooses a time, capture their response with another **Collect** block (e.g., `preferredSlot`).
+  </Step>
+  <Step title="Book the Appointment" titleSize="h3">
+    Next, add a second API Request block to confirm the booking:
+
+    - Endpoint
+    - Method: `POST`
+
+    If the booking is successful, the API will return a confirmation response with details like `bookingId` or `meetingLink`.
+  </Step>
+  <Step title="Connect Output Paths" titleSize="h3">
+    Output nodes define how your **Custom Action** communicates results back to the main flow.\
+    They act as exit points - determining what happens once your action finishes, whether it succeeds, fails, or the caller ends the process.
+
+    ![Managing Output Nodes Gi](/assets/managing-output-nodes.gif)
+
+    **Understanding Output Paths**
+
+    Each output path represents a possible outcome of your action. For example:
+
+    - **Success:** The action completed successfully. i.e The appointment was booked and confirmed.
+    - **Fail:** Something went wrong during the process. i.e The booking API request failed or returned an error.
+    - **Not Interested:** The caller declined to proceed. i.e The client decided not to book or continue with the call.
+
+    These output paths let you control what the AI should do next, ensuring that every scenario is handled gracefully.
+
+    **Adding Output Nodes**
+
+    1. Click any empty area inside the purple Custom Action box (the group area).
+    2. The **Global Settings** panel will slide in from the right side.
+    3. Under **Output Paths**, you’ll see existing nodes (e.g., _Success_, _Fail_, _Not Interested_).
+    4. To create a new one, click **➕ Add Output Path**, then enter a name - for example, _Escalate_ or _Reschedule_.
+    5. Click **Done** to save your changes.
+
+    Once saved, each output path will appear as a small circle at the bottom of the purple Custom Action box, ready to connect to the next step in your flow.
+  </Step>
+  <Step title="Connect to End Call and Post-Call Actions" titleSize="h3">
+    Once your appointment logic is complete and all outcome paths are defined, you need to connect your Custom Action to the End Call block and any post-call actions that should run after the conversation finishes.\
+    This ensures a clean and professional call experience for both your AI agent and the client.
+
+    **Add the End Call Block**
+
+    At the bottom of your flow, click the **＋ button** and select **End Call**.\
+    This block finalizes the interaction once all other actions have run.
+
+    **Link Each Output Path to Its Next Step**
+
+    Make sure every outcome path from your Custom Action connects to the appropriate block:
+
+    | **Output Path**    | **Typical Connection**                  | **Example Action**                                                        |
+    | :----------------- | :-------------------------------------- | :------------------------------------------------------------------------ |
+    | **Success**        | End Call\> Send SMS or Send Email       | “Your consultation is confirmed for Thursday at 2 PM.”                    |
+    | **Error**          | \> Escalate to Support or Transfer Call | Route the caller to a live receptionist if booking fails.                 |
+    | **Not Interested** | \> End Call                             | Politely close the call: “Alright, no problem — thank you for your time.” |
+
+    These connections ensure that each scenario is gracefully handled without leaving the caller in an unfinished state.
+
+    **Add Optional Post-Call Actions**
+
+    If you want to follow up or log the appointment automatically, add post-call blocks:
+
+    - **Send Email:** Send an internal summary to your legal assistant or client.
+    - **Send SMS:** Send a text reminder or confirmation link.
+    - **API Request:** Log the appointment into your CRM or case-management system.
+    - **Code Block:** Run custom logic - for example, update case status or trigger automation in another tool.
+
+    You can also chain this Custom Action to other Custom Actions, creating seamless workflows across multiple integrations.
+
+    ![Post Call Options For Custom Actions Gi](/assets/post-call-options-for-custom-actions.gif)
+
+    Once all nodes are connected and fields are configured, your Custom Action for appointment booking is ready.
+
+    In the next section, we’ll show you how to publish your Custom Action to your organization or the Phonely Marketplace so others can reuse it.
+  </Step>
+  <Step title="Publishing Your Custom Action" titleSize="h3">
+    Once your Custom Action is complete and tested, the next step is to **publish** it — either for private testing, internal team use, or public sharing. Publishing determines who can access, reuse, and configure the action in other call flows.
+
+    ![Saving And Publishing A Custom Action Gi](/assets/saving-and-publishing-a-custom-action.gif)
+
+    **Accessing the Publish Options**
+
+    To begin publishing:
+
+    1. Click the **⋯ (three vertical dots)** at the **top-right corner** of the purple Custom Action area.
+    2. From the dropdown menu, select one of the following options:
+
+    | **Option**                  | **Purpose**                                                                                                                                     |
+    | :-------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------- |
+    | **Save as Draft**           | Keeps the Custom Action private to your current flow. Ideal for ongoing testing or early prototypes.                                            |
+    | **Publish to Organization** | Shares the Custom Action with your team members. Everyone in your organization can add it to their own call flows and update to newer versions. |
+    | **Publish to Marketplace**  | Submits the action for public review and distribution, making it available to all users on Phonely.                                             |
+  </Step>
+  <Step title="Configure Customizable Fields" titleSize="h3">
+    After selecting a publish option, Phonely will prompt you to configure fields.\
+    This step defines which variables other users can edit when they use your Custom Action in their own flows.
+
+    1. The **Configure Fields** window opens automatically.\
+       Here you’ll see all **available nodes**, such as headers and query parameters, listed on the left panel.
+    2. Check the boxes next to the parameters that you want users to customize — for example:
+    3. On the right side, Phonely shows editable text fields labeled:\
+       _“User will enter value here.”_\
+       This indicates that the selected parameter will be visible and configurable by others.
+    4. Click **Next** to continue once you’ve chosen all relevant fields.
+  </Step>
+  <Step title="Finalize the Integration details and Submit" titleSize="h3">
+    After configuring fields, you’ll move to the **Finalize Custom Action** window.\
+    This is where you define how your integration will appear to others.
+
+    1. **Integration Name:** Choose an existing integration or create a new one.
+    2. **Description:** Provide a clear summary of what your Custom Action does.
+    3. **Icon:** Select an icon to represent your Custom Action.
+    4. **Action Name:** Enter a short, clear title for the action.
+    5. Click **Submit** to finalize and publish.
+
+       ![Create Custom Action Pn](/assets/create-custom-action.png)
+  </Step>
+  <Step title="Your Custom Action is now ready to use" titleSize="h3">
+    After submission, you’ll receive a confirmation message indicating that your Custom Action has been successfully created or updated.
+
+    Depending on your chosen option:
+
+    - **Draft:** Appears only within your current project.
+    - **Organization:** Appears in your team’s shared action library.
+    - **Marketplace:** Submitted for review by Phonely’s moderation team before public listing.
+
+    You can always return to the **⋯ menu** to:
+
+    - Update the action
+    - Edit metadata (name, description)
+    - Re-publish
+
+    Team members can find it in the **Add Action** menu under your chosen integration name ready to drag, configure, and connect into their own call flows.
+
+    ![How To Use Published Custom Actions Gi](/assets/how-to-use-published-custom-actions.gif)
+  </Step>
+</Steps>

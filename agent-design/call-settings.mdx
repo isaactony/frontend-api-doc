@@ -1,0 +1,151 @@
+---
+title: "Call Settings"
+description: "Description of your new file."
+---
+
+The Call Settings page allows you to control how your Phonely Agent handles live calls — including recording behavior, call duration limits, silence detection, timezone configuration, and compliance options.             
+
+Use this section to fine-tune your call flow experience, ensuring that every conversation aligns with your operational and compliance needs.             
+
+![Call Settings Phonely Gi](/assets/call-settings-phonely.gif)
+
+## Accessing Call Settings
+
+To open the Call Settings panel:
+
+<Steps>
+  <Step title="Go to the Agent Design section from the left sidebar.">
+    
+  </Step>
+  <Step title="At the top of the page, click Settings.">
+    
+  </Step>
+  <Step title="Under the tabs shown, select Call Settings.">
+    You’ll see a group of options including call recording, silence detection, compliance, timezone, and phone number management.
+  </Step>
+</Steps>
+
+## **Call Settings Overview**
+
+Below is a breakdown of each setting available in this panel and how it affects call behavior.
+
+### **1. Call Recordings**
+
+When enabled, Phonely records all incoming and outgoing calls for future review. Transcripts are still available even if recording is turned off.
+
+**Impact:                                            **
+
+- Turning this off disables audio recording but keeps text transcripts active.
+- Recommended to **enable** for quality assurance and training.
+- Ensure compliance with local regulations on call recording before enabling.
+
+### **2. Record Post Transfer**
+
+Allows recording to continue even after a call has been transferred to a human agent. Viewable in call history recording. You must inform the Transferee (person being transferred to) that the call is being recorded.
+
+**Impact:                                                                          **
+
+- Captures the entire conversation history, including transferred segments.
+- Must inform the transferee (the person being transferred to) that the call is recorded for compliance.                                        
+- Useful for full-context audits of customer interactions.
+
+### **3. Max Call Duration**
+
+Defines the maximum time a caller can remain on a call with Phonely.\
+The default duration is 20 minutes, adjustable up to 60 minutes.
+
+**Impact:**
+
+- Prevents agents from being stuck in long or idle calls.
+- Automatically ends the call once the set time is reached.
+- When the limit is hit, Phonely will say the **Max Duration Message** (editable text field below the slider).
+
+> Example message:\
+> “I apologize, but we’ve reached the maximum duration for this call. Thank you for your time.”
+
+### **4. End Immediately**
+
+When enabled, the call ends instantly after reaching the call limit — skipping any closing message.
+
+**Impact:**
+
+- Faster termination of calls (no goodbye message).
+- Use for automated call centers or transactional systems that don’t need closing dialogue.
+
+### **5. Silence Detection**
+
+Determines how the agent reacts to extended silence during calls.
+
+**Parameters:**
+
+- **Silence Timeout:** Number of seconds Phonely will wait before speaking again (e.g., 15s).
+- **Max Retries:** Number of times the agent checks in with the caller before ending the call.
+
+**Impact:**
+
+- Prevents long pauses and improves engagement.
+- Helps the agent re-engage distracted callers.
+- If silence persists after max retries, Phonely will end the call politely.
+
+### 6. HIPAA Compliance
+
+Ensures your agent operates under HIPAA (Health Insurance Portability and Accountability Act) standards when handling sensitive medical information.
+
+**Impact:**
+
+- Available only on **Enterprise Plans**.
+- Requires a signed **Business Associate Agreement (BAA)** with Phonely.
+- Once enabled, call data is encrypted, audit logs are activated, and non-compliant integrations are restricted.
+
+**How to Enable:**
+
+1. Click the HIPAA Compliance toggle.
+2. A verification modal appears:
+
+   > “This feature requires an enterprise plan to enable. Talk to a Phonely team member to add this to your account.”
+3. Click **Talk to Sales** to contact the Phonely team.
+
+### **7. PCI Compliance**
+
+Applies Payment Card Industry Data Security Standards (PCI DSS) for businesses that handle payment information.
+
+**Impact:              **
+
+- Masks sensitive card details and prevents them from being transcribed or logged.
+- Only PCI-certified integrations can process call data.
+- Audio and transcript storage is fully encrypted.
+- Available on **Enterprise Plan only**.
+
+**How to Enable:**
+
+1. Click the **PCI Compliance** toggle.
+2. A prompt appears:
+
+   > “This feature requires an enterprise plan to enable. Talk to a Phonely team member to add this to your account.”                                                                                   
+3. Click **Talk to Sales** to request activation.
+
+### **8. Agent Timezone**
+
+Sets the local timezone your agent uses for scheduling and timestamping call activity.
+
+**Impact:**
+
+- Affects how call logs, schedules, and reports appear in the dashboard.
+- Ensure this matches your team’s operational timezone (e.g., **Nairobi (EAT) GMT+03:00**).
+
+### **9. Additional Phone Numbers**
+
+Manage multiple phone numbers connected to your Phonely Agent. You can add new numbers, rename them, or assign them to specific flows.
+
+**Impact:**
+
+- Enables dedicated lines for different departments or campaigns.
+- Allows scaling with multiple numbers under one agent.
+
+**How to Add a Number:**
+
+1. Scroll to **Additional Phone Numbers** at the bottom of the Call Settings page.
+2. Click **\+ Add a Number**.
+3. Choose a number, assign a name, and save.
+
+> See full guide: [Add & Manage Phone Numbers →](#)

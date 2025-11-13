@@ -1,6 +1,5 @@
 ---
 title: "Quick Start"
-icon: "bolt"
 description: "Build your first agent in 5 minutes"
 ---
 
@@ -21,7 +20,7 @@ Phonely combines a few different technologies together to create AI that accurat
 
 <CardGroup cols={3}>
   <Card title="Plan your agent" icon="lightbulb" iconType="solid" href="/get-started/overview" cta="Learn best practices">
-    If you know what you want done, we can almost guarentee we can automate it with Phonely. But like anything, a little planning will go a long way in making sure your agent does everythign you need
+    If you know what you want done, we can almost guarentee we can automate it with Phonely. But like anything, a little planning will go a long way in making sure your agent does everythign you need.
   </Card>
   <Card title="Build the call flow" icon="workflow" iconType="solid" href="/key-concepts/flows" cta="Learn flow basics">
     Everything in Phonely is built in flows. Flows allow you to take your call scripts, connect them to tools and so much more.
@@ -58,8 +57,10 @@ Building voice AI agents has never been easier. Get started in just a few simple
   <Step title="Design the flow" icon="workflow" stepNumber={3}>
     Use the visual Flow Builder to map greetings, questions, transfers, API calls, scheduling, and post-call actions. Learn best pracrices of flow building here.
 
+    ![Flow Builder Canvas Pn](/assets/flow-builder-canvas.png)
+
     <Frame caption="Flow builder canvas">
-      ![Phonely flow builder canvas](/assets/flow-builder.png)
+      
     </Frame>
   </Step>
   <Step title="Capture variables" icon="list" stepNumber={4}>
@@ -76,21 +77,25 @@ Building voice AI agents has never been easier. Get started in just a few simple
     Add **warm transfers** (with voicemail detection and fallback) or **cold transfers**.\
     Route by intent, person, or department to keep every call moving toward resolution.
 
+    ![Transfer Calls Pn](/assets/transfer-calls.png)
+
     <Frame caption="Transfer configuration options">
-      ![Warm and cold transfer configuration](/assets/transfer-options.png)
+      
     </Frame>
   </Step>
   <Step title="Integrate actions" icon="plug" stepNumber={6}>
     Use pre-built integrations like **Google Calendar**, or call your APIs with the **API Request** block.\
     Pass variables such as `@name` and `@dob` dynamically.
 
+    ![Api Builder Block Pn](/assets/api-builder-block.png)
+
     <Frame caption="API Request block configuration">
-      ![API request configuration in Phonely](/assets/api-request.png)
+      
     </Frame>
   </Step>
   <Step title="Publish & test" icon="rocket" stepNumber={7}>
     Click **Publish**, hit **Test**, or call your provisioned number to hear your agent live.\
-    Iterate fast and deploy instantly.r
+    Iterate fast and deploy instantly.
 
     ![Test Workflow Publish Save Draft Gi](/images/test-workflow-publish-save-draft.gif)
 
@@ -114,7 +119,7 @@ Learn the core concepts used to answer millions of calls by selecting one of the
   <Card title="Learn about Flows" icon="workflow" iconType="solid" href="/key-concepts/flows" cta="Understand how flows work">
     Learn how Phonely’s visual Flow Builder helps you define scripts, connect integrations, and automate your call logic.
   </Card>
-  <Card title="Outbound Calling" icon="phone" iconType="solid" href="/blocks/make-call" cta="Build your first outbound campaign">
+  <Card title="Outbound Calling" icon="phone" iconType="solid" href="/outboundcalling/createaoutboundcallingcampaign/" cta="Build your first outbound campaign">
     Automate appointment reminders, reactivations, or follow-up calls using the same intuitive building blocks as inbound.
   </Card>
   <Card title="A/B Testing" icon="shuffle" iconType="solid" href="/capabilities/ab-testing" cta="Start testing your agent">
@@ -134,9 +139,9 @@ Learn the core concepts used to answer millions of calls by selecting one of the
   <Accordion title="What if my business uses multiple software tools?">
     You can connect multiple integrations inside a single flow. For example, pull appointment data from Google Calendar, send confirmations via SMS, and log the interaction in HubSpot, all in one call.
 
-    <ProTip>
-  If you don’t see your integration listed, you can **import any API directly from a cURL command** to make it work instantly.
-</ProTip>
+    <Tip>
+      If you don’t see your integration listed, you can **import any API directly from a cURL command** to make it work instantly.
+    </Tip>
   </Accordion>
   <Accordion title="Can I test my agent before deploying it?">
     Yes. Use the **Test** button on the agent design page or call your assigned Phonely number. You can hear the agent in real time, confirm it follows your call flows, and review analytics immediately after.
