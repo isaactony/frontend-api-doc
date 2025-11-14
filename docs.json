@@ -31,7 +31,8 @@
               "key-concepts/create-duplicate-agents",
               "key-concepts/flows",
               "key-concepts/routing",
-              "key-concepts/variables"
+              "key-concepts/variables",
+              "key-concepts/manage-workflow-versions"
             ]
           },
           {
