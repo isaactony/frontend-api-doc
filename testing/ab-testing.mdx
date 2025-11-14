@@ -3,9 +3,9 @@ title: "A/B Testing in Phonely"
 description: "Description of your new file."
 ---
 
-Phonely's A/B Testing tool helps you **experiment**, **measure, **and improve your voice AI's perfomance with real worl data . It allows you to compare different versions of you AI agent such as Voice, workflow, conversation settings to determine which one performs best in live calls. 
+Phonely's A/B Testing tool helps you **experiment**, measure, and improve your voice AI's perfomance with real worl data . It allows you to compare different versions of you AI agent such as Voice, workflow, conversation settings to determine which one performs best in live calls.
 
-This guide explains how A/B testing works, how to create and run a test, and how to interpret results. 
+This guide explains how A/B testing works, how to create and run a test, and how to interpret results.
 
 ## What is A/B Testing in Phonely ?
 
@@ -16,7 +16,7 @@ A/B Testing lets you run controlled experiments between two versions of your AI 
 
 Incoming calls are automatically split between the two versions. Phonely then measures how each one perfoms based on the success criteria you define — such as call duration, outcomes, or end reasons.
 
-This gives you clear, data-driven insights into what changes actually improve performance — instead of relying on guesswork.                        
+This gives you clear, data-driven insights into what changes actually improve performance — instead of relying on guesswork.
 
 ## **Where to Access A/B Testing**
 
@@ -24,7 +24,7 @@ This gives you clear, data-driven insights into what changes actually improve pe
 2. Open your **Testing** tab.
 3. Choose **A/B Testing** from the top navigation bar.
 
-You’ll see three sections:                
+You’ll see three sections:
 
 - **Planned** – Tests you’ve set up but haven’t started yet.
 - **In Progress** – Tests currently running on live calls.
@@ -67,13 +67,121 @@ Phonely supports multiple types of tests depending on your experiment goal. You 
 
 Once selected, click **Next**.
 
-## **. What is A/B Testing in Phonely?**
+## Define End Criteria and Call Distribution
 
-A/B Testing lets you run controlled experiments between two versions of your AI agent:
+Here, you’ll specify **how long the test should run** and **what share of calls** should be routed to your test version.
 
-- The **Base Agent (Control)** — your existing setup.
-- The **Test Agent (Variant)** — a duplicate with specific changes.
+### **A. End Criteria**
 
-Incoming calls are automatically split between the two versions. Phonely then measures how each one performs based on the **success criteria** you define — such as call duration, outcomes, or end reasons.
+Choose when the test should stop automatically:
 
-This gives you clear, data-driven insights into what changes actually improve performance — instead of relying on guesswork.
+- **By Number of Calls:** Ends after a set number of test calls.\
+  _Example:_ Stop after 1,000 calls routed to the test version.
+- **By Number of Days:** Runs for a fixed duration (e.g., 10 days).
+- **AI-Determined (Coming Soon):** Will allow Phonely to automatically decide when enough data is collected.
+
+### B. Call Route Percentage
+
+Use the slider to define how much traffic is sent to the test version.
+
+- **Example:** Route 30% of calls to the test, and keep 70% on the base agent.
+- **Recommendation:** Start small (20–30%) to ensure stability before scaling up.
+
+After configuring both, click **Next**.
+
+## 6. Set Success Criteria
+
+This step defines what “success” means for your test. You can base success on how calls end, what outcomes are tagged, or how long they last.
+
+### **A. Call Ended Reason-Based Testing**
+
+Evaluates success based on how the call ended.\
+Use this if you care about the _technical or behavioral outcome_ of the call.
+
+- **Examples of End Reasons:**
+  - Call Transferred
+  - Voicemail
+  - Max Duration
+  - Silence Timeout
+  - Customer Ended
+  - Agent Ended
+
+_Use case:_ “We want more calls to end in transfers to the sales team.”
+
+### **B. Call Outcome-Based Testing**
+
+Evaluates based on your defined **business outcomes** — which you can configure inside your flow.
+
+- **Examples:**
+  - Appointment Booked
+  - Lead Qualified
+  - Legal Inquiry Logged
+  - Support Issue Resolved
+
+_Use case:_ “We want to see if the new workflow increases lead qualification rate.”
+
+### **C. Duration-Based Testing**
+
+Optimizes for call length.
+
+- **Shorter Calls:** Indicates more efficiency or faster resolution (ideal for support or routing).
+- **Longer Calls:** Indicates better engagement or deeper discussions (ideal for sales).
+
+_Use case:_ “Does the new prompt shorten average support calls by 15%?”
+
+### **D. LLM-Based Evaluation (Coming Soon)**
+
+A future option will allow Phonely’s AI to analyze transcripts and automatically evaluate call quality based on context.
+
+Once you’ve chosen and configured your success criteria, click **Next**.
+
+## **7. Editing the Test Agent**
+
+After setup, Phonely automatically duplicates your base agent into a **Test Agent**.\
+You’ll see a banner:
+
+> “You are editing a test agent. This agent will be used to test the new changes.”
+
+You can now modify only what you want to test:
+
+- Change the **voice or personality** for voice tests.
+- Adjust **workflow blocks** or **logic paths** for workflow tests.
+- Update **agent settings** such as response delay or background noise for settings tests.
+- Modify **knowledge sources** for knowledge base tests.
+
+Keep all other elements identical to ensure that results reflect only the changes you made.
+
+Once done, click **Continue** to save your test agent.
+
+## **8. Running the A/B Test**
+
+After your setup is complete, you’ll return to the A/B Testing dashboard.
+
+1. Under the **Planned** section, find your new test.
+2. Click **Begin Test** to start routing calls.
+
+Your test will then appear under **In Progress**, showing live metrics such as:
+
+- **Success Rate** for each agent
+- **Total Answered Calls**
+- **Traffic Allocation**
+
+Calls will automatically be divided between your Base Agent and Test Agent.
+
+## **9. Monitoring and Analyzing Results**
+
+You can monitor ongoing results anytime during the test:
+
+- Track **Success Rate Trends** to see which variant performs better.
+- Check if call allocation percentages remain balanced.
+- Review **call outcomes** and **end reasons** to ensure tagging consistency.
+
+Once your call limit or duration target is reached, the test moves to the **Completed** section.
+
+Click **View Results** to analyze:
+
+- Performance metrics (success rate, duration, end reason distribution).
+- Comparative insights between Base and Test agents.
+- Which version achieved better alignment with your success criteria.
+
+The variant with the higher success percentage is your **winning configuration** — which you can apply to your main agent for future calls.
