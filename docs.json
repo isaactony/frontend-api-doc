@@ -126,9 +126,15 @@
             ]
           },
           {
-            "group": "Account, Usage and Organization Settings",
+            "group": "Account, and Organization Settings",
             "pages": [
               "manage-account-and-organization-settings/manage-account-and-oraganization-settings"
+            ]
+          },
+          {
+            "group": "Billing and Usage",
+            "pages": [
+              "billing-and-usage/plans-and-billing-history"
             ]
           }
         ]
