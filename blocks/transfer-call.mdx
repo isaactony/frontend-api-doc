@@ -30,63 +30,62 @@ The Transfer Call Block provides unparalleled flexibility for routing calls, mak
 
 The Transfer Call Block can be configured for both simple, static transfers and more complex, dynamic routing scenarios.
 
-**• Simple Use Case: Basic Call Transfers**
+**Simple Use Case: Basic Call Transfers**
 
 This is the most straightforward application, where calls are transferred to a pre-defined phone number.
 
-**1. Add the Transfer Call Block**
+<Steps>
+  <Step title=" Add the Transfer Call Block">
+    1. Navigate to the Workflows section in the Agent Design tab.
+    2. Add a Transfer Call block to your workflow by clicking the **\+ button** and selecting the block from the list.
+  </Step>
+  <Step title="Configure Trigger Conditions">
+    Set trigger conditions within the preceding blocks in your workflow to determine when a call should be transferred.
 
-1. Navigate to the Workflows section in the Agent Design tab.
-2. Add a Transfer Call block to your workflow by clicking the + button and selecting the block from the list.
+    **Example**: Transfer the call if the customer:
 
-**2. Configure Trigger Conditions**
+    - Asks to speak with a person.
+    - Appears frustrated during the conversation.
+  </Step>
+  <Step title="Add an Interim Message (Optional)">
+    Add a message that will play for the caller while the transfer is in progress, such as "Please hold while I connect you to a representative."
+  </Step>
+  <Step title="Tag the Outcome">
+    Assign a Call Outcome Tag (e.g., "Sales Transfer") to track and analyze transferred calls in your dashboard and analytics, providing valuable insights.
+  </Step>
+</Steps>
 
-Set trigger conditions within the preceding blocks in your workflow to determine when a call should be transferred.
-
-**Example**: Transfer the call if the customer:
-
-- Asks to speak with a person.
-- Appears frustrated during the conversation.
-
-**3. Add an Interim Message (Optional)**
-
-Add a message that will play for the caller while the transfer is in progress, such as "Please hold while I connect you to a representative."
-
-**4. Tag the Outcome**
-
-Assign a Call Outcome Tag (e.g., "Sales Transfer") to track and analyze transferred calls in your dashboard and analytics, providing valuable insights.
-
-**• Bonus: Department Transfers**
+## **Bonus: Department Transfers**
 
 For routing to different departments, you can combine the Transfer Call Block with other Phonely features:
 
 1. Add an Ask Exactly Block before the transfer to ask the caller which department they would like to reach (e.g., Sales, Marketing, Support).
 2. Route calls to the appropriate department by duplicating the Transfer Call block and assigning specific department phone numbers to each branch.
 
-**• Dynamic Use Case: Real-time Call Transfers via API**
+### **Dynamic Use Case: Real-time Call Transfers via API**
 
 This application is ideal for scenarios where target phone numbers are not fixed (e.g., routing to the next available agent in a call center) and need to be retrieved dynamically.
 
-**1. Add an API Request Block**
+<Steps>
+  <Step title="Add an API Request Block">
+    1. Use the API Request Block in your workflow to fetch the required phone number from an external system.
+    2. Configure the API endpoint to return the phone number dynamically.
 
-1. Use the API Request Block in your workflow to fetch the required phone number from an external system.
-2. Configure the API endpoint to return the phone number dynamically.
+    **Example**: The API may return a JSON response containing the number, such as:
 
-**Example**: The API may return a JSON response containing the number, such as:
-
-```json
-{ "number": "+1234567890" }
-```
-
-**2. Use the Retrieved Number in Transfer Call Block**
-
-1. After the API Request Block, add the Transfer Call Block.
-2. In the Phone Number Field, insert the variable returned by the API (e.g., `{{api_response.number}}`). This tells Phonely to use the number dynamically retrieved by the API.
-
-**3. Test the Workflow**
-
-1. Test the API request to ensure the phone number is correctly retrieved.
-2. Simulate a call to verify that the call routes to the dynamically retrieved number.
+    ```json
+    { "number": "+1234567890" }
+    ```
+  </Step>
+  <Step title="Use the Retrieved Number in Transfer Call Block">
+    1. After the API Request Block, add the Transfer Call Block.
+    2. In the Phone Number Field, insert the variable returned by the API (e.g., `{{api_response.number}}`). This tells Phonely to use the number dynamically retrieved by the API.
+  </Step>
+  <Step title="Test the Workflow">
+    1. Test the API request to ensure the phone number is correctly retrieved.
+    2. Simulate a call to verify that the call routes to the dynamically retrieved number.
+  </Step>
+</Steps>
 
 ## Warm Transfers
 
