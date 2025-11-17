@@ -6,13 +6,13 @@ description: "Learn how to build, publish and update custom actions in Phonely"
 ## What Are Custom Actions?
 
 Custom Actions allow you to package a series of connected blocks - for example, prompts, logic branches, and API requests - into a single reusable block.\
-Once created, you can reuse this action across multiple call flows, share it with your organization, or even publish it to the marketplace.  
+Once created, you can reuse this action across multiple call flows, share it with your organization, or even publish it to the marketplace.
 
 Think of a Custom Action as a mini reusable workflow inside your larger flow. It behaves like a single block but contains its own inner logic, inputs, and outputs.
 
 ## Why Custom Actions Matter
 
-- **Reusability:** Build a workflow once (e.g., appointment scheduling, lead collection, verification) and reuse it across multiple flows.  
+- **Reusability:** Build a workflow once (e.g., appointment scheduling, lead collection, verification) and reuse it across multiple flows.
 - **Consistency:** Ensure teams follow the same steps and structure for repeated processes.
 - **Scalability:** Share standard actions (like “Verify Customer Identity”) across teams and departments.
 - **Maintainability:** Update logic in one place, changes automatically propagate to all flows using that action.
@@ -49,8 +49,10 @@ Let’s build a Make Appointment Custom Action that collects a preferred time, c
 
     Next, you’ll connect to your firm’s booking system or calendar API to check available slots.
 
-    - Click the **＋ button** under your Collect block and select **API Request**.
-    - In the configuration panel:
+    Click the **＋ button** under your Collect block and select **API Request**.
+
+    In the configuration panel:
+
     - Method:  `GET`
     - Endpoint
     - Headers: include your `Content-Type` (e.g., `application/json`) and `apiKey`
