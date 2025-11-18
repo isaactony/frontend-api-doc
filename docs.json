@@ -134,7 +134,8 @@
           {
             "group": "Billing and Usage",
             "pages": [
-              "billing-and-usage/plans-and-billing-history"
+              "billing-and-usage/plans-and-billing-history",
+              "billing-and-usage/manage-agents-and-usage"
             ]
           }
         ]
