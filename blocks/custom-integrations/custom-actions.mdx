@@ -32,7 +32,7 @@ Let’s build a Make Appointment Custom Action that collects a preferred time, c
   <Step title="Add Blocks to Your Custom Action" titleSize="h3">
     Inside the purple area (your Custom Action workspace), you can start building just like you would in a regular flow.
 
-    - Click the **＋ button** below the ****Start node****  to open the block selector, then choose any block you want to add — for example, Talk, Collect, API Request, or Send Email.
+    - Click the **＋ button** below the **Start node** to open the block selector, then choose any block you want to add — for example, Talk, Collect, API Request, or Send Email.
     - Alternatively, you can drag blocks into the purple area from an existing flow.
 
     <Tip>
@@ -43,7 +43,7 @@ Let’s build a Make Appointment Custom Action that collects a preferred time, c
     Inside the purple area, you can drag and connect blocks just like a normal workflow.
   </Step>
   <Step title="Example: Configuring an Appointment Custom Action " titleSize="h3">
-    Let’s walk through how to configure a Custom Action that handles appointment scheduling for a legal office.
+    Let’s walk through how to configure a Custom Action that handles appointment scheduling for a legal office.                      
 
     **Connect an API Request Block**
 
@@ -57,7 +57,7 @@ Let’s build a Make Appointment Custom Action that collects a preferred time, c
     - Endpoint
     - Headers: include your `Content-Type` (e.g., `application/json`) and `apiKey`
     - Body Parameters.
-    - You can reference any collected variables using double curly braces.
+    - You can reference any collected variables using  double curly braces.
 
     This request checks available appointment slots for the specified time range.
   </Step>
@@ -68,10 +68,10 @@ Let’s build a Make Appointment Custom Action that collects a preferred time, c
 
     > “I found two available slots - tomorrow at 10 AM and Thursday at 2 PM. Which one would you prefer?”
 
-    - If the caller chooses a time, capture their response with another **Collect** block (e.g., `preferredSlot`).
+    - If the caller chooses a time, capture their response with another **Collect** block (e.g., `preferredSlot`). 
   </Step>
   <Step title="Book the Appointment" titleSize="h3">
-    Next, add a second API Request block to confirm the booking:
+    Next, add a second API Request block to confirm the booking:   
 
     - Endpoint
     - Method: `POST`
