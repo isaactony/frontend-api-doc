@@ -73,13 +73,11 @@ In this example, we will demonstrate how the Code Block is used inside a workflo
             "10001": "+1555002352"
         }
     
+        zip_code = str(input_dict.get("zip_code"))
+    
         store_phone = zip_to_store_map.get(zip_code, "+14445046273")
     
-        output_dict = {
-            "store_phone_number": store_phone
-        }
-    
-        return output_dict
+        return {"store_phone": store_phone}
     
     ```
   </Step>

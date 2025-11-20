@@ -1,5 +1,271 @@
 ---
-title: 'New file'
-description: 'Description of your new file.'
+title: "Simulation Testing in Phonely"
+description: "Description of your new file."
 ---
 
+Simulation Testing allows you to test your AI agents using fully synthetic, AI-generated phone conversations. Instead of relying solely on real inbound calls, you can run hundreds of controlled simulations to see how your agent behaves under different scenarios — before any customer ever interacts with it.
+
+This guide explains what Simulation Testing is, how to create and run simulation test cases, and how to review results to improve your agent’s performance.
+
+## **What Is Simulation Testing?**
+
+Simulation Testing uses AI to generate realistic phone conversations between a virtual “customer” and your Phonely agent. These simulations behave like real calls — including intent changes, interruptions, topic variations, and unexpected questions.
+
+Simulation Testing helps you:
+
+- Validate workflows before going live
+- Detect misconfigurations, routing errors, and dead-ends
+- Test knowledge base accuracy
+- Stress-test prompts and guardrails
+- Preview how your agent handles different tones and behaviors
+- Ensure your agent behaves consistently after updates
+
+Unlike A/B tests, simulation tests **do not use real customers** and **do not affect live call routing**.
+
+## **Where to Access Simulation Testing**
+
+To open the simulation workspace:
+
+1. Go to your **Phonely Dashboard**.
+2. Click the **Simulation Testing** tab at the top (beside A/B Testing).
+3. You will see two sub-tabs:
+   - **Test Cases** – Create and configure simulations
+   - **Results** – Review past simulation outputs
+
+The main screen shows:
+
+- **Test Cases** at the top
+- **Data Sources** (optional call recordings) at the bottom
+
+## **Test Cases Overview**
+
+Each Test Case represents a simulation scenario. For example:
+
+- “Pricing Inquiry Simulation”
+- “Lead Qualification Flow”
+- “Support Troubleshooting Scenario”
+- “Billing Issue Call”
+
+Each test card displays:
+
+- Name and description
+- Config button (⚙️)
+- Run button (▶)
+
+You can create as many scenarios as needed to cover different customer journeys.
+
+## **Data Sources Overview**
+
+Simulation Testing can optionally use **real call recordings** to enhance realism.
+
+You can upload:
+
+- .wav
+- .mp3
+- .m4a
+
+Using real calls helps the simulator:
+
+- Mimic customer tone
+- Generate more natural variations
+- Produce more realistic agent-customer interactions
+
+If you don’t upload recordings, Phonely generates conversations from scratch using AI.
+
+## **How to Create a Simulation Test Case**
+
+Follow these steps to build your first simulation:
+
+## **Step 1 — Click “+” to Add a New Test Case**
+
+1. Go to **Simulation Testing \> Test Cases**
+2. Click the **\+** card
+3. A modal window titled **Add Test Case** will appear
+
+## **Step 2 — Name and Describe the Test**
+
+Fill in:
+
+### **Case Name**
+
+A short, descriptive label such as:
+
+- “Support Call – Device Setup”
+- “Customer Asking About Plans”
+- “Lead Qualification Script”
+
+### **Description**
+
+Explain the goal of the simulation.
+
+Example:
+
+> “Simulates a conversation where a customer asks about pricing and plan options.”
+
+## **Step 3 — Configure Test Parameters**
+
+Two sliders allow you to define the nature and quantity of simulations:
+
+---
+
+### **A. Test Instance**
+
+Defines **how many conversations** to generate.
+
+- Range: **1–25** per run
+- Up to **1000** total runs (billed at \$0.10 per run)
+
+**More runs = stronger accuracy**, especially for complex flows.
+
+### **B. Variance**
+
+Controls the randomness of the simulated customer behavior.
+
+- **1 = Low Variance**\
+  Conversations stay similar across runs
+- **10 = High Variance**\
+  Conversations differ dramatically (ideal for stress testing)
+
+Higher variance helps reveal weaknesses in:
+
+- Prompts
+- Routing
+- Tone handling
+- Unexpected customer questions
+
+## **Step 4 — Add Data Sources (Optional)**
+
+Scroll to the **Data Sources** section at the bottom of the page.
+
+You can:
+
+- **Upload call recordings**
+- Select from previously uploaded samples
+- Filter recordings by name
+
+Recordings help the simulator learn from real customer language.
+
+This step is optional — simulations will still run even with no recordings.
+
+## **Step 5 — Run the Simulation**
+
+After saving the test case:
+
+1. Find the test card
+2. Click **Run**
+3. Phonely will begin generating simulated calls
+4. Progress indicators will appear
+
+You can continue working while simulations run in the background.
+
+# **Reviewing Simulation Results**
+
+After simulations complete, open the **Results** tab.
+
+For each simulation run, you will see:
+
+---
+
+## **1. Success Rate**
+
+Measures whether the agent successfully completed the intended flow.
+
+Examples of success criteria:
+
+- The agent answered correctly
+- The workflow reached the intended end block
+- The agent used the right KB article
+- The conversation followed expected logic
+
+---
+
+## **2. Conversation Transcripts**
+
+You can view full transcripts for each simulated call, including:
+
+- Customer message
+- Agent response
+- Routing decisions
+- Detected intents
+- Any error messages
+
+This helps you diagnose issues quickly.
+
+---
+
+## **3. Failure Reasons**
+
+Phonely shows what caused a failed simulation, such as:
+
+- KB article not found
+- Agent repeated itself
+- Workflow loop detected
+- Incorrect routing
+- Unexpected customer question not handled
+- Prompt failure
+
+---
+
+## **4. Summary Insights**
+
+Phonely also provides aggregate insights:
+
+- Average conversation length
+- Outcome distribution
+- Most common failure types
+- Workflow confusion points
+- Prompt inconsistency indicators
+
+These insights help you refine your agent and improve reliability.
+
+---
+
+# **When to Use Simulation Testing vs A/B Testing**
+
+| Feature                  | Simulation Testing        | A/B Testing             |
+| :----------------------- | :------------------------ | :---------------------- |
+| Uses AI-generated calls  | ✅                         | ❌                       |
+| Uses real customer calls | ❌                         | ✅                       |
+| Cost                     | Low                       | Based on call minutes   |
+| Purpose                  | Debugging, QA, validation | Real-world optimization |
+| Good for                 | Pre-launch                | Post-launch             |
+| Impact on customers      | None                      | Yes                     |
+
+Use Simulation Testing **before** going live and A/B Testing **after** you're live.
+
+---
+
+# **Best Practices for Simulation Testing**
+
+### **1. Start with low variance**
+
+Use variance 2–3 to validate the core flow.
+
+### **2. Increase variance for stress testing**
+
+Set variance to 7–10 after your agent is stable.
+
+### **3. Use multiple test instances**
+
+More runs give more reliable results.
+
+### **4. Upload a few real recordings**
+
+Even 3–5 recordings can drastically improve realism.
+
+### **5. Create specific scenarios**
+
+Instead of one large test case, create several granular ones:
+
+- Pricing inquiry
+- Broken device
+- Billing dispute
+- Appointment booking
+
+### **6. Always check transcripts**
+
+Failures often reveal hidden logic issues.
+
+### **7. Re-run tests after major workflow or KB changes**
+
+Simulation Testing is perfect for regression testing.
