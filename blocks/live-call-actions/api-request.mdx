@@ -7,7 +7,7 @@ The **API Request block** lets your Phonely flow connect with any external web s
 
 ![Making An Api Request In Phonely Gi](/assets/making-an-api-request-in-phonely.gif)
 
-### What the API Request Block Does
+## What the API Request Block Does
 
 This block acts as a bridge between Phonely and another system.\
 It can:
@@ -18,7 +18,7 @@ It can:
 
 You can connect it to any REST API using a cURL command or manual setup.
 
-<Step title="Adding the API Request Block to a Flow" stepNumber={1} titleSize="h3">
+## Adding the API Request Block to a Flow
   Connect it below a **Collect** or **Ask Exactly** block if you want to send the data collected earlier.
 
   <Tip>
@@ -33,9 +33,8 @@ You can connect it to any REST API using a cURL command or manual setup.
   - You’ll see a new block added to your canvas labeled **API Request**.
 
   ![Api Request Block Pn](/assets/api-request-block.png)
-</Step>
 
-<Step title="Setup" stepNumber={2} titleSize="h3">
+## Setup
   When you open the block, you’ll see two ways to define your API request:
 
   ### Option 1: Import from cURL
@@ -66,9 +65,9 @@ You can connect it to any REST API using a cURL command or manual setup.
   You’ll then define all settings step by step in the **Configure** tab.
 
   ![Manually Build Api Request Flow Gi](/assets/manually-build-api-request-flow.gif)
-</Step>
 
-<Step title="Configure" stepNumber={3} titleSize="h3">
+
+## Configure
   The **Configure** tab is where you define what your API request should do.
 
   #### 1. API Method
@@ -149,9 +148,9 @@ You can connect it to any REST API using a cURL command or manual setup.
   | **Call Outcome Tagging**       | Add labels for analytics or call reports (e.g., “api_success” or “crm_update”).       |
 
   Click **Continue** to save and move on to the **Test** step.
-</Step>
 
-<Step title="Test Stage" stepNumber={4} titleSize="h3">
+
+## Test Stage
   Testing ensures your configuration works before you publish your flow.
 
   1. Click **Test**.\
@@ -171,9 +170,9 @@ You can connect it to any REST API using a cURL command or manual setup.
   ```
 
   If failed, you’ll get an error message explaining what went wrong (e.g., invalid URL, authentication error, or timeout).
-</Step>
 
-<Step title="Usecases for API Requests" stepNumber={5} titleSize="h3">
+
+## Usecases for API Requests
   | **Scenario**    | **Action** | **Example Use Case**                            |
   | :-------------- | :--------- | :---------------------------------------------- |
   | CRM integration | POST       | Send collected lead data to HubSpot or Zoho CRM |
@@ -181,4 +180,3 @@ You can connect it to any REST API using a cURL command or manual setup.
   | Data lookup     | GET        | Fetch an order status or product info           |
   | Notification    | POST       | Trigger a Slack or Discord webhook              |
   | Ticket creation | POST       | Create a support ticket in Zendesk or Freshdesk |
-</Step>
