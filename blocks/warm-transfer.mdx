@@ -11,17 +11,17 @@ In this page, learn how to create a Warm Transfer in Phonely's platform. The War
 
 **• Personalized Handoff** - The AI agent can deliver a customized message to the receiving human agent, providing essential context about the caller (e.g., "Hey, I've got John on the line here, he's interested in learning about X, Y, and Z.").
 
-**• Variable Integration** - The introduction message can dynamically use any previously collected call variables (like the caller's name, their query, or other details) to enrich the context given to the human agent.
+**• Variable Integration** - The introduction message can dynamically use any previously collected call variables (like the caller's name, their query, or other details) to enrich the context given to the human agent.                
 
-**• IVR & Voicemail Detection** - Phonely can detect if the warm transfer attempts to connect to an IVR system or a voicemail. If detected, the call can be pulled back to the AI agent to continue the conversation or route to an alternative path (e.g., "Looks like that person wasn't available; would you like to leave a message?").
+**• IVR & Voicemail Detection** - Phonely can detect if the warm transfer attempts to connect to an IVR system or a voicemail. If detected, the call can be pulled back to the AI agent to continue the conversation or route to an alternative path (e.g., "Looks like that person wasn't available; would you like to leave a message?").    
 
-**• Error Handling for Invalid Numbers** - Provides built-in error handling for invalid or unavailable transfer numbers, allowing the AI to gracefully continue the conversation or redirect to a different flow instead of abruptly ending the call.
+**• Error Handling for Invalid Numbers** - Provides built-in error handling for invalid or unavailable transfer numbers, allowing the AI to gracefully continue the conversation or redirect to a different flow instead of abruptly ending the call.    
 
-**• Configurable Duration** - Set a specific duration for how long the AI should wait for the transfer to complete before triggering a fallback action.
+**• Configurable Duration** - Set a specific duration for how long the AI should wait for the transfer to complete before triggering a fallback action.    
 
 **• Seamless Integration** - Easily linked within your workflow to trigger a warm transfer at any point in the conversation based on caller intent (e.g., "I would like to talk to a human").
 
-**• Call Outcome Tagging** - Allows for the tagging of calls to provide analytics on warm transfer success rates and reasons for failure.
+**• Call Outcome Tagging** - Allows for the tagging of calls to provide analytics on warm transfer success rates and reasons for failure.       
 
 ## How to Use
 
@@ -35,9 +35,9 @@ Implementing a Warm Transfer involves adding the block to your workflow, configu
   </Step>
   <Step title="Configure">
     1. Click on the Warm Transfer Block to open its settings.
-    2. **Transfer Phone Number:** Enter the phone number of the human agent or team you wish to transfer the call to.  
+    2. **Transfer Phone Number:** Enter the phone number of the human agent or team you wish to transfer the call to.
     3. **Introduction Message:** Compose the message that your Phonely AI will say to the receiving human agent. Use variables to provide context (e.g., "Hi, I have [caller_name] on the line, they're calling about [reason_for_call].").
-    4. **Set Duration:** Define how long Phonely should attempt the warm transfer before executing a fallback.  
+    4. **Set Duration:** Define how long Phonely should attempt the warm transfer before executing a fallback.
   </Step>
   <Step title=" Enable Detection">
     1. Check **"Detect IVR"** if you want Phonely to identify and handle connections to automated phone systems.
