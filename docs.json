@@ -56,9 +56,9 @@
                 "group": "Flow Blocks",
                 "pages": [
                   "blocks/flow-blocks/start-flow",
+                  "blocks/flow-blocks/collect",
                   "blocks/flow-blocks/talk",
                   "blocks/flow-blocks/ask-exactly",
-                  "blocks/flow-blocks/collect",
                   "blocks/flow-blocks/filter",
                   "blocks/flow-blocks/time-filter",
                   "blocks/flow-blocks/end-call"
