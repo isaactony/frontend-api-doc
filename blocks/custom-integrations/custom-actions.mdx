@@ -15,7 +15,7 @@ Think of a Custom Action as a mini reusable workflow inside your larger flow. It
 - **Reusability:** Build a workflow once (e.g., appointment scheduling, lead collection, verification) and reuse it across multiple flows.
 - **Consistency:** Ensure teams follow the same steps and structure for repeated processes.
 - **Scalability:** Share standard actions (like “Verify Customer Identity”) across teams and departments.
-- **Maintainability:** Update logic in one place, changes automatically propagate to all flows using that action.
+- **Mantainability:** Update logic in one place, changes automatically propagate to all flows using that action.
 
 ## Building a Custom Action (Appointment Example)
 
@@ -26,7 +26,7 @@ Let’s build a Make Appointment Custom Action that collects a preferred time, c
 <Steps>
   <Step title="Start from Your Flow" titleSize="h3">
     1. Open an existing call flow (e.g., your appointment scheduling flow).
-    2. Click the **＋ button** under any existing block.
+    2. Click the **＋ button** under any exisiting block.
     3. Select Build a Custom Action. A purple editor window opens -  this is your custom action workspace.
   </Step>
   <Step title="Add Blocks to Your Custom Action" titleSize="h3">
@@ -43,7 +43,7 @@ Let’s build a Make Appointment Custom Action that collects a preferred time, c
     Inside the purple area, you can drag and connect blocks just like a normal workflow.
   </Step>
   <Step title="Example: Configuring an Appointment Custom Action " titleSize="h3">
-    Let’s walk through how to configure a Custom Action that handles appointment scheduling for a legal office.                      
+    Let’s walk through how to configure a Custom Action that handles appointment scheduling for a legal office.
 
     **Connect an API Request Block**
 
@@ -68,10 +68,10 @@ Let’s build a Make Appointment Custom Action that collects a preferred time, c
 
     > “I found two available slots - tomorrow at 10 AM and Thursday at 2 PM. Which one would you prefer?”
 
-    - If the caller chooses a time, capture their response with another **Collect** block (e.g., `preferredSlot`). 
+    - If the caller chooses a time, capture their response with another **Collect** block (e.g., `preferredSlot`).
   </Step>
   <Step title="Book the Appointment" titleSize="h3">
-    Next, add a second API Request block to confirm the booking:   
+    Next, add a second API Request block to confirm the booking:
 
     - Endpoint
     - Method: `POST`
