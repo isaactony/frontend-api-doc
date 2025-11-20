@@ -32,11 +32,11 @@ You’ll see three sections:
 - **In Progress** – Tests currently running on live calls.
 - **Completed** – Finished tests where you can review performance results.
 
-## 3. Creating a New A/B Test
+## Creating a New A/B Test
 
 Click **Create a new test** in the Planned section to begin. A step-by-step setup window will appear.
 
-### **Step 1: Name and Describe Your Test**
+### **Name and Describe Your Test**
 
 - **Test Name:** Give your test a descrptive name that identifies what you’re testing.\
   _Example:_ “Friendly Voice vs Formal Voice – Support Line.”
@@ -73,7 +73,7 @@ Once selected, click **Next**.
 
 Here, you’ll specify **how long the test should run** and **what share of calls** should be routed to your test version.
 
-### A. End Criteria
+### End Criteria
 
 Choose when the test should stop automatically:
 
@@ -82,22 +82,22 @@ Choose when the test should stop automatically:
 - **By Number of Days:** Runs for a fixed duration (e.g., 10 days).
 - **AI-Determined (Coming Soon):** Will allow Phonely to automatically decide when enough data is collected.
 
-### B. Call Route Percentage
+### Call Route Percentage
 
 Use the slider to define how much traffic is sent to the test version.
 
 - **Example:** Route 30% of calls to the test, and keep 70% on the base agent.
 - **Recommendation:** Start small (20–30%) to ensure stability before scaling up.
 
-After configuring both, click **Next**.   
+After configuring both, click **Next**.
 
 ![Configure Test End Criteria Gi](/assets/configure-test-end-criteria.gif)
 
-## 6. Set Success Criteria
+## Set Success Criteria
 
-This step defines what “success” means for your test. You can base success on how calls end, what outcomes are tagged, or how long they last. 
+This step defines what “success” means for your test. You can base success on how calls end, what outcomes are tagged, or how long they last.
 
-### A. Call Ended Reason-Based Testing
+### Call Ended Reason-Based Testing
 
 Evaluates success based on how the call ended.\
 Use this if you care about the _technical or behavioral outcome_ of the call.
@@ -112,19 +112,19 @@ Use this if you care about the _technical or behavioral outcome_ of the call.
 
 _Use case:_ “We want more calls to end in transfers to the sales team.”
 
-### B. Call Outcome-Based Testing
+### Call Outcome-Based Testing
 
 Evaluates based on your defined **business outcomes** — which you can configure inside your flow.
 
 - **Examples:**
-  - Appointment Booked.  
-  - Lead Qualified. 
-  - Legal Inquiry Logged. 
-  - Support Issue Resolved. 
+  - Appointment Booked.
+  - Lead Qualified.
+  - Legal Inquiry Logged.
+  - Support Issue Resolved.
 
 _Use case:_ “We want to see if the new workflow increases lead qualification rate.”
 
-### C. Duration-Based Testing
+### Duration-Based Testing
 
 Optimizes for call length.
 
@@ -133,15 +133,15 @@ Optimizes for call length.
 
 _Use case:_ “Does the new prompt shorten average support calls by 15%?”
 
-### D. LLM-Based Evaluation (Coming Soon)
+### LLM-Based Evaluation (Coming Soon)
 
-A future option will allow Phonely’s AI to analyze transcripts and automatically evaluate call quality based on context.  
+A future option will allow Phonely’s AI to analyze transcripts and automatically evaluate call quality based on context.
 
 Once you've chosen and configured your success criteria, click **Next**.
 
 ![Test Success Criteria Gi](/assets/test-success-criteria.gif)
 
-## 7. Editing the Test Agent
+## Editing the Test Agent
 
 After setup, Phonely automatically duplicates your base agent into a **Test Agent**.\
 You’ll see a banner:
@@ -154,7 +154,7 @@ Keep all other elements identical to ensure that results reflect only the change
 
 Once done, click **Continue** to save your test agent.
 
-## 8. Running the A/B Test
+## Running the A/B Test
 
 After your setup is complete, you’ll return to the A/B Testing dashboard.
 
@@ -171,7 +171,7 @@ Calls will automatically be divided between your Base Agent and Test Agent.
 
 ![Execute An Ab Test Gi](/assets/execute-an-ab-test.gif)
 
-## 9. Monitoring and Analyzing Results
+## Monitoring and Analyzing Results
 
 You can monitor ongoing results anytime during the test:
 
@@ -189,7 +189,7 @@ Click **View Results** to analyze:
 
 The variant with the higher success percentage is your **winning configuration** — which you can apply to your main agent for future calls.
 
-## 10. Editing an A/B Test
+##  Editing an A/B Test
 
 Phonely allows you to update your A/B test at any point before or during the experiment. This is useful when you want to refine the test name, description, routing percentage, or modify the Test Agent itself.
 
@@ -213,9 +213,9 @@ Use this option to update:
 - What you’re testing (Voice, Workflow, Agent Settings, etc.)
 - End criteria (number of calls or days)
 - Call route percentage
-- Success criteria.          
+- Success criteria.
 
-This opens the same guided setup window you used when creating the test, allowing you to adjust any configuration step-by-step.          
+This opens the same guided setup window you used when creating the test, allowing you to adjust any configuration step-by-step.
 
 ### Edit B Test Agent
 
@@ -238,10 +238,10 @@ If you want to remove a planned or completed test entirely, choose **Delete Test
 
 You might want to make edits when:
 
-- The description or test name needs clarification. 
-- You want to adjust call routing (e.g., from 30% to 45%). 
-- You need to modify the workflow, voice, or KB version in the Test Agent. 
-- You decide to extend the test duration from 1 day to 7 days. 
-- You want to tighten or change the success criteria. 
+- The description or test name needs clarification.
+- You want to adjust call routing (e.g., from 30% to 45%).
+- You need to modify the workflow, voice, or KB version in the Test Agent.
+- You decide to extend the test duration from 1 day to 7 days.
+- You want to tighten or change the success criteria.
 
 Any changes you make will immediately update the test configuration.
