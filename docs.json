@@ -128,6 +128,13 @@
             ]
           },
           {
+            "group": "Testing",
+            "pages": [
+              "/testing/ab-testing",
+              "testing/simulation-testing"
+            ]
+          },
+          {
             "group": "Account, and Organization Settings",
             "pages": [
               "manage-account-and-organization-settings/manage-account-and-oraganization-settings"
