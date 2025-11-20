@@ -8,172 +8,178 @@ The **API Request block** lets your Phonely flow connect with any external web s
 ![Making An Api Request In Phonely Gi](/assets/making-an-api-request-in-phonely.gif)
 
 ### What the API Request Block Does
-    This block acts as a bridge between Phonely and another system.\
-    It can:
 
-    - **Send data** collected from callers (e.g., names, phone numbers, emails).
-    - **Retrieve data** (e.g., product info, availability, or pricing).
-    - **Trigger workflows** in apps like Zapier, Make, or your internal API.
+This block acts as a bridge between Phonely and another system.\
+It can:
 
-    You can connect it to any REST API using a cURL command or manual setup.
-  
-  <Step title="Adding the API Request Block to a Flow" titleSize="h3">
-    4. Connect it below a **Collect** or **Ask Exactly** block if you want to send the data collected earlier.
+- **Send data** collected from callers (e.g., names, phone numbers, emails).
+- **Retrieve data** (e.g., product info, availability, or pricing).
+- **Trigger workflows** in apps like Zapier, Make, or your internal API.
 
-    <Tip>
-      For example, you can collect a caller’s name and email first, then use the API Request block to send those details to your CRM.
-    </Tip>
-    2. In your flow editor, click the **➕ (plus)** icon below an existing block.
-    2. In the popup menu, look under Live Call Actions.
-    3. Select **API Request**.
-       - You’ll see a new block added to your canvas labeled **API Request**.
+You can connect it to any REST API using a cURL command or manual setup.
 
-    ![Api Request Block Pn](/assets/api-request-block.png)
-  </Step>
-  <Step title="Setup" titleSize="h3">
-    When you open the block, you’ll see two ways to define your API request:
+<Step title="Adding the API Request Block to a Flow" stepNumber={1} titleSize="h3">
+  Connect it below a **Collect** or **Ask Exactly** block if you want to send the data collected earlier.
 
-    ### Option 1: Import from cURL
+  <Tip>
+    For example, you can collect a caller’s name and email first, then use the API Request block to send those details to your CRM.
+  </Tip>
+  In your flow editor, click the **➕ (plus)** icon below an existing block.
 
-    If you already have a cURL command (e.g., from Postman or developer docs):
+  In the popup menu, look under Live Call Actions.
 
-    1. Paste it into the **cURL Command** box.
-    2. Click **Import from cURL**.\
-       Phonely automatically extracts the method, endpoint, headers, and body.
+  Select **API Request**.
 
-    Example:
+  - You’ll see a new block added to your canvas labeled **API Request**.
 
-    ```
-    curl -X POST "https://jsonplaceholder.typicode.com/posts" \
-    -H "Content-Type: application/json" \
-    -d '{
-      "title": "Phonely Flow Test",
-      "body": "This is a test API request from my Phonely flow.",
-      "userId": 1
-    }'
-    ```
+  ![Api Request Block Pn](/assets/api-request-block.png)
+</Step>
 
-    After import, Phonely converts this into structured fields under **Configure**.
+<Step title="Setup" stepNumber={2} titleSize="h3">
+  When you open the block, you’ll see two ways to define your API request:
 
-    ### Option 2: Build Manually
+  ### Option 1: Import from cURL
 
-    If you don’t have a cURL command, click **Build Manually**.\
-    You’ll then define all settings step by step in the **Configure** tab.
+  If you already have a cURL command (e.g., from Postman or developer docs):
 
-    ![Manually Build Api Request Flow Gi](/assets/manually-build-api-request-flow.gif)
-  </Step>
-  <Step title="Configure" titleSize="h3">
-    The **Configure** tab is where you define what your API request should do.
+  1. Paste it into the **cURL Command** box.
+  2. Click **Import from cURL**.\
+     Phonely automatically extracts the method, endpoint, headers, and body.
 
-    #### 1. API Method
+  Example:
 
-    Select the type of request from the dropdown:
+  ```
+  curl -X POST "https://jsonplaceholder.typicode.com/posts" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "title": "Phonely Flow Test",
+    "body": "This is a test API request from my Phonely flow.",
+    "userId": 1
+  }'
+  ```
 
-    - `GET` – Retrieve data from a system.
-    - `POST` – Send new data (most common).
-    - `PUT` or `PATCH` – Update an existing record.
-    - `DELETE` – Remove a resource.
+  After import, Phonely converts this into structured fields under **Configure**.
 
-    > Example: Choose **POST** when sending form data or new entries to an external app.
+  ### Option 2: Build Manually
 
-    #### 2. API URL
+  If you don’t have a cURL command, click **Build Manually**.\
+  You’ll then define all settings step by step in the **Configure** tab.
 
-    Enter the endpoint where the request should go, e.g.:
+  ![Manually Build Api Request Flow Gi](/assets/manually-build-api-request-flow.gif)
+</Step>
 
-    ```
-    https://jsonplaceholder.typicode.com/posts
-    ```
+<Step title="Configure" stepNumber={3} titleSize="h3">
+  The **Configure** tab is where you define what your API request should do.
 
-    This is the destination for your data.
+  #### 1. API Method
 
-    #### 3. Headers
+  Select the type of request from the dropdown:
 
-    Headers define metadata or authentication details for your API call.\
-    Click **\+ Add** to add key-value pairs such as:
+  - `GET` – Retrieve data from a system.
+  - `POST` – Send new data (most common).
+  - `PUT` or `PATCH` – Update an existing record.
+  - `DELETE` – Remove a resource.
 
-    | **Key**       | **Value**           |
-    | :------------ | :------------------ |
-    | Content-Type  | application/json    |
-    | Authorization | Bearer YOUR_API_KEY |
+  > Example: Choose **POST** when sending form data or new entries to an external app.
 
-    <Tip>
-      Always include `Content-Type: application/json` for JSON-based APIs.
-    </Tip>
-    #### 4. Query Parameters _(optional)_
+  #### 2. API URL
 
-    Use this if your API uses query strings in the URL (e.g., filtering or pagination).
+  Enter the endpoint where the request should go, e.g.:
 
-    Example:
+  ```
+  https://jsonplaceholder.typicode.com/posts
+  ```
 
-    | **Key** | **Value** |
-    | :------ | :-------- |
-    | userId  | 5         |
-    | limit   | 10        |
+  This is the destination for your data.
 
-    #### 5. Body (For POST, PUT, PATCH Requests)
+  #### 3. Headers
 
-    Define what data will be sent.\
-    Switch between **Code** (for JSON) and **Raw** (for plain text).
+  Headers define metadata or authentication details for your API call.\
+  Click **\+ Add** to add key-value pairs such as:
 
-    Example:
+  | **Key**       | **Value**           |
+  | :------------ | :------------------ |
+  | Content-Type  | application/json    |
+  | Authorization | Bearer YOUR_API_KEY |
 
-    ```
-    {
-      "title": "Phonely Flow Test",
-      "body": "This is a test API request from my Phonely flow.",
-      "userId": 1
-    }
-    ```
+  <Tip>
+    Always include `Content-Type: application/json` for JSON-based APIs.
+  </Tip>
+  #### 4. Query Parameters _(optional)_
 
-    <Tip>
-      You can make your API requests dynamic by inserting variables captured earlier in your flow. Type `@`to open the variable picker or select from Available Variables or Auto-Gather Variables to include dynamic data in your request.
-    </Tip>
-    ### 6. Advanced Settings
+  Use this if your API uses query strings in the URL (e.g., filtering or pagination).
 
-    Click to expand this section.\
-    These options help control the flow behavior during API communication.
+  Example:
 
-    ![Api Request Advanced Options Pn](/assets/api-request-advanced-options.png)
+  | **Key** | **Value** |
+  | :------ | :-------- |
+  | userId  | 5         |
+  | limit   | 10        |
 
-    | **Setting**                    | **Description**                                                                       |
-    | :----------------------------- | :------------------------------------------------------------------------------------ |
-    | **Enable Error Handling**      | Lets you catch failed API calls and redirect the flow.                                |
-    | **Retry on Failure**           | Retries automatically if the server doesn’t respond.                                  |
-    | **Interim Message**            | Sends a short message to the caller (e.g., “Please hold while I send your request.”). |
-    | **Post Interim Message Delay** | Adds a short pause after the interim message.                                         |
-    | **Call Outcome Tagging**       | Add labels for analytics or call reports (e.g., “api_success” or “crm_update”).       |
+  #### 5. Body (For POST, PUT, PATCH Requests)
 
-    Click **Continue** to save and move on to the **Test** step.
-  </Step>
-  <Step title="Test Stage" titleSize="h3">
-    Testing ensures your configuration works before you publish your flow.
+  Define what data will be sent.\
+  Switch between **Code** (for JSON) and **Raw** (for plain text).
 
-    1. Click **Test**.\
-       Phonely will send the request exactly as you configured.
-    2. The response will display instantly, showing whether it succeeded or failed.
+  Example:
 
-    If successful, you’ll see:
+  ```
+  {
+    "title": "Phonely Flow Test",
+    "body": "This is a test API request from my Phonely flow.",
+    "userId": 1
+  }
+  ```
 
-    ```
-    Status: 201 Created
-    {
-      "id": 101,
-      "title": "Phonely Flow Test",
-      "body": "This is a test API request from my Phonely flow.",
-      "userId": 1
-    }
-    ```
+  <Tip>
+    You can make your API requests dynamic by inserting variables captured earlier in your flow. Type `@`to open the variable picker or select from Available Variables or Auto-Gather Variables to include dynamic data in your request.
+  </Tip>
+  ### 6. Advanced Settings
 
-    If failed, you’ll get an error message explaining what went wrong (e.g., invalid URL, authentication error, or timeout).
-  </Step>
-  <Step title="Usecases for API Requests" titleSize="h3">
-    
+  Click to expand this section.\
+  These options help control the flow behavior during API communication.
 
-    | **Scenario**    | **Action** | **Example Use Case**                            |
-    | :-------------- | :--------- | :---------------------------------------------- |
-    | CRM integration | POST       | Send collected lead data to HubSpot or Zoho CRM |
-    | SMS gateway     | POST       | Send a text message via Twilio                  |
-    | Data lookup     | GET        | Fetch an order status or product info           |
-    | Notification    | POST       | Trigger a Slack or Discord webhook              |
-    | Ticket creation | POST       | Create a support ticket in Zendesk or Freshdesk |
-  </Step>
+  ![Api Request Advanced Options Pn](/assets/api-request-advanced-options.png)
+
+  | **Setting**                    | **Description**                                                                       |
+  | :----------------------------- | :------------------------------------------------------------------------------------ |
+  | **Enable Error Handling**      | Lets you catch failed API calls and redirect the flow.                                |
+  | **Retry on Failure**           | Retries automatically if the server doesn’t respond.                                  |
+  | **Interim Message**            | Sends a short message to the caller (e.g., “Please hold while I send your request.”). |
+  | **Post Interim Message Delay** | Adds a short pause after the interim message.                                         |
+  | **Call Outcome Tagging**       | Add labels for analytics or call reports (e.g., “api_success” or “crm_update”).       |
+
+  Click **Continue** to save and move on to the **Test** step.
+</Step>
+
+<Step title="Test Stage" stepNumber={4} titleSize="h3">
+  Testing ensures your configuration works before you publish your flow.
+
+  1. Click **Test**.\
+     Phonely will send the request exactly as you configured.
+  2. The response will display instantly, showing whether it succeeded or failed.
+
+  If successful, you’ll see:
+
+  ```
+  Status: 201 Created
+  {
+    "id": 101,
+    "title": "Phonely Flow Test",
+    "body": "This is a test API request from my Phonely flow.",
+    "userId": 1
+  }
+  ```
+
+  If failed, you’ll get an error message explaining what went wrong (e.g., invalid URL, authentication error, or timeout).
+</Step>
+
+<Step title="Usecases for API Requests" stepNumber={5} titleSize="h3">
+  | **Scenario**    | **Action** | **Example Use Case**                            |
+  | :-------------- | :--------- | :---------------------------------------------- |
+  | CRM integration | POST       | Send collected lead data to HubSpot or Zoho CRM |
+  | SMS gateway     | POST       | Send a text message via Twilio                  |
+  | Data lookup     | GET        | Fetch an order status or product info           |
+  | Notification    | POST       | Trigger a Slack or Discord webhook              |
+  | Ticket creation | POST       | Create a support ticket in Zendesk or Freshdesk |
+</Step>
