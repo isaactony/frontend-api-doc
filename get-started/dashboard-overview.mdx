@@ -63,12 +63,12 @@ This view is refreshed continuously throughout the day and includes only calls t
 ### **Call Volume**
 
 The **Call Volume** card displays the total number of calls handled by your agents today.\
-It breaks down into:                
+It breaks down into:
 
 - **Inbound Calls:** Calls received by your agents.
-- **Outbound Calls:** Calls initiated by your agents (e.g., through outbound campaigns or redial flows).      
+- **Outbound Calls:** Calls initiated by your agents (e.g., through outbound campaigns or redial flows).
 
-![Todays Metrics Pn](/assets/todays-metrics.png)
+![Todays Metrics Phonely Pn](/assets/todays-metrics-phonely.png)
 
 The graph helps you visualize call trends as the day progresses.\
 For example, a gradual rise in the inbound curve means your team is receiving calls consistently, while spikes indicate busy periods.
@@ -81,13 +81,13 @@ This card can display one of several metrics, controlled by the dropdown menu in
 
 - **Call Outcomes** – Trend of resolved, missed, transferred, voicemail, etc.
 - **Call Topics** – Count of categorized topics (e.g., _Appointment Request_, _Billing Inquiry_, _Support Ticket_) detected by Phonely’s AI from call transcripts.
-- **Total Calls** – Total number of calls in the selected period (sum of inbound + outbound).
+- **Total Calls** – Total number of calls in the last 24 hours. 
 - **Total Actions** – Number of in-flow actions performed by agents/flows (e.g., send SMS/email, transfer, API call).
 - **Total Duration** – Aggregate talk time for the selected period.
 
 ## Periodic Metrics
 
-### **1. Call Volume**
+### **Call Volume**
 
 The **Call Volume** chart tracks the total number of calls made and received by Phonely during the selected period. It distinguishes between:
 
@@ -99,16 +99,16 @@ You can use this visualization to identify trends and patterns in your call traf
 - A sudden drop in inbound calls might indicate routing issues or downtime.
 - A sharp increase may reflect a successful campaign or seasonal surge.
 
-![Call Volumues Phonely Pn](/assets/call-volumues-phonely.png)
+![Call Volume Metrics Phonely Pn](/assets/call-volume-metrics-phonely.png)
 
 By analyzing call volume over time, you can make informed decisions about staffing, flow optimization, and scaling your agents.
 
-### **2. Peak Times**
+### **Peak Times**
 
 The **Peak Times** section identifies when most calls occur during the day.\
 Each bar represents an hour block, helping you pinpoint your busiest hours.
 
-![Peak Times Dashboard Pn](/assets/peak-times-dashboard.png)
+![Peak Times Metric Phonely Pn](/assets/peak-times-metric-phonely.png)
 
 This information is essential for:
 
@@ -118,7 +118,7 @@ This information is essential for:
 
 For example, if your calls peak between 3 PM and 5 PM, you can plan automated follow-ups or redials during quieter hours.
 
-### **3. End Call Reasons**
+### **End Call Reasons**
 
 The **End Call Reasons** widget automatically categorizes why each call ended.\
 Common end reasons include:
@@ -128,14 +128,26 @@ Common end reasons include:
 - **Agent Ended** – Phonely or your AI flow ended the call based on logic or timeout.
 - **Transfer or Voicemail** – The call was redirected or logged to voicemail.
 
-![End Call Outcomes Pn](/assets/end-call-outcomes.png)
+<img
+  src="/assets/end-call-reasons-metric.png"
+  alt="End Call Reasons Metric Pn"
+  title="End Call Reasons Metric Pn"
+  style={{ width:"90%" }}
+/>
 
 Understanding end call reasons helps you identify friction points. If you notice frequent timeouts, your script or flow may need adjustments. If many customers hang up early, consider revising your greeting or routing logic.
 
-### **4. Call Topics**
+### **Call Topics**
 
 The **Call Topics** section organizes calls by detected intent or purpose.\
-Phonely uses natural language understanding to interpret what each call was about, such as _Billing Inquiry_, _Appointment Booking_, or _Technical Support_.
+Phonely uses natural language understanding to interpret what each call was about. 
+
+<img
+  src="/assets/call-topics-metrics-phonely.png"
+  alt="Call Topics Metrics Phonely Pn"
+  title="Call Topics Metrics Phonely Pn"
+  style={{ width:"89%" }}
+/>
 
 These insights help you:
 
@@ -145,7 +157,7 @@ These insights help you:
 
 For instance, if “Order Status” becomes your most frequent topic, you might introduce a dedicated flow or quick-response feature to handle it automatically.
 
-### 5. Call Actions
+### Call Actions
 
 **Call Actions** represent the most common steps or automations your agents triggered during calls.\
 These actions could include:
@@ -154,12 +166,16 @@ These actions could include:
 - Creating or updating records in connected systems (like Google Sheets or Zapier).
 - Running code blocks or transferring calls.
 
-![Call Actions Pn](/assets/call-actions.png)
+<img
+  src="/assets/call-actions.png"
+  alt="Call Actions Pn"
+  style={{ width:"87%" }}
+/>
 
-This section shows which automations are most active and how often they occur.\
+  This section shows which automations are most active and how often they occur.\
 It’s an excellent indicator of workflow effectiveness, if a critical action rarely appears, it might mean users aren’t reaching that stage or an integration isn’t firing properly.
 
-### **6. Call Outcomes**
+### **Call Outcomes**
 
 **Call Outcomes** summarize what happened at the end of each call.\
 Unlike “End Call Reasons” (which describe how the call technically ended), outcomes describe the business result.
@@ -175,7 +191,7 @@ Examples of call outcomes:
 These outcomes are vital for measuring success. They help teams assess whether conversations are achieving their goals and whether call flows are converting effectively.\
 Monitoring trends in call outcomes also helps you evaluate changes over time - for example, after tweaking scripts or updating your AI prompts.
 
-### **7. Call Sentiment**
+### **Call Sentiment**
 
 The **Call Sentiment** section analyzes caller emotions and tone throughout the conversation.\
 Each call is categorized as **Positive**, **Neutral**, or **Negative** based on the caller’s language and sentiment.
@@ -184,7 +200,7 @@ This insight helps you gauge customer satisfaction without manually reviewing tr
 If you notice a rise in negative sentiment, it could indicate a confusing workflow, an unhelpful agent tone, or recurring product issues.\
 On the other hand, consistently positive sentiment is a strong indicator that your AI agents are providing effective support.
 
-### **8. Agent Breakdown**
+### **Agent Breakdown**
 
 The **Agent Breakdown** chart compares performance across all active agents.\
 You can toggle between several views:
