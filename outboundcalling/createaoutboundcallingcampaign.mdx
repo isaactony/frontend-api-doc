@@ -21,8 +21,8 @@ An outbound campaign is a coordinated series of automated calls initiated by you
 
 Once configured, the system can automatically call new leads as they appear or process static lists of contacts in defined batches. The campaign setup process is divided into structured steps to ensure accuracy and compliance.
 
-<Steps>
-  <Step title=" Define Campaign Information" titleSize="h2">
+
+## Define Campaign Information
     When you click **Create Campaign**, you’re first asked to define the _identity_ and _intent_ of your campaign. This will help you organize campaigns and ensure that metrics and compliance requirements are clear later.
 
     ### **Campaign Name**
@@ -45,8 +45,8 @@ Once configured, the system can automatically call new leads as they appear or p
     Once defined, this context shapes your reporting and helps ensure that future analytics are categorized properly.    
 
     ![Create Outbound Campaign](/assets/create-outbound-campaign.gif)
-  </Step>
-  <Step title="Add Outbound Numbers" titleSize="h2">
+  
+  ## Add Outbound Numbers
     A campaign needs outbound phone numbers that it can use to place calls. These numbers are provisioned through **Twilio**.
 
     When you connect Twilio to Phonely, all your available numbers become visible, allowing you to choose which ones will represent the campaign.
@@ -75,8 +75,8 @@ Once configured, the system can automatically call new leads as they appear or p
        As with state-based routing, if no local number exists, Phonely falls back to a random enabled number.                       
 
     Routing determines how your campaign appears to the outside world and directly affects engagement metrics like pickup and conversion rates.    
-  </Step>
-  <Step title="Call Cadence" titleSize="h2">
+  
+  ## Call Cadence
     “Call cadence” refers to _when_ and _how often_ your campaign will place calls.\
     Phonely allows scheduling so your AI never calls outside of approved working hours.
 
@@ -90,8 +90,8 @@ Once configured, the system can automatically call new leads as they appear or p
     You’ll also find a **rate control slider** that sets the maximum calls per hour.\
     This feature prevents overwhelming your telephony provider or overloading concurrent call capacity.\
     Cadence management is critical for maintaining system stability and for ensuring you don’t exceed your provider’s call-per-second thresholds.
-  </Step>
-  <Step title="Select Trigger Type" titleSize="h2">
+  
+  ## Select Trigger
     This step determines how Phonely knows who to call and when to trigger those calls.\
     It’s here that you’ll decide between a continuous, always-on campaign and a finite, one-time batch.
 
@@ -151,8 +151,8 @@ Once configured, the system can automatically call new leads as they appear or p
 
     Once uploaded, Phonely processes the list sequentially according to your call cadence.\
     If you want to reuse the same campaign later with new leads, simply upload another CSV or create a new campaign.
-  </Step>
-  <Step title="Configure Call Flows" titleSize="h2">
+  
+  ## Configure Call Flows
     Now that Phonely knows who to call, this step defines what happens during the call.\
     Your AI agent’s behavior is determined by a Call Flow — a visual, block-based sequence that specifies messages, questions, responses, and follow-up actions.
 
@@ -177,8 +177,8 @@ Once configured, the system can automatically call new leads as they appear or p
       Please note that **not all variables need to be mapped**, only those you want your agent to reference or use during the call
     </Danger>
     After mapping, click **Save** to lock in your configuration.
-  </Step>
-  <Step title="Avoid Spamming - Review Compliance and Legal Confirmation" titleSize="h2">
+  
+  ## Avoid Spamming - Review Compliance and Legal Confirmation
     Outbound calling regulations vary by country, so Phonely includes a mandatory compliance review step before publishing.
 
     You’ll see two confirmation checkboxes:
@@ -194,8 +194,8 @@ Once configured, the system can automatically call new leads as they appear or p
     ![Avoid Spamming Outbound Campaign](/assets/avoid-spamming-outbound-campaign.png)
 
     Once both are acknowledged, you can safely **publish** your campaign.
-  </Step>
-  <Step title="Launching and Monitoring the Campaign" titleSize="h2">
+  
+  ## Launching and Monitoring the Campaign
     After publishing, your campaign appears on the **Outbound Calls Dashboard**.\
     This page provides real-time insights into every call attempt and result.
 
@@ -204,8 +204,8 @@ Once configured, the system can automatically call new leads as they appear or p
     > “No calls made yet. Start the campaign to begin calling.”
 
     Click **Start Campaign** to begin. Phonely immediately activates your Agents, which begins dialing leads according to your scheduled.
-  </Step>
-  <Step title="Managing Campaign Status" titleSize="h2">
+  
+  ## Managing Campaign Status
     Once running, your campaign displays an **In Progress** status badge.\
     Click it to reveal control options:
 
@@ -213,8 +213,8 @@ Once configured, the system can automatically call new leads as they appear or p
     - **End Campaign** – permanently stop the campaigns. Once ended, it cannot be resumed.
 
     ![Campaign Actions Pn](/assets/campaign-actions.png)
-  </Step>
-  <Step title="Editing and Optimizing Existing Campaigns" titleSize="h2">
+  
+  ## Editing and Optimizing Existing Campaigns
     If you need to make adjustments after launch, click **Edit Campaign** at the top-right of the dashboard.
 
     You can modify:
@@ -226,7 +226,5 @@ Once configured, the system can automatically call new leads as they appear or p
     - Call flow connections.
 
       ![Edit Ooutbound Campaign Pn](/assets/edit-ooutbound-campaign.png)
-  </Step>
-</Steps>
 
 ---
