@@ -125,17 +125,7 @@ The Knowledge Base settings control how your agent retrieves and uses informatio
 
 ## RAG Score Threshold
 
-This threshold determines how similar a knowledge chunk must be in order for the agent to use it in a response.
-
-A **higher threshold** means the agent only uses highly relevant content.\
-A **lower threshold** means it may use more broadly related information.
-
-For example:
-
-- If you want extremely accurate answers, keep the threshold **strict** (0.6–0.8).
-- If your documents are long and you want the agent to consider more context, lower the threshold (0.2–0.4).
-
-Setting the slider to **0** disables filtering completely.
+This threshold determines how similar a knowledge chunk must be in order for the agent to use it in a response. Filter out chunks with a score below this threshold for cosine distance metric. Lower values include more results but may be less relevant. Set to 0 to disable filtering. Default is 0.7.
 
 ## RAG Top K Results
 
