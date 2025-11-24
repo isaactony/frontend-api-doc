@@ -161,6 +161,18 @@ Once the transfer connects to a human or voicemail, you can define advanced beha
 
 How long Phonely should attempt the warm introduction before switching to cold transfer.
 
+**Detect who answered:** When enabled, Phonely will detect if a person, voicemail, or IVR answered before proceeding. When disabled, Phonely immediately speaks after detecting any audio.
+
+**Detection timeout:** The maximum time allowed for the other end to speak before being detected as an IVR, voicemail, or a person.
+
+**Message to caller (inbound):** After detecting a person on the line, this message is played to the inbound caller before transferring them to the outbound destination.
+
+**Message to recipient (outbound):** After detecting a person on the line, this message is played to the outbound destination before connecting the inbound caller to them. 
+
+**Post transfer message: **After connecting the inbound caller to the outbound destination, this message is played to both parties before the agent disconnects. 
+
+**Warm transfer duration:** The maximum duration in seconds that Phonely will attempt to complete the warm transfer.
+
 ### **Call Outcome Tagging**
 
 Automatically tag the call based on:
