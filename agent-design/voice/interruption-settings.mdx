@@ -51,7 +51,7 @@ This helps avoid awkward overlaps or overly long pauses between sentences.
 ## Number of Words to Interrupt Assistant
 
 This determines how many words the caller must speak before interrupting the AI mid-response.\
-It helps balance between letting the agent finish its thoughts and ensuring users can easily interject when needed.   
+It helps balance between letting the agent finish its thoughts and ensuring users can easily interject when needed.
 
 ## Smart Endpointing
 
@@ -62,3 +62,87 @@ This helps prevent the AI from interrupting too early and creates smoother turn-
 2. Adjust the Smart Turn Stop Time slider to control how long the AI waits before speaking again.
 
 ![Smart End Pointing Pn](/assets/smart-end-pointing.png)
+
+## Model Providers
+
+The **Model Providers** section controls the AI and telecom engines that power your Phonely agent. These settings influence how your agent sounds, how quickly it responds, how well it reasons, and how reliably it handles calls. For best performance, Phonely recommends keeping most of these options on their defaults — but you can still customize everything based on your workflow.
+
+![Model Providers Phonely Pn](/assets/model-providers-phonely.png)
+
+## Voice LLM Model
+
+This setting determines **which Large Language Model** your agent uses when speaking to callers. Different models offer different balances of speed, reasoning quality, and cost.
+
+You can choose from several OpenAI and Azure-powered models, along with Phonely’s optimized default:
+
+- **Phonely (Default)** – A pre-optimized model configuration designed specifically for live phone conversations. It provides the best mix of speed, reliability, and stable conversational tone.
+- **GPT-5.1** – OpenAI’s latest high-reasoning model. Excellent for complex or technical conversations, though slightly slower.
+- **GPT-5** – Strong reasoning with ~800ms response time.
+- **GPT-5 Mini** – A faster, more lightweight GPT-5 variant with ~600ms response time.
+- **GPT-4.1** – Balanced performance, stable and predictable.
+- **GPT-4o** – Azure-powered with very fast ~450ms responses.
+
+## Telecom Provider
+
+This determines which telecom network your Phonely agent uses when placing and receiving calls.
+
+You can choose between:
+
+- **Phonely (Default)** – Optimized for warm transfers and clear audio quality.
+- **Dialy** – Great for warm transfers but has a slightly slower dial-out.
+- **Twilio** – Extremely reliable with fast dial-out, ideal for high-volume environments.
+
+## Prompt Version (Beta)
+
+Prompt Versions control the **instructions and reasoning style** your AI agent uses internally. Each version represents an improvement in clarity, response tone, and logic.
+
+Available versions include:
+
+- **Phonely v1** – The original stable system.
+- **Phonely v1.5 (Default)** – Improved reasoning and more natural responses.
+- **Phonely v2 (Beta)** – More concise, human-like answers.
+- **Phonely v2.5 (Beta)** – Latest experimental version with better performance and smoother conversational flow.
+
+## Flow Architecture (Beta)
+
+Flow Architecture defines **how Phonely processes call logic and conversational state**.
+
+You can switch between two versions:
+
+- **Phonely 1.0 (Default)** – Production-ready and stable.
+- **Phonely 2.0** – Experimental next-generation architecture with smoother transitions and more advanced flow logic.
+
+## Transcription Keywords
+
+If your business uses **uncommon names, technical terms, product codes, model numbers, or industry-specific jargon**, you can enter them here to help the transcriber recognize them accurately during calls.
+
+Simply type a keyword and press **Enter** to save it.\
+This helps improve transcript accuracy and prevents misheard words.
+
+## Knowledge Base Settings
+
+The Knowledge Base settings control how your agent retrieves and uses information from your uploaded documents. These influence how much context your agent pulls in and how strictly it filters irrelevant content.
+
+## RAG Score Threshold
+
+This threshold determines how similar a knowledge chunk must be in order for the agent to use it in a response.
+
+A **higher threshold** means the agent only uses highly relevant content.\
+A **lower threshold** means it may use more broadly related information.
+
+For example:
+
+- If you want extremely accurate answers, keep the threshold **strict** (0.6–0.8).
+- If your documents are long and you want the agent to consider more context, lower the threshold (0.2–0.4).
+
+Setting the slider to **0** disables filtering completely.
+
+## RAG Top K Results
+
+This controls the **maximum number of chunks** retrieved from your Knowledge Base for each answer.
+
+- **Lower values** (1–2 results) → short, focused responses
+- **Medium values** (3 results, default) → balanced context
+- **Higher values** (5–10 results) → richer information but sometimes more noise
+
+Choose based on how detailed your conversations need to be.
