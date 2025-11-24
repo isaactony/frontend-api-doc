@@ -100,10 +100,10 @@ Failover is one of the most powerful features.
 
 When enabled, Phonely:
 
-1. Tries the first number
-2. If no one picks up → moves to the next
-3. Repeats until someone answers
-4. If all fail → exits the block, allowing you to play a fallback message
+1. Tries the first number. 
+2. If no one picks up → moves to the next. 
+3. Repeats until someone answers. 
+4. If all fail → exits the block, allowing you to play a fallback message. 
 
 <img
   src="/assets/failover-in-transfer-flow.png"
@@ -126,11 +126,11 @@ All this happens automatically with a simple toggle.
 
 When the agent starts the transfer, the caller may need to wait briefly. Phonely lets you design this experience with three modes:
 
-### **On Hold Chat**
+### On Hold Chat
 
 Phonely continues talking to the customer while completing the transfer.
 
-### **On Hold Music**
+### On Hold Music
 
 Phonely plays hold music with periodic reminder messages such as:\
 _“Thanks for holding. We're still connecting you.”_
@@ -140,7 +140,7 @@ You can set:
 - **Reminder message**
 - **Reminder frequency (seconds)**
 
-### **Both (Chat + Music)**
+### Both (Chat + Music)
 
 Phonely mixes live conversation with hold music for a more dynamic waiting experience.
 
@@ -157,7 +157,7 @@ Phonely mixes live conversation with hold music for a more dynamic waiting exper
 
 Once the transfer connects to a human or voicemail, you can define advanced behaviors:
 
-### **Warm Transfer Attempt Duration**
+### Warm Transfer Attempt Duration
 
 How long Phonely should attempt the warm introduction before switching to cold transfer.
 
@@ -169,11 +169,11 @@ How long Phonely should attempt the warm introduction before switching to cold t
 
 **Message to recipient (outbound):** After detecting a person on the line, this message is played to the outbound destination before connecting the inbound caller to them.
 
-\*\*Post transfer message: \*\*After connecting the inbound caller to the outbound destination, this message is played to both parties before the agent disconnects.
+**Post transfer message:** After connecting the inbound caller to the outbound destination, this message is played to both parties before the agent disconnects.
 
 **Warm transfer duration:** The maximum duration in seconds that Phonely will attempt to complete the warm transfer.
 
-### **Call Outcome Tagging**
+### Call Outcome Tagging
 
 Automatically tag the call based on:
 
@@ -194,8 +194,6 @@ This is ideal for reporting, analytics, and CRM syncing.
 
 ## Putting It All Together: Example Workflow
 
-Let’s build a real example matching Will’s video:
-
 ### Scenario
 
 Caller wants to reach someone in the support team.
@@ -212,12 +210,16 @@ Add destinations:
    - Number: +1…
    - Pre-transfer message: “Let me connect you to Pam.”
    - Enable failover
-2. **Michael**
-   - Number: +1…
-3. **Dwight**
-   - Number: +1…
-4. **Jim**
-   - Number: +1…
+2. **Michael: **Number: +1…
+3. **Dwight: **Number: +1…
+4. **Jim: **Number: +1…
+
+<img
+  src="/assets/transfer-call-example.png"
+  alt="Transfer Call Example Pn"
+  title="Transfer Call Example Pn"
+  style={{ width:"59%" }}
+/>
 
 ### Hold Experience
 
