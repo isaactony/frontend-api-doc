@@ -32,6 +32,7 @@
               "key-concepts/flows",
               "key-concepts/routing",
               "key-concepts/variables",
+              "key-concepts/auto-gather-variables",
               "key-concepts/manage-workflow-versions"
             ]
           },
