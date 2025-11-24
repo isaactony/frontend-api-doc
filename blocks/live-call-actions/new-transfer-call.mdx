@@ -11,7 +11,7 @@ This guide walks you through everything you can do inside the updated **Transfer
 
 ## Why the New Transfer Flow Matters
 
-Before this update, businesses had to create **giant spider-web flows** just to transfer a caller to the right person. A typical setup looked like:
+Before this update, businesses had to create giant spider-web flows just to transfer a caller to the right person. A typical setup looked like:
 
 - Ask the caller who they want
 - Route them manually to different branches (Dwight → branch A, Michael → branch B, Pam → branch C…)
@@ -37,7 +37,7 @@ The Transfer Call block has three main sections:
 
 1. **Setup** — Choose warm or cold transfer
 2. **On Transfer** — Add destinations, conditions, messages, and failover behavior
-3. **Connection Experience** — Customize what happens while the caller waits and after the call connects
+3. **Connection Experience** — Customize what happens while the caller waits and after the call connects.            
 
 Let’s walk through each part in detail.
 
@@ -58,9 +58,9 @@ Best for:
 The agent briefly introduces the caller and shares context before completing the transfer.\
 Best for:
 
-- Customer support escalations. 
-- Sales handoffs. 
-- Complex or high-value callers. 
+- Customer support escalations.
+- Sales handoffs.
+- Complex or high-value callers.
 
 Selecting the correct transfer type determines how Phonely behaves when initiating the handoff.
 
@@ -72,10 +72,10 @@ This section is the heart of the transfer flow. Here, you can define exactly how
 
 Each destination includes:
 
-- **Condition**: keywords such as _“support,” “sales,” “billing”_ that trigger this route. For example if the caller says support or Michael use this destination. 
-- **Phone Number**: the number Phonely will dial. 
+- **Condition**: keywords such as _“support,” “sales,” “billing”_ that trigger this route. For example if the caller says support or Michael use this destination.
+- **Phone Number**: the number Phonely will dial.
 - **Pre-Transfer Message**: the message the agent says before transferring (e.g., _“Let me connect you to Pam.”_)
-- **Failover Toggle**: enables automatic retry if the call goes to voicemail or isn’t answered. 
+- **Failover Toggle**: enables automatic retry if the call goes to voicemail or isn’t answered.
 
 <img
   src="/assets/transfer-flow-block.png"
@@ -167,9 +167,9 @@ How long Phonely should attempt the warm introduction before switching to cold t
 
 **Message to caller (inbound):** After detecting a person on the line, this message is played to the inbound caller before transferring them to the outbound destination.
 
-**Message to recipient (outbound):** After detecting a person on the line, this message is played to the outbound destination before connecting the inbound caller to them. 
+**Message to recipient (outbound):** After detecting a person on the line, this message is played to the outbound destination before connecting the inbound caller to them.
 
-**Post transfer message: **After connecting the inbound caller to the outbound destination, this message is played to both parties before the agent disconnects. 
+\*\*Post transfer message: \*\*After connecting the inbound caller to the outbound destination, this message is played to both parties before the agent disconnects.
 
 **Warm transfer duration:** The maximum duration in seconds that Phonely will attempt to complete the warm transfer.
 
