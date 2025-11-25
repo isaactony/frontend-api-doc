@@ -17,11 +17,11 @@ Understanding the nuances between Phonely's conversational blocks is crucial for
 
 **• Purpose** - Ideal for gathering a string of related information (like a form) where all fields must be collected consecutively.
 
-**• Behavior** - It is a single, combined block that does not branch based on individual answers within the block. The AI ensures all required information is gathered before moving to the next part of the workflow.
+**• Behavior** - It is a single, combined block that does not branch based on individual answers within the block. The AI ensures all required information is gathered before moving to the next part of the workflow. 
 
 **• Efficiency** - It is significantly faster and cleaner than creating a series of individual Ask Exactly Blocks or a single Prompt Block for this specific use case.
 
-**• Smart Confirmation** - If the customer has already provided information relevant to a question in the Collect Block earlier in the conversation, Phonely will intelligently confirm that information instead of re-asking the question, enhancing the natural flow.
+**• Smart Confirmation** - If the customer has already provided information relevant to a question in the Collect Block earlier in the conversation, Phonely will intelligently confirm that information instead of re-asking the question, enhancing the natural flow.  
 
 ## Key Features
 
@@ -51,14 +51,16 @@ Understanding the nuances between Phonely's conversational blocks is crucial for
 
     - **Name (Variable Name)**: Assign a descriptive internal name for the variable that will store this piece of information (e.g., "customer_name", "contact_phone", "user_email"). This name will be used to reference the data later.
     - **Type (Answer Type)**: Select the appropriate data type for the expected input (e.g., text, phone, email, number, date). This ensures Phonely validates and stores the information in the correct format for subsequent use.
-    - **Question (Instruction)**: Briefly describe what Phonely should ask or obtain from the customer (e.g., "Get customer name", "Get customer phone", "Get customer email"). This serves as an instruction to the AI.
+    - **Question (Instruction)**: Briefly describe what Phonely should ask or obtain from the customer (e.g., "Get customer name", "Get customer phone", "Get customer email"). This serves as an instruction to the AI.   
 
     <Tip>
       You can include specific instructions here, such as "Get the caller's name and spell it back to them
     </Tip>
-    ## 
+    ![Collect Block In Phonely Pn](/assets/collect-block-in-phonely.png)
   </Step>
 </Steps>
+
+### Example Details to Collect
 
 Here's how you might configure a Collect Block to collect basic customer details:
 
@@ -82,7 +84,7 @@ Here's how you might configure a Collect Block to collect basic customer details
 
 ## Using Data
 
-After the Collect Block has successfully gathered all the defined information, it is automatically stored as variables. These variables are immediately available for use in any subsequent blocks within your workflow.
+After the Collect Block has successfully gathered all the defined information, it is automatically stored as variables. These variables are immediately available for use in any subsequent blocks within your workflow. 
 
 **• Accessing Data** - When configuring actions, conditions, or prompts in later blocks, simply select the appropriate variable name that was defined in your Collect Block (e.g., name, phone, email) to reference the collected data.
 

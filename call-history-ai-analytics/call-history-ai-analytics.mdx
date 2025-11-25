@@ -60,7 +60,7 @@ Use the **Filters panel** to quickly refine your search and uncover the calls th
 
 You can also click **View \> Toggle Columns** to customize which fields are displayed, such as A/B Test, Last Block, or Version.
 
-## **Reviewing Call Details**
+## Reviewing Call Details
 
 Click any call row to open the **Call Detail View**.\
 You’ll find three tabs at the top: **Highlights**, **Transcript**, and **Blocks**.
@@ -90,10 +90,10 @@ The **Blocks** tab breaks the conversation down into the individual workflow blo
 
 Each block displays:
 
-- **Block Name and Status**. 
-- **AI Speech** and **User Input** text
-- **Variables Extracted** during the exchange
-- **Reasoning** that explains AI intent detection or clarification logic
+- **Block Name and Status**.
+- **AI Speech** and **User Input** text.
+- **Variables Extracted** during the exchange.
+- **Reasoning** that explains AI intent detection or clarification logic.
 
 This view is especially helpful when debugging or optimizing your call flows.
 
@@ -101,7 +101,7 @@ This view is especially helpful when debugging or optimizing your call flows.
 
 The **Export** and **Report** options allow you to analyze call performance or share data externally.
 
-### A) Export Selected Calls
+### Export Selected Calls
 
 Use **Export Selected Calls** when you want to download specific calls manually from the list.
 
@@ -110,32 +110,37 @@ Use **Export Selected Calls** when you want to download specific calls manually 
 2. Click **Export Selected Calls**.
    - This action downloads a **CSV file** containing detailed data for only those calls.
 
-### B) Running a Report
+### Running a Report
 
 Use **Run Report** to generate an automatic summary of all calls that match your **filters and date range** - no manual selection needed.
 
-1. At the top of the Call History page, apply the desired date range. 
+1. At the top of the Call History page, apply the desired date range.
 2. Once your filters are set, click Run Report in the bottom toolbar.
 3. Phonely will automatically generate a Call Report summarizing those filtered calls.
 
-### C) Understanding the Call Report
+### Understanding the Call Report
 
 After clicking **Run Report**, a summary panel appears showing:
 
-![Call Report Analytics Pn](/assets/call-report-analytics.png)
+<img
+  src="/assets/call-report-analytics.png"
+  alt="Call Report Analytics Pn"
+  className="mx-auto"
+  style={{ width:"61%" }}
+/>
 
-### D) Downloading Report Data
+### Downloading Report Data
 
 You can download your report in two formats:
 
 - **Raw Data (CSV)** – Contains every individual call and all details, perfect for deeper review in Excel or Sheets.
 - **Summary Stats (JSON)** – Contains aggregated metrics only (totals, averages, outcomes), useful for analytics tools or dashboards.
 
-Simply click the **Download CSV** or **Download JSON** button from the Call Report panel.                                                        
+Simply click the **Download CSV** or **Download JSON** button from the Call Report panel.
 
-## **Understanding Call Path Analytics**
+## Understanding Call Path Analytics
 
-Click the **Call Path** tab at the top of the Call History page to visualize how conversations progress through your workflows.            
+Click the **Call Path** tab at the top of the Call History page to visualize how conversations progress through your workflows.
 
 Each node in the diagram represents a block or workflow segment, while the connecting lines show call progression between them.
 
@@ -147,21 +152,21 @@ Each node in the diagram represents a block or workflow segment, while the conne
 - **Workflow Nodes** – Represent steps like  _Reception Flow_, or _AI Receptionist_.
 - **End Node** – Displays success rate, total calls ended, and end reasons (e.g., _AI Hang Up_, _Customer Ended_).
 
-You can use filters here to focus on:           
+You can use filters here to focus on:
 
-- A specific date range.         
-- Your workflows (e.g., Appointment Booking vs. Legal Reception)
-- Calls that share the same outcome or end reason
+- A specific date range.
+- Your workflows (e.g., Appointment Booking vs. Legal Reception).
+- Calls that share the same outcome or end reason.
 
 ## Example Use Cases
-                                  
+
 <Tabs>
   <Tab title="Appointment Scheduling">
     Use call paths to track how effectively appointment scheduling calls are processed and identify areas for improvement.
   </Tab>
   <Tab title="Lead Qualification">
     Analyze call endings to refine lead qualification prompts and reduce call drop-off rates.
-  </Tab>   
+  </Tab>
 </Tabs>
 
 ## Best Practices

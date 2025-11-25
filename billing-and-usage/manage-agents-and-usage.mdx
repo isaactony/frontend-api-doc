@@ -1,5 +1,5 @@
 ---
-title: "Access Usage Data or Delete Agents"
+title: "Access Usage Data & Delete Agents"
 description: "Learn how to access agents usage data and how to delete agents"
 ---
 
@@ -8,34 +8,52 @@ From here, you can monitor call activity, download usage data, and manage agents
 
 ### **Accessing the Agents Page**
 
-1. From the main navigation bar at the top, click **Agents**.
-2. You’ll see a table listing all agents in your organization, along with key details such as:
-   - **Name:** The agent’s display name.
-   - **Phone Number:** The number assigned to the agent (if any).
-   - **Agent ID:** A unique identifier.
-   - **Deployment:** Indicates whether the agent is live in _Production_ or another environment.
-   - **Call Minutes (Monthly):** Total minutes the agent has used this month.
-   - **Updated At:** Shows when the agent was last modified or deployed.
+<Steps>
+  <Step title="Click your profile icon (bottom-left corner of the dashboard).">
+    
+  </Step>
+  <Step title="    From the dropdown menu, select Settings.">
+    
+  </Step>
+  <Step title="Switch to the agents tab.">
+    
+  </Step>
+  <Step title="You’ll see a table listing all agent in your organization, along with key details such as:">
+    - **Name**: The agent's display name. 
+    - **Phone Number:** The number assigned to the agent (if any).
+    - **Agent ID:** A unique identifier.
+    - **Deployment:** Indicates whether the agent is live in Production or Enterprise.
+    - **Call Minutes (Monthly):** Total minutes the agent has used this month.
+    - **Updated At:** Shows when the agent was las modified or deployed.
+  </Step>
+  <Step title="Click the organization button at top to switch between different organizations.">
+    
+  </Step>
+</Steps>
 
-### 1. Accessing Agent Usage Data
+![Accessing Agent Usage Data Gi](/assets/accessing-agent-usage-data.gif)
+
+### Agent Usage Data
 
 Each agent’s monthly activity is automatically logged and displayed in this table. You can also export this data for external reporting or analysis.
 
-1. Go to the **Agents** page.
-2. Review each agent’s **Call Minutes (Monthly)** to see current usage.
+1. Review each agent’s **Call Minutes (Monthly)** to see current usage.
 3. To download a detailed report:
    - Click the **Download usage data** button (top right of the table).
-   - The data file will include each agent’s total usage time, deployment details, and activity timestamps.
-4. Open the downloaded file in your preferred spreadsheet tool (e.g., Excel or Google Sheets) to analyze or share with your team.
+   - The data file will include each agent's total usage time, deployment details, and activity timestamps.
 
-   <Tip>
-     Usage data helps you track which agents handle the most calls, making it easier to allocate minutes or identify agents that may need scaling adjustments.
-   </Tip>
+![Agent Usage Table Pn](/assets/agent-usage-table.png)
 
-### 2. Deleting Agents
+3. Open the downloaded file in your preferred spreadsheet tool (e.g., Excel or Google Sheets) to analyze or share with your team. 
+
+<Tip>
+  Usage data helps you track which agents handle the most calls, making it easier to allocate minutes or identify agents that may need scaling adjustments.
+</Tip>
+
+### Deleting Agents
 
 If an agent is no longer needed, you can safely delete it from your organization.\
-Deleting an agent permanently removes its configurations, workflows, and logs associated with that agent.\
+Deleting an agent permanently removes its configurations, workflows, and logs associated with that agent.                     \
 You can delete one or multiple agents at once.
 
 1. On the **Agents** page, locate the agent(s) you want to remove.
@@ -47,3 +65,5 @@ You can delete one or multiple agents at once.
    <Tip>
      Deleted agents cannot be recovered. If you need to reuse a configuration later, consider duplicating the agent before deleting it.
    </Tip>
+
+![Deleting An Agent Gi](/assets/deleting-an-agent.gif)

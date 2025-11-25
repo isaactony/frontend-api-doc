@@ -1,0 +1,247 @@
+---
+title: "Transfer Call Block"
+description: "Description of your new file."
+---
+
+The **Transfer Call** block lets your agent seamlessly hand off a live call to another person, department, or fallback destination. Phonely’s updated transfer flow dramatically simplifies call routing by replacing large, branching, hard-to-manage flows with a single intelligent block that can handle warm transfers, cold transfers, failover logic, caller triage, and on-hold experiences—all in one place.
+
+This guide walks you through everything you can do inside the updated **Transfer Call** block, how it works, and how to set it up step-by-step.
+
+<iframe src="https://www.youtube.com/embed/AykOOGnQf2Q" title="YouTube video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
+
+## Why the New Transfer Flow Matters
+
+Before this update, businesses had to create giant spider-web flows just to transfer a caller to the right person. A typical setup looked like:
+
+- Ask the caller who they want
+- Route them manually to different branches (Dwight → branch A, Michael → branch B, Pam → branch C…)
+- Add fallback logic for every branch (e.g., voicemail → retry → next agent)
+- Repeat this for every destination.
+
+This resulted in huge, messy workflows.
+
+The new transfer block condenses ALL of this into one simple module:
+
+- Add multiple destiantions.
+- Automatically triage callers with AI.
+- Automatically retry alternative numbers if one doesn’t pick up.
+- Choose warm transfer or cold transfer.
+- Customize the caller’s hold experience.
+- Set advanced rules like tagging, timeout durations, and human-answered outcomes.
+
+Instead of 30+ blocks, you now need **one**.
+
+## How the Transfer Call Block Works
+
+The Transfer Call block has three main sections:
+
+1. **Setup** — Choose warm or cold transfer.
+2. **On Transfer** — Add destinations, conditions, messages, and failover behavior.
+3. **Connection Experience** — Customize what happens while the caller waits and after the call connects.
+
+Let’s walk through each part in detail.
+
+## 1. Setup — Choose the Type of Transfer
+
+At the Setup step, you decide which transfer style your agent will perform.
+
+### Cold Transfer
+
+The agent transfers the caller immediately with **no introduction**.\
+Best for:
+
+- Quick internal routing.
+- When the person receiving the call does not need context.
+
+### Warm Transfer
+
+The agent briefly introduces the caller and shares context before completing the transfer.\
+Best for:
+
+- Customer support escalations.
+- Sales handoffs.
+- Complex or high-value callers.
+
+Selecting the correct transfer type determines how Phonely behaves when initiating the handoff.
+
+## 2. On Transfer
+
+This section is the heart of the transfer flow. Here, you can define exactly how Phonely determines who to transfer to and in what order.
+
+### Adding Transfer Destinations
+
+Each destination includes:
+
+- **Condition**: keywords such as _“support,” “sales,” “billing”_ that trigger this route. For example if the caller says support or Michael use this destination.
+- **Phone Number**: the number Phonely will dial.
+- **Pre-Transfer Message**: the message the agent says before transferring (e.g., _“Let me connect you to Pam.”_)
+- **Failover Toggle**: enables automatic retry if the call goes to voicemail or isn’t answered.
+
+<img
+  src="/assets/transfer-flow-block.png"
+  alt="Transfer Flow Block Pn"
+  title="Transfer Flow Block Pn"
+  className="mx-auto"
+  style={{ width:"89%" }}
+/>
+
+You can add as many destinations as you need. For example:
+
+1. Destination 1 → Lisa
+2. Destination 2 → Michael
+3. Destination 3 → Dwight
+4. Destination 4 → Pam
+
+Phonely’s AI handles the decision-making automatically—no need to build complex “if caller says X” branches manually.
+
+## Failover Routing (Automatic Retry Logic)
+
+Failover is one of the most powerful features.
+
+When enabled, Phonely:
+
+1. Tries the first number.
+2. If no one picks up → moves to the next.
+3. Repeats until someone answers.
+4. If all fail → exits the block, allowing you to play a fallback message.
+
+<img
+  src="/assets/failover-in-transfer-flow.png"
+  alt="Failover In Transfer Flow Pn"
+  title="Failover In Transfer Flow Pn"
+  style={{ width:"75%" }}
+/>
+
+Example:
+
+- Try Pam
+- If Pam doesn’t pick up → call Michael
+- If Michael doesn’t pick up → call Dwight
+- If Dwight doesn’t pick up → call Jim
+- If nobody picks up → agent returns to flow (e.g., “Sorry, no one is available right now.”)
+
+All this happens automatically with a simple toggle.
+
+## 3. While Waiting for Connection — Customize the Caller’s On-Hold Experience
+
+When the agent starts the transfer, the caller may need to wait briefly. Phonely lets you design this experience with three modes:
+
+**On Hold Chat**
+
+Phonely continues talking to the customer while completing the transfer.
+
+**On Hold Music**
+
+Phonely plays hold music with periodic reminder messages such as:\
+_“Thanks for holding. We're still connecting you.”_
+
+You can set:
+
+- **Reminder message**
+- **Reminder frequency (seconds)**
+
+**Both (Chat + Music)**
+
+Phonely mixes live conversation with hold music for a more dynamic waiting experience.
+
+<img
+  src="/assets/transfer-call-on-hold-experience.png"
+  alt="Transfer Call On Hold Experience Pn"
+  title="Transfer Call On Hold Experience Pn"
+  style={{ width:"75%" }}
+/>
+
+---
+
+## 4. When Connection Is Established
+
+Once the transfer connects to a human or voicemail, you can define advanced behaviors:
+
+### Warm Transfer Attempt Duration
+
+How long Phonely should attempt the warm introduction before switching to cold transfer.
+
+**Detect who answered:** When enabled, Phonely will detect if a person, voicemail, or IVR answered before proceeding. When disabled, Phonely immediately speaks after detecting any audio.
+
+**Detection timeout:** The maximum time allowed for the other end to speak before being detected as an IVR, voicemail, or a person.
+
+**Message to caller (inbound):** After detecting a person on the line, this message is played to the inbound caller before transferring them to the outbound destination.
+
+**Message to recipient (outbound):** After detecting a person on the line, this message is played to the outbound destination before connecting the inbound caller to them.
+
+**Post transfer message:** After connecting the inbound caller to the outbound destination, this message is played to both parties before the agent disconnects.
+
+**Warm transfer duration:** The maximum duration in seconds that Phonely will attempt to complete the warm transfer.
+
+### Call Outcome Tagging
+
+Automatically tag the call based on:
+
+- Transfer result
+- Destination
+- Human-answered detection
+
+This is ideal for reporting, analytics, and CRM syncing.
+
+<img
+  src="/assets/transfer-call-advanced-settings.png"
+  alt="Transfer Call Advanced Settings Pn"
+  title="Transfer Call Advanced Settings Pn"
+  style={{ width:"79%" }}
+/>
+
+---
+
+## Putting It All Together: Example Workflow
+
+**Scenario:** Caller wants to reach someone in the support team.
+
+**Setup:**  Choose **Warm Transfer**.
+
+### On Transfer
+
+Add destinations:
+
+1. **Pam**
+   - Number: +1…
+   - Pre-transfer message: “Let me connect you to Pam.”
+   - Enable failover
+2. Michael: Number: +1…
+3. Dwight: Number: +1…
+4. Jim: Number: +1…
+
+<img
+  src="/assets/transfer-call-example.png"
+  alt="Transfer Call Example Pn"
+  title="Transfer Call Example Pn"
+  style={{ width:"63%" }}
+/>
+
+### Hold Experience
+
+Use **On Hold Music**
+
+- Reminder message: “Thanks for holding, we’re still connecting you.”
+- Reminder every 20 seconds
+
+### Connection Behavior
+
+- Warm Transfer Attempt Duration: 45 seconds.
+- Add call outcome tags.
+
+## Why This Is a Game-Changer
+
+The updated transfer experience lets you:
+
+- Build advanced routing in minutes instead of hours
+- Reduce workflow complexity
+- Simplify maintenance
+- Improve caller experience
+- Use AI triage instead of manual branching
+- Automatically retry fallback numbers
+- Personalize the hold experience
+- Track transfer outcomes more accurately
+
+It’s cleaner, more scalable, more intuitive, and far more powerful.
+
+---

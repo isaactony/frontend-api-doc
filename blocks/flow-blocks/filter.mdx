@@ -35,7 +35,7 @@ When the Filter block is added to your flow:
 
 - It evaluates one or more conditions using variables and comparison rules.
 - Each condition returns either **True** or **False**.
-- Based on the outcome:          
+- Based on the outcome:
   - **True path** \> Executes the next connected block when all/any conditions are met.
   - **False path** \> Executes the next block when conditions fail.
 
@@ -49,16 +49,20 @@ Let’s walk through every part of the setup shown in your screenshots.
 
 <Steps>
   <Step title="Add the Filter Block" titleSize="h3">
-    1. In your flow, click the **“+”** icon after any existing block.
-    2. Under **Flow Actions**, choose **Filter**.
-    3. The Filter block will appear with two output paths — **True** and **False**.
+    In your flow, click the **“+”** icon after any existing block.
+
+    Under **Flow Actions**, choose **Filter**.
+
+    The Filter block will appear with two output paths — **True** and **False**.
   </Step>
   <Step title="Define Your Conditions" titleSize="h3">
     Each condition is a rule that tells Phonely what to check.
 
-    1. Click the Filter block to open its configuration panel.
-    2. Under **Conditions**, click into **Condition 1**.
-    3. You’ll see three main fields:
+    Click the Filter block to open its configuration panel.
+
+    Under **Conditions**, click into **Condition 1**.
+
+    You’ll see three main fields:
 
     | Field                             | Description                                                                                                                                            |
     | :-------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -94,7 +98,7 @@ Let’s walk through every part of the setup shown in your screenshots.
     </Tip>
   </Step>
   <Step title="Select the Data Type" titleSize="h3">
-    Under the comparison dropdown, click the small menuand choose the correct type:
+    Under the comparison dropdown, click the small menu and choose the correct type:  
 
     | Data Type   | When to Use                                         |
     | :---------- | :-------------------------------------------------- |
@@ -176,9 +180,9 @@ Let’s walk through every part of the setup shown in your screenshots.
 
     Set **Logic** to **And**.
 
-    \> If both conditions are true, the flow continues through the True branch — for example, routing the caller to the Chicago Downtown Store or triggering an API Request to fetch store details in that ZIP code area.
+    **\>** If both conditions are true, the flow continues through the True branch — for example, routing the caller to the Chicago Downtown Store or triggering an API Request to fetch store details in that ZIP code area.
 
-    \> If not, the flow follows the False branch — for example, playing a message such as:
+    **\>** If not, the flow follows the False branch — for example, playing a message such as:
 
     > “Sorry, we couldn’t find a nearby store based on your location. Please check your ZIP code and try again.”
   </Step>

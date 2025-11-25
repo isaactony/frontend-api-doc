@@ -34,33 +34,26 @@ The Send Text Message Block very simply allows Phonely to send a text message fr
 
 <Steps>
   <Step title="Access the Workflows Page">
-    1. Log in to the Phonely Dashboard. If you're logging in for the first time, you'll see a navigation bar on the left side.
+    1. Log in to the Phonely Dashboard.
     2. Navigate to the "Agent" page and then select "Workflows".
   </Step>
   <Step title="Create or Edit a Workflow">
     1. Click on "Create New Flow" or edit an existing flow.
     2. Set a Trigger Condition for your workflow (e.g., "when someone asks about call flows"). This allows you to create different questions and branching answers based on the trigger.
   </Step>
-  <Step title="Add a Phone Number Request (Crucial for Reliability)">
-    1. To reliably send an SMS, start by either confirm the customer's phone number as the number that triggered the call, or asking for the customer's phone number in a preceding block.
-    2. Use an Ask Exactly Block for this purpose.
-    3. Select "Advanced Options" within that block's settings and choose "Phone" for the answer type to ensure the input is formatted correctly.
-  </Step>
-  <Step title="Add the Send Text Message Block">
+  <Step title="Add the Send SMS Block" stepNumber={3}>
     1. Link the action by clicking the plus + button in your workflow where you want the SMS to be sent.
-    2. Select "Send SMS Message" from the available blocks.
-  </Step>
-  <Step title="Configure the SMS">
-    Click on the Send Text Message Block to open its settings.
+    2. Select "Send SMS " from the available blocks.
   </Step>
 </Steps>
 
-## **Choose the Phone Number**
+## Choose the Phone Number
 
 <Steps>
   <Step title="You have two primary options for the recipient:">
-    - **Use the customer's phone number from which the call was sent to or received from**
-    - **Use a phone number provided in a previous question** (Recommended for reliability)
+    - Use the customer's phone number from which the call was sent to or received from
+    - Use a phone number provided in a previous block.
+    - Use autogather to collect the phone number. 
     - **Advanced**: You can also access Twilio metadata variables (like caller_phone_number) for advanced use cases, but explicitly asking the customer is often simpler and more reliable.
   </Step>
   <Step title="Compose the Message Content: Enter the message you want to send.">
@@ -73,6 +66,13 @@ The Send Text Message Block very simply allows Phonely to send a text message fr
   </Step>
   <Step title="Add Call Outcome Tagging (Optional)">
     Tag this stage for analytics, allowing you to understand if Phonely reached this point in the conversation.
+
+    <img
+      src="/assets/send-sms-block-action.png"
+      alt="Send Sms Block Action Pn"
+      title="Send Sms Block Action Pn"
+      style={{ width:"59%" }}
+    />
   </Step>
 </Steps>
 
