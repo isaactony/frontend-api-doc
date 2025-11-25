@@ -171,7 +171,7 @@
                       "api-reference/endpoint/get-all-agents",
                       "api-reference/endpoint/duplicate-agent",
                       "api-reference/endpoint/update-agent"
-                    ]
+                    ] 
                   },
                   {
                     "group": "Call Management",
