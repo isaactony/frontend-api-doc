@@ -78,7 +78,7 @@ The **Configure** tab is where you define what your API request should do.
   style={{ width:"72%" }}
 />
 
-#### 1. API Method
+**1. API Method**
 
 Select the type of request from the dropdown:
 
@@ -91,11 +91,11 @@ Select the type of request from the dropdown:
 
 > Example: Choose **POST** when sending form data or new entries to an external app.
 
-#### 2. API URL
+**2. API URL**
 
 Enter the endpoint where the request should go. This is the destination for your data.
 
-#### 3. Headers
+**3. Headers**
 
 Headers define metadata or authentication details for your API call.\
 Click **\+ Add** to add key-value pairs such as:
@@ -109,7 +109,7 @@ Click **\+ Add** to add key-value pairs such as:
   Always include `Content-Type: application/json` for JSON-based APIs.
 </Tip>
 
-#### 4. Query Parameters _(optional)_
+**4. Query Parameters _(optional)_**
 
 Use this if your API uses query strings in the URL (e.g., filtering or pagination).
 
@@ -120,7 +120,7 @@ Example:
 | userId  | 5         |
 | limit   | 10        |
 
-#### 5. Body (For POST, PUT, PATCH Requests)
+**5. Body (For POST, PUT, PATCH Requests)**
 
 Define what data will be sent.\
 Switch between **Code** (for JSON) and **Raw** (for plain text).
@@ -138,7 +138,7 @@ Example:
   You can make your API requests dynamic by inserting variables captured earlier in your flow. Type `@`to open the variable picker or select from Available Variables or Auto-Gather Variables to include dynamic data in your request.
 </Tip>
 
-### 6. Advanced Settings
+**6. Advanced Settings**
 
 Click to expand this section. These options help control the flow behavior during API communication.
 
@@ -179,7 +179,7 @@ Status: 201 Created
 }
 ```
 
-If failed, you’ll get an error message explaining what went wrong (e.g., invalid URL, authentication error, or timeout).
+If failed, you’ll get an error message explaining what went wrong (e.g., invalid URL, authentication error, or timeout). 
 
 ## Usecases for API Requests
 

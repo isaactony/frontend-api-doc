@@ -16,18 +16,18 @@ Before this update, businesses had to create giant spider-web flows just to tran
 - Ask the caller who they want
 - Route them manually to different branches (Dwight → branch A, Michael → branch B, Pam → branch C…)
 - Add fallback logic for every branch (e.g., voicemail → retry → next agent)
-- Repeat this for every destination
+- Repeat this for every destination.
 
 This resulted in huge, messy workflows.
 
 The new transfer block condenses ALL of this into one simple module:
 
-- Add multiple destinations
-- Automatically triage callers with AI
-- Automatically retry alternative numbers if one doesn’t pick up
-- Choose warm transfer or cold transfer
-- Customize the caller’s hold experience
-- Set advanced rules like tagging, timeout durations, and human-answered outcomes
+- Add multiple destiantions.
+- Automatically triage callers with AI.
+- Automatically retry alternative numbers if one doesn’t pick up.
+- Choose warm transfer or cold transfer.
+- Customize the caller’s hold experience.
+- Set advanced rules like tagging, timeout durations, and human-answered outcomes.
 
 Instead of 30+ blocks, you now need **one**.
 
@@ -92,7 +92,7 @@ You can add as many destinations as you need. For example:
 3. Destination 3 → Dwight
 4. Destination 4 → Pam
 
-Phonely’s AI handles the decision-making automatically—no need to build complex “if caller says X” branches manually.                                                                                          
+Phonely’s AI handles the decision-making automatically—no need to build complex “if caller says X” branches manually.
 
 ## Failover Routing (Automatic Retry Logic)
 
@@ -100,10 +100,10 @@ Failover is one of the most powerful features.
 
 When enabled, Phonely:
 
-1. Tries the first number. 
-2. If no one picks up → moves to the next. 
-3. Repeats until someone answers. 
-4. If all fail → exits the block, allowing you to play a fallback message. 
+1. Tries the first number.
+2. If no one picks up → moves to the next.
+3. Repeats until someone answers.
+4. If all fail → exits the block, allowing you to play a fallback message.
 
 <img
   src="/assets/failover-in-transfer-flow.png"
@@ -126,11 +126,11 @@ All this happens automatically with a simple toggle.
 
 When the agent starts the transfer, the caller may need to wait briefly. Phonely lets you design this experience with three modes:
 
-### On Hold Chat
+**On Hold Chat**
 
 Phonely continues talking to the customer while completing the transfer.
 
-### On Hold Music
+**On Hold Music**
 
 Phonely plays hold music with periodic reminder messages such as:\
 _“Thanks for holding. We're still connecting you.”_
@@ -140,7 +140,7 @@ You can set:
 - **Reminder message**
 - **Reminder frequency (seconds)**
 
-### Both (Chat + Music)
+**Both (Chat + Music)**
 
 Phonely mixes live conversation with hold music for a more dynamic waiting experience.
 
@@ -194,9 +194,9 @@ This is ideal for reporting, analytics, and CRM syncing.
 
 ## Putting It All Together: Example Workflow
 
-**Scenario: **Caller wants to reach someone in the support team.
+\*\*Scenario: \*\*Caller wants to reach someone in the support team.
 
-**Setup: **Choose **Warm Transfer**.
+\*\*Setup: \*\*Choose **Warm Transfer**.
 
 ### On Transfer
 
@@ -206,9 +206,9 @@ Add destinations:
    - Number: +1…
    - Pre-transfer message: “Let me connect you to Pam.”
    - Enable failover
-2. **Michael: **Number: +1…
-3. **Dwight: **Number: +1…
-4. **Jim: **Number: +1…
+2. \*\*Michael: \*\*Number: +1…
+3. \*\*Dwight: \*\*Number: +1…
+4. \*\*Jim: \*\*Number: +1…
 
 <img
   src="/assets/transfer-call-example.png"
@@ -226,8 +226,8 @@ Use **On Hold Music**
 
 ### Connection Behavior
 
-- Warm Transfer Attempt Duration: 45 seconds. 
-- Add call outcome tags. 
+- Warm Transfer Attempt Duration: 45 seconds.
+- Add call outcome tags.
 
 ## Why This Is a Game-Changer
 
