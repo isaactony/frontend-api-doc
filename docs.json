@@ -132,9 +132,7 @@
           {
             "group": "Testing",
             "pages": [
-              "/testing/ab-testing",
-              "testing/simulation-testing"
-            ]
+              "/testing/ab-testing"            ]
           },
           {
             "group": "Account, and Organization Settings",
