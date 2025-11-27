@@ -3,95 +3,107 @@ title: "Using Call Flows"
 description: "Build complex conversations, connect with your tools and more with flows"
 ---
 
-# Introduction
+Flows are the visual blueprints that define exactly how your AI phone agent behaves—from the greeting, to data collection, to decisions, actions, and the final call outcome.\
+They describe what the agent says, what it asks, what it stores, what APIs it calls, and how the conversation moves forward.
 
-Flows are the visual blueprints for your AI phone agents - defining what the agent says, collects, calls, and decides from "hello" to hang-up.
+## What Are Flows?
 
-## What are Flows?
+Flows are made of several core elements:
 
-<Card title="Blocks" icon="sparkles">
-  Individual units of behavior - speak to callers, collect info, call APIs, transfer, end calls, and more.
-</Card>
+### 1. Blocks (Steps in the Conversation)
 
-<Card title="Edges" icon="arrow-right">
-  Connections that determine which path the conversation takes next.
-</Card>
+Each block represents a single action or behavior, such as:
 
-<Card title="Variables" icon="tag">
-  The agent's short-term memory - values that change per call (caller inputs, system data, API results).
-</Card>
+- Speaking to the caller
+- Asking a question and capturing input
+- Calling an API
+- Making a decision based on conditions
+- Transferring the call
+- Ending the call
 
-## Why use Flows?
+### 2. Connections (Edges)
 
-<Card title="No code to start">
-  Drag, drop, and configure. Ship fast without waiting on engineering.
-</Card>
+Edges determine which path the call takes next.\
+They can include:
 
-<Card title="Real-time & natural">
-  Handle interruptions, clarifications, and pivots mid-conversation.
-</Card>
+- Simple transitions (always go to the next step)
+- Conditional transitions (go to the next block only if a variable meets a condition)
+- Confirmation requirements
 
-<Card title="Built to scale">
-  Confidently handle thousands of concurrent calls.
-</Card>
+### 3. Call Memory (Variables)
 
-<Card title="Integrations">
-  Call your APIs and systems directly from the Flow.
-</Card>
+Variables store information during the call, such as:
 
----
+- Caller-provided inputs
+- API responses
+- System-generated data (timestamp, outcomes, etc.)
 
-# Core concepts
+They act as the agent’s short-term working memory for the duration of the call.
 
-## How to change a Flow
+## Why Use Flows?
 
-<Steps>
-  <Step title="Enter edit mode">
-    Open your Flow and click Edit
-  </Step>
-  <Step title="Add blocks">
-    Drag desired blocks from the left sidebar onto the canvas.
-  </Step>
-  <Step title="Configure blocks">
-    Click a block to set prompts, fields, API details, and validation.
-  </Step>
-  <Step title="Connect blocks">
-    Drag from a block’s output port (bottom) to the next block’s input (top).
-  </Step>
-  <Step title="Save">
-    Click Save Each save creates a new version.
-  </Step>
-</Steps>
+Flows allow you to:
 
-<Info>
-  Versioning: Every save is a version. You can revert. Always test before pushing to production.
-</Info>
+- Build and update conversational logic without engineering support
+- Handle interruptions, clarifications, backtracking, and pivots gracefully
+- Scale confidently across thousands of concurrent calls
+- Integrate directly with your systems through API requests
+- Iterate quickly with versioning and safe publishing
 
-## Connecting blocks with edges
+## Core Concepts
 
-<Steps>
-  <Step title="Create an edge">
-    Click and drag from the output of one block to the input of the next.
-  </Step>
-  <Step title="Configure the edge">
-    Select the edge to open the editor and set guards/requirements.
-  </Step>
-  <Step title="Confirm & save">
-    Define what must be present or confirmed before the edge is taken, then save.
-  </Step>
-</Steps>
+### How to Create a Flow
 
-<Info>
-  Variables that must exist (and be non-empty) for the edge to be eligible.
-</Info>
+1. **Open your Flow** and click **Edit**. This enters editing mode.
+2. **Add blocks**\
+   **Click the “+” node** between existing blocks or at the end of a chain to insert a new block.
 
-<Info>
-  Variables the caller should confirm before taking the edge (e.g.,@name, @address).
-</Info>
+<img
+  src="/assets/adding-a-new-block-phonely.png"
+  alt="Adding A New Block Phonely Pn"
+  title="Adding A New Block Phonely Pn"
+  style={{ width:"85%" }}
+/>
 
----
+**3. Configure a Block**
 
-# Call variables
+Click any block in your Flow to open its configuration panel.\
+Each block contains different settings, and the options you see will depend on the type of block you’re setting up.
+
+<Tip>
+  Blocks have different setup and configuration requirements. For example, a Talk block includes questions and answers, Collect blocks include questions and variables, while API Request blocks include payload, headers, and response mapping.
+</Tip>
+
+<img
+  src="/assets/how-to-configure-a-block.png"
+  alt="How To Configure A Block Pn"
+  title="How To Configure A Block Pn"
+  style={{ width:"87%" }}
+/>
+
+**4. Connect blocks**\
+When a new block is added, Phonely automatically creates a connection. You can change connections between blocks by hovering over an edge clicking the **X** button, and then place your cursor over the output node of one block and drag the edge to connect to the input node of another block.       
+
+**5. Edit and edge**
+
+Hover over and edge and click the edit button to open the edit slide in panel. Here you can:  
+
+![How To Edit An Edge Pn](/assets/how-to-edit-an-edge.png)
+
+                                        
+
+- Specify the variables that must exist before allowing passage through this edge. The workflow will only proceed if all specified variables are present.
+- Specify the variables that should be confirmed before allowing passage through this edge. The workflow will only proceed if all specified variables are confirmed.
+
+**6. Save your changes**\
+Every save creates a **new version** you can review or revert.
+
+**Publish when ready**\
+Publishing makes the version live for real callers.                                                                                        
+
+**Confirm & publish**
+
+## Call variables
 
 <AccordionGroup>
   <Accordion title="What are call variables?">
@@ -105,9 +117,9 @@ Flows are the visual blueprints for your AI phone agents - defining what the age
   </Accordion>
 </AccordionGroup>
 
-## Variable types
+### Variable types
 
-Variables in Phonely can store different types of data. Choose the appropriate type when collecting information from callers or storing data from API responses.
+Variables in Phonely can store different types of data. Choose the appropriate type when collecting information from callers or storing data from API responses.      
 
 | Type           | Data Type  | Description                                |
 | :------------- | :--------- | :----------------------------------------- |
@@ -127,14 +139,14 @@ Variables in Phonely can store different types of data. Choose the appropriate t
 
 ---
 
-# Call outcome tagging
+## Call outcome tagging.                                   
 
 <Info>
   Outcome tags enable analytics, reporting, and automations after the call ends.
 </Info>
 
 <Card title="Automatic">
-  System applies defaults like `completed`, `failed`, or `transferred`.
+  System applies defaults like `completed`, `failed`, `lead_qualified`, `appointment_schedule,` or `transferred`.
 </Card>
 
 <Card title="Custom">
@@ -151,9 +163,9 @@ Variables in Phonely can store different types of data. Choose the appropriate t
 
 ---
 
-# Testing & best practices
+## Testing & best practices
 
-## Test your Flows
+### Test your Flows
 
 <Tabs>
   <Tab title="Simulation">
@@ -206,7 +218,7 @@ Variables in Phonely can store different types of data. Choose the appropriate t
 
 ---
 
-# Common patterns & workflows
+## Common patterns & workflows
 
 <Tabs>
   <Tab title="Customer Service">
