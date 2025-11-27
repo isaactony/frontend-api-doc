@@ -19,12 +19,12 @@ Variables are the backbone of your agents. They capture data during a call, pass
 
 **What variables are.**
 
-Structured data (caller phone, name, intent, outcomes, etc.) that your agent reads/writes at runtime and exposes after the call.
+Structured data (caller phone, name, intent, outcomes, etc.) that your agent reads/writes at runtime and exposes after the call.                                                                                                                                                                               
 
 **Where they live.**
 
-- Live-call variables exist while the conversation is running and power real-time logic (branching, transfers, API requests, messages).
-- Post-call variables are the finalized record (transcript, summary, sentiment, outcomes, links) used in emails, webhooks, CRMs, or BI.
+- Live-call variables exist while the conversation is running and power real-time logic (branching, transfers, API requests, messages).     
+- Post-call variables are the finalized record (transcript, summary, sentiment, outcomes, links) used in emails, webhooks, CRMs, or BI.                                                        
 
 **How they're created.**
 
@@ -63,7 +63,7 @@ Define a key/value once (for example, `api_key`) and reuse across blocks and flo
 
 ### Auto-gather
 
-Prompt the caller at the moment a block needs a value (name, email, date, etc.)—no extra Talk block required.
+Prompt the caller at the moment a block needs a value (name, email, date, etc.)—no extra Talk block required.        
 
 <Tip>
   In an API Request block, add a query/body field → choose "Auto-gather" → set type (Text, Email, Phone, Date, Time) and "Required." At runtime, the agent asks, then proceeds with the request.
