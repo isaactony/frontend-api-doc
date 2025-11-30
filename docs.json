@@ -30,7 +30,6 @@
             "pages": [
               "key-concepts/create-duplicate-agents",
               "key-concepts/flows",
-              "key-concepts/flow-canvas-controls",
               "key-concepts/routing",
               "key-concepts/variables",
               "key-concepts/auto-gather-variables",
