@@ -102,7 +102,8 @@
               {
                 "group": "Custom Actions",
                 "pages": [
-                  "blocks/custom-integrations/custom-actions"
+                  "blocks/custom-integrations/custom-actions",
+                  "blocks/custom-integrations/google-calendar-custom-block"
                 ]
               }
             ]
