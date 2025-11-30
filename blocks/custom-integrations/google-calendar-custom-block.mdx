@@ -3,17 +3,17 @@ title: "Custom Google Calendar Block"
 description: "Description of your new file."
 ---
 
-The Custom Google Calendar block lets you set up an entire appointment-booking workflow in just a few clicks. Instead of manually creating multiple blocks and connecting them together, this block bundles the full appointment flow for you:    
+The Custom Google Calendar block lets you set up an entire appointment-booking workflow in just a few clicks. Instead of manually creating multiple blocks and connecting them together, this block bundles the full appointment flow for you:
 
 - **Get Availability**
 - **Select Appointment Slot**
 - **Make Appointment**
 
-This makes appointment scheduling fast to set up—even for non-technical users—while still allowing complete customization if needed.     
+This makes appointment scheduling fast to set up—even for non-technical users—while still allowing complete customization if needed.
 
 ## 1. Add the Custom Google Calendar Block
 
-1. Open your Flow.           
+1. Open your Flow.
 2. Click any **\+** connector to add a new block.
 3. Under **Custom Actions**, select: Google Calendar (Custom Google Calendar)
 
@@ -24,12 +24,12 @@ This makes appointment scheduling fast to set up—even for non-technical users�
   style={{ width:"73%" }}
 />
 
-This adds a single block containing the full appointment workflow.      
+This adds a single block containing the full appointment workflow.
 
-The block includes two output paths:                                                          
+The block includes two output paths:
 
-- **Success** – Appointment successfully created.             
-- **Fail** – Calendar error, missing info, or scheduling failure.  
+- **Success** – Appointment successfully created.
+- **Fail** – Calendar error, missing info, or scheduling failure.
 
   <img
     src="/assets/google-calendar-custom-block.png"
@@ -37,8 +37,6 @@ The block includes two output paths:
     title="Google Calendar Custom Block Pn"
     style={{ width:"88%" }}
   />
-
-                                                                                                                                          
 
 ## 3. Connect Your Google Account
 
@@ -50,7 +48,7 @@ To allow Phonely to access your Google Calendar:
    - Choose an account already listed **or**
    - Click **Use another account** if needed.
 4. Review the permissions (read and write access for events).
-5. Click **Continue**.                     
+5. Click **Continue**.
 
 When the connection is successful, you will see:
 
@@ -58,7 +56,7 @@ When the connection is successful, you will see:
 or\
 ✔ **Reconnected**
 
-This means the block now has secure access to your calendar.
+This means the block now has secure access to your calendar.                                                                                                                                                                                                                                          
 
 ## Configure the Custom Google Calendar Block
 
@@ -79,7 +77,7 @@ Examples:
 
 - **Consultation Call**
 - **Demo Appointment**
-- **Therapy Session**
+- **Therapy Session.                                                  **
 - **Onboarding Meeting**
 
 This is what both you and the caller will see on the calendar invite.
@@ -92,17 +90,17 @@ Add optional additional details that should appear inside the calendar event.
 
 Set which days and hours callers are allowed to book.
 
-Each day includes:
+Each day includes:                                                                                                                                                                                                                                                                                                    
 
-### Day Toggle
+**Day Toggle**
 
 Enable or disable booking for that day (e.g., disable weekends).
 
-### Time Ranges
+**Time Ranges**
 
 For each enabled day, you can define one or more availability windows:
 
-Example:
+Example:                                                   
 
 - `9:00 am → 12:00 pm`
 - `1:00 pm → 5:00 pm`
@@ -113,7 +111,7 @@ Options per day:
 - **✕** — remove the current window
 - **\+** — add another window (useful for breaks, split shifts, etc.)
 
-Phonely will automatically:  
+Phonely will automatically:
 
 - Check your Google Calendar for conflicts
 - Only offer callers times that fall within these defined ranges
@@ -124,7 +122,7 @@ Phonely will automatically:
 Once your duration, title, description, and weekly schedule are set:
 
 Click **Done**\
-Your Google Calendar block is now fully configured and ready to handle booking automatically during live calls.    
+Your Google Calendar block is now fully configured and ready to handle booking automatically during live calls.
 
 ## **Edit the Block Internally**
 
@@ -144,7 +142,7 @@ If you want full control—custom prompts, more conditions, storing the slots, o
 
 The block expands into a full workflow group containing:
 
-- **Collect Info** (if needed)
+- **Collect Info** 
 - **Get Availability**
 - **Select Appointment Slot**
 - **Make Appointment**
@@ -159,12 +157,14 @@ The block expands into a full workflow group containing:
 You can now:
 
 - Change the prompts in the Talk blocks
-- Adjust variable names
-- Modify how slots are presented.  
+- Adjust variable names.   
+- Modify how slots are presented.
 - Change fallback logic (e.g., if no slots available)
 - Add conditions
 - Save slots for later use
-- Change how API responses are parsed
+- Change how API responses are parsed. 
+
+![Custom Google Calendar Block Gi](/assets/custom-google-calendar-block.gif)
 
 ### **Publishing or Reverting Edits**
 
@@ -172,6 +172,4 @@ Inside the group’s top-right corner menu you will see:
 
 - **Cancel editing** – revert to the original single block
 - **Save as Draft** – changes only apply to this Flow
-- **Publish to Marketplace** – make this integration reusable across your workspace                                                                         
-
-               
+- **Publish to Marketplace** – make this integration reusable across your workspace
