@@ -47,143 +47,159 @@ So, you can visually branch your automation into multiple directions depending o
 
 Let’s walk through every part of the setup shown in your screenshots.
 
-<Steps>
-  <Step title="Add the Filter Block" titleSize="h3">
-    In your flow, click the **“+”** icon after any existing block.
+### Add the Filter Block
 
-    Under **Flow Actions**, choose **Filter**.
+In your flow, click the **“+”** icon after any existing block.
 
-    The Filter block will appear with two output paths — **True** and **False**.
-  </Step>
-  <Step title="Define Your Conditions" titleSize="h3">
-    Each condition is a rule that tells Phonely what to check.
+Under **Flow Actions**, choose **Filter**.
 
-    Click the Filter block to open its configuration panel.
+The Filter block will appear with two output paths — **True** and **False**.
 
-    Under **Conditions**, click into **Condition 1**.
+### Define Your Conditions
 
-    You’ll see three main fields:
+Each condition is a rule that tells Phonely what to check.
 
-    | Field                             | Description                                                                                                                                            |
-    | :-------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | **Define Field**                  | The variable or data point you want to evaluate (e.g., `caller_phone`, `customer_name`, `response`).                                                   |
-    | **Comparison Operator**           | Defines how the field is compared — options include: <br />• `exists` <br />• `is equal to` <br />• `is not equal to` <br />• `is an array containing` |
-    | **Value Type & Comparison Value** | Select data type (`String`, `Number`, or `Boolean`) and specify the value to compare against.                                                          |
-  </Step>
-  <Step title=" Choose Available Variables" titleSize="h3">
-    Click inside Define Field, this opens the Available Variables panel.
+Click the Filter block to open its configuration panel.
 
-    Here you’ll find:
+Under **Conditions**, click into **Condition 1**.
 
-    - **Call Variables** – System-generated details like caller ID, phone number, or call metadata.
-    - **Custom Variables** – Variables you’ve defined manually.
-    - **Auto-Gather Variables (Beta)** – Prompts the caller at the moment a block needs a value (name, email, date, etc.)—no extra Talk block required.
-    - **Collect Caller Details** – Inputs from Collect or Ask Exactly blocks (e.g., `caller_name`, `caller_phone`).
-  </Step>
-  <Step title="Select the Comparison Operator" titleSize="h3">
-    Click the dropdown that says **“is equal to”** to see other options:
+You’ll see three main fields:
 
-    - **exists** \> Checks if a variable exists or is defined.
-    - **is equal to** \> Compares for equality.
-    - **is not equal to** \> Checks inequality.
-    - **is an array containing** \> Used when working with list-type variables.
+| Field                             | Description                                                                                                                                            |
+| :-------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Define Field**                  | The variable or data point you want to evaluate (e.g., `caller_phone`, `customer_name`, `response`).                                                   |
+| **Comparison Operator**           | Defines how the field is compared — options include: <br />• `exists` <br />• `is equal to` <br />• `is not equal to` <br />• `is an array containing` |
+| **Value Type & Comparison Value** | Select data type (`String`, `Number`, or `Boolean`) and specify the value to compare against.                                                          |
 
-    Choose one that fits your logic.
+### Choose Available Variables
 
-    <Tip>
-      For example:
+Click inside Define Field, this opens the Available Variables panel.
 
-      - Use `exists` to ensure a phone number is collected.
-      - Use `is equal to` to match a user’s choice.
-    </Tip>
-  </Step>
-  <Step title="Select the Data Type" titleSize="h3">
-    Under the comparison dropdown, click the small menu and choose the correct type:  
+Here you’ll find:
 
-    | Data Type   | When to Use                                         |
-    | :---------- | :-------------------------------------------------- |
-    | **String**  | For text values like names or words.                |
-    | **Number**  | For numeric comparisons like age, amount, or count. |
-    | **Boolean** | For true/false logic (e.g., `is_verified = true`).  |
+- **Call Variables** – System-generated details like caller ID, phone number, or call metadata.
+- **Custom Variables** – Variables you’ve defined manually.
+- **Auto-Gather Variables (Beta)** – Prompts the caller at the moment a block needs a value (name, email, date, etc.)—no extra Talk block required.
+- **Collect Caller Details** – Inputs from Collect or Ask Exactly blocks (e.g., `caller_name`, `caller_phone`).
 
-    Then enter your comparison value.
-  </Step>
-  <Step title="Add Multiple Cases and Conditions" titleSize="h3">
-    You can branch your flow based on cases, where each case represents a possible path or scenario. Each case can contain one or more conditions, which define the logic that must be met for that path to trigger.
+### Select the Comparison Operator
 
-    ![Cases And Conditions Filter Gi](/assets/cases-and-conditions-filter.gif)
+Click the dropdown that says **“is equal to”** to see other options:
 
-    #### Cases
+**1. exists: **Checks whether the variable has any value. Useful for verifying that earlier blocks captured caller input.
 
-    A case represents a distinct route your flow can take. For example, _Case 1_ might handle verified callers, while _Case 2_ handles unverified callers.\
-    Use **➕ Add Case** to create a new case with its own set of conditions.
+**2. doesn’t exist: **True when the variable is empty, null, or was never set.
 
-    #### Conditions
+**3. is equal to: **Compares the field to a specific value.
 
-    Within each case, you can define one or more conditions to check specific rules or data values.
+**4. is not equal to: **True when the field does _not_ match the provided value.
 
-    - Click **➕ Add Condition** to add another rule within the same case.
-    - Each condition can evaluate a different variable, such as caller name, phone number, or appointment type.
+**5. is an array containing: **Used when the variable is a list and you need to check if it contains a specific item.
 
-    #### Logic Operators
+**6. matches condition (AI)**\
+Uses AI to evaluate whether the caller’s message or extracted intent _semantically matches_ a natural-language condition you define.\
+Examples:
 
-    When you have multiple conditions in a case, choose how they interact using a **Logic Operator**:
+- “caller wants to book an appointment”
+- “caller is asking for refund”
+- “caller needs technical support”
 
-    | Logic Option | Description                                                |
-    | :----------- | :--------------------------------------------------------- |
-    | **And**      | All conditions must be true for the case to match.         |
-    | **Or**       | Only one condition needs to be true for the case to match. |
+**7. does not match condition (AI)**\
+The inverse of the above. True when the caller’s message or intent _does not_ match your natural-language condition.\
+Examples:
 
-    #### Example
+- “caller is not asking about appointments”
+- “caller is not requesting order status”
 
-    - **And** → `caller_name = John` **and** `caller_phone = 123456`
-    - **Or** → `caller_name = John` **or** `caller_name = Jane`
-  </Step>
-  <Step title="Configure Advanced Settings" titleSize="h3">
-    Scroll down to **Advanced Settings**.
+These AI-powered options are ideal when you want logic based on **intent**, not exact words, enabling more natural decision-making without manually collecting variables.Choose one that fits your logic.
 
-    Here’s what you can adjust:
+Under the comparison dropdown, click the small menu and choose the correct type:
 
-    #### Interim Message
+| Data Type   | When to Use                                         |
+| :---------- | :-------------------------------------------------- |
+| **String**  | For text values like names or words.                |
+| **Number**  | For numeric comparisons like age, amount, or count. |
+| **Boolean** | For true/false logic (e.g., `is_verified = true`).  |
 
-    Enable this if you want to play a message to the caller while Phonely checks the conditions.
+Then enter your comparison value.
 
-    - **Post Interim Message Delay:** Adds a short delay before continuing.
-    - **Interim Message Prompt:** You can write or auto-generate a 3–7 word message such as _“Please hold while I check_” or _“Verifying your input.”_
+### Add Multiple Cases and Conditions
 
-    #### Call Outcome Tagging
+You can branch your flow based on cases, where each case represents a possible path or scenario. Each case can contain one or more conditions, which define the logic that must be met for that path to trigger.
 
-    Optionally, add a keyword tag to label this flow’s result (e.g., `validated`, `invalid_number`). This helps track call outcomes later in reports or analytics.
-  </Step>
-  <Step title="Save the Filter" titleSize="h3">
-    Click **Done** to confirm and exit.
+![Cases And Conditions Filter Gi](/assets/cases-and-conditions-filter.gif)
 
-    Once done:
+#### Cases
 
-    - The block shows **True** and **False** outputs.
-    - Connect the **True** path to actions to perform if all conditions pass.
-    - Connect the **False** path to fallback or error handling actions.
+A case represents a distinct route your flow can take. For example, _Case 1_ might handle verified callers, while _Case 2_ handles unverified callers.\
+Use **➕ Add Case** to create a new case with its own set of conditions.
 
-    ## Example: Using Variables in Filter Logic
+#### Conditions
 
-    Let’s say your **Collect block** gathered two inputs from the caller:
+Within each case, you can define one or more conditions to check specific rules or data values.
 
-    - `caller_phone`
-    - `caller_zip_code`
+- Click **➕ Add Condition** to add another rule within the same case.
+- Each condition can evaluate a different variable, such as caller name, phone number, or appointment type.
 
-    You can then use a **Filter block** to determine which store location the caller should be routed to based on these values.
+#### Logic Operators
 
-    Example conditions:
+When you have multiple conditions in a case, choose how they interact using a **Logic Operator**:
 
-    - **Condition 1:** `caller_phone` starts with "+1-312" _(Chicago area code)_
-    - **Condition 2:** `caller_zip_code` is equal to "60601" _(Downtown Chicago ZIP code)_
+| Logic Option | Description                                                |
+| :----------- | :--------------------------------------------------------- |
+| **And**      | All conditions must be true for the case to match.         |
+| **Or**       | Only one condition needs to be true for the case to match. |
 
-    Set **Logic** to **And**.
+#### Example
 
-    **\>** If both conditions are true, the flow continues through the True branch — for example, routing the caller to the Chicago Downtown Store or triggering an API Request to fetch store details in that ZIP code area.
+- **And** → `caller_name = John` **and** `caller_phone = 123456`
+- **Or** → `caller_name = John` **or** `caller_name = Jane`
 
-    **\>** If not, the flow follows the False branch — for example, playing a message such as:
+### Configure Advanced Settings
 
-    > “Sorry, we couldn’t find a nearby store based on your location. Please check your ZIP code and try again.”
-  </Step>
-</Steps>
+Scroll down to **Advanced Settings**.
+
+Here’s what you can adjust:
+
+#### Interim Message
+
+Enable this if you want to play a message to the caller while Phonely checks the conditions.
+
+- **Post Interim Message Delay:** Adds a short delay before continuing.
+- **Interim Message Prompt:** You can write or auto-generate a 3–7 word message such as _“Please hold while I check_” or _“Verifying your input.”_
+
+#### Call Outcome Tagging
+
+Optionally, add a keyword tag to label this flow’s result (e.g., `validated`, `invalid_number`). This helps track call outcomes later in reports or analytics.
+
+### Save the Filter
+
+Click **Done** to confirm and exit.
+
+Once done:
+
+- The block shows **True** and **False** outputs.
+- Connect the **True** path to actions to perform if all conditions pass.
+- Connect the **False** path to fallback or error handling actions.
+
+## Example: Using Variables in Filter Logic
+
+Let’s say your **Collect block** gathered two inputs from the caller:
+
+- `caller_phone`
+- `caller_zip_code`
+
+You can then use a **Filter block** to determine which store location the caller should be routed to based on these values.
+
+Example conditions:
+
+- **Condition 1:** `caller_phone` starts with "+1-312" _(Chicago area code)_
+- **Condition 2:** `caller_zip_code` is equal to "60601" _(Downtown Chicago ZIP code)_
+
+Set **Logic** to **And**.
+
+**\>** If both conditions are true, the flow continues through the True branch — for example, routing the caller to the Chicago Downtown Store or triggering an API Request to fetch store details in that ZIP code area.
+
+**\>** If not, the flow follows the False branch — for example, playing a message such as:
+
+> “Sorry, we couldn’t find a nearby store based on your location. Please check your ZIP code and try again.”
