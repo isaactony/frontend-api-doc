@@ -178,28 +178,3 @@ Once everything works:
 3. Click **Publish**.
 
 Your agent will now write data to Google Sheets automatically during real calls.
-
-## Success and Error Paths
-
-After the Add Row action runs, two branches appear:
-
-### Success
-
-A row was successfully inserted.\
-You can add blocks such as:
-
-- **Say Exactly**\
-  “Thanks! I’ve saved your information.”
-- **Send SMS / Send Email**\
-  Send the caller confirmation.
-
-### Error
-
-The sheet could not be accessed.
-
-You can add blocks such as:
-
-- **Say Exactly**\
-  “I wasn’t able to save your details. Let me try again.”
-- **Collect**\
-  Ask for missing or corrected data.
