@@ -14,7 +14,7 @@ This is useful for:
 - Recording appointment requests
 - Storing customer details from a call
 
-## 1. Start a New Flow
+## Start a New Flow
 
 1. Go to **Agent Design \>  Create Flow**.
 2. Add a **Start Flow** trigger.
@@ -23,7 +23,7 @@ This is useful for:
 
 These variables will be available later in the Google Sheets configuration panel.
 
-## 2. Add the Google Sheets Action
+## Add the Google Sheets Action
 
 1. Click the **(+)** icon under the block where you want to write the data.
 2. Under **Post Call Actions**, select **Google Sheets**.
@@ -47,7 +47,7 @@ This action inserts a new row into your selected spreadsheet.
 
 4. Click **Connect to Google Sheets**.
 
-## 3. Connect Your Google Account
+## Connect Your Google Account
 
 When prompted:
 
@@ -65,7 +65,7 @@ After successful authentication, the button updates to **Reconnected** or **Conn
 
 Click **Continue** to move to configuration.
 
-## 4. Configure the Row Data
+## Configure the Row Data
 
 The **Configure** panel allows you to define exactly where data should go in your sheet and which values should be written.
 
@@ -79,13 +79,18 @@ Click the refresh icon if you just created or renamed a sheet.
 Choose the specific worksheet (tab) in the spreadsheet.\
 Refresh the list if needed.
 
-### **Sync Column Names**
+### Sync Column Names
 
-Click **Sync Column Names** to automatically load all column headers from your sheet.
+Click **Sync Column Names** to automatically load all column headers from your sheet. This ensures your row data maps correctly to the right columns.
 
-This ensures your row data maps correctly to the right columns.
+<img
+  src="/assets/mappingfieldsanrowsgooglesheetaddrow.gif"
+  alt="Mappingfieldsanrowsgooglesheetaddrow Gi"
+  title="Mappingfieldsanrowsgooglesheetaddrow Gi"
+  style={{ width:"98%" }}
+/>
 
-## 5. Map Columns to Flow Variables
+## Map Columns to Flow Variables
 
 Under **Row Data**, you will see a list of column names pulled from your sheet:
 
@@ -100,79 +105,57 @@ For each column:
 
 1. Click the field.
 2. Choose a variable from the left-side **Available Variables** panel.
-   - Examples:
-     - `caller_name`
-     - `phone_number`
-     - `order_number`
-     - `email_address`
-3. Or type a static value (e.g., “New lead”).
 
-You can freely mix:
+Examples:`caller_name, phone_number, order_number, email_address`
 
-- Caller variables
-- AI-generated variables
-- Custom user-defined variables
-- Static text values
-
-**Example mapping:**
+**Example mapping**
 
 | Spreadsheet Column | Value Written to Sheet |
 | :----------------- | :--------------------- |
 | customer name      | `caller_name`          |
 | order number       | `phone_number`         |
 | email              | `email_address`        |
-| created_at         | `{{now}}` (ISO time)   |
+| created_at         | `{{now}}`              |
 
----
-
-## **6. Advanced Settings (Optional)**
+## Advanced Settings (Optional)
 
 ### **Interim Message**
 
 If enabled, Phonely will speak a short message while writing to Google Sheets.\
-Example:
+Example: “Please hold while I save your details.”
 
-> “Please hold while I save your details.”
-
-### **Post Interim Message Delay**
+### Post Interim Message Delay
 
 Adds a brief pause after the interim message to avoid interrupting the API call.
 
-### **Interim Message Prompt**
+### Interim Message Prompt
 
 Choose:
 
 - **Promptable** – LLM rewrites your message more naturally.
 - **Fixed** – your exact text is used verbatim.
 
-### **Call Outcome Tagging**
+### Call Outcome Tagging
 
-Add tags such as:
-
-- `row_added`
-- `lead_saved`
-- `followup_logged`
-- `order_logged`
+Add tags such as:`row_added, lead_saved, followup_logged, order_logged`
 
 These appear in analytics and are useful for automation.
 
 Click **Continue** when ready.
 
----
-
-## **7. Test the Google Sheets Write Action**
+## Test the Google Sheets Write Action
 
 In the **Test** tab:
 
 1. Review the row data that will be created.
 2. Click **Test**.
 
-If successful:
-
-- A confirmation appears.
-- A real row is added to your Google Sheet.
-
-You can click **Open Sheet** to confirm.
+<img
+  src="/assets/testing-add-rows-google-sheets.png"
+  alt="Testing Add Rows Google Sheets Pn"
+  title="Testing Add Rows Google Sheets Pn"
+  style={{ width:"56%" }}
+/>
 
 If something fails:
 
@@ -181,9 +164,7 @@ If something fails:
 - Ensure column names match exactly
 - Re-sync column names
 
----
-
-## **8. Publish Your Workflow**
+## 8. Publish Your Workflow
 
 Once everything works:
 
@@ -193,13 +174,11 @@ Once everything works:
 
 Your agent will now write data to Google Sheets automatically during real calls.
 
----
-
-## **9. Success and Error Paths**
+## Success and Error Paths
 
 After the Add Row action runs, two branches appear:
 
-### **Success**
+### Success
 
 A row was successfully inserted.\
 You can add blocks such as:
@@ -209,7 +188,7 @@ You can add blocks such as:
 - **Send SMS / Send Email**\
   Send the caller confirmation.
 
-### **Error**
+### Error
 
 The sheet could not be accessed.
 
