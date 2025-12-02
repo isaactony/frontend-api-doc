@@ -95,7 +95,7 @@ Let’s say a customer calls to check their **order status**. Instead of transfe
 
 Once the search action runs, Phonely creates two possible branches:
 
-- **Success** — the data was found in Google Sheets.
+- **Success** — the row was found in Google Sheets.
 - **Error** — no match was found or the sheet could not be accessed.
 
 Under each branch, you can add blocks to:
@@ -103,14 +103,19 @@ Under each branch, you can add blocks to:
 - Speak or message the result.
 - Apologize or ask for a new input if no match is found.
 
+<img
+  src="/assets/success-and-error-google-sheets.png"
+  alt="Success And Error Google Sheets Pn"
+  title="Success And Error Google Sheets Pn"
+  style={{ width:"91%" }}
+/>
+
 **Example:**
 
 - On Success → **Say Exactly**:\
   “Your order status is `order_status` and your expected delivery date is `ship_date`.”
 - On Error → **Say Exactly**:\
   “I couldn’t find that order number. Could you repeat it once more?”
-
----
 
 ## Common Use Cases
 
