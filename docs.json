@@ -85,7 +85,8 @@
                   "blocks/post-call-actions/connect-to-make",
                   "blocks/post-call-actions/redial",
                   "blocks/post-call-actions/campaign",
-                  "blocks/post-call-actions/connect-to-google-drive"
+                  "blocks/post-call-actions/connect-to-google-drive",
+                  "blocks/post-call-actions/google-sheet-add-row"
                 ]
               },
               {
