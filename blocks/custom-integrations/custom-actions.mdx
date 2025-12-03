@@ -27,34 +27,36 @@ Let’s build a Make Appointment Custom Action that collects a preferred time, c
 
 <Steps>
   <Step title="Open an existing call flow (e.g., your appointment scheduling flow).">
+    
   </Step>
   <Step title="Click the ＋ buztton under any existing block.">
+    
   </Step>
   <Step title="Select Build a Custom Action. A purple editor window opens -  this is your custom action workspace.">
+    
   </Step>
 </Steps>
-            
+
 ### Add Blocks to Your Custom Action
 
-Inside the purple area (your Custom Action workspace), you can start building just like you would in a regular flow.        
+Inside the purple area (your Custom Action workspace), you can start building just like you would in a regular flow.
 
 - Click the **＋ button** below the **Start node** to open the block selector, then choose any block you want to add — for example, Talk, Collect, API Request, or Send Email.
 - Alternatively, you can drag blocks into the purple area from an existing flow.
-                                                                        
+
 <Tip>
   When you drag a block into a Custom Action, it becomes part of that action’s internal logic. This means it is disconnected from any nodes outside the group.
 
   Only the designated output nodes (e.g., Success, Error) can connect outside the Custom Action to the rest of your main flow.
 </Tip>
-                                           
+
 Inside the purple area, you can drag and connect blocks just like a normal workflow.
 
 ### Example: Configuring an Appointment Custom Action
 
 Let’s walk through how to configure a Custom Action that handles appointment scheduling for a legal office.
 
-**Connect an API Request Block**
-Next, you’ll connect to your firm’s booking system or calendar API to check available slots.
+**Connect an API Request Block** Next, you’ll connect to your firm’s booking system or calendar API to check available slots.
 
 Click the **＋ button** under your Collect block and select **API Request**.
 
@@ -90,7 +92,7 @@ If the booking is successful, the API will return a confirmation response with d
 ### Connect Output Paths
 
 Output nodes define how your **Custom Action** communicates results back to the main flow.\
-They act as exit points - determining what happens once your action finishes, whether it succeeds, fails, or the caller ends the process.   
+They act as exit points - determining what happens once your action finishes, whether it succeeds, fails, or the caller ends the process.
 
 ![Managing Output Nodes Gi](/assets/managing-output-nodes.gif)
 
@@ -98,11 +100,11 @@ They act as exit points - determining what happens once your action finishes, wh
 
 Each output path represents a possible outcome of your action. For example:
 
-- **Success:** The action completed successfully. i.e The appointment was booked and confirmed.
-- **Fail:** Something went wrong during the process. i.e The booking API request failed or returned an error.
-- **Not Interested:** The caller declined to proceed. i.e The client decided not to book or continue with the call.
+- **Success:** The action completed successfully. i.e The appointment was booked and confirmed. 
+- **Fail:** Something went wrong during the process. i.e The booking API request failed or returned an error.    
+- **Not Interested:** The caller declined to proceed. i.e The client decided not to book or continue with the call.                
 
-These output paths let you control what the AI should do next, ensuring that every scenario is handled gracefully.
+These output paths let you control what the AI should do next, ensuring that every scenario is handled gracefully.                   
 
 **Adding Output Nodes**
 
@@ -116,7 +118,7 @@ Once saved, each output path will appear as a small circle at the bottom of the 
 
 ### Connect to End Call and Post-Call Actions
 
-Once your appointment logic is complete and all outcome paths are defined, you need to connect your Custom Action to the End Call block and any post-call actions that should run after the conversation finishes.\
+Once your appointment logic is complete and all outcome paths are defined, you need to connect your Custom Action to the End Call block and any post-call actions that should run after the conversation finishes.                                     \
 This ensures a clean and professional call experience for both your AI agent and the client.
 
 **Add the End Call Block**
@@ -134,7 +136,7 @@ Make sure every outcome path from your Custom Action connects to the appropriate
 | **Error**          | \> Escalate to Support or Transfer Call | Route the caller to a live receptionist if booking fails.                 |
 | **Not Interested** | \> End Call                             | Politely close the call: “Alright, no problem — thank you for your time.” |
 
-These connections ensure that each scenario is gracefully handled without leaving the caller in an unfinished state.
+These connections ensure that each scenario is gracefully handled without leaving the caller in an unfinished state.                                               
 
 **Add Optional Post-Call Actions**
 
@@ -155,7 +157,7 @@ In the next section, we’ll show you how to publish your Custom Action to your 
 
 ### Publishing Your Custom Action
 
-Once your Custom Action is complete and tested, the next step is to **publish** it — either for private testing, internal team use, or public sharing. Publishing determines who can access, reuse, and configure the action in other call flows.         
+Once your Custom Action is complete and tested, the next step is to **publish** it — either for private testing, internal team use, or public sharing. Publishing determines who can access, reuse, and configure the action in other call flows.
 
 ![Saving And Publishing A Custom Action Gi](/assets/saving-and-publishing-a-custom-action.gif)
 
@@ -164,7 +166,7 @@ Once your Custom Action is complete and tested, the next step is to **publish** 
 To begin publishing:
 
 1. Click the **⋯ (three vertical dots)** at the **top-right corner** of the purple Custom Action area.
-2. From the dropdown menu, select one of the following options:                          
+2. From the dropdown menu, select one of the following options:
 
 | **Option**                  | **Purpose**                                                                                                                                     |
 | :-------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -175,15 +177,15 @@ To begin publishing:
 ### Configure Customizable Fields
 
 After selecting a publish option, Phonely will prompt you to configure fields.\
-This step defines which variables other users can edit when they use your Custom Action in their own flows.                                                                                                                                                        
+This step defines which variables other users can edit when they use your Custom Action in their own flows.
 
 1. The **Configure Fields** window opens automatically.\
-   Here you’ll see all **available nodes**, such as headers and query parameters, listed on the left panel.         
+   Here you’ll see all **available nodes**, such as headers and query parameters, listed on the left panel.
 2. Check the boxes next to the parameters that you want users to customize — for example:
 3. On the right side, Phonely shows editable text fields labeled:\
-   _“User will enter value here.”           _\
+   \_“User will enter value here.”           \_\
    This indicates that the selected parameter will be visible and configurable by others.
-4. Click **Next** to continue once you’ve chosen all relevant fields.                        
+4. Click **Next** to continue once you’ve chosen all relevant fields.
 
 ### Finalize the Integration details and Submit
 
