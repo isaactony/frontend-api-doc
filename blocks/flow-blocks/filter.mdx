@@ -80,7 +80,7 @@ You’ll see three main fields:
 
 Click inside Define Field, this opens the Available Variables panel.
 
-Here you’ll find:           
+Here you’ll find:
 
 - **Call Variables** – System-generated details like caller ID, phone number, or call metadata.
 - **Custom Variables** – Variables you’ve defined manually.
@@ -91,26 +91,22 @@ Here you’ll find:
 
 Click the dropdown that says **“is equal to”** to see other options:
 
-1.**exists:**  Checks whether the variable has any value. Useful for verifying that earlier blocks captured caller input.
-
+1. **exists:**  Checks whether the variable has any value. Useful for verifying that earlier blocks captured caller input.
 2. **doesn’t exist:** True when the variable is empty, null, or was never set.
 3. **is equal to:** Compares the field to a specific value.
-
-4.**is not equal to** : True when the field does _not_ match the provided value.
-
-5.**is an array containing:**  Used when the variable is a list and you need to check if it contains a specific item.
-
-**6. matches condition (AI)**\
-Uses AI to evaluate whether the caller’s message or extracted intent _semantically matches_ a natural-language condition you define.\
-Examples:
+4. **is not equal to** : True when the field does _not_ match the provided value.
+5. **is an array containing:**  Used when the variable is a list and you need to check if it contains a specific item.
+6. **matches condition (AI)**\
+   Uses AI to evaluate whether the caller’s message or extracted intent _semantically matches_ a natural-language condition you define.\
+   Examples:
 
 - “caller wants to book an appointment”
 - “caller is asking for refund”
 - “caller needs technical support”
 
-**7. does not match condition (AI)**\
-The inverse of the above. True when the caller’s message or intent _does not_ match your natural-language condition.\
-Examples:
+7. **does not match condition (AI)**\
+   The inverse of the above. True when the caller’s message or intent _does not_ match your natural-language condition.\
+   Examples:
 
 - “caller is not asking about appointments”
 - “caller is not requesting order status”
