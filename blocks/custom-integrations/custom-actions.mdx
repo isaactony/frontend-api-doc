@@ -6,9 +6,9 @@ description: "Learn how to build, publish and update custom actions in Phonely"
 ## What Are Custom Actions?
 
 Custom Actions allow you to package a series of connected blocks - for example, prompts, logic branches, and API requests - into a single reusable block.\
-Once created, you can reuse this action across multiple call flows, share it with your organization, or even publish it to the marketplace.
+Once created, you can reuse this action across multiple call flows, share it with your organization, or even publish it to the marketplace.                      
 
-Think of a Custom Action as a mini reusable workflow inside your larger flow. It behaves like a single block but contains its own inner logic, inputs, and outputs.
+Think of a Custom Action as a mini reusable workflow inside your larger flow. It behaves like a single block but contains its own inner logic, inputs, and outputs.                 
 
 ## Why Custom Actions Matter
 
@@ -27,13 +27,10 @@ Let’s build a Make Appointment Custom Action that collects a preferred time, c
 
 <Steps>
   <Step title="Open an existing call flow (e.g., your appointment scheduling flow).">
-    
   </Step>
   <Step title="Click the ＋ buztton under any existing block.">
-    
   </Step>
   <Step title="Select Build a Custom Action. A purple editor window opens -  this is your custom action workspace.">
-    
   </Step>
 </Steps>
 
@@ -100,11 +97,11 @@ They act as exit points - determining what happens once your action finishes, wh
 
 Each output path represents a possible outcome of your action. For example:
 
-- **Success:** The action completed successfully. i.e The appointment was booked and confirmed. 
-- **Fail:** Something went wrong during the process. i.e The booking API request failed or returned an error.    
-- **Not Interested:** The caller declined to proceed. i.e The client decided not to book or continue with the call.                
+- **Success:** The action completed successfully. i.e The appointment was booked and confirmed.
+- **Fail:** Something went wrong during the process. i.e The booking API request failed or returned an error.
+- **Not Interested:** The caller declined to proceed. i.e The client decided not to book or continue with the call.
 
-These output paths let you control what the AI should do next, ensuring that every scenario is handled gracefully.                   
+These output paths let you control what the AI should do next, ensuring that every scenario is handled gracefully.
 
 **Adding Output Nodes**
 
@@ -136,7 +133,7 @@ Make sure every outcome path from your Custom Action connects to the appropriate
 | **Error**          | \> Escalate to Support or Transfer Call | Route the caller to a live receptionist if booking fails.                 |
 | **Not Interested** | \> End Call                             | Politely close the call: “Alright, no problem — thank you for your time.” |
 
-These connections ensure that each scenario is gracefully handled without leaving the caller in an unfinished state.                                               
+These connections ensure that each scenario is gracefully handled without leaving the caller in an unfinished state.
 
 **Add Optional Post-Call Actions**
 
