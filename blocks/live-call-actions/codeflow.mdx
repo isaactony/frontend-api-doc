@@ -32,7 +32,7 @@ In this example, we will demonstrate how the Code Block is used inside a workflo
 
 <Steps>
   <Step title="Add a New Block" titleSize="p">
-    From your workflow canvas, click the + icon and select Code from the list of available blocks.
+    From your workflow canvas, click the **\+** icon and select Code action from the list of available blocks.
 
     The block will appear in your flow, ready for configuration.    
 
@@ -41,7 +41,7 @@ In this example, we will demonstrate how the Code Block is used inside a workflo
   <Step title="Configure Input Variables">
     Each Code Block begins with one or more input variables, these are values passed into your script from previous blocks.   
 
-    Enter the name of the variable. This is the name that you will use to refer to the variable in your code.    
+    Enter the name of the variable. This is the name that you will use to refer to the variable in your code.         
 
     <Tip>
       You’ll notice default variables like `arg1` and `arg2` when adding a Code Block. Feel free to rename or remove them to match your workflow’s actual input variables.
@@ -66,7 +66,7 @@ In this example, we will demonstrate how the Code Block is used inside a workflo
   </Step>
   <Step title="Write Your Code">
     <Tip>
-      Do not alter the main function definition — it must always accept and return dictionaries named input and output.
+      Do not alter the main function definition, it must always accept and return dictionaries named input and output.
     </Tip>
     ```
     def function(input_dict: dict) -> dict:
