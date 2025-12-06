@@ -37,19 +37,19 @@ The Google Calendar integration allows your Phonely agent to check availability 
    - Choose from the list of accounts or click **“Use another account”** if not listed.
 3. Review the permissions requested and click **“Continue.”**
    - This authorizes Phonely to securely access your calendar.
-4. Once authenticated, Phonely will display **Reconnect** and the **Continue** button should now be activated. 
+4. Once authenticated, Phonely will display **Reconnect** and the Continue button should now be activated.                    
 
 ## Verify and Continue
 
-1. Once your Google Calendar is connected, the **Setup** step will be marked complete with a checkmark.
-2. Click **“Continue”** to proceed to the **Configure** stage.
-3. Depending on your selected action:
+1. Once your Google Calendar is connected, the **Setup** step will be marked complete with a checkmark.    
+2. Click **“Continue”** to proceed to the **Configure** stage.    
+3. Depending on your selected action:    
    - For **Check Availability**, specify the time range and conditions for checking free/busy slots.
    - For **Create Appointment**, define event details like title, time, and attendees.
 
 ## Configure the Google Calendar
 
-After connecting your Google Calendar, the Configure step changes depending on the Action you selected in the Setup stage.
+After connecting your Google Calendar, the Configure step changes depending on the Action you selected in the Setup stage.     
 
 ### Configuration options for "Check Availability" Action
 
@@ -77,7 +77,7 @@ After connecting your Google Calendar, the Configure step changes depending on t
   </Step>
   <Step title="Available Time Slots (count)">
     - Set how many distinct slots to retrieve and present.
-    - This doesn’t change your calendar- only how many options the caller hears before choosing.
+    - This doesn’t change your calendar- only how many options the caller hears before choosing.    
   </Step>
   <Step title="Available Times (per-day windows)">
     Define the business hours the agent should consider **within** the search period. Each weekday has:
@@ -86,9 +86,11 @@ After connecting your Google Calendar, the Configure step changes depending on t
     - A **from \> to** time window (e.g., `9:00 am → 5:00 pm`).
     - **\+** to add another window for split shifts (e.g., `9–12` and `2–5`).
     - **✕** to remove a window.
-    - **Notes:**
-      - These hours gate the search; if your calendar is open at 7pm but the day is disabled or outside the window, it won’t be offered.
-      - Timezone respects your agent/project settings, ensure your business hours align with the intended timezone.
+
+    **Notes:**
+
+    - These hours gate the search; if your calendar is open at 7pm but the day is disabled or outside the window, it won’t be offered.
+    - Timezone respects your agent/project settings, ensure your business hours align with the intended timezone.
   </Step>
 </Steps>
 
@@ -137,9 +139,7 @@ This setup shares some base fields (like Calendar ID, Start Time, and Advanced S
     </Tip>
   </Step>
   <Step title="Appointment Description">
-    A short summary of what the appointment is about.
-
-    Appears inside the calendar event’s description field.
+    A short summary of what the appointment is about. Appears inside the calendar event’s description field.
 
     <Tip>
       Example: _Discuss project requirements and timeline for Q4 deliverables._
@@ -180,12 +180,12 @@ These are real, conflict-free ranges within your defined working hours.
 <img
   src="/assets/availability-tests.png"
   alt="Availability Tests Pn"
-  style={{ width:"56%" }}
+  style={{ width:"59%" }}
 />
 
 ### When Action = Create Appointment
 
-The Test tab performs a live test that actually creates an appointment in your Google Calendar using the parameters you defined.
+The Test tab performs a live test that actually creates an appointment in your Google Calendar using the parameters you defined.  
 
 #### What You’ll See
 
@@ -194,7 +194,7 @@ Lists the appointment details that will be used for the event creation, includin
 
 **2. Appointment Created Successfully Panel:**
 
-- Shows a confirmation message.
+Shows a confirmation message.
 
 <img
   src="/assets/appointments-test.png"
