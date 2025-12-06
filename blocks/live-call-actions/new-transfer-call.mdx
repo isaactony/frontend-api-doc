@@ -35,13 +35,13 @@ Instead of 30+ blocks, you now need **one**.
 
 The Transfer Call block has three main sections:
 
-1. **Setup** — Choose warm or cold transfer.
-2. **On Transfer** — Add destinations, conditions, messages, and failover behavior.
-3. **Connection Experience** — Customize what happens while the caller waits and after the call connects.
+1. **Setup:** Choose warm or cold transfer.
+2. **On Transfer:** Add destinations, conditions, messages, and failover behavior.
+3. **Connection Experience:** Customize what happens while the caller waits and after the call connects.      
 
 Let’s walk through each part in detail.
 
-## 1. Setup — Choose the Type of Transfer
+## Setup - Choose the Type of Transfer
 
 At the Setup step, you decide which transfer style your agent will perform.
 
@@ -64,7 +64,7 @@ Best for:
 
 Selecting the correct transfer type determines how Phonely behaves when initiating the handoff.
 
-## 2. On Transfer
+## On Transfer
 
 This section is the heart of the transfer flow. Here, you can define exactly how Phonely determines who to transfer to and in what order.
 
@@ -82,7 +82,7 @@ Each destination includes:
   alt="Transfer Flow Block Pn"
   title="Transfer Flow Block Pn"
   className="mx-auto"
-  style={{ width:"89%" }}
+  style={{ width:"67%" }}
 />
 
 You can add as many destinations as you need. For example:
@@ -122,7 +122,7 @@ Example:
 
 All this happens automatically with a simple toggle.
 
-## 3. While Waiting for Connection — Customize the Caller’s On-Hold Experience
+## Customize the Caller’s On-Hold Experience
 
 When the agent starts the transfer, the caller may need to wait briefly. Phonely lets you design this experience with three modes:
 
@@ -151,9 +151,7 @@ Phonely mixes live conversation with hold music for a more dynamic waiting exper
   style={{ width:"75%" }}
 />
 
----
-
-## 4. When Connection Is Established
+## When Connection Is Established
 
 Once the transfer connects to a human or voicemail, you can define advanced behaviors:
 
