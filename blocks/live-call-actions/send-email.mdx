@@ -14,20 +14,20 @@ The Send Email Block serves as a vital tool for automating follow-up communicati
     Sends emails automatically from your Phonely agent to a specified recipient.
   </Step>
   <Step title="Variable-Rich Content:">
-    Dynamically compose email subject lines and body content by embedding variables from the ongoing conversation (e.g., caller's name, provided email, phone number, call summary, dashboard URL to the call recording).
+    Dynamically compose email subject lines and body content by embedding variables from the ongoing conversation (e.g., caller's name, provided email, phone number, call summary, dashboard URL to the call recording).    
   </Step>
   <Step title="Plain Text or HTML">
-    Choose between sending emails in plain text format or with rich HTML formatting for enhanced presentation.
+    Choose between sending emails in plain text format or with rich HTML formatting for enhanced presentation.   
   </Step>
   <Step title="Flexible Triggering:">
     - **Live Call Action**: Triggers the email during the active conversation.
-    - **Post Call Action**: Triggers the email after the call has ended. Post-call emails are highly valuable as they can be configured to send even if the caller doesn't complete the entire workflow, acting as a preemptive notification.
+    - **Post Call Action**: Triggers the email after the call has ended. Post-call emails are highly valuable as they can be configured to send even if the caller doesn't complete the entire workflow, acting as a preemptive notification.     
   </Step>
   <Step title="Custom Recipient & Sender">
     Define the recipient email address and the "From" name that appears on the email.
   </Step>
   <Step title="Variable Formatting">
-    Utilizes Phonely's variable formatting capabilities, ensuring captured data (like phone numbers) is presented in a desired style.
+    Utilizes Phonely's variable formatting capabilities, ensuring captured data (like phone numbers) is presented in a desired style.   
   </Step>
 </Steps>
 
@@ -44,25 +44,25 @@ Implementing the Send Email Block involves setting up your workflow to gather in
   <Step title="Gather Necessary Information (e.g., using a Collect Block)">
     1. Add a Prompt Block (or a Multi-Ask Block) early in your workflow.
     2. Instruct the AI to gather specific contact information that you want to include in the email (e.g., name, email address, phone number).
-    3. Define Variables: Ensure you define variables within your Prompt Block (e.g., caller_name, caller_email, caller_phone_number) and specify their types.
+    3. Define Variables: Ensure you define variables within your Prompt Block (e.g., caller_name, caller_email, caller_phone_number) and specify their types.   
 
     <Tip>
       Tip: For phone numbers, you can select the phone type or use a custom type to define a specific formatting style (e.g., E.164, or a localized format) for how the number is stored.
     </Tip>
   </Step>
   <Step title="Add the Send Email Block">
-    1. In your workflow, click the **\+** button to add an action.  
-    2. Select "**Send Email**" from the available options.   
+    1. In your workflow, click the **\+** button to add an action.
+    2. Select "**Send Email**" from the available options.
 
     **Post Call vs. Live Call**
 
-    - **Post Call**: If you choose a Post Call Send Email Block, it will appear to the right of your block, as a dotted line. This means you can connect it anywhere in your flow, and the email will be sent automatically after the call, even if the caller doesn't complete the entire workflow path, ensuring preemptive notification.  
-    - **Live Call**: If you choose a Live Call send email block, this connection will appear at the bottom of the preceding block that you would like to connect it to. This means the email will be sent live, during your call.   
+    - **Post Call**: If you choose a Post Call Send Email Block, it will appear to the right of your block, as a dotted line. This means you can connect it anywhere in your flow, and the email will be sent automatically after the call, even if the caller doesn't complete the entire workflow path, ensuring preemptive notification.
+    - **Live Call**: If you choose a Live Call send email block, this connection will appear at the bottom of the preceding block that you would like to connect it to. This means the email will be sent live, during your call.
   </Step>
   <Step title="Configure the Email Content">
     1. Click on the Send Email Block to open its settings.
-    2. Format: Choose between "Plain Text" or "HTML" format for your email content.
-    3. Compose Subject & Body: Enter your desired subject line and message content.
+    2. Format: Choose between **Plain** **Text** or **HTML** format for your email content.   
+    3. Compose Subject & Body: Enter your desired subject line and message content.   
 
     ![Send Email Block Pn](/assets/send-email-block.png)
 
@@ -71,7 +71,7 @@ Implementing the Send Email Block involves setting up your workflow to gather in
     4. You can embed any variables you have previously stored in your workflow.
 
     <Tip>
-      If you want to send this to your team, you can send to a static email address. If you want to send this to your customer, you can select the email variable that was earlier defined in the call. 
+      If you want to send this to your team, you can send to a static email address. If you want to send this to your customer, you can select the email variable that was earlier defined in the call.
     </Tip>
     | Field                               | Description                                                                                                                                                                                                   |
     | :---------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
