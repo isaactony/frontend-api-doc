@@ -17,7 +17,7 @@ The Google Calendar integration allows your Phonely agent to check availability 
 1. On the right-hand panel, you’ll see the Google Calendar setup screen.
 2. Under **Action**, choose one of the following:
    - **Check Availability** – Allows your agent to verify open time slots in your calendar.
-     - **Create an Appointment** – Lets the agent automatically schedule a new event.
+   - **Create an Appointment** – Lets the agent automatically schedule a new event.
 3. Select your preferred option.
 
 ![Connecting Your Google Calendar To Phonely Gi](/assets/connecting-your-google-calendar-to-phonely.gif)
@@ -115,16 +115,14 @@ This setup shares some base fields (like Calendar ID, Start Time, and Advanced S
 
 <Steps>
   <Step title="End Time">
-    Defines when the scheduled event ends.
-
-    Must be later than the start time.
+    Defines when the scheduled event ends. Must be later than the start time.
   </Step>
   <Step title="Email">
     Required field where you enter the attendee’s email.
 
     The system automatically sends a Google Calendar invitation to this address once the booking is created.
 
-    You can use dynamic variables (e.g., caller email) if captured earlier in the flow.
+    You can use dynamic variables (e.g., caller email) captured earlier in the flow.
   </Step>
   <Step title="Appointment Name">
     The event title as it appears in your calendar and the attendee’s invite.
@@ -162,20 +160,22 @@ The **Test** tab runs a dry-run against your calendar with the exact parameters 
 
 #### What You’ll See
 
-1. **Test Configuration Summary:**\
-   Displays the configuration details that were used for the test.
-   - **Selected Calendar** – which Google Calendar is being queried
-   - **Duration** – length of each slot (e.g., 15m or 30m)
-   - **Start Time** – the point from which the system begins checking (usually “Current time” if you clicked the clock icon)
-2. **Available Slots Found Panel:**\
-   Shows a table of available slots.
-   - Each row includes Start Time \> End Time pairs.
-   - These are real, conflict-free ranges within your defined working hours.
+**1. Test Configuration Summary **
+
+Displays the configuration details that were used for the test.
+
+- **Selected Calendar** – which Google Calendar is being queried
+- **Duration** – length of each slot (e.g., 15m or 30m)
+
+**2. Available Slots Found Panel:**\
+Shows a table of available slots. Each row includes Start Time \> End Time pairs.
+
+These are real, conflict-free ranges within your defined working hours.
 
 <img
   src="/assets/availability-tests.png"
   alt="Availability Tests Pn"
-  style={{ width:"75%" }}
+  style={{ width:"56%" }}
 />
 
 ### When Action = Create Appointment
