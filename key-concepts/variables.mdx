@@ -155,10 +155,10 @@ Variables that describe the execution environment, flow versioning, and infrastr
 
 | Variable                | Type   | When Set / Source | Notes                                                                                                                                                               |
 | :---------------------- | :----- | :---------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Flow Version**        | string | System            | Version of the workflow executed during the call (useful when comparing behavior across versions or generating release logs).                                       |
-| **Backend Version**     | string | System            | Backend build/version running the call. Helps engineers track rollouts and regressions.                                                                             |
-| **Voice Infra Version** | string | System            | Indicates voice infrastructure version (useful for voice quality debugging or migration validation).                                                                |
-| **Environment**         | string | System            | Shows where the call is running: `production` · `staging` · `development`. Used for routing behavior by stage or preventing test flows from triggering live actions |
+| **Flow Version**        | `text` | System            | Version of the workflow executed during the call (useful when comparing behavior across versions)                                                                   |
+| **Backend Version**     | `text` | System            | Backend build/version running the calls.                                                                                                                            |
+| **Voice Infra Version** | `text` | System            | Indicates voice infrastructure version (useful for voice quality debugging or migration validation)                                                                 |
+| **Environment**         | `text` | System            | Shows where the call is running: `production` · `staging` · `development`. Used for routing behavior by stage or preventing test flows from triggering live actions |
 
 #### Ended Call Reason - Allowed Values
 
