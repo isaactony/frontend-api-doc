@@ -24,7 +24,7 @@ Structured data (caller phone, name, intent, outcomes, etc.) that your agent rea
 **Where they live.**
 
 - Live-call variables exist while the conversation is running and power real-time logic (branching, transfers, API requests, messages).
-- Post-call variables are the finalized record (transcript, summary, sentiment, outcomes, links) used in emails, webhooks, CRMs, or BI.   
+- Post-call variables are the finalized record (transcript, summary, sentiment, outcomes, links) used in emails, webhooks, CRMs, or BI.
 
 **How they're created.**
 
@@ -148,6 +148,17 @@ Prompt the caller at the moment a block needs a value (name, email, date, etc.)�
 | **Workflow Triggered** | `boolean`    | Platform            | Whether a workflow was triggered during the call  |
 | **Call Transferred**   | `boolean`    | Telephony/Platform  | Whether the call was transferred to another party |
 | **Stored Variables**   | `json`       | Platform            | Variables stored during the call execution        |
+
+### **System & Version Metadata (New)**
+
+Variables that describe the execution environment, flow versioning, and infrastructure details. Useful for debugging, analytics, release tracking, and conditional routing.
+
+| Variable                | Type   | When Set / Source | Notes                                                                                                                                                               |
+| :---------------------- | :----- | :---------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Flow Version**        | string | System            | Version of the workflow executed during the call (useful when comparing behavior across versions or generating release logs).                                       |
+| **Backend Version**     | string | System            | Backend build/version running the call. Helps engineers track rollouts and regressions.                                                                             |
+| **Voice Infra Version** | string | System            | Indicates voice infrastructure version (useful for voice quality debugging or migration validation).                                                                |
+| **Environment**         | string | System            | Shows where the call is running: `production` · `staging` · `development`. Used for routing behavior by stage or preventing test flows from triggering live actions |
 
 #### Ended Call Reason - Allowed Values
 
