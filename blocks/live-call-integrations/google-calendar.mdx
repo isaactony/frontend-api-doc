@@ -31,25 +31,38 @@ The Google Calendar integration allows your Phonely agent to check availability 
 
 ## Connect Your Google Account
 
-1. Click **“Connect to Google Calendar.”**
-   - A pop-up will appear prompting you to link your Google account.
-2. Select the Google account you want to connect.
-   - Choose from the list of accounts or click **“Use another account”** if not listed.
-3. Review the permissions requested and click **“Continue.”**
-   - This authorizes Phonely to securely access your calendar.
-4. Once authenticated, Phonely will display **Reconnect** and the Continue button should now be activated.                    
+1. Click **Connect to Google Calendar**. A pop-up will appear prompting you to link your Google account.
+2. Select the Google account you want to connect. Choose from the list of accounts or click **“Use another account”** if not listed.
+
+<img
+  src="/assets/connect-to-google-calendar.png"
+  alt="Connect To Google Calendar Pn"
+  title="Connect To Google Calendar Pn"
+  style={{ width:"91%" }}
+/>
+
+3. Review the permissions requested and click **Continue**. This authorizes Phonely to securely access your calendar.
+
+<img
+  src="/assets/selecting-google-permissions-for-phonely.png"
+  alt="Selecting Google Permissions For Phonely Pn"
+  title="Selecting Google Permissions For Phonely Pn"
+  style={{ width:"92%" }}
+/>
+
+4. Once authenticated, Phonely will display Reconnect and the **Continue** button should now be activated.
 
 ## Verify and Continue
 
-1. Once your Google Calendar is connected, the setup step will be marked complete with a checkmark.    
-2. Click **“Continue”** to proceed to the **Configure** stage.    
-3. Depending on your selected action:    
+1. Once your Google Calendar is connected, the setup step will be marked complete with a checkmark.
+2. Click **“Continue”** to proceed to the **Configure** stage.
+3. Depending on your selected action:
    - For **Check Availability**, specify the time range and conditions for checking free/busy slots.
    - For **Create Appointment**, define event details like title, time, and attendees.
 
 ## Configure the Google Calendar
 
-After connecting your Google Calendar, the Configure step changes depending on the Action you selected in the Setup stage.     
+After connecting your Google Calendar, the Configure step changes depending on the Action you selected in the Setup stage.
 
 ### Configuration options for "Check Availability" Action
 
@@ -77,7 +90,7 @@ After connecting your Google Calendar, the Configure step changes depending on t
   </Step>
   <Step title="Available Time Slots (count)">
     - Set how many distinct slots to retrieve and present.
-    - This doesn’t change your calendar- only how many options the caller hears before choosing.    
+    - This doesn’t change your calendar- only how many options the caller hears before choosing.
   </Step>
   <Step title="Available Times (per-day windows)">
     Define the business hours the agent should consider **within** the search period. Each weekday has:
@@ -85,7 +98,7 @@ After connecting your Google Calendar, the Configure step changes depending on t
     - A **toggle** to enable/disable that day entirely.
     - A **from \> to** time window (e.g., `9:00 am → 5:00 pm`).
     - **\+** to add another window for split shifts (e.g., `9–12` and `2–5`).
-    - **✕** to remove a window.   
+    - **✕** to remove a window.
 
     **Notes:**
 
@@ -105,7 +118,7 @@ After connecting your Google Calendar, the Configure step changes depending on t
   </Step>
   <Step title="Interim Message Prompt">
     - **Fixed** – always use the text you provide verbatim.
-    - **Promptable** – let the LLM vary the phrasing while keeping your intent (good for more natural conversations).     
+    - **Promptable** – let the LLM vary the phrasing while keeping your intent (good for more natural conversations).
   </Step>
   <Step title="Call Outcome Tagging">
     - Add keywords (e.g., `booking_created`, `no_availability`, `calendar_error`) to tag call analytics when this block completes.
@@ -118,7 +131,7 @@ After connecting your Google Calendar, the Configure step changes depending on t
 ### **Configuration options for “Create Appointment” Action**
 
 Choose this action when the Phonely agent should **book an event directly** in Google Calendar.\
-This setup shares some base fields (like Calendar ID, Start Time, and Advanced Settings) but also includes unique fields specific to appointment creation.    
+This setup shares some base fields (like Calendar ID, Start Time, and Advanced Settings) but also includes unique fields specific to appointment creation.
 
 ![Google Calendar Appointments Phonely Gi](/assets/google-calendar-appointments-phonely.gif)
 
@@ -165,7 +178,7 @@ The **Test** tab runs a dry-run against your calendar with the exact parameters 
 
 #### What You’ll See
 
-**1. Test Configuration Summary **
+\*\*1. Test Configuration Summary \*\*
 
 Displays the configuration details that were used for the test.
 
@@ -185,7 +198,7 @@ These are real, conflict-free ranges within your defined working hours.
 
 ### When Action = Create Appointment
 
-The Test tab performs a live test that actually creates an appointment in your Google Calendar using the parameters you defined.      
+The Test tab performs a live test that actually creates an appointment in your Google Calendar using the parameters you defined.
 
 #### What You’ll See
 
@@ -194,7 +207,7 @@ Lists the appointment details that will be used for the event creation, includin
 
 **2. Appointment Created Successfully Panel:**
 
-Shows a confirmation message.    
+Shows a confirmation message.
 
 <img
   src="/assets/appointments-test.png"
@@ -206,7 +219,7 @@ Shows a confirmation message.
 
 Once successfully connected, your Phonely agent can:
 
-- Instantly check your availability during a call.    
+- Instantly check your availability during a call.
 - Automatically schedule or confirm appointments in your connected Google Calendar.
 
 <Tip>
