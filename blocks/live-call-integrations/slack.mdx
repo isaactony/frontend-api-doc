@@ -3,7 +3,7 @@ title: "Connecting Slack "
 description: "Learn how you can connect you slack workspaces to phonely"
 ---
 
-The Slack integration allows your Phonely agent to send messages directly to your Slack workspace — automatically sharing call updates, summaries, or notifications in real time.\
+The Slack integration allows your Phonely agent to send messages directly to your Slack workspace, automatically sharing call updates, summaries, or notifications in real time.\
 This guide walks you through the full process, from connecting your Slack workspace to Phonely, configuring channels, and testing your setup.
 
 ![Connecting Slack To Phonely Workflows Gi](/assets/connecting-slack-to-phonely-workflows.gif)
@@ -19,7 +19,7 @@ This guide walks you through the full process, from connecting your Slack worksp
 In the **Setup** tab of the Slack integration panel:
 
 1. Open the **Action** dropdown menu.
-2. Select **Send Channel Message** — this tells Phonely to post a message to a chosen Slack channel.
+2. Select **Send Channel Message**, this tells Phonely to post a message to a chosen Slack channel.
 3. Click **Connect to Slack** to start linking your workspace.
 
 ## Authorize the Connection
@@ -28,15 +28,18 @@ When you click **Connect to Slack**, you’ll be redirected to Slack’s authori
 
 ### **Choose the Right Workspace**
 
-- Select the workspace where you want Phonely to send messages.
-- If your current workspace has reached the app limit (as shown in the screenshot), you’ll see a message like:
+Select the workspace where you want Phonely to send messages.
 
-  <Tip>
-    Workspaces on free plans can only install 10 apps. You can add Phonely if you upgrade your workspace or remove one of your existing apps.
-  </Tip>
-- If this appears:
-  - Either **remove one app** from your workspace, or
-  - **Switch to another workspace** from the dropdown list.
+If your current workspace has reached the app limit (as shown in the screenshot), you’ll see a message like:
+
+<Tip>
+  Workspaces on free plans can only install 10 apps. You can add Phonely if you upgrade your workspace or remove one of your existing apps.
+</Tip>
+
+If this appears:
+
+- Either **remove one app** from your workspace, or
+- **Switch to another workspace** from the dropdown list.
 
 <Tip>
   If you have multiple Slack workspaces, make sure you choose the one where your team manages calls or notifications.
@@ -74,9 +77,11 @@ Once connected, move to the **Configure** tab.
 
 ### **Select a Channel**
 
-- Use the **Channel** dropdown to choose where Phonely will post messages.
-- You can search for any public or private channel your connected Slack account has access to.
-- If your desired channel doesn’t appear, create it in Slack first and then refresh your Phonely integration window.
+Use the **Channel** dropdown to choose where Phonely will post messages.
+
+You can search for any public or private channel your connected Slack account has access to.
+
+If your desired channel doesn’t appear, create it in Slack first and then refresh your Phonely integration window.
 
 <img
   src="/assets/configure-slack-connection.png"
@@ -88,16 +93,18 @@ Once connected, move to the **Configure** tab.
 
 In the message field:
 
-- Enter the text you want Phonely to post to your Slack channel.
-- Use **variables** (e.g., `CallerName`, `Summary`, `AgentName`) to include dynamic call data.
-- Example message:
+Enter the text you want Phonely to post to your Slack channel.
 
-  ```
-  New call handled by AgentName  
-  Caller: CallerName  
-  Summary: Summary  
-  Outcome: CallOutcome
-  ```
+Use **variables** (e.g., `CallerName`, `Summary`, `AgentName`) to include dynamic call data.
+
+Example message:
+
+```
+New call handled by AgentName  
+Caller: CallerName  
+Summary: Summary  
+Outcome: CallOutcome
+```
 
 ## Test the Integration
 
