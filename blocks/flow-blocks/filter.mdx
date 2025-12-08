@@ -7,7 +7,7 @@ description: "Route conversation based on conditions and create dynamic conversa
 
 The Filter block in Phonely allows you to split your call flow based on conditions. Think of it as a decision-making point that checks if certain criteria are met, like whether the caller’s name matches a specific value, or if a collected variable exists, and then routes the call accordingly.
 
-This helps you create personalized, dynamic, and logic-based flows where outcomes depend on user input, call data, or system variables. 
+This helps you create personalized, dynamic, and logic-based flows where outcomes depend on user input, call data, or system variables.
 
 ![Filter Block Phonely Gi](/assets/filter-block-phonely.gif)
 
@@ -31,13 +31,12 @@ Here are common scenarios where the Filter block is useful:
 
 ## Understanding How It Works
 
-When the Filter block is added to your flow:
+When the Filter block is added to your flow, it evaluates one or more conditions using variables and comparison rules.
 
-- It evaluates one or more conditions using variables and comparison rules.
-- Each condition returns either **True** or **False**.
-- Based on the outcome:
-  - **True path** \> Executes the next connected block when all/any conditions are met.
-  - **False path** \> Executes the next block when conditions fail.
+Based on the outcome:
+
+- **True path** \> Executes the next connected block when all/any conditions are met.
+- **False path** \> Executes the next block when conditions fail.
 
 <img
   src="/assets/updated-filters-phonely.png"
