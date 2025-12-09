@@ -6,7 +6,7 @@ description: "Learn how to build, publish and update custom actions in Phonely"
 ## What Are Custom Actions?
 
 Custom Actions allow you to package a series of connected blocks - for example, prompts, logic branches, and API requests - into a single reusable block.\
-Once created, you can reuse this action across multiple call flows, share it with your organization, or even publish it to the marketplace.
+Once created, you can reuse this action across multiple call flows, share it with your organization, or even publish it to the marketplace.   
 
 Think of a Custom Action as a mini reusable workflow inside your larger flow. It behaves like a single block but contains its own inner logic, inputs, and outputs.
 
@@ -52,15 +52,15 @@ Inside the purple area (your Custom Action workspace), you can start building ju
 
 Inside the purple area, you can drag and connect blocks just like a normal workflow.
 
-### Configuring an Appointment Custom Action
+### Configuring an  Custom Action - Appointment Example
 
 Let’s walk through how to configure a Custom Action that handles appointment scheduling for a legal office.
 
-**Connect an API Request Block** Next, you’ll connect to your firm’s booking system or calendar API to check available slots.
+1. Connect an API Request Block Next, you’ll connect to your firm’s booking system or calendar API to check available slots.
 
-Click the **＋ button** under your Collect block and select **API Request**.
+2. Click the **＋ button** under your Collect block and select **API Request**.
 
-In the configuration panel:
+3. In the configuration panel:
 
 - Method:  `GET`
 - Endpoint.
@@ -70,7 +70,7 @@ In the configuration panel:
 
 This request checks available appointment slots for the specified time range.
 
-### Offer Available Time Slots
+**Offer Available Time Slots**
 
 After retrieving availability, add a **Talk** block to read back available slots to the caller.
 
@@ -80,7 +80,7 @@ Example prompt:
 
 - If the caller chooses a time, capture their response with another **Collect** block (e.g., `preferredSlot`).
 
-### Book the Appointment
+**Book the Appointment**
 
 Next, add a second API Request block to confirm the booking:
 
