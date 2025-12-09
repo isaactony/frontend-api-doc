@@ -3,7 +3,7 @@ title: "Using Call Flows"
 description: "Build complex conversations, connect with your tools and more with flows"
 ---
 
-Flows are the visual blueprints that define exactly how your AI phone agent behaves—from the greeting, to data collection, to decisions, actions, and the final call outcome.\
+Flows are the visual blueprints that define exactly how your AI phone agent behaves, from the greeting, to data collection, to decisions, actions, and the final call outcome.\
 They describe what the agent says, what it asks, what it stores, what APIs it calls, and how the conversation moves forward.
 
 ## What Are Flows?
@@ -34,8 +34,8 @@ They can include:
 
 Variables store information during the call, such as:
 
-- Caller-provided inputs.  
-- API responses.  
+- Caller-provided inputs.
+- API responses.
 - System-generated data (timestamp, outcomes, etc.)
 
 They act as the agent’s short-term working memory for the duration of the call.
@@ -44,7 +44,7 @@ They act as the agent’s short-term working memory for the duration of the call
 
 Phonely includes several canvas tools to help you navigate and organize large workflows.
 
-You’ll find tools for:           
+You’ll find tools for:
 
 - Switching between **Hand Mode** (drag canvas) and **Pointer Mode** (select/move nodes)
 - **Exporting** the flow as a PNG
@@ -52,14 +52,14 @@ You’ll find tools for:
 - **Undo/Redo** actions
 - Viewing your **change history**
 
-See the dedicated [Navigation & Editing Tools in the Flow Builder guide](/key-concepts/flow-canvas-controls) for more details. 
+See the dedicated [Navigation & Editing Tools in the Flow Builder guide](/key-concepts/flow-canvas-controls) for more details.
 
 ## Core Concepts
 
 ### How to Create a Flow
 
-1. **Open your Flow** and click **Edit**. This enters editing mode.   
-2. **Add blocks. Click the “+” node** between existing blocks or at the end of a chain to insert a new block.    
+1. **Open your Flow** and click **Edit**. This enters editing mode.
+2. **Add blocks. Click the “+” node** between existing blocks or at the end of a chain to insert a new block.
 
 <img
   src="/assets/adding-a-new-block-phonely.png"
@@ -71,7 +71,7 @@ See the dedicated [Navigation & Editing Tools in the Flow Builder guide](/key-co
 **3. Configure a Block**
 
 Click any block in your Flow to open its configuration panel.\
-Each block contains different settings, and the options you see will depend on the type of block you’re setting up.       
+Each block contains different settings, and the options you see will depend on the type of block you’re setting up.
 
 <Tip>
   Blocks have different setup and configuration requirements. For example, a Talk block includes questions and answers, Collect blocks include questions and variables, while API Request blocks include payload, headers, and response mapping.
@@ -85,7 +85,7 @@ Each block contains different settings, and the options you see will depend on t
 />
 
 **4. Connect blocks**\
-When a new block is added, Phonely automatically creates a connection. You can change connections between blocks by hovering over an edge clicking the **X** button, and then place your cursor over the output node of one block and drag the edge to connect to the input node of another block.                                                                                                        
+When a new block is added, Phonely automatically creates a connection. You can change connections between blocks by hovering over an edge clicking the **X** button, and then place your cursor over the output node of one block and drag the edge to connect to the input node of another block.
 
 **5. Edit and edge**
 
@@ -93,14 +93,14 @@ Hover over and edge and click the edit button to open the edit slide in panel. H
 
 ![How To Edit An Edge Pn](/assets/how-to-edit-an-edge.png)
 
-- Specify the variables that must exist before allowing passage through this edge. The workflow will only proceed if all specified variables are present.   
-- Specify the variables that should be confirmed before allowing passage through this edge. The workflow will only proceed if all specified variables are confirmed.  
+- Specify the variables that must exist before allowing passage through this edge. The workflow will only proceed if all specified variables are present.
+- Specify the variables that should be confirmed before allowing passage through this edge. The workflow will only proceed if all specified variables are confirmed.
 
 **6. Save your changes**\
 Every save creates a **new version** you can review or revert.
 
 **7. Publish when ready**\
-Publishing makes the version live for real callers.   
+Publishing makes the version live for real callers.
 
 ## Call variables
 
@@ -118,7 +118,7 @@ Publishing makes the version live for real callers.
 
 ### Variable types
 
-Variables in Phonely can store different types of data. Choose the appropriate type when collecting information from callers or storing data from API responses.                    
+Variables in Phonely can store different types of data. Choose the appropriate type when collecting information from callers or storing data from API responses.
 
 | Type           | Data Type  | Description                                |
 | :------------- | :--------- | :----------------------------------------- |
@@ -138,22 +138,22 @@ Variables in Phonely can store different types of data. Choose the appropriate t
 
 ---
 
-## Call outcome tagging.   
+## Call outcome tagging.
 
 <Info>
   Outcome tags enable analytics, reporting, and automations after the call ends.
 </Info>
 
 <Card title="Automatic">
-  System applies defaults like `completed`, `failed`, `lead_qualified`, `appointment_schedule,` or `transferred`.     
+  System applies defaults like `completed`, `failed`, `lead_qualified`, `appointment_schedule,` or `transferred`.
 </Card>
 
 <Card title="Custom">
-  Set custom tags in End Call blocks for downstream workflows.    
+  Set custom tags in End Call blocks for downstream workflows.
 </Card>
 
 <Card title="Conditional">
-  Apply tags only when conditions on variables are met.    
+  Apply tags only when conditions on variables are met.
 </Card>
 
 <Tip>
@@ -186,7 +186,7 @@ Variables in Phonely can store different types of data. Choose the appropriate t
   <Tab title="Live">
     <Steps>
       <Step title="Use test numbers">
-        Route calls to non-production DIDs.    
+        Route calls to non-production DIDs.
       </Step>
       <Step title="Monitor in real time">
         Watch transcripts and events in the dashboard.
