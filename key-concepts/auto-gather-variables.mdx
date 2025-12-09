@@ -5,7 +5,7 @@ description: "Learn how Auto-Gather Variables help your agent collect informatio
 
 Auto-Gather Variables are one of the most powerful features in Phonely. They let your agent collect, validate, and format information **at the exact moment it’s needed**, directly inside a block such as a Payment block, API Request block, Calendar block, Email block, or even Post-Call workflows.
 
-Instead of creating Talk blocks just to gather data, Auto-Gather Variables let you define the variable inside the block where it will be used. This keeps your flows cleaner, shorter, and more intelligent.      
+Instead of creating Talk blocks just to gather data, Auto-Gather Variables let you define the variable inside the block where it will be used. This keeps your flows cleaner, shorter, and more intelligent.
 
 <iframe src="https://www.youtube.com/embed/my-0awvgnb4" title="YouTube video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
 
@@ -14,9 +14,9 @@ Instead of creating Talk blocks just to gather data, Auto-Gather Variables let y
 Traditionally, collecting a variable required a Talk Block:
 
 - Ask the caller a question.
-- Define the variable inside that Talk Block. 
-- Validate and confirm it. 
-- Use it later in your flow. 
+- Define the variable inside that Talk Block.
+- Validate and confirm it.
+- Use it later in your flow.
 
 This works, but becomes complicated when:
 
@@ -34,9 +34,18 @@ For example: inside API Request, Payment, Calendar, Email, and more.
 
 ### How to Create One
 
-1. Open any block (e.g., API Request or Payment).   
-2. Look for the **Auto-Gather Variables** section.   
-3. Click **\+** to create a new variable.   
+1. Open any block (e.g., API Request or Payment). 
+1. Click on any of the fields where you want to collect and add the variable. 
+2. This should open the **Variables** panel. Click and expand the Auto-gather variables section.
+
+<img
+  src="/assets/connecting-to-slack.png"
+  alt="Connecting To Slack Pn"
+  title="Connecting To Slack Pn"
+  style={{ width:"89%" }}
+/>
+
+3. Click **\+** to create a new variable.
 
 <img
   src="/images/image.png"
@@ -47,7 +56,7 @@ For example: inside API Request, Payment, Calendar, Email, and more.
 
 4. Fill in the required fields:
 
-- **Variable Name**: A short, descriptive name.   
+- **Variable Name**: A short, descriptive name.
 - **Variable Type:** Choose from several built-in types.
 - **Description:** Clarify what Phonely should gather, e.g. _“The amount the customer wants to donate.”_
 
@@ -100,7 +109,7 @@ Imagine you want to collect the payment amount from a caller.
 
 1. Open **Payment Block**
 2. Click **\+ Auto-Gather Variable**
-3. Create a variable:        
+3. Create a variable:
    - Name: `amount`
    - Type: Custom
    - Custom Type Definition: _“Format this as a raw number with two decimal places (e.g., 34 → 34.00).”_
