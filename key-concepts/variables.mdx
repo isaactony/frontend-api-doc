@@ -19,12 +19,12 @@ Variables are the backbone of your agents. They capture data during a call, pass
 
 **What variables are.**
 
-Structured data (caller phone, name, intent, outcomes, etc.) that your agent reads/writes at runtime and exposes after the call.                                                                                                                                                                               
+Structured data (caller phone, name, intent, outcomes, etc.) that your agent reads/writes at runtime and exposes after the call.
 
 **Where they live.**
 
-- Live-call variables exist while the conversation is running and power real-time logic (branching, transfers, API requests, messages).     
-- Post-call variables are the finalized record (transcript, summary, sentiment, outcomes, links) used in emails, webhooks, CRMs, or BI.                                                        
+- Live-call variables exist while the conversation is running and power real-time logic (branching, transfers, API requests, messages).
+- Post-call variables are the finalized record (transcript, summary, sentiment, outcomes, links) used in emails, webhooks, CRMs, or BI.
 
 **How they're created.**
 
@@ -63,7 +63,7 @@ Define a key/value once (for example, `api_key`) and reuse across blocks and flo
 
 ### Auto-gather
 
-Prompt the caller at the moment a block needs a value (name, email, date, etc.)—no extra Talk block required.        
+Prompt the caller at the moment a block needs a value (name, email, date, etc.)—no extra Talk block required.
 
 <Tip>
   In an API Request block, add a query/body field → choose "Auto-gather" → set type (Text, Email, Phone, Date, Time) and "Required." At runtime, the agent asks, then proceeds with the request.
@@ -149,6 +149,17 @@ Prompt the caller at the moment a block needs a value (name, email, date, etc.)�
 | **Call Transferred**   | `boolean`    | Telephony/Platform  | Whether the call was transferred to another party |
 | **Stored Variables**   | `json`       | Platform            | Variables stored during the call execution        |
 
+### **System & Version Metadata (New)**
+
+Variables that describe the execution environment, flow versioning, and infrastructure details. Useful for debugging, analytics, release tracking, and conditional routing.
+
+| Variable                | Type   | When Set / Source | Notes                                                                                                                                                               |
+| :---------------------- | :----- | :---------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Flow Version**        | `text` | System            | Version of the workflow executed during the call (useful when comparing behavior across versions)                                                                   |
+| **Backend Version**     | `text` | System            | Backend build/version running the calls.                                                                                                                            |
+| **Voice Infra Version** | `text` | System            | Indicates voice infrastructure version (useful for voice quality debugging or migration validation)                                                                 |
+| **Environment**         | `text` | System            | Shows where the call is running: `production` · `staging` · `development`. Used for routing behavior by stage or preventing test flows from triggering live actions |
+
 #### Ended Call Reason - Allowed Values
 
 - `customer_hung_up`
@@ -185,7 +196,7 @@ Open the Variables modal and add keys you'll reuse (for example, `api_key`, `org
 
 ### Use Auto-Gather Where It Matters
 
-Inside an API Request block, set a parameter's source to "Auto-gather," choose a type (Text, Email, Phone, Date, Time), and mark it required. The agent will ask at runtime and then proceed.
+Inside an API Request block, set a parameter's source to "Auto-gather," choose a type (Text, Email, Phone, Date, Time), and mark it required. The agent will ask at runtime and then proceed. [Learn more about auto-gather variables here](/key-concepts/auto-gather-variables). 
 
 ### Separate Live vs Post-Call
 

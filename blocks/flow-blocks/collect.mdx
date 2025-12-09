@@ -15,33 +15,33 @@ The Collect Block is a core component in Phonely used when you want to ask a ser
 
 Understanding the nuances between Phonely's conversational blocks is crucial for effective workflow design. Here is some key information on what defines the Collect block:
 
-**• Purpose** - Ideal for gathering a string of related information (like a form) where all fields must be collected consecutively.
+**Purpose** - Ideal for gathering a string of related information (like a form) where all fields must be collected consecutively.
 
-**• Behavior** - It is a single, combined block that does not branch based on individual answers within the block. The AI ensures all required information is gathered before moving to the next part of the workflow. 
+**Behavior** - It is a single, combined block that does not branch based on individual answers within the block. The AI ensures all required information is gathered before moving to the next part of the workflow.
 
-**• Efficiency** - It is significantly faster and cleaner than creating a series of individual Ask Exactly Blocks or a single Prompt Block for this specific use case.
+**Efficiency** - It is significantly faster and cleaner than creating a series of individual Ask Exactly Blocks or a single Prompt Block for this specific use case.
 
-**• Smart Confirmation** - If the customer has already provided information relevant to a question in the Collect Block earlier in the conversation, Phonely will intelligently confirm that information instead of re-asking the question, enhancing the natural flow.  
+**Smart Confirmation** - If the customer has already provided information relevant to a question in the Collect Block earlier in the conversation, Phonely will intelligently confirm that information instead of re-asking the question, enhancing the natural flow.
 
 ## Key Features
 
-**• Efficient Data Aggregation** - Collects multiple data points (e.g., name, phone, email) within a single conversational segment.
+**Efficient Data Aggregation** - Collects multiple data points (e.g., name, phone, email) within a single conversational segment.
 
-**• Automated Question Generation** - Phonely's AI intelligently formulates how to ask the defined questions, maintaining a natural conversation flow.
+**Automated Question Generation** - Phonely's AI intelligently formulates how to ask the defined questions, maintaining a natural conversation flow.
 
-**• Guaranteed Information Capture** - The block ensures all specified information is gathered and stored as variables before the workflow proceeds.
+**Guaranteed Information Capture** - The block ensures all specified information is gathered and stored as variables before the workflow proceeds.
 
-**• Streamlined Workflow Design** - Significantly reduces the complexity of your workflow canvas compared to using multiple individual question blocks.
+**Streamlined Workflow Design** - Significantly reduces the complexity of your workflow canvas compared to using multiple individual question blocks.
 
-**• Natural Conversation** - Allows Phonely to guide the conversation naturally, reducing the need for manual question crafting and complex branching logic.
+**Natural Conversation** - Allows Phonely to guide the conversation naturally, reducing the need for manual question crafting and complex branching logic.
 
-**• Pre-fill and Confirmation** - Automatically confirms information if the customer has already provided it, preventing repetitive questions.
+**Pre-fill and Confirmation** - Automatically confirms information if the customer has already provided it, preventing repetitive questions.
 
 ## Setup
 
 <Steps>
   <Step title="Add a New Block">
-    In your workflow, click the + button to add a new block.
+    In your workflow, click the **\+** button to add a new block.
   </Step>
   <Step title="Select Collect:">
     Choose the "Collect" option from the available blocks.
@@ -51,7 +51,7 @@ Understanding the nuances between Phonely's conversational blocks is crucial for
 
     - **Name (Variable Name)**: Assign a descriptive internal name for the variable that will store this piece of information (e.g., "customer_name", "contact_phone", "user_email"). This name will be used to reference the data later.
     - **Type (Answer Type)**: Select the appropriate data type for the expected input (e.g., text, phone, email, number, date). This ensures Phonely validates and stores the information in the correct format for subsequent use.
-    - **Question (Instruction)**: Briefly describe what Phonely should ask or obtain from the customer (e.g., "Get customer name", "Get customer phone", "Get customer email"). This serves as an instruction to the AI.   
+    - **Question (Instruction)**: Briefly describe what Phonely should ask or obtain from the customer (e.g., "Get customer name", "Get customer phone", "Get customer email"). This serves as an instruction to the AI.
 
     <Tip>
       You can include specific instructions here, such as "Get the caller's name and spell it back to them
@@ -84,7 +84,7 @@ Here's how you might configure a Collect Block to collect basic customer details
 
 ## Using Data
 
-After the Collect Block has successfully gathered all the defined information, it is automatically stored as variables. These variables are immediately available for use in any subsequent blocks within your workflow. 
+After the Collect Block has successfully gathered all the defined information, it is automatically stored as variables. These variables are immediately available for use in any subsequent blocks within your workflow.
 
 **• Accessing Data** - When configuring actions, conditions, or prompts in later blocks, simply select the appropriate variable name that was defined in your Collect Block (e.g., name, phone, email) to reference the collected data.
 
@@ -100,11 +100,11 @@ The Collect block offers powerful options for precise data handling:
 
 ## Analytics
 
-**• Call Outcome Tags** - The Collect Block allows you to use outcome tags, which are crucial for tracking user progression and analyzing workflow performance.
+**Call Outcome Tags** - The Collect Block allows you to use outcome tags, which are crucial for tracking user progression and analyzing workflow performance.
 
-**• Purpose** - By tagging this block as an outcome, you can track if a caller reaches this stage of the conversation.
+**Purpose** - By tagging this block as an outcome, you can track if a caller reaches this stage of the conversation.
 
-**• Analytics** - This information is then visible in Phonely's analytics section, enabling you to conduct A/B tests and gain insights into your agent's effectiveness.
+**Analytics** - This information is then visible in Phonely's analytics section, enabling you to conduct A/B tests and gain insights into your agent's effectiveness.
 
 ## Conclusion
 

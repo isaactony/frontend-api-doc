@@ -15,17 +15,22 @@ Think of talk blocks as prompt blocks. Prompts are essentially a set of instruct
 
 <Steps>
   <Step title="Navigate to your workflow in the Agent Design tab">
+    
   </Step>
   <Step title="Select the (+) node below the Start Flow block to add a block.">
+    
   </Step>
   <Step title='Choose "Talk Block" to add it.'>
+    
   </Step>
   <Step title="Enter your desired conversation prompt for the AI agent.">
+    
   </Step>
   <Step title='Click "Generate with AI" to ensure proper formatting for the agent.'>
+    
   </Step>
   <Step title="Optionally, adjust exit conditions or variables as needed.">
-
+    
   </Step>
 </Steps>
 
@@ -39,11 +44,11 @@ Think of them as the criteria Phonely uses to decide, "Okay, the AI has done wha
 
 Here's a breakdown of why Exit Conditions are important and how they work:
 
-**• Guiding the Conversation Flow** - Exit conditions are crucial for creating dynamic and logical call flows. They ensure the conversation doesn't get stuck in one step and moves towards the desired outcome (e.g., scheduling an appointment, gathering information, transferring to a human).
+**Guiding the Conversation Flow** - Exit conditions are crucial for creating dynamic and logical call flows. They ensure the conversation doesn't get stuck in one step and moves towards the desired outcome (e.g., scheduling an appointment, gathering information, transferring to a human).
 
-**• Triggering the Next Action** - When an exit condition is met, it signals to Phonely to activate the connected block in your workflow. This could be another Talk Block, a Transfer Call block, an End Call block, or any other available block.
+**Triggering the Next Action** - When an exit condition is met, it signals to Phonely to activate the connected block in your workflow. This could be another Talk Block, a Transfer Call block, an End Call block, or any other available block.
 
-**• Based on Caller Input or AI Actions** - Exit conditions can be based on various factors, such as:
+**Based on Caller Input or AI Actions** - Exit conditions can be based on various factors, such as:
 
 - **Keywords or Phrases**: The caller says a specific word or phrase (e.g., "Yes, schedule it," "I need support").
 - **Confirmation**: The AI asks a question and the caller provides a confirming answer.
@@ -69,7 +74,7 @@ Here's why **Variables** are **essential** and how they work:
 
 #### **Examples of Variable Use:**
 
-1. Storing the caller's name in a variable called `caller_name` so your agent can say, "Hello, [caller_name]!"
+1. Storing the caller's name in a variable called `caller_name` so your agent can say, "Hello, @caller_name!"
 2. Capturing the reason for the call in a variable called `reason_for_call` and using it to route the call appropriately.
 3. Saving the selected appointment date and time in variables like `appointment_date` and `appointment_time` for confirmation.
 

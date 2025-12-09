@@ -18,20 +18,26 @@ When you add a **Campaign** block into your flow, you’re essentially telling P
 
 > “Once this call reaches this point, add the contact to Campaign X for later follow-up.”
 
-This ensures that every caller who meets certain conditions (like missed calls, sales interest, or incomplete forms) is not lost — instead, they’re automatically scheduled for another touchpoint.
+This ensures that every caller who meets certain conditions (like missed calls, sales interest, or incomplete forms) is not lost instead, they’re automatically scheduled for another touchpoint.
 
 ### Configuring the Campaign Block
 
-1. **Open the Flow Editor**
-   - Add a **Campaign** block from the side menu.
-   - Connect it to the previous block (such as _End Call_ or _Conditional_).
-2. **Select the Target Campaign**
-   - In the **Campaign** dropdown, choose from your list of existing campaigns.
-3. **Assign the Caller**
-   - Once a campaign is selected, any caller who reaches this block will automatically be added to that campaign’s outbound queue.
-4. **Save Changes**
-   - Click **Done** to confirm your configuration.
-   - Validate your flow before publishing to ensure there are no unresolved issues.
+<Steps>
+  <Step title="Open the Flow Editor">
+    Add a **Campaign** block from the side menu.
+
+    Connect it to the previous block (such as _End Call_ or _Conditional_).
+  </Step>
+  <Step title="Select the Target Campaign">
+    In the **Campaign** dropdown, choose from your list of existing campaigns.
+  </Step>
+  <Step title="Assign the Caller">
+    Once a campaign is selected, any caller who reaches this block will automatically be added to that campaign’s outbound queue.
+  </Step>
+  <Step title="Save Changes">
+    Click **Done** to confirm your configuration. Validate your flow before publishing to ensure there are no unresolved issues.
+  </Step>
+</Steps>
 
 ### Example Use Cases
 
@@ -55,7 +61,7 @@ After an initial inquiry, route callers into a _Sales Follow-Up Campaign_ to ens
 If a customer’s call outcome is “No Response,” send them to a _Reactivation Campaign_ for another outreach attempt later.
 
 The Campaign block is your automation bridge between inbound and outbound communication.\
-It ensures that every caller — whether missed, interested, or needing follow-up — is queued into the right workflow without manual effort.
+It ensures that every caller, whether missed, interested, or needing follow-up, is queued into the right workflow without manual effort.
 
 By connecting it thoughtfully within your flow, you can build a fully automated engagement cycle that keeps your outreach consistent and efficient.
 

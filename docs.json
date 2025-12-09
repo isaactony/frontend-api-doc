@@ -33,6 +33,7 @@
               "key-concepts/routing",
               "key-concepts/variables",
               "key-concepts/auto-gather-variables",
+              "key-concepts/flow-canvas-controls",
               "key-concepts/manage-workflow-versions"
             ]
           },
@@ -85,7 +86,8 @@
                   "blocks/post-call-actions/connect-to-make",
                   "blocks/post-call-actions/redial",
                   "blocks/post-call-actions/campaign",
-                  "blocks/post-call-actions/connect-to-google-drive"
+                  "blocks/post-call-actions/connect-to-google-drive",
+                  "blocks/post-call-actions/google-sheet-add-row"
                 ]
               },
               {
@@ -101,7 +103,8 @@
               {
                 "group": "Custom Actions",
                 "pages": [
-                  "blocks/custom-integrations/custom-actions"
+                  "blocks/custom-integrations/custom-actions",
+                  "blocks/custom-integrations/google-calendar-custom-block"
                 ]
               }
             ]

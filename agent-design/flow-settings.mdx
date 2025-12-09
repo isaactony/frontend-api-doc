@@ -3,58 +3,49 @@ title: "Flow Settings"
 description: "Learn how to access and configure Flow Settings in Phonely to customize context, resources, and tone for each call flow."
 ---
 
-The **Flow Settings** panel allows you to customize each call flow with the specific context, resources, and configurations it needs to perform correctly. These settings define how your AI agent behaves, what reference materials it can use, and how it transitions between flows.
+The **Flow Settings** panel allows you to customize each call flow with the specific context, resources, and configurations it needs to perform correctly. These settings define how your agent behaves, what reference materials it can use, and how it transitions between flows.
 
-![Configure Flow Settings Gi](/assets/configure-flow-settings.gif)
+1. Open your **Phonely Dashboard**.
+2. Navigate to **Agent Design** in the left sidebar.     
+3. Select an agent to open its workflows, or click **Create Workflow** to start a new one.
+4. Choose the flow you want to edit.     
+5. Click **Flow Settings** in the top-right corner of the editor.
 
-<Steps>
-  <Step title="Go to your Phonely Dashboard.">
-    
-  </Step>
-  <Step title="    Open the Agent Design section from the left sidebar.">
-    
-  </Step>
-  <Step title="Select the agent whose workflow you want to edit.">
-    
-  </Step>
-  <Step title="Click on the Workflow tab to view all existing flows.">
-    
-  </Step>
-  <Step title="    Choose the specific flow you want to modify.">
-    
-  </Step>
-  <Step title="In the top-right corner of the flow editor, click Flow Settings.">
-    
-  </Step>
-</Steps>
+<img
+  src="/assets/configure-flow-settings.gif"
+  alt="Configure Flow Settings Gi"
+  style={{ width:"96%" }}
+/>
 
-This will open the Flow Settings panel, where you can adjust contextual information, select documents, and apply tone guidelines.
+This will open the Flow Settings page, where you can adjust contextual information, select documents, and apply tone guidelines.
 
-![Agent Flow Settings Pn](/assets/agent-flow-settings.png)
+<img
+  src="/assets/agent-flow-settings.png"
+  alt="Agent Flow Settings Pn"
+  style={{ width:"95%" }}
+/>
 
-### **Flow Specific Information**
+### Flow Specific Information
 
 Use this field to provide additional details or context about the purpose of your flow. This information helps your AI agent understand the flow’s intent and ensures that responses remain accurate and relevant.
 
 Example:
 
-> “This flow handles customer support inquiries for billing, refunds, and subscription upgrades..."
+> _“This flow handles customer support inquiries for billing, refunds, and subscription upgrades..."_
 
-### **Include Guidelines**
+### Include Guidelines
 
 Enable this option to apply the Guidelines set in your agent guidelines file.\
-This ensures that tone, style, and phrasing stay consistent across all calls — whether the agent is handling support, sales, or appointment scheduling.
+This ensures that tone, style, and phrasing stay consistent across all calls, whether the agent is handling support, sales, or appointment scheduling.
 
 - When checked, the AI automatically follows the rules defined in your **Agent Guidelines**.
 - When unchecked, the flow will operate independently without enforced guidelines.
 
-**Related Guide:**
+Related Guide: [Agent Design & Tone Guidelines](/agent-design/set-agent-guidelines/)
 
-- [Agent Design & Tone Guidelines](/agent-design/set-agent-guidelines/) – Learn how to create and apply communication styles that match your brand.
+### Documents
 
-### **Documents**
-
-Attach one or more **Documents** that the flow can reference during live calls.\
+Attach one or more **Documents** that the flow can reference during live calls.   \
 These may include FAQs, product manuals, legal disclaimers, or training materials.
 
 **How to use:**
@@ -63,9 +54,7 @@ These may include FAQs, product manuals, legal disclaimers, or training material
 2. Choose specific files you want the AI Agent to access.
 3. Save your selection.
 
-**Related Guide:**
-
-- [Uploading Documents](/agent-knowledge-base/upload-documents/) – Learn how to upload, organize, and control document access.
+Related Guide [Uploading Documents](/agent-knowledge-base/upload-documents/) – Learn how to upload, organize, and control document access.
 
 ### **Websites**
 
@@ -77,21 +66,17 @@ Select the websites that the agent can use as additional reference sources when 
 2. Pick specific sites relevant to this flow, such as your company knowledge base or product documentation portal.
 3. Save your selection.
 
-For example:
-
-> Choose “Phonely AI” and “Google Workspace Support” if your agent helps users troubleshoot integrations with Google apps.
-
 **Related Guide:**
 
 - [Add Websites](/agent-knowledge-base/add-websites/)– Learn how to connect and authorize your web sources securely.
 
-### **Switch Message**
+### Switch Message
 
 The **Switch Message** defines what your AI agent says while transitioning to this flow.\
 This ensures callers experience a natural, professional pause while context loads in the background.
 
 **Example**:
 
-> “One moment please, I’m connecting you to our scheduling assistant.”
+> _“One moment please, I’m connecting you to our scheduling assistant.”_
 
 You can customize this to fit your tone or scenario (e.g., “Let me transfer you to our billing department.”).
