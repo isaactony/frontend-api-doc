@@ -3,13 +3,13 @@ title: "Collect"
 description: "Efficiently gather multiple pieces of information from callers in a natural, conversational manner"
 ---
 
-In this tutorial, we'll guide you through the Collect Block in Phonely, demonstrating how you can efficiently gather multiple pieces of information from a customer in a natural, conversational manner. This feature streamlines your workflows, making your AI receptionist highly efficient and human-like. To clear up any initial confusion, this was previously called the 'Multi-Ask Block'.
+In this tutorial, we'll guide you through the Collect Block in Phonely, demonstrating how you can efficiently gather multiple pieces of information from a customer in a natural, conversational manner. This feature streamlines your workflows, making your AI agent highly efficient and human-like. To clear up any initial confusion, this was previously called the 'Multi-Ask Block'.
 
 ![Howto Adda Collect Block Gi](/images/HowtoAddaCollectBlock.gif)
 
 ## What is it?
 
-The Collect Block is a core component in Phonely used when you want to ask a series of different questions, essentially functioning like a voice-enabled form. It is designed to collect multiple pieces of information (such as name, phone number, and email) in a single, combined block that does not branch. Phonely's AI automatically generates how it asks these questions and will not proceed until all defined information has been successfully stored.                              
+The Collect Block is a core component in Phonely used when you want to ask a series of different questions, essentially functioning like a voice-enabled form. It is designed to collect multiple pieces of information (such as name, phone number, and email) in a single, combined block that does not branch. Phonely's AI automatically generates how it asks these questions and will not proceed until all defined information has been successfully stored.
 
 ## When to Use
 
@@ -17,19 +17,19 @@ Understanding the nuances between Phonely's conversational blocks is crucial for
 
 **Purpose** - Ideal for gathering a string of related information (like a form) where all fields must be collected consecutively.
 
-**Behavior** - It is a single, combined block that does not branch based on individual answers within the block. The AI ensures all required information is gathered before moving to the next part of the workflow.    
+**Behavior** - It is a single, combined block that does not branch based on individual answers within the block. The AI ensures all required information is gathered before moving to the next part of the workflow.
 
 **Efficiency** - It is significantly faster and cleaner than creating a series of individual Ask Exactly Blocks or a single Prompt Block for this specific use case.
 
-**Smart Confirmation** - If the customer has already provided information relevant to a question in the Collect Block earlier in the conversation, Phonely will intelligently confirm that information instead of re-asking the question, enhancing the natural flow.    
+**Smart Confirmation** - If the customer has already provided information relevant to a question in the Collect Block earlier in the conversation, Phonely will intelligently confirm that information instead of re-asking the question, enhancing the natural flow.
 
 ## Key Features
 
-**Efficient Data Aggregation** - Collects multiple data points (e.g., name, phone, email) within a single conversational segment.    
+**Efficient Data Aggregation** - Collects multiple data points (e.g., name, phone, email) within a single conversational segment.
 
 **Automated Question Generation** - Phonely's AI intelligently formulates how to ask the defined questions, maintaining a natural conversation flow.
 
-**Guaranteed Information Capture** - The block ensures all specified information is gathered and stored as variables before the workflow proceeds.    
+**Guaranteed Information Capture** - The block ensures all specified information is gathered and stored as variables before the workflow proceeds.
 
 **Streamlined Workflow Design** - Significantly reduces the complexity of your workflow canvas compared to using multiple individual question blocks.
 
@@ -47,7 +47,7 @@ Understanding the nuances between Phonely's conversational blocks is crucial for
     Choose the "Collect" option from the available blocks.
   </Step>
   <Step title="Configure Questions:">
-    For each piece of information you need to gather, you will add a specific entry within the Collect Block's settings:            
+    For each piece of information you need to gather, you will add a specific entry within the Collect Block's settings:
 
     - **Name (Variable Name)**: Assign a descriptive internal name for the variable that will store this piece of information (e.g., "customer_name", "contact_phone", "user_email"). This name will be used to reference the data later.
     - **Type (Answer Type)**: Select the appropriate data type for the expected input (e.g., text, phone, email, number, date). This ensures Phonely validates and stores the information in the correct format for subsequent use.
