@@ -6,7 +6,7 @@ description: "Learn how to build, publish and update custom actions in Phonely"
 ## What Are Custom Actions?
 
 Custom Actions allow you to package a series of connected blocks - for example, prompts, logic branches, and API requests - into a single reusable block.\
-Once created, you can reuse this action across multiple call flows, share it with your organization, or even publish it to the marketplace.   
+Once created, you can reuse this action across multiple call flows, share it with your organization, or even publish it to the marketplace.
 
 Think of a Custom Action as a mini reusable workflow inside your larger flow. It behaves like a single block but contains its own inner logic, inputs, and outputs.
 
@@ -19,7 +19,7 @@ Think of a Custom Action as a mini reusable workflow inside your larger flow. It
 
 ## Building a Custom Action (Appointment Example)
 
-Let’s build a Make Appointment Custom Action that collects a preferred time, checks availability, and books an appointment.
+Let’s build a Make Appointment Custom Action that collects a preferred time, checks availability, and books an appointment.     
 
 ![How To Create A Custom Action Gi](/assets/how-to-create-a-custom-action.gif)
 
@@ -57,9 +57,7 @@ Inside the purple area, you can drag and connect blocks just like a normal workf
 Let’s walk through how to configure a Custom Action that handles appointment scheduling for a legal office.
 
 1. Connect an API Request Block Next, you’ll connect to your firm’s booking system or calendar API to check available slots.
-
 2. Click the **＋ button** under your Collect block and select **API Request**.
-
 3. In the configuration panel:
 
 - Method:  `GET`
@@ -139,10 +137,10 @@ These connections ensure that each scenario is gracefully handled without leavin
 
 **Add Optional Post-Call Actions**
 
-If you want to follow up or log the appointment automatically, add post-call blocks:   
+If you want to follow up or log the appointment automatically, add post-call blocks:
 
-- **Send Email:** Send an internal summary to your legal assistant or client.   
-- **Send SMS:** Send a text reminder or confirmation link.    
+- **Send Email:** Send an internal summary to your legal assistant or client.
+- **Send SMS:** Send a text reminder or confirmation link.
 - **API Request:** Log the appointment into your CRM or case-management system.
 - **Code Block:** Run custom logic - for example, update case status or trigger automation in another tool.
 
@@ -154,7 +152,7 @@ Once all nodes are connected and fields are configured, your Custom Action for a
 
 ### Publishing Your Custom Action
 
-Once your Custom Action is complete and tested, the next step is to **publish** or **save it as a draft**, either for private testing, internal team use, or public sharing. Publishing determines who can access, reuse, and configure the action in other call flows.        
+Once your Custom Action is complete and tested, the next step is to **publish** or **save it as a draft**, either for private testing, internal team use, or public sharing. Publishing determines who can access, reuse, and configure the action in other call flows.
 
 ![Saving And Publishing A Custom Action Gi](/assets/saving-and-publishing-a-custom-action.gif)
 
@@ -163,7 +161,7 @@ Once your Custom Action is complete and tested, the next step is to **publish** 
 To begin publishing:
 
 1. Click the **⋯ (three vertical dots)** at the **top-right corner** of the purple Custom Action area.
-2. From the dropdown menu, select one of the following options:    
+2. From the dropdown menu, select one of the following options:
 
 | **Option**                  | **Purpose**                                                                                                                                     |
 | :-------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -174,23 +172,23 @@ To begin publishing:
 ### Configure Customizable Fields
 
 After selecting a publish option, Phonely will prompt you to configure fields.\
-This step defines which variables other users can edit when they use your Custom Action in their own flows.      
+This step defines which variables other users can edit when they use your Custom Action in their own flows.
 
 1. The **Configure Fields** window opens automatically. Here you’ll see all **available nodes**, such as headers and query parameters, listed on the left panel.
 2. Check the boxes next to the parameters that you want users to customize for example:
 3. On the right side, Phonely shows editable text fields labeled:\
-   “User will enter value here.” This indicates that the selected parameter will be visible and configurable by others.   
-4. Click **Next** to continue once you’ve chosen all relevant fields.   
+   “User will enter value here.” This indicates that the selected parameter will be visible and configurable by others.
+4. Click **Next** to continue once you’ve chosen all relevant fields.
 
 ### Finalize the Integration details and Submit
 
 After configuring fields, you’ll move to the **Finalize Custom Action** window.    \
-This is where you define how your integration will appear to others.      
+This is where you define how your integration will appear to others.
 
-1. **Integration Name:** Choose an existing integration or create a new one.   
-2. **Description:** Provide a clear summary of what your Custom Action does.   
-3. **Icon:** Select an icon to represent your Custom Action.    
-4. **Action Name:** Enter a short, clear title for the action.     
+1. **Integration Name:** Choose an existing integration or create a new one.
+2. **Description:** Provide a clear summary of what your Custom Action does.
+3. **Icon:** Select an icon to represent your Custom Action.
+4. **Action Name:** Enter a short, clear title for the action.
 5. Click **Submit** to finalize and publish.
 
 <img
