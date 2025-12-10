@@ -19,7 +19,7 @@ Think of a Custom Action as a mini reusable workflow inside your larger flow. It
 
 ## Building a Custom Action (Appointment Example)
 
-Let’s build a Make Appointment Custom Action that collects a preferred time, checks availability, and books an appointment.         
+Let’s build a Make Appointment Custom Action that collects a preferred time, checks availability, and books an appointment.
 
 ![How To Create A Custom Action Gi](/assets/how-to-create-a-custom-action.gif)
 
@@ -41,10 +41,10 @@ Let’s build a Make Appointment Custom Action that collects a preferred time, c
 
 Inside the purple area (your Custom Action workspace), you can start building just like you would in a regular flow.
 
-- Click the **＋ button** below the **Start node** to open the block selector, then choose any block you want to add, for example, Talk, Collect, API Request, or Send Email.   
+- Click the **＋ button** below the **Start node** to open the block selector, then choose any block you want to add, for example, Talk, Collect, API Request, or Send Email.
 
   ![Add Blocks To A Custom Action Pn](/assets/add-blocks-to-a-custom-action.png)
-- Alternatively, you can drag blocks into the purple area from an existing flow.       
+- Alternatively, you can drag blocks into the purple area from an existing flow.
 
 <Tip>
   When you drag a block into a Custom Action, it becomes part of that action’s internal logic. This means it is disconnected from any nodes outside the group.
@@ -52,7 +52,7 @@ Inside the purple area (your Custom Action workspace), you can start building ju
   Only the designated output nodes (e.g., Success, Error) can connect outside the Custom Action to the rest of your main flow.
 </Tip>
 
-Inside the purple area, you can drag and connect blocks just like a normal workflow.    
+Inside the purple area, you can drag and connect blocks just like a normal workflow.
 
 ### Configuring an  Custom Action - Appointment Example
 
@@ -60,12 +60,12 @@ Let’s walk through how to configure a Custom Action that handles appointment s
 
 1. Connect an API Request Block Next, you’ll connect to your firm’s booking system or calendar API to check available slots.
 2. Click the **＋ button** under your Collect block and select **API Request**.
-3. In the configuration panel:   
+3. In the configuration panel:
 
 - Method:  `GET`
-- Endpoint.   
+- Endpoint.
 - Headers: include your `Content-Type` (e.g., `application/json`) and `apiKey.  `
-- Body Parameters.   
+- Body Parameters.
 - You can reference any collected variables using double curly braces.
 
 This request checks available appointment slots for the specified time range.
@@ -150,20 +150,20 @@ You can also chain this Custom Action to other Custom Actions, creating seamless
 
 ![Post Call Options For Custom Actions Gi](/assets/post-call-options-for-custom-actions.gif)
 
-Once all nodes are connected and fields are configured, your Custom Action for appointment booking is ready.         
+Once all nodes are connected and fields are configured, your Custom Action for appointment booking is ready.
 
 ### Publishing Your Custom Action
 
-Once your Custom Action is complete and tested, the next step is to **publish** or **save it as a draft**, either for private testing, internal team use, or public sharing. Publishing determines who can access, reuse, and configure the action in other call flows.         
+Once your Custom Action is complete and tested, the next step is to **publish** or **save it as a draft**, either for private testing, internal team use, or public sharing. Publishing determines who can access, reuse, and configure the action in other call flows.
 
 ![Saving And Publishing A Custom Action Gi](/assets/saving-and-publishing-a-custom-action.gif)
 
 **Accessing the Publish Options**
 
-To begin publishing:  
+To begin publishing:
 
 1. Click the **⋯ (three vertical dots)** at the **top-right corner** of the purple Custom Action area.
-2. From the dropdown menu, select one of the following options:     
+2. From the dropdown menu, select one of the following options:
 
 | **Option**                  | **Purpose**                                                                                                                                     |
 | :-------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -209,12 +209,8 @@ Depending on your chosen option:
 - **Organization:** Appears in your team’s shared action library.
 - **Marketplace:** Submitted for review by Phonely’s moderation team before public listing.
 
-You can always return to the **⋯** menu to:
+You can always return to the **⋯** menu to Update the action,Edit metadata (name, description) or re-publish.
 
-- Update the action.
-- Edit metadata (name, description).
-- Re-publish.
-
-You and your team can now find the published action under the **Custom Actions **sections under your chosen integration name ready to drag, configure, and connect into their own call flows.
+You and your team can now find the published action under the \*\*Custom Actions \*\*sections under your chosen integration name ready to drag, configure, and connect into their own call flows.
 
 ![How To Use Published Custom Actions Gi](/assets/how-to-use-published-custom-actions.gif)
