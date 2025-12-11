@@ -1,11 +1,11 @@
 ---
 title: "Auto-Gather Variables"
-description: "Learn how Auto-Gather Variables help your agent collect information automatically—without adding extra blocks or complex logic."
+description: "Learn how Auto-Gather Variables help your agent collect information automatically, without adding extra blocks or complex logic."
 ---
 
 Auto-Gather Variables are one of the most powerful features in Phonely. They let your agent collect, validate, and format information **at the exact moment it’s needed**, directly inside a block such as a Payment block, API Request block, Calendar block, Email block, or even Post-Call workflows.
 
-Instead of creating Talk blocks just to gather data, Auto-Gather Variables let you define the variable inside the block where it will be used. This keeps your flows cleaner, shorter, and more intelligent.      
+Instead of creating Talk blocks just to gather data, Auto-Gather Variables let you define the variable inside the block where it will be used. This keeps your flows cleaner, shorter, and more intelligent.
 
 <iframe src="https://www.youtube.com/embed/my-0awvgnb4" title="YouTube video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
 
@@ -14,16 +14,16 @@ Instead of creating Talk blocks just to gather data, Auto-Gather Variables let y
 Traditionally, collecting a variable required a Talk Block:
 
 - Ask the caller a question.
-- Define the variable inside that Talk Block. 
-- Validate and confirm it. 
-- Use it later in your flow. 
+- Define the variable inside that Talk Block.
+- Validate and confirm it.
+- Use it later in your flow.
 
 This works, but becomes complicated when:
 
-- You need many variables
-- You want to gather them only at specific points
-- Your flow changes over time
-- You want fewer blocks and cleaner logic
+- You need many variables.
+- You want to gather them only at specific points.
+- Your flow changes over time.
+- You want fewer blocks and cleaner logic.
 
 Auto-Gather Variables solve all of this by letting you define variables **exactly where they’re needed**, with built-in validation, formatting, confirmation, and re-use.
 
@@ -34,21 +34,32 @@ For example: inside API Request, Payment, Calendar, Email, and more.
 
 ### How to Create One
 
-1. Open any block (e.g., API Request or Payment).   
-2. Look for the **Auto-Gather Variables** section.   
-3. Click **\+** to create a new variable.   
+1. Open any block (e.g., API Request or Payment).
+
+2. Click on any of the fields where you want to collect and add the variable.
+
+3. This should open the **Variables** panel. Click and expand the Auto-gather variables section.
 
 <img
-  src="/images/image.png"
-  alt="image.png"
-  title="image.png"
-  style={{ width:"78%" }}
+  src="/assets/adding-auto-gather-variables.png"
+  alt="Adding Auto Gather Variables Pn"
+  title="Adding Auto Gather Variables Pn"
+  style={{ width:"81%" }}
 />
 
-4. Fill in the required fields:
+4. Click **\+** to create a new variable.
+4. Fill in the required fields.
 
-- **Variable Name**: A short, descriptive name.   
-- **Variable Type:** Choose from several built-in types.
+<img
+  src="/assets/custom-auto-gather-variables.png"
+  alt="Custom Auto Gather Variables Pn"
+  title="Custom Auto Gather Variables Pn"
+  className="mr-auto"
+  style={{ width:"69%" }}
+/>
+
+- **Variable Name**: A short, descriptive name.      
+- **Variable Type:** Choose from several built-in types.                
 - **Description:** Clarify what Phonely should gather, e.g. _“The amount the customer wants to donate.”_
 
 This helps the AI understand exactly what to capture.
@@ -77,30 +88,22 @@ This ensures the agent outputs values _exactly the way your system expects them_
 - IDs
 - Special codes
 
-<img
-  src="/assets/custom-auto-gather-variables.png"
-  alt="Custom Auto Gather Variables Pn"
-  title="Custom Auto Gather Variables Pn"
-  className="mr-auto"
-  style={{ width:"67%" }}
-/>
-
 ## Auto-Gather in Action (Example: Payment Block)
 
 Imagine you want to collect the payment amount from a caller.
 
-### Instead of:
+### Instead of           
 
 1. Adding a Talk Block
 2. Asking for the amount
 3. Validating the format manually
 4. Passing it to the Payment block
 
-### You simply:
+### You simply.        
 
 1. Open **Payment Block**
 2. Click **\+ Auto-Gather Variable**
-3. Create a variable:        
+3. Create a variable:
    - Name: `amount`
    - Type: Custom
    - Custom Type Definition: _“Format this as a raw number with two decimal places (e.g., 34 → 34.00).”_

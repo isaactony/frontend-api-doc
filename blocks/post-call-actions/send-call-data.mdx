@@ -1,9 +1,9 @@
 ---
 title: "Send Call Data"
-description: "Description of your new file."
+description: "Learn how to share call data to external systems via a webhook"
 ---
 
-The Send Call Data action in Phonely allows you to automatically send call details — such as caller information, call duration, outcomes, and workflow data — to an external system via a webhook.\
+The Send Call Data action allows your agents to automatically send call details, such as caller information, call duration, outcomes, and workflow data, to an external system via a webhook.\
 This is particularly useful for integrating Phonely with CRMs, analytics dashboards, or automation tools like Zapier, or custom APIs.
 
 You can configure this integration to:
@@ -12,7 +12,7 @@ You can configure this integration to:
 - Send specific fields only (for lightweight or customized workflows)
 - Format and control the payload using manual or code input modes
 
-## 1. Access the Send Call Data Block
+## Access the Send Call Data Block
 
 1. Go to **Agent Design** in your Phonely dashboard.
 2. Open or create a **workflow**.
@@ -21,7 +21,7 @@ You can configure this integration to:
 
 This action is triggered once the call ends, ensuring all relevant data is finalized before being sent.
 
-## 2. Configure Webhook Settings
+## Configure Webhook Settings
 
 In the **Configure** tab, you’ll define where Phonely should send your call data.
 
@@ -33,11 +33,11 @@ Enter the endpoint URL where the data will be sent.
   Make sure your endpoint is ready to receive POST requests with JSON data.
 </Tip>
 
-## 3. Send Full Call Data
+## Send Full Call Data
 
 Toggle Send full call data to decide whether Phonely should send all available call fields or only specific ones.
 
-### Option A: Full Call Data. 
+### Option A: Full Call Data.
 
 When this is checked, Phonely automatically sends the entire call payload to your webhook.
 
@@ -52,31 +52,39 @@ You’ll then see the **Body** section with three options for customization:
 
 Let’s look at each in detail.
 
-## **4. Manual Mode**
+## Manual Mode
 
 The **Manual** option lets you build a JSON payload by specifying each key-value pair directly.
 
-### **How to Use**
+### How to Use
 
-1. Click **Add Field** to create new entries.                  
+1. Click **Add Field** to create new entries.
 2. Under **Key**, define the name of your data field (e.g., `callerName`, `callSummary`).
 3. Under **Value**, enter a static value or select a dynamic variable from your workflow.
 4. Select the **Type** (String, Number, Boolean, etc.) for each field.
 
-![image.png](/images/image.png)
+<img
+  src="/images/image.png"
+  alt="image.png"
+  style={{ width:"95%" }}
+/>
 
 <Tip>
   Manual mode is best for simple, structured payloads sent to other systems like CRMs or notification apps.
 </Tip>
 
-## 6. Code Mode
+## Code Mode
 
 For advanced users, the **Code** option allows you to directly write or paste raw JSON.\
 You can freely format your request body, insert variables, and structure nested objects.
 
-![Send Full Data Code Pn](/assets/send-full-data-code.png)
+<img
+  src="/assets/send-full-data-code.png"
+  alt="Send Full Data Code Pn"
+  style={{ width:"89%" }}
+/>
 
-## 7. Test the Configuration
+## Test the Configuration
 
 Once your webhook and payload are set up, switch to the **Test** tab to verify the connection.
 
@@ -87,7 +95,11 @@ Once your webhook and payload are set up, switch to the **Test** tab to verify t
 Phonely will send a sample payload to your webhook.\
 If successful, you’ll see a **Test Result** preview with the response returned from your endpoint.
 
-![Test Send Call Data Post Call Action Pn](/assets/test-send-call-data-post-call-action.png)
+<img
+  src="/assets/test-send-call-data-post-call-action.png"
+  alt="Test Send Call Data Post Call Action Pn"
+  style={{ width:"90%" }}
+/>
 
 If you see the response displayed under “Test Result,” with success status then your webhook is active and configured correctly.
 
