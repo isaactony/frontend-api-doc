@@ -46,7 +46,7 @@ Click the **＋ button** below the **Start node** to open the block selector, th
 <img
   src="/assets/add-blocks-to-a-custom-action.png"
   alt="Add Blocks To A Custom Action Pn"
-  style={{ width:"85%" }}
+  style={{ width:"84%" }}
 />
 
 Alternatively, you can drag blocks into the purple area from an existing flow.
@@ -63,36 +63,59 @@ Inside the purple area, you can drag and connect blocks just like a normal workf
 
 Let’s walk through how to configure a Custom Action that handles appointment scheduling for a legal office.
 
-1. Connect an API Request Block Next, you’ll connect to your firm’s booking system or calendar API to check available slots.
-2. Click the **＋ button** under your Collect block and select **API Request**.
-3. In the configuration panel:
+## **Check Availability (Google Calendar)**
 
-- Method:  `GET`
-- Endpoint.
-- Headers: include your `Content-Type` (e.g., `application/json`) and `apiKey.  `
-- Body Parameters.
-- You can reference any collected variables using double curly braces.
+After collecting details:
 
-This request checks available appointment slots for the specified time range.
+Click ＋ and select Google Calendar.
 
-**Offer Available Time Slots**
+Choose the Check Availability action.
 
-After retrieving availability, add a **Talk** block to read back available slots to the caller.
+[Learn how you can connect phonely with your google calendar here](/blocks/live-call-integrations/google-calendar)
+
+Configure:
+
+- **Calendar ID** – choose the calendar to check
+- **Start time & search window** – when to begin scanning
+- **Slot duration** – 15m, 30m, 1h, etc.
+- **Business hours** – restrict available times
+- **Number of slots to return** – how many options to offer the caller
+
+<img
+  src="/assets/check-availability-custom-action.png"
+  alt="Check Availability Custom Action Pn"
+  title="Check Availability Custom Action Pn"
+  style={{ width:"90%" }}
+/>
+
+Once configured, add a Talk or Ask block to present the available slots and allow the caller to choose one.
 
 Example prompt:
 
-> “I found two available slots - tomorrow at 10 AM and Thursday at 2 PM. Which one would you prefer?”
+> “I found availability at 10 AM or 2 PM. Which would you prefer?”
 
-If the caller chooses a time, capture their response with another Collect block (e.g., preferredSlot).
+Capture their selection using another Collect block (e.g., `selected_slot`).
 
-**Book the Appointment**
+## Create Appointment (Google Calendar)
 
-Next, add a second API Request block to confirm the booking:
+Now add the second Google Calendar block:
 
-- Endpoint.
-- Method: `POST`
+1. Click **＋** and select **Google** **Calendar**. 
+1. Chose the Create Appointment.
 
-If the booking is successful, the API will return a confirmation response with details like `bookingId` or `meetingLink`.
+Configure fields:
+
+- **Calendar ID**
+- **Start Time / End Time**
+- **Attendee Email** → use the variable from Collect (e.g., `caller_email`)
+- **Title** (e.g., “Consultation with caller_name”)
+- **Description** (optional)
+
+If successful, Google Calendar automatically sends the guest invitation.
+
+You may optionally follow with a Talk block:
+
+> “Great, your appointment is confirmed!”
 
 ### Connect Output Paths
 
