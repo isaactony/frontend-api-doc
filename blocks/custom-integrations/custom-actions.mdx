@@ -59,27 +59,27 @@ Alternatively, you can drag blocks into the purple area from an existing flow.
 
 Inside the purple area, you can drag and connect blocks just like a normal workflow.
 
-## Configuring a Custom Action - Appointment Example
+### Configuring an  Custom Action - Appointment Example
 
 Let’s walk through how to configure a Custom Action that handles appointment scheduling for a legal office.
 
-### Check Availability (Google Calendar)
+## **Check Availability (Google Calendar)**
 
 After collecting details:
 
 Click ＋ and select Google Calendar.
 
-Choose the Check Availability action.
+Choose the Check Availability action. 
 
 [Learn how you can connect phonely with your google calendar here](/blocks/live-call-integrations/google-calendar)
 
 Configure:
 
-- **Calendar ID** – choose the calendar to check
-- **Start time & search window** – when to begin scanning
+- **Calendar ID** – choose the calendar to check.  
+- **Start time & search window** – when to begin scanning.  
 - **Slot duration** – 15m, 30m, 1h, etc.
 - **Business hours** – restrict available times
-- **Number of slots to return** – how many options to offer the caller
+- **Number of slots to return** – how many options to offer the caller. 
 
 <img
   src="/assets/check-availability-custom-action.png"
@@ -96,24 +96,26 @@ Example prompt:
 
 Capture their selection using another Collect block (e.g., `selected_slot`).
 
-### Create Appointment (Google Calendar)
+## Create Appointment (Google Calendar)
 
 Now add the second Google Calendar block:
 
-1. Click **＋** and select **Google** **Calendar**.
-1. Chose the Create Appointment.
+1. Click **＋ **and select **Google Calendar. **
+1. Chose the Create Appointment. 
 
 Configure fields:
 
 - **Calendar ID**
 - **Start Time / End Time**
-- **Attendee Email**:  use the variable from Collect (e.g., `caller_email`)
-- **Appointment Name: **Provide a name for the appointment.
-- **Appointment Description:** Provide a brief description of the appointment.
+- **Attendee Email** → use the variable from Collect (e.g., `caller_email`)
+- **Title** (e.g., “Consultation with {caller_name}”)
+- **Description** (optional)
 
 If successful, Google Calendar automatically sends the guest invitation.
 
-![Make Appointment Custom Action New Pn](/assets/make-appointment-custom-action-new.png)
+You may optionally follow with a Talk block:
+
+> “Great, your appointment is confirmed!”
 
 ### Connect Output Paths
 
@@ -148,7 +150,7 @@ Once your appointment logic is complete and all outcome paths are defined, you n
 
 **Add the End Call Block**
 
-At the bottom of your flow, click the **＋ button** and select **End Call**.      \
+At the bottom of your flow, click the **＋ button** and select **End Call**.\
 This block finalizes the interaction once all other actions have run.
 
 **Link Each Output Path to Its Next Step**
@@ -170,7 +172,7 @@ If you want to follow up or log the appointment automatically, add post-call blo
 - **Send Email:** Send an internal summary to your legal assistant or client.
 - **Send SMS:** Send a text reminder or confirmation link.
 - **API Request:** Log the appointment into your CRM or case-management system.
-- **Code Block:** Run custom logic - for example, update case status or trigger automation in another tool.   
+- **Code Block:** Run custom logic - for example, update case status or trigger automation in another tool.
 
 You can also chain this Custom Action to other Custom Actions, creating seamless workflows across multiple integrations.
 
@@ -204,7 +206,7 @@ This step defines which variables other users can edit when they use your Custom
 
 1. The **Configure Fields** window opens automatically. Here you’ll see all **available nodes**, such as headers and query parameters, listed on the left panel.
 2. Check the boxes next to the parameters that you want users to customize for example:
-3. On the right side, Phonely shows editable text fields labeled:   \
+3. On the right side, Phonely shows editable text fields labeled:\
    “User will enter value here.” This indicates that the selected parameter will be visible and configurable by others.
 4. Click **Next** to continue once you’ve chosen all relevant fields.
 
