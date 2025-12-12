@@ -724,6 +724,201 @@
         }
       }
     },
+    "/agent-block-list": {
+      "get": {
+        "summary": "List blocked phone numbers",
+        "description": "Retrieves the list of blocked phone numbers for a specific agent",
+        "parameters": [
+          {
+            "name": "uid",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "User ID"
+          },
+          {
+            "name": "agentId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The ID of the agent whose block list you want to retrieve"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BlockListResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid search params",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      },
+      "post": {
+        "summary": "Add phone numbers to block list",
+        "description": "Adds phone numbers to an agent's block list",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BlockListRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BlockListUpdateResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request body or numbers parameter",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      },
+      "delete": {
+        "summary": "Remove phone numbers from block list",
+        "description": "Removes phone numbers from an agent's block list",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BlockListRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BlockListDeleteResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request body or numbers parameter",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
     "/report-call-error": {
       "post": {
         "summary": "Report an issue with a call",
@@ -2180,6 +2375,98 @@
           "role": {
             "type": "string",
             "description": "Role of the speaker (e.g., assistant, user)"
+          }
+        }
+      },
+      "BlockListResponse": {
+        "type": "object",
+        "properties": {
+          "blockList": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Array of blocked phone numbers"
+          }
+        }
+      },
+      "BlockListRequest": {
+        "type": "object",
+        "required": ["uid", "agentId", "numbers"],
+        "properties": {
+          "uid": {
+            "type": "string",
+            "description": "User ID"
+          },
+          "agentId": {
+            "type": "string",
+            "description": "The ID of the agent"
+          },
+          "numbers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Array of phone numbers to add or remove from the block list"
+          }
+        }
+      },
+      "BlockListUpdateResponse": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "Success message"
+          },
+          "added": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Array of phone numbers that were successfully added"
+          },
+          "failed": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BlockListFailure"
+            },
+            "description": "Array of numbers that failed to be added and the reason"
+          }
+        }
+      },
+      "BlockListDeleteResponse": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "Success message"
+          },
+          "removed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Array of phone numbers that were successfully removed"
+          },
+          "failed": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BlockListFailure"
+            },
+            "description": "Array of numbers that failed to be removed and the reason"
+          }
+        }
+      },
+      "BlockListFailure": {
+        "type": "object",
+        "properties": {
+          "number": {
+            "type": "string",
+            "description": "The phone number that failed"
+          },
+          "reason": {
+            "type": "string",
+            "description": "Reason for failure"
           }
         }
       },
