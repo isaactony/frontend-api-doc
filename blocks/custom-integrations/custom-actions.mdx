@@ -73,13 +73,13 @@ Choose the Check Availability action.
 
 [Learn how you can connect phonely with your google calendar here](/blocks/live-call-integrations/google-calendar)
 
-Configure:
-
-- **Calendar ID** – choose the calendar to check.
-- **Start time & search window** – when to begin scanning.
-- **Slot duration** – 15m, 30m, 1h, etc.
-- **Business hours** – restrict available times
-- **Number of slots to return** – how many options to offer the caller.
+<Expandable title="Configuration Details">
+  - Calendar ID – choose the calendar to check.
+  - Start time & search window – when to begin scanning.
+  - Slot duration – 15m, 30m, 1h, etc.
+  - Business hours – restrict available times
+  - Number of slots to return – how many options to offer the caller.
+</Expandable>
 
 <img
   src="/assets/check-availability-custom-action.png"
@@ -100,7 +100,7 @@ Capture their selection using another Collect block (e.g., `selected_slot`).
 
 Now add the second Google Calendar block:
 
-1. Click **＋** and select **Google Calendar**. 
+1. Click **＋** and select **Google Calendar**.
 1. Chose the Create Appointment.
 
 <Expandable title="Fields to configure">
@@ -116,10 +116,6 @@ Now add the second Google Calendar block:
 </Expandable>
 
 If successful, Google Calendar automatically sends the guest invitation.
-
-You may optionally follow with a Talk block:
-
-> “Great, your appointment is confirmed!”
 
 ### Connect Output Paths
 
