@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "palm",
-  "name": " Phonely Documentation",
+  "name": "Phonely Documentation",
   "colors": {
     "primary": "#6B0099",
     "light": "#FAFAFA",
