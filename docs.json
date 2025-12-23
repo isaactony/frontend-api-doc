@@ -135,7 +135,8 @@
           {
             "group": "Testing",
             "pages": [
-              "/testing/ab-testing"            ]
+              "testing/ab-testing"
+            ]
           },
           {
             "group": "Account, and Organization Settings",
