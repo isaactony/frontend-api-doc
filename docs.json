@@ -117,7 +117,7 @@
             ]
           },
           {
-            "group": " Agent Knowledge Base",
+            "group": "Agent Knowledge Base",
             "pages": [
               "agent-knowledge-base/upload-files",
               "agent-knowledge-base/upload-documents",
