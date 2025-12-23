@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "palm",
-  "name": " Phonely Documentation",
+  "name": "Phonely Documentation",
   "colors": {
     "primary": "#6B0099",
     "light": "#FAFAFA",
@@ -117,7 +117,7 @@
             ]
           },
           {
-            "group": " Agent Knowledge Base",
+            "group": "Agent Knowledge Base",
             "pages": [
               "agent-knowledge-base/upload-files",
               "agent-knowledge-base/upload-documents",
@@ -135,10 +135,11 @@
           {
             "group": "Testing",
             "pages": [
-              "/testing/ab-testing"            ]
+              "testing/ab-testing"
+            ]
           },
           {
-            "group": "Account, and Organization Settings",
+            "group": "Account and Organization Settings",
             "pages": [
               "manage-account-and-organization-settings/manage-account-and-organization-settings"
             ]
@@ -232,9 +233,6 @@
       {
         "tab": "Webhook Reference",
         "icon": "webhook",
-        "pages": [
-          "webhook-reference/Intro"
-        ],
         "groups": [
           {
             "group": "Webhook Reference",
