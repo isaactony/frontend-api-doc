@@ -233,9 +233,6 @@
       {
         "tab": "Webhook Reference",
         "icon": "webhook",
-        "pages": [
-          "webhook-reference/Intro"
-        ],
         "groups": [
           {
             "group": "Webhook Reference",
