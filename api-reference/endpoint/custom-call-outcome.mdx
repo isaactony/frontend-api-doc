@@ -35,26 +35,9 @@ curl -X PATCH "https://app.phonely.ai/api/calls/agent123/call456" \
   }'
 ```
 
-### Response (200 OK)
-
-```json
-{
-  "success": true,
-  "call_id": "call456",
-  "agent_id": "agent123",
-  "updated_fields": [
-    "custom_call_outcome",
-    "custom_call_outcome_value",
-    "custom_call_metadata"
-  ]
-}
-```
-
 ---
 
 ## Example 2: Update by Phone Number (Last Touch - Default)
-
-### Using API Key
 
 ```bash
 curl -X PATCH "https://app.phonely.ai/api/calls/agent123/+14155551234" \
@@ -70,40 +53,9 @@ curl -X PATCH "https://app.phonely.ai/api/calls/agent123/+14155551234" \
   }'
 ```
 
-### Using Firebase Token
-
-```bash
-curl -X PATCH "https://app.phonely.ai/api/calls/agent123/+14155551234" \
-  -H "Authorization: Bearer your-firebase-id-token" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "custom_call_outcome": "No Sale",
-    "custom_call_outcome_value": 0
-  }'
-```
-
-### Response (200 OK)
-
-```json
-{
-  "success": true,
-  "call_id": "call789",
-  "agent_id": "agent123",
-  "phone": "+14155551234",
-  "preference": "last",
-  "updated_fields": [
-    "custom_call_outcome",
-    "custom_call_outcome_value",
-    "custom_call_metadata"
-  ]
-}
-```
-
 ---
 
 ## Example 3: Update by Phone Number (First Touch)
-
-### Using API Key
 
 ```bash
 curl -X PATCH "https://app.phonely.ai/api/calls/agent123/+14155551234?preference=first" \
@@ -119,23 +71,6 @@ curl -X PATCH "https://app.phonely.ai/api/calls/agent123/+14155551234?preference
   }'
 ```
 
-### Response (200 OK)
-
-```json
-{
-  "success": true,
-  "call_id": "call111",
-  "agent_id": "agent123",
-  "phone": "+14155551234",
-  "preference": "first",
-  "updated_fields": [
-    "custom_call_outcome",
-    "custom_call_outcome_value",
-    "custom_call_metadata"
-  ]
-}
-```
-
 ---
 
 ## Example 4: Partial Update (Only Outcome)
@@ -147,17 +82,6 @@ curl -X PATCH "https://app.phonely.ai/api/calls/agent123/call456" \
   -d '{
     "custom_call_outcome": "Follow Up Required"
   }'
-```
-
-### Response (200 OK)
-
-```json
-{
-  "success": true,
-  "call_id": "call456",
-  "agent_id": "agent123",
-  "updated_fields": ["custom_call_outcome"]
-}
 ```
 
 ---
