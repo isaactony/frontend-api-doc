@@ -183,7 +183,8 @@
                     "pages": [
                       "api-reference/endpoint/list-calls",
                       "api-reference/endpoint/get-call",
-                      "api-reference/endpoint/report-call-error"
+                      "api-reference/endpoint/report-call-error",
+                      "api-reference/endpoint/custom-call-outcome"
                     ]
                   },
                   {
