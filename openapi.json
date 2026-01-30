@@ -1038,7 +1038,7 @@
               ],
               "default": "last"
             },
-            "description": "Which call to update when identifying by phone number"
+            "description": "first: first time that someone called in, last: latest call from someone"
           }
         ],
         "requestBody": {
