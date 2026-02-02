@@ -1000,8 +1000,8 @@
     },
     "/calls/{agentId}/{callIdOrPhone}": {
       "patch": {
-        "summary": "Update custom call outcome",
-        "description": "Updates custom call outcome fields for a call identified by either call ID or phone number.",
+        "summary": "Set call outcome",
+        "description": "Set call outcome fields for a call identified by either call ID or phone number.",
         "security": [
           {
             "ApiKeyAuth": []
